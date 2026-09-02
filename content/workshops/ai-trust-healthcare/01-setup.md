@@ -3,7 +3,7 @@ title       = "Setup & Prerequisites"
 description = "Access DemoBot, Splunk Agent Observability, Cisco AI Defense, Splunk Observability Cloud, and Splunk Cloud."
 duration    = "10 min"
 weight      = 10
-aliases     = ["/setup.html", "/workshops/ai-governance/01-setup/"]
+aliases     = ["/setup.html", "/workshops/ai-governance/01-setup/", "/workshops/ai-governance-healthcare/01-setup/"]
 +++
 
 ### 1. How to Access DemoBot

@@ -7,12 +7,12 @@ home_sections = ["workshops"]
 
 [[cta]]
 label = "Start: Setup & Prerequisites"
-href  = "/workshops/ai-governance-healthcare/01-setup/"
+href  = "/workshops/ai-trust-healthcare/01-setup/"
 style = "primary"
 
 [[cta]]
 label = "Jump to the labs"
-href  = "/workshops/ai-governance-healthcare/02-overview/"
+href  = "/workshops/ai-trust-healthcare/02-overview/"
 style = "ghost"
 +++
 

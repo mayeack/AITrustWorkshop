@@ -3,7 +3,7 @@ title       = "AI Governance Overview"
 description = "The single pane of glass: usage, cost, risk, and compliance — every number one click from its evidence."
 duration    = "15 min"
 weight      = 20
-aliases     = ["/section-0-overview.html", "/workshops/ai-governance/02-overview/"]
+aliases     = ["/section-0-overview.html", "/workshops/ai-governance/02-overview/", "/workshops/ai-governance-healthcare/02-overview/"]
 +++
 
 ![alt text](/images/image-122.png)

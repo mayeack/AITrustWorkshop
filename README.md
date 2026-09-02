@@ -20,11 +20,11 @@ and published by GitHub Actions (`.github/workflows/pages.yml`) on every push to
 
 - `content/_index.md` — Home (hero + the workshop narrative). **Generated** by
   `build_index.py`; do not hand-edit.
-- `content/workshops/ai-governance-healthcare/` — the workshop pages: `01-setup.md`,
+- `content/workshops/ai-trust-healthcare/` — the workshop pages: `01-setup.md`,
   `02-overview.md`, `03-lab-1-measure.md` … `06-lab-4-govern.md`, `07-wrap-up.md`,
   `08-reference.md`. Sidebar order comes from `weight` in each page's front matter.
   One directory per vertical: each verticalized workshop is its own section under
-  `content/workshops/` (`ai-governance-healthcare`, `ai-governance-<vertical>`, …), so
+  `content/workshops/` (`ai-trust-healthcare`, `ai-trust-<vertical>`, …), so
   the URL is `/workshops/<vertical-slug>/`. `build_index.py` builds the healthcare
   vertical by default — set `WORKSHOP_SLUG` to target another one.
 - `static/images/` — screenshots, referenced as `/images/image-NN.png`.

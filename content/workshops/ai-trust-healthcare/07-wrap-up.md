@@ -3,7 +3,7 @@ title       = "Wrap-Up & Outcomes"
 description = "Four pillars, one trusted dataset, five executive outcomes."
 duration    = "5 min"
 weight      = 70
-aliases     = ["/wrap-up.html", "/workshops/ai-governance/07-wrap-up/"]
+aliases     = ["/wrap-up.html", "/workshops/ai-governance/07-wrap-up/", "/workshops/ai-governance-healthcare/07-wrap-up/"]
 +++
 
 ## Outcome

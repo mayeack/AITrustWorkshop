@@ -33,7 +33,7 @@ IS hand-maintained (it is the only place the hero title, eyebrow, pillars line, 
 Override the narrative output path with an argument or NARRATIVE_MD; select the vertical with
 WORKSHOP_SLUG (each verticalized workshop is its own section under content/workshops/):
 
-    WORKSHOP_SLUG=ai-governance-finserv python3 build_index.py "/path/to/1 - narrative.md"
+    WORKSHOP_SLUG=ai-trust-finserv python3 build_index.py "/path/to/1 - narrative.md"
 """
 import os
 import re
@@ -47,9 +47,9 @@ narrative_path = Path(
     sys.argv[1] if len(sys.argv) > 1 else os.environ.get("NARRATIVE_MD", DEFAULT_NARRATIVE)
 )
 # Slug of the vertical being built. Each verticalized workshop is its own section under
-# content/workshops/ (ai-governance-healthcare, ai-governance-finserv, …) so the URLs stay
+# content/workshops/ (ai-trust-healthcare, ai-trust-finserv, …) so the URLs stay
 # distinct; override with WORKSHOP_SLUG when generating a different vertical.
-WORKSHOP_SLUG = os.environ.get("WORKSHOP_SLUG", "ai-governance-healthcare")
+WORKSHOP_SLUG = os.environ.get("WORKSHOP_SLUG", "ai-trust-healthcare")
 WORKSHOP_DIR = HERE / "content" / "workshops" / WORKSHOP_SLUG
 INTRO = WORKSHOP_DIR / "00-introduction.md"
 HOME = HERE / "content" / "_index.md"

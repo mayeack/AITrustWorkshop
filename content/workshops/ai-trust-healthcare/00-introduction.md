@@ -3,7 +3,7 @@ title       = "Introduction"
 description = "Measured. Secured. Observable. Governed. Trusted. One Cisco, end to end."
 duration    = "15 min"
 weight      = 5
-aliases     = ["/workshops/ai-governance/00-introduction/"]
+aliases     = ["/workshops/ai-governance/00-introduction/", "/workshops/ai-governance-healthcare/00-introduction/"]
 +++
 
 *A field workshop for the executives accountable for AI — and the engineers who run it.*

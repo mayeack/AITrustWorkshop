@@ -3,7 +3,7 @@ title       = "Lab 2 — Secure"
 description = "Cisco AI Defense: turn the Lab 1 finding into a runtime guardrail and block non-compliant output live."
 duration    = "1 hour"
 weight      = 40
-aliases     = ["/lab-2-secure.html", "/workshops/ai-governance/04-lab-2-secure/"]
+aliases     = ["/lab-2-secure.html", "/workshops/ai-governance/04-lab-2-secure/", "/workshops/ai-governance-healthcare/04-lab-2-secure/"]
 +++
 
 ![alt text](/images/image-124.png)

@@ -9,7 +9,7 @@ weight      = 1
 layout      = "chapter"
 subtitle    = "One Cisco · Delivering Agentic AI Trust End to End"
 tagline     = "FY'27 · Hands-on"
-aliases     = ["/workshops/ai-governance/"]
+aliases     = ["/workshops/ai-governance/", "/workshops/ai-governance-healthcare/"]
 +++
 
 Four labs, one live agentic application. You will measure AI quality objectively, block non-compliant output at runtime, trace a latency incident end to end, and prove it all — on the same trusted turns.
