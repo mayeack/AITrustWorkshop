@@ -34,7 +34,7 @@ Cisco AI Defense is a live integration: it inspects the prompt (pre-LLM) and the
 
 #### 2.1.1 Access DemoBot
 
-Go to the  DemoBot instance and enter the access code provided by the facilitator.
+Go to the DemoBot instance and enter the access code provided by the facilitator.
 
 #### 2.1.2 Prompt Prescriptive Overreach
 
@@ -142,7 +142,7 @@ Click on **Publish Policy**.
 
 ![alt text](/images/image-69.png)
 
-Click on **Go to adpative guardrail profiles**.
+Click on **Go to adaptive guardrail profiles**.
 
 #### 2.3.2 Apply the Custom Guardrail
 
@@ -174,9 +174,9 @@ Click on **Save changes**.
 
 ![alt text](/images/image-77.png)
 
-#### 2.4 Validate Prescriptive Overreach Guardrail
+### Lab 2.4 Validate Prescriptive Overreach Guardrail
 
-### 2.4.1 Access DemoBot
+#### 2.4.1 Access DemoBot
 
 Navigate back to DemoBot. In the left sidepanel, toggle on **Prescriptive Overreach**.
 
@@ -192,7 +192,7 @@ In the left sidepanel, toggle on **Cisco AI Defense Policy Review**. Click on **
 
 ![alt text](/images/image-80.png)
 
-Send a similiar prompt. The non-compliant response is now blocked!
+Send a similar prompt. The non-compliant response is now blocked!
 
 ![alt text](/images/image-81.png)
 
@@ -200,7 +200,7 @@ In the left sidepanel, toggle off **Prescriptive Overreach**. Click on **New Ses
 
 ![alt text](/images/image-82.png)
 
-Send a similiar prompt. Compliant responses are not blocked.
+Send a similar prompt. Compliant responses are not blocked.
 
 ## Outcome
 

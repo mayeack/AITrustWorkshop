@@ -56,12 +56,12 @@ The left sidepanel also has a number of controls to force non-compliant behavior
 
 Explore sending sample prompts to both the baseline and the poisoned model (via the model picker), and observe the difference in responses. We will then review how these differential responses can be automatically identified by Splunk Agent Observability.
 
-### 1.1.3 Prompt Aberrant Behavior
+#### 1.1.3 Prompt Aberrant Behavior
 
 Explore sending various aberrant prompts and triggering non-compliant behavior. At minimum:
 
 - Send a prompt with **Prescriptive Overreach** toggled on
-- Send a prompt with **Include Synethetic PII/PHI in Responses** toggled on
+- Send a prompt with **Include Synthetic PII/PHI in Responses** toggled on
 - Send a prompt with various PII, such as a phone number, email address, SSN, or address
 - Send a prompt with a toxic or aggressive tone
 - Send a prompt with a prompt injection attempt
@@ -102,7 +102,7 @@ Click on **Logs**.
 
 The Log Stream view turns every live AI conversation into a graded, searchable record — the continuous audit trail that proves the application is behaving safely in production.
 
-Logs — The running ledger of real user interactions, capturing what went in and what the AI sent back. This is the system of record that makes  behavior observable and reviewable rather than a black box.
+Logs — The running ledger of real user interactions, capturing what went in and what the AI sent back. This is the system of record that makes behavior observable and reviewable rather than a black box.
 
 Automated scoring (such as Output Toxicity, Prescriptive Overreach, Completeness) — Every response is auto-graded against safety and quality measures, including custom risk checks tuned to this use case. This is the core value: thousands of interactions evaluated without human review, with weak responses surfaced automatically for attention. You can click on each metric to understand the cost. Notice the significant cost difference between metrics computed using Luna (SLM) and frontier lab models.
 
@@ -162,7 +162,7 @@ Traces Count — Tracks total volume of activity. This sizes the workload and gi
 
 Agent Cost — Translates that consumption into dollars. This is the line item leadership actually cares about: what is this AI costing us, tracked over time so spend never becomes a surprise.
 
-Feel free to explore additonal metric charts.
+Feel free to explore additional metric charts.
 
 ### 9. Review Experiments
 
@@ -235,7 +235,8 @@ Configure Output (type & roll-up) — Sets how individual scores combine into a 
 The journey walks through six capabilities that make trust measurable:
 
 **Monitor** — Logs capture every live AI interaction as a searchable, auto-graded audit trail, so production behavior is observable and reviewable rather than a black box.
-Detect the unknown — Signals surface risks no one thought to define (PII leakage, medical hallucinations, harassment), catching the "unknown unknowns" before they become incidents.
+
+**Detect the unknown** — Signals surface risks no one thought to define (PII leakage, medical hallucinations, harassment), catching the "unknown unknowns" before they become incidents.
 
 **Investigate** — Trace-level detail opens any single conversation end to end, providing a defensible case file of how and why the AI answered as it did.
 

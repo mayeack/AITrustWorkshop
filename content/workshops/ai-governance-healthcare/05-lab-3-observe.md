@@ -162,7 +162,7 @@ Because we triggered the alert synthetically, there is nothing to fix. Go ahead 
 
 A latency spike was traced to its exact cause — and resolved — without reading a single log line. The slow request was isolated, diagnosed by an AI agent, and performance returned to baseline.
 
-- **One platform, one turn** The slow turn in APM is the *same* turn as the audit log and the quality score — operations, quality, and
+- **One platform, one turn.** The slow turn in APM is the *same* turn as the audit log and the quality score — operations, quality, and
   forensics share one identity.
 - **The agent traces; you don't grep.** A Troubleshooting & Remediation Agent follows the request end-to-end and points at the bottleneck automatically.
 - **Cost and latency, on the very same turn.** Observe shows token spend and latency on the very turns Splunk Agent Observability already scored for quality — not in a separate dashboard.
