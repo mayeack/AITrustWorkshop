@@ -1,20 +1,20 @@
 +++
 title       = "Introduction"
-description = "Measured. Secured. Observable. Governed. Agentic Trust delivered - One Cisco, end to end."
+description = "Measured. Secured. Observable. Governed. Trusted. One Cisco, end to end."
 duration    = "15 min"
 weight      = 5
 aliases     = ["/workshops/ai-governance/00-introduction/"]
 +++
 
-*A field workshop for the executives accountable for AI — and the engineers who run it. Observability is one of four governed pillars covered here, not the whole story.*
+*A field workshop for the executives accountable for AI — and the engineers who run it.*
 
-## The Problem: AI Is Moving Faster Than Trust is Being Built
+## The Problem: AI Is Moving Faster Than Trust Can Be Earned
 
 Enterprises are shipping agentic AI into production faster than they can trust it. Autonomous and semi-autonomous agents now make decisions, call tools, and generate language that reaches customers, patients, and regulators — at machine speed, around the clock, at a volume no human review queue can keep pace with.
 
 The risk is not theoretical. A single AI interaction can leak PII or PHI, absorb a prompt injection that overrides its instructions, fabricate a medical treatment that never existed, or quietly drift away from the behavior it was certified with. Each of these is, simultaneously, a **security** event, an **operations** event, a **quality** event, and a **compliance** event.
 
-Yet most organizations are trying to govern this with disconnected point solutions. The security team sees a blocked prompt in one console. The SRE sees a latency spike in another. The data-science team sees a quality score in a third. The compliance officer, during an audit, is handed screenshots from all three and asked to reconstruct what actually happened on a given turn. **Four tools, four truths, no single thread connecting them.** By the time the story is stitched together by hand, the agent has served thousands more turns.
+Yet most organizations are trying to build that trust with disconnected point solutions. The security team sees a blocked prompt in one console. The SRE sees a latency spike in another. The data-science team sees a quality score in a third. The compliance officer, during an audit, is handed screenshots from all three and asked to reconstruct what actually happened on a given turn. **Four tools, four truths, no single thread connecting them.** By the time the story is stitched together by hand, the agent has served thousands more turns.
 
 That gap — between the speed of agentic AI and the speed at which you can prove it deserves trust — is the problem this workshop closes.
 
@@ -30,30 +30,30 @@ That creates a compelling opportunity to improve both operating efficiency and p
 
 ![alt text](/images/image-121.png)
 
-But scaling that value introduces material governance risk. Hallucinations, PII exposure, and prescriptive overreach can quickly turn an efficiency gain into a clinical, regulatory, or reputational event.
+But scaling that value introduces material risk to the trust it depends on. Hallucinations, PII exposure, and prescriptive overreach can quickly turn an efficiency gain into a clinical, regulatory, or reputational event.
 
-**The value of MedAdvice can scale. So can the risk. Governance is what makes the economics sustainable.**
+**The value of MedAdvice can scale. So can the risk. Trust — proven, not assumed — is what makes the economics sustainable.**
 
 ---
 
 ## The One Cisco Thesis
 
-One Cisco closes the governance gap end to end with **one integrated architecture across four pillars** — and the differentiator versus point tools is structural, not cosmetic.
+One Cisco closes the trust gap end to end with **one integrated architecture across four pillars** — and the differentiator versus point tools is structural, not cosmetic.
 
 > **Every AI interaction is captured once and correlated on a shared, OTel-compliant identifier, so security, operations, quality, and audit become one investigation, not four disconnected tools.**
 
-The four pillars:
+The four pillars of trust — and the question each one answers:
 
 | **Pillar** | **Capability** | **Platform** |
 | --- | --- | --- |
-| **Measure / Evaluate** | Define **good**, then prove it — baseline vs. poisoned behavior, token & cost, signals that surface unknown unknowns, continuous metrics on a deployed agent | Splunk Agent Observability |
-| **Secure** | Runtime policy + guardrails on every prompt and response | Cisco AI Defense |
-| **Observe** | End-to-end tracing, latency, and cost | Splunk Observability Cloud |
-| **Govern** | Immutable audit trail + forensics + security incident response | Splunk Core / Enterprise Security |
+| **Measure / Evaluate** | *Is it good?* Define **good**, then prove it — baseline vs. poisoned behavior, token & cost, signals that surface unknown unknowns, continuous metrics on a deployed agent | Splunk Agent Observability |
+| **Secure** | *Is it safe?* Runtime policy + guardrails on every prompt and response | Cisco AI Defense |
+| **Observe** | *Is it reliable?* End-to-end tracing, latency, and cost | Splunk Observability Cloud |
+| **Govern** | *Is it accountable?* Immutable audit trail + forensics + security incident response | Splunk Core / Enterprise Security |
 
 ![alt text](/images/image-118.png)
 
-One Cisco AI Governance architecture: production AI traffic flows through Cisco Cloud Control, Cisco AI Defense, and Cisco Data Fabric into Splunk Observability Cloud and Splunk Core, with Splunk Agent Observability closing the continuous feedback loop back to the AI system — delivering a cohesive agentic AI governance solution.
+One Cisco Agentic AI Trust architecture: production AI traffic flows through Cisco Cloud Control, Cisco AI Defense, and Cisco Data Fabric into Splunk Observability Cloud and Splunk Core, with Splunk Agent Observability closing the continuous feedback loop back to the AI system — one cohesive architecture for delivering agentic AI trust.
 
 ---
 
@@ -61,7 +61,7 @@ One Cisco AI Governance architecture: production AI traffic flows through Cisco 
 
 The workshop is delivered against a real, running application: MedAdvice — a multi-agent medical-advice chatbot.
 
-The architectural anchor is the **AI Governance Overview dashboard** in Splunk Core (AI Governance Overview Dashboard). It answers, in one view, the question every leader is actually asking — *"Is our AI safe, reliable, accurate, and accountable right now?"*.
+The architectural anchor is the **AI Governance Overview dashboard** in Splunk Core. It answers, in one view, the question every leader is actually asking — *"Can I trust our AI right now — is it safe, reliable, accurate, and accountable?"*
 
 Splunk Agent Observability (Lab 1) is where agentic behavior gets evaluated, defined, and measured. It evaluates the whole agent trace — workflow, agents, tool calls, and the LLM response — and scores each turn against research-backed metrics (hallucination, context adherence, PII/PHI leakage, tool-selection quality) plus custom metrics you define. Those metrics are run by Luna, one of Cisco’s purpose-built small language models, so you get LLM-as-judge quality without paying frontier-model prices to score every turn — and that cost profile is exactly what makes evaluation affordable to run continuously, not just once. You run it two ways: as an offline experiment over a dataset before you ship — and as continuous scoring on live traffic once deployed, where its signals surface the unknown unknowns no one anticipated.
 
@@ -80,20 +80,20 @@ The key advantages are:
 
 **Customizable to enterprise requirements:** Luna can support custom metrics and can be tuned against an organization's own data and definition of acceptable AI behavior, making it more relevant than generic LLM-as-a-judge approaches.
 
-Luna changes AI governance from periodic sampling to continuous control. Its cost and latency profile makes it feasible to evaluate and protect AI interactions at production scale instead of relying primarily on expensive LLM judges or manual review.
+Luna changes how AI trust is earned — from periodic sampling to continuous control. Its cost and latency profile makes it feasible to evaluate and protect AI interactions at production scale instead of relying primarily on expensive LLM judges or manual review.
 {{% /notice %}}
 
 MedAdvice applies safety gates before and after every LLM call. **Cisco AI Defense (Lab 2)** is a live integration: it inspects the prompt pre-LLM and the response post-LLM against multiple guardrails — PII, PHI, PCI, Harassment, Hate, Profanity, Prompt Injection, etc. — and blocks non-compliant content. Every turn is logged with full governance and audit metadata in Cisco Data Fabric.
 
-That same per-turn telemetry feeds **Splunk Observability Cloud (Lab 3)**, the operational lens on the running agent. Where Cisco AI Defense governs what MedAdvice is allowed to say, Observability Cloud watches how it runs, emitting OpenTelemetry traces, spans, latency, and token/cost telemetry for every LLM call and tool hop across the multi-agent graph. The AI Troubleshooting Agent then uses this telemetry to identify incidents, evaluate their root cause and impact, and resolve issues across the agentic workflow.
+That same per-turn telemetry feeds **Splunk Observability Cloud (Lab 3)**, the operational lens on the running agent. Where Cisco AI Defense enforces what MedAdvice is allowed to say, Observability Cloud watches how it runs, emitting OpenTelemetry traces, spans, latency, and token/cost telemetry for every LLM call and tool hop across the multi-agent graph. The AI Troubleshooting Agent then uses this telemetry to identify incidents, evaluate their root cause and impact, and resolve issues across the agentic workflow.
 
-**Splunk Core (Lab 4)** is where all of it comes to rest, providing the immutable audit trail and unified security record for every governed turn. If MedAdvice detects a prompt injection attempt, Splunk can correlate the malicious prompt, AI Defense verdict, affected agent actions, and downstream response into a single investigation. Enterprise Security Agents can then help triage the event, assess its scope and severity, recommend next actions, and accelerate response, turning that governed telemetry into the foundation for an agentic SOC.
+**Splunk Core (Lab 4)** is where all of it comes to rest, providing the immutable audit trail and unified security record for every turn. If MedAdvice detects a prompt injection attempt, Splunk can correlate the malicious prompt, AI Defense verdict, affected agent actions, and downstream response into a single investigation. Enterprise Security Agents can then help triage the event, assess its scope and severity, recommend next actions, and accelerate response, turning that evidence into the foundation for an agentic SOC.
 
 ### AI Governance Overview Dashboard: The Single Pane of Glass
 
-**Scenario.** You open the AI Governance Overview dashboard. Governed turns, policy blocks, injections, hallucinations, PII hits, and token cost are all on one screen.
+**Scenario.** You open the AI Governance Overview dashboard. Turns served, policy blocks, injections, hallucinations, PII hits, and token cost are all on one screen.
 
-**What One Cisco does.** You see the security, quality, operational, and governance signals for each AI interaction in a common view. Every KPI rolls back to the same correlated interaction record, allowing you to move from program-level posture to the evidence behind an individual turn without reconstructing the story across multiple systems.
+**What One Cisco does.** You see the security, quality, operational, and compliance signals for each AI interaction in a common view. Every KPI rolls back to the same correlated interaction record, allowing you to move from program-level posture to the evidence behind an individual turn without reconstructing the story across multiple systems.
 
 {{% notice style="info" title="Executive outcome" icon="star" %}}
 **Executive outcome - Unified Visibility & Control.** You see the posture of the AI program at a glance — and know that any number on the screen is one click from the evidence behind it.
@@ -119,10 +119,10 @@ The result is not simply a pass/fail test before deployment. You establish a mea
 
 **What One Cisco does.** You use Cisco AI Defense to place runtime controls around every MedAdvice interaction. Prompts are inspected before the LLM is invoked, and generated responses are independently inspected before they reach the patient. Policies detect and enforce against risks such as prompt injection, PII/PHI exposure, prohibited content, and prescriptive overreach.
 
-You then tune a response-direction guardrail against MedAdvice's clinical requirements and immediately re-run the interaction. You see how an observed behavioral risk becomes an enforceable runtime policy, with the resulting verdict and enforcement action captured as part of the governed interaction record.
+You then tune a response-direction guardrail against MedAdvice's clinical requirements and immediately re-run the interaction. You see how an observed behavioral risk becomes an enforceable runtime policy, with the resulting verdict and enforcement action captured as part of the interaction's immutable record.
 
 {{% notice style="info" title="Executive outcome" icon="star" %}}
-**Executive outcome — Trusted AI.** You move governance from written policy to machine-speed enforcement. Unsafe interactions can be detected and blocked before they create patient, regulatory, or reputational exposure, while controls can be continuously tuned as requirements and risks evolve.
+**Executive outcome — Trusted AI.** You turn written policy into machine-speed enforcement. Unsafe interactions can be detected and blocked before they create patient, regulatory, or reputational exposure, while controls can be continuously tuned as requirements and risks evolve.
 {{% /notice %}}
 
 ### Lab 3 — Observe (Splunk Observability Cloud): Find the Failure, Restore the Service
@@ -146,7 +146,7 @@ You then use the AI Troubleshooting Agent to identify the incident, evaluate its
 You can then move evidence-backed findings into Splunk Enterprise Security, where Enterprise Security Agents help you triage the event, assess scope and severity, investigate surrounding activity, recommend next actions, and accelerate response. The same telemetry that gives you defensible evidence for governance and audit now becomes actionable security context for an increasingly agentic SOC.
 
 {{% notice style="info" title="Executive outcome" icon="star" %}}
-**Executive outcome — Accountability & Evidence.** You can make every consequential AI interaction attributable, explainable, and actionable. Audit evidence is available on demand, while security findings can move directly into AI-assisted investigation and response rather than ending in a governance report.
+**Executive outcome — Accountability & Evidence.** You can make every consequential AI interaction attributable, explainable, and actionable. Audit evidence is available on demand, while security findings can move directly into AI-assisted investigation and response rather than ending in a compliance report.
 {{% /notice %}}
 
 ---
@@ -157,7 +157,7 @@ You can then move evidence-backed findings into Splunk Enterprise Security, wher
 | --- | --- | --- |
 | **Unified Visibility & Control** | See the posture of your AI program at a glance, with every material signal traceable to the evidence behind it. | AI Governance Overview Dashboard |
 | **Improved Outcomes** | Turn AI quality, safety, and cost into measurable operating metrics, establish a baseline before release, identify emerging risks in production, and continuously improve against evidence. | Splunk Agent Observability |
-| **Trusted AI** | Move governance from written policy to machine-speed enforcement, detecting and blocking unsafe interactions before they create patient, regulatory, or reputational exposure. | Cisco AI Defense |
+| **Trusted AI** | Turn written policy into machine-speed enforcement, detecting and blocking unsafe interactions before they create patient, regulatory, or reputational exposure. | Cisco AI Defense |
 | **Operational Excellence** | Move AI incidents faster from detection to root cause and resolution, reducing operational effort while protecting performance, user experience, and the economics of AI at scale. | Splunk Observability Cloud |
 | **Accountability & Evidence** | Make consequential AI interactions attributable, explainable, and actionable, with audit evidence available on demand and security findings flowing directly into AI-assisted investigation and response. | Splunk Enterprise Security |
 
@@ -165,14 +165,14 @@ You can then move evidence-backed findings into Splunk Enterprise Security, wher
 
 ## The Call to Action
 
-Agentic AI is already in production. The question for every CISO, CIO, CTO, and Chief Risk and Compliance officer is no longer *whether* to govern it, but *whether you can prove you are.*
+Agentic AI is already in production. The question for every CISO, CIO, CTO, and Chief Risk and Compliance officer is no longer *whether* to trust it, but *whether you can prove it deserves that trust.*
 
 One Cisco makes that proof a single screen and a single thread. **Capture every AI interaction once. Correlate it across security, operations, quality, and audit. Investigate once, not four times.**
 
 This workshop puts that correlated architecture in your hands against a live, running multi-agent application, showing how you measure agent behavior, enforce runtime policy, identify and resolve operational failures, and turn evidence-backed threats into AI-assisted security response, all on the same turn, all on the same thread.
 
-**Measured. Secured. Observable. Governed. One Cisco, end to end.**
+**Measured. Secured. Observable. Governed. Trusted. One Cisco, end to end.**
 
-Let's govern AI at machine speed.
+Let's deliver trust at machine speed.
 
 ---

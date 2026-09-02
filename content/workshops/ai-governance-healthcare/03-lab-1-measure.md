@@ -82,17 +82,17 @@ Search for the project **DemoBot**, and then click on it.
 
 Click on **Overview**.
 
-Each section of the Overview dashboard turns AI development into a measurable, governed discipline — testing safety, comparing versions objectively, and maintaining a defensible record of quality.
+Each section of the Overview dashboard turns AI development into a measurable, evidence-backed discipline — testing safety, comparing versions objectively, and maintaining a defensible record of quality.
 
 Log Streams — Captures live records of how the AI application behaves in real use, providing a continuous audit trail for monitoring quality and catching issues in production.
 
 Playgrounds — A sandbox for safely experimenting with prompts and model behavior, helping the team iterate and innovate without touching the live system.
 
-Experiments (the leaderboard) — Ranks different versions of the model head-to-head against a benchmark. We see comparisons between the "baseline" versus "poisoned" model runs, scored and rank-ordered. Experiments provide objective, data-driven evidence of which configuration is safest and best-performing — critical for AI risk and governance decisions.
+Experiments (the leaderboard) — Ranks different versions of the model head-to-head against a benchmark. We see comparisons between the "baseline" versus "poisoned" model runs, scored and rank-ordered. Experiments provide objective, data-driven evidence of which configuration is safest and best-performing — critical for deciding which version has earned the trust to ship.
 
 Datasets — Curated "golden" reference sets used to grade the AI consistently. Reusable datasets are the gold-standard yardstick that makes quality and safety measurable and repeatable.
 
-Prompts — A versioned, centralized library of the instructions that drive the AI, enabling governance and change-control over the core logic, reusable directly in code.
+Prompts — A versioned, centralized library of the instructions that drive the AI, enabling change-control over the core logic, reusable directly in code.
 
 ### 5. Review Logs
 
@@ -208,7 +208,7 @@ Metric type (Luna, LLM) — Shows what does the grading — a fast lightweight e
 
 Metric level (Trace, Session, LLM, Retriever) — Defines where each metric applies — a single step, a whole conversation, or a specific component. Precision here means problems get measured at exactly the layer they occur.
 
-Tags & Modality — Organize the library by purpose (agents, RAG, safety) and data type. As the catalog grows, this is what keeps it navigable and governable rather than a sprawl.
+Tags & Modality — Organize the library by purpose (agents, RAG, safety) and data type. As the catalog grows, this is what keeps it navigable and manageable rather than a sprawl.
 
 ### 12. Review Prescriptive Overreach Metric
 
@@ -230,9 +230,9 @@ Configure Output (type & roll-up) — Sets how individual scores combine into a 
 
 ## Outcome
 
-**Splunk Agent Observability** turns AI development from a black box into a measurable, governed discipline. Using DemoBot — preloaded with a clean "baseline" model and an intentionally "poisoned" one — participants see firsthand how non-compliant AI behavior is automatically detected, scored, and contained.
+**Splunk Agent Observability** turns AI development from a black box into a measurable discipline you can trust. Using DemoBot — preloaded with a clean "baseline" model and an intentionally "poisoned" one — participants see firsthand how non-compliant AI behavior is automatically detected, scored, and contained.
 
-The journey walks through six governance capabilities:
+The journey walks through six capabilities that make trust measurable:
 
 **Monitor** — Logs capture every live AI interaction as a searchable, auto-graded audit trail, so production behavior is observable and reviewable rather than a black box.
 Detect the unknown — Signals surface risks no one thought to define (PII leakage, medical hallucinations, harassment), catching the "unknown unknowns" before they become incidents.

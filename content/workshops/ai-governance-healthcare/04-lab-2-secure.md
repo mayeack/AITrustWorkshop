@@ -21,7 +21,7 @@ The **CISO** and **AI Security / AppSec** teams. Primary question: _Is our AI sa
 <!-- persona:end -->
 
 {{% notice style="info" title="Objective" icon="target" %}}
-Turn the Lab 1 finding into enforcement: a medical-advice response is **non-compliant**; you update the governing policy and re-run to ensure a **governed** response.
+Turn the Lab 1 finding into enforcement: a medical-advice response is **non-compliant**; you update the runtime policy and re-run to ensure a **trusted** response.
 {{% /notice %}}
 
 ## Background
@@ -204,16 +204,16 @@ Send a similiar prompt. Compliant responses are not blocked.
 
 ## Outcome
 
-A risky medical response went from **non-compliant to governed**. The unsafe output never reached the user; the policy was authored and tuned on the spot; the fix was re-validated against the live app immediately.
+A risky medical response went from **non-compliant to trusted**. The unsafe output never reached the user; the policy was authored and tuned on the spot; the fix was re-validated against the live app immediately.
 
 - **Threats are stopped, not just seen.** Cisco AI Defense inspects every prompt and every response, and blocks what crosses the line in real time.
-- **Governance is a runtime control.** Policy is written and tuned the moment a gap appears — not filed as a quarterly change request.
+- **Trust is a runtime control.** Policy is written and tuned the moment a gap appears — not filed as a quarterly change request.
 - **Measure and enforce are one loop.** The Lab 1 finding became the guardrail.
 
 <!-- exec-outcome:start -->
 
 {{% notice style="info" title="Executive outcome" icon="star" %}}
-**Executive outcome — Trusted AI.** You move governance from written policy to machine-speed enforcement. Unsafe interactions can be detected and blocked before they create patient, regulatory, or reputational exposure, while controls can be continuously tuned as requirements and risks evolve.
+**Executive outcome — Trusted AI.** You turn written policy into machine-speed enforcement. Unsafe interactions can be detected and blocked before they create patient, regulatory, or reputational exposure, while controls can be continuously tuned as requirements and risks evolve.
 {{% /notice %}}
 
 <!-- exec-outcome:end -->

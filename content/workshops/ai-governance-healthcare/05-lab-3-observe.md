@@ -26,9 +26,9 @@ After applying the guardrail in Cisco AI Defense, the response is now compliant.
 
 ## Background
 
-Splunk Observability Cloud instruments the AI application the way you'd instrument any production service — using **OpenTelemetry traces** that follow a request end-to-end, across every agent, model, and operation. Every governed turn carries the same identity used to score quality in Lab 1 and to record the AI Defense verdict in Lab 2. Operations, quality, and forensics are not three datasets — they are three views of one trace.
+Splunk Observability Cloud instruments the AI application the way you'd instrument any production service — using **OpenTelemetry traces** that follow a request end-to-end, across every agent, model, and operation. Every turn carries the same identity used to score quality in Lab 1 and to record the AI Defense verdict in Lab 2. Operations, quality, and forensics are not three datasets — they are three views of one trace.
 
-The guardrail you applied in [Lab 2](../04-lab-2-secure/) made the response compliant — but latency has now breached SLO. Here you trace that exact request, isolate the slow span, and let the **Troubleshooting & Remediation Agent** pinpoint the bottleneck — instead of grepping logs. AI reliability, cost, and quality are governed on the same screen, as one operational discipline.
+The guardrail you applied in [Lab 2](../04-lab-2-secure/) made the response compliant — but latency has now breached SLO. Here you trace that exact request, isolate the slow span, and let the **Troubleshooting & Remediation Agent** pinpoint the bottleneck — instead of grepping logs. AI reliability, cost, and quality are managed on the same screen, as one operational discipline.
 
 ## Labs
 
@@ -82,7 +82,7 @@ Click on **View all AI agents**.
 
 ![alt text](/images/image-105.png)
 
-The AI agents view is the per-agent scorecard for a multi-agent system — it breaks the application down into the individual AI agents that do the work and grades each one on health, speed, cost, quality, and risk. This is how you govern not just "the AI," but every specialist agent inside it.
+The AI agents view is the per-agent scorecard for a multi-agent system — it breaks the application down into the individual AI agents that do the work and grades each one on health, speed, cost, quality, and risk. This is how you build trust in not just "the AI," but every specialist agent inside it.
 
 Top KPIs (Requests, Errors, Tokens, Cost) — The combined vital signs across all agents: total work served, failure rate, consumption, and spend. The at-a-glance read that the agentic system as a whole is healthy.
 
@@ -108,7 +108,7 @@ Quality issues vs. time — Charts when quality problems occurred and of what ki
 
 Filters (Environment, Agents, Models, Quality issues, Risks, Errors only) — Narrow the entire flood of traffic to the specific traces that matter — one model, one risk type, errors only. This is what makes a high-volume system investigable: isolate the needle before reading it.
 
-Quality / Risk toggle — Switches the same trace data between a quality lens and a security lens. One dataset, two governance questions — "is it accurate?" and "is it safe?"
+Quality / Risk toggle — Switches the same trace data between a quality lens and a security lens. One dataset, two trust questions — "is it accurate?" and "is it safe?"
 
 Trace table (Trace ID, Span, Operation, Content, Date, Duration, Cost, Tokens, Quality issues, Risks) — The line-item record of individual interactions, each with its actual input/output, what it cost, how long it took, and how it scored. This is the ground truth — every aggregate number on every other dashboard ultimately resolves to a row here.
 
@@ -165,7 +165,7 @@ A latency spike was traced to its exact cause — and resolved — without readi
 - **One platform, one turn** The slow turn in APM is the *same* turn as the audit log and the quality score — operations, quality, and
   forensics share one identity.
 - **The agent traces; you don't grep.** A Troubleshooting & Remediation Agent follows the request end-to-end and points at the bottleneck automatically.
-- **Cost and latency, on the governed turn.** Observe shows token spend and latency on the very turns Splunk Agent Observability already scored for quality — not in a separate dashboard.
+- **Cost and latency, on the very same turn.** Observe shows token spend and latency on the very turns Splunk Agent Observability already scored for quality — not in a separate dashboard.
 
 APM detectors breach during the ~90s incident; the trace view isolates the slow span; latency returns to ~8s baseline after the fault expires.
 

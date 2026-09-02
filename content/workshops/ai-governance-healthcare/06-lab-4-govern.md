@@ -26,7 +26,7 @@ During an audit, review immutable AI interaction logs, surface a prompt-injectio
 
 ## Background
 
-Detection and observability tell you *what happened*. Governance is about being able to **prove it** — to an auditor, a regulator, or your own board — and to show that a human was accountable for the response.
+Detection and observability tell you *what happened*. Governance is about being able to **prove it** — to an auditor, a regulator, or your own board — and to show that a human was accountable for the response. It is the pillar where trust becomes evidence.
 
 In the earlier labs, every AI interaction was logged with full governance metadata and a shared correlation ID. That foundation is what makes this lab possible: an adversarial prompt-injection attempt isn't just blocked in the moment, it leaves a **permanent, immutable record** that can be reconstructed on demand.
 
@@ -131,7 +131,7 @@ The prompt injection turn is visible and flagged in the search results; the Prom
 <!-- exec-outcome:start -->
 
 {{% notice style="info" title="Executive outcome" icon="star" %}}
-**Executive outcome — Accountability & Evidence.** You can make every consequential AI interaction attributable, explainable, and actionable. Audit evidence is available on demand, while security findings can move directly into AI-assisted investigation and response rather than ending in a governance report.
+**Executive outcome — Accountability & Evidence.** You can make every consequential AI interaction attributable, explainable, and actionable. Audit evidence is available on demand, while security findings can move directly into AI-assisted investigation and response rather than ending in a compliance report.
 {{% /notice %}}
 
 <!-- exec-outcome:end -->

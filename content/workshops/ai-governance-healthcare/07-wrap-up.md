@@ -1,6 +1,6 @@
 +++
 title       = "Wrap-Up & Outcomes"
-description = "Four pillars, one governed dataset, five executive outcomes."
+description = "Four pillars, one trusted dataset, five executive outcomes."
 duration    = "5 min"
 weight      = 70
 aliases     = ["/wrap-up.html", "/workshops/ai-governance/07-wrap-up/"]
@@ -16,10 +16,10 @@ aliases     = ["/wrap-up.html", "/workshops/ai-governance/07-wrap-up/"]
 | --- | --- | --- |
 | **Unified Visibility & Control** | See the posture of your AI program at a glance, with every material signal traceable to the evidence behind it. | AI Governance Overview Dashboard |
 | **Improved Outcomes** | Turn AI quality, safety, and cost into measurable operating metrics, establish a baseline before release, identify emerging risks in production, and continuously improve against evidence. | Splunk Agent Observability |
-| **Trusted AI** | Move governance from written policy to machine-speed enforcement, detecting and blocking unsafe interactions before they create patient, regulatory, or reputational exposure. | Cisco AI Defense |
+| **Trusted AI** | Turn written policy into machine-speed enforcement, detecting and blocking unsafe interactions before they create patient, regulatory, or reputational exposure. | Cisco AI Defense |
 | **Operational Excellence** | Move AI incidents faster from detection to root cause and resolution, reducing operational effort while protecting performance, user experience, and the economics of AI at scale. | Splunk Observability Cloud |
 | **Accountability & Evidence** | Make consequential AI interactions attributable, explainable, and actionable, with audit evidence available on demand and security findings flowing directly into AI-assisted investigation and response. | Splunk Enterprise Security |
 
-**The ask.** The question is no longer *whether* to govern agentic AI — it's *whether you can prove you are.* One Cisco gives your governance board the visibility and control to move AI agents from prototype to production. **Capture once. Correlate across all four pillars.**
+**The ask.** The question is no longer *whether* to trust agentic AI — it's *whether you can prove it deserves that trust.* One Cisco gives your governance board the visibility and control to move AI agents from prototype to production — trusted, end to end. **Capture once. Correlate across all four pillars.**
 
-Measured. Secured. Observable. Governed. **One Cisco, end to end.**
+Measured. Secured. Observable. Governed. **Trusted. One Cisco, end to end.**

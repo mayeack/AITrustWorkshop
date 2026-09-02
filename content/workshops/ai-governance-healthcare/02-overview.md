@@ -21,16 +21,16 @@ The **CIO / CTO** and **AI Governance leaders** who need the whole AI program on
 <!-- persona:end -->
 
 {{% notice style="info" title="Objective" icon="target" %}}
-Establish the thesis: every governed turn and its quality/security scores live in one view, and you drill from there into any pillar.
+Establish the thesis: every turn — and the quality and security scores that make it trustworthy — lives in one view, and you drill from there into any pillar.
 {{% /notice %}}
 
 ## Background
 
 Every pillar in this workshop — quality, safety, cost, compliance — depends on one thing first: the data has to exist, in one place, in one shape. That foundation is **Cisco Data Fabric, powered by Splunk**.
 
-Agentic systems emit a constant stream of signals: prompts, responses, tokens, latency, safety events, user and session context. In most organizations that signal is scattered across providers, gateways, and logs — so governance becomes a patchwork of guesses and vibes, not evidence.
+Agentic systems emit a constant stream of signals: prompts, responses, tokens, latency, safety events, user and session context. In most organizations that signal is scattered across providers, gateways, and logs — so trust becomes a patchwork of guesses and vibes, not evidence.
 
-Cisco Data Fabric fixes that. It ingests AI telemetry from every model, app, and session — wherever it runs — and normalizes it into one queryable record. The pillars aren't separate tools bolted together; they're different views of that single governed dataset:
+Cisco Data Fabric fixes that. It ingests AI telemetry from every model, app, and session — wherever it runs — and normalizes it into one queryable record. The pillars aren't separate tools bolted together; they're different views of that single trusted dataset:
 
 - **Visibility** — the Overview dashboard is this data rolled up to board level.
 - **Quality & Safety** — a metric and an incident point at the same source of truth.
@@ -45,7 +45,7 @@ One dataset. Every pillar. That's what lets a leader go from a number on the scr
 
 You should have received an email with instructions on how to access your assigned Splunk Cloud instance.
 
-### 2. Go to AI Governance App
+### 2. Navigate to AI Governance App
 
 ![alt text](/images/image-14.png)
 
@@ -116,7 +116,7 @@ Anomalies & Forecast (Hourly Cost vs. Baseline, Projected 30-Day Spend, Unattrib
 The leader sees the entire AI program as a single, trustworthy scorecard — and understands it stands on one unified data foundation, not a patchwork of tools.
 
 - **One pane of glass.** Usage, cost, performance, safety, compliance — every model and session, one screen.
-- **Posture at a glance, evidence one click away.** Every number is backed by the raw event beneath it. Governance becomes provable, not asserted.
+- **Posture at a glance, evidence one click away.** Every number is backed by the raw event beneath it. Trust becomes provable, not asserted.
 
 The takeaway: AI is no longer a black box trusted on faith. It's a measurable, attributable, auditable program.
 

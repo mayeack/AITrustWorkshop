@@ -1,11 +1,11 @@
-# Agentic AI Governance Workshop — Hugo site config.
+# Agentic AI Trust Workshop — Hugo site config.
 # Theme: splunk/hugo-theme-splunk-workshop (git submodule under themes/).
 # Local preview:  hugo server        (needs Hugo 0.161+ extended)
 # Production build happens in .github/workflows/pages.yml.
 
 baseURL = "https://mayeack.github.io/AIGovernanceWorkshop/"
 locale  = "en-us"
-title   = "Agentic AI Governance Workshop"
+title   = "Agentic AI Trust Workshop"
 defaultContentLanguage = "en"
 enableEmoji     = true
 enableRobotsTXT = true
@@ -37,7 +37,7 @@ theme = "hugo-theme-splunk-workshop"
   # ---- Identity ----
   brandName       = "splunk>"
   brandTagline    = ""
-  description     = "One Cisco: governing agentic AI end to end — measurable, secure, observable, governed."
+  description     = "One Cisco: delivering agentic AI trust end to end — measured, secure, observable, governed."
   copyright       = "&copy; {year} Cisco Systems, Inc."
   logoLight       = "images/splunk-logo-black.png"
   logoDark        = "images/splunk-logo-white.png"
