@@ -16,7 +16,7 @@ The risk is not theoretical. A single AI interaction can leak PII or PHI, absorb
 
 Yet most organizations are trying to govern this with disconnected point solutions. The security team sees a blocked prompt in one console. The SRE sees a latency spike in another. The data-science team sees a quality score in a third. The compliance officer, during an audit, is handed screenshots from all three and asked to reconstruct what actually happened on a given turn. **Four tools, four truths, no single thread connecting them.** By the time the story is stitched together by hand, the agent has served thousands more turns.
 
-That gap — between the speed of agentic AI and the speed of you can prove it deservers trust — is the problem this workshop closes.
+That gap — between the speed of agentic AI and the speed at which you can prove it deserves trust — is the problem this workshop closes.
 
 ---
 
