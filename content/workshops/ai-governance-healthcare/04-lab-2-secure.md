@@ -28,7 +28,7 @@ Turn the Lab 1 finding into enforcement: a medical-advice response is **non-comp
 
 Cisco AI Defense is a live integration: it inspects the prompt (pre-LLM) and the response (post-LLM) against **multiple guardrails** and blocks non-compliant content. The **Prescriptive Overreach** finding measured in [Lab 1](../03-lab-1-measure/) is authored here as a **custom response-direction guardrail**.
 
-## Step by step
+## Labs
 
 ### Lab 2.1 Prompt Prescriptive Overreach in DemoBot
 

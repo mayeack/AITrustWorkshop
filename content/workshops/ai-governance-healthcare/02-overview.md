@@ -39,13 +39,13 @@ Cisco Data Fabric fixes that. It ingests AI telemetry from every model, app, and
 
 One dataset. Every pillar. That's what lets a leader go from a number on the screen to the exact conversation behind it.
 
-## Step by Step
+## Labs
 
-### 1. Access Splunk
+### 1. Access Splunk Cloud
 
 You should have received an email with instructions on how to access your assigned Splunk Cloud instance.
 
-### 2. Access AI Governance App
+### 2. Go to AI Governance App
 
 ![alt text](/images/image-14.png)
 

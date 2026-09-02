@@ -30,9 +30,11 @@ Splunk Agent Observability evaluates the **whole agent trace** and scores each t
 
 Model evaluation, metric construction, and signal understanding is critical both to build trust in AI systems before deployment, and to monitor model drift over time.
 
-## Step by step
+## Labs
 
-### 1. Access DemoBot
+### Lab 1.1 Explore Prompting in DemoBot
+
+#### 1.1.1 Access DemoBot
 
 ![alt text](/images/image-21.png)
 
@@ -42,7 +44,7 @@ Go to the DemoBot instance and enter the access code provided by the facilitator
 Because we are using an open weight model, ensure that you select **gpt-4o-mini** from the **Static Emission** dropdown so that tokenomics calculates correctly!
 {{% /notice %}}
 
-### 2. Explore the Baseline vs the Poisoned Model
+#### 1.1.2 Explore the Baseline vs the Poisoned Model
 
 ![alt text](/images/image-92.png)
 
@@ -54,9 +56,12 @@ The left sidepanel also has a number of controls to force non-compliant behavior
 
 Explore sending sample prompts to both the baseline and the poisoned model (via the model picker), and observe the difference in responses. We will then review how these differential responses can be automatically identified by Splunk Agent Observability.
 
-At minimum:
+### 1.1.3 Prompt Aberrant Behavior
 
-- Send a prompt with **Prescriptive Overreach** toggled on.
+Explore sending various aberrant prompts and triggering non-compliant behavior. At minimum:
+
+- Send a prompt with **Prescriptive Overreach** toggled on
+- Send a prompt with **Include Synethetic PII/PHI in Responses** toggled on
 - Send a prompt with various PII, such as a phone number, email address, SSN, or address
 - Send a prompt with a toxic or aggressive tone
 - Send a prompt with a prompt injection attempt

@@ -6,10 +6,6 @@ weight      = 60
 aliases     = ["/lab-4-govern.html", "/workshops/ai-governance/06-lab-4-govern/"]
 +++
 
-{{% notice style="warning"%}}
-This lab needs to be extended to include Enterprise Security AI agents / a response plan.
-{{% /notice %}}
-
 ![alt text](/images/image-126.png)
 
 **Pillar:** Govern<br>
@@ -36,9 +32,9 @@ In the earlier labs, every AI interaction was logged with full governance metada
 
 You will stage a real prompt-injection attack against DemoBot, watch it surface in Splunk's Prompt Injection Detection dashboard, trace it back through the correlation search that defines *how* the threat is detected, and follow it into Enterprise Security as a notable event landing in an analyst's queue. The point is the **end-to-end chain**: a live attack becomes a measurable detection, turning a security incident into a defensible story with a clear owner and outcome.
 
-## Step by step
+## Labs
 
-### 1. Access Splunk
+### 1. Access Splunk Cloud
 
 You should have received an email with instructions on how to access your assigned Splunk Cloud instance.
 
