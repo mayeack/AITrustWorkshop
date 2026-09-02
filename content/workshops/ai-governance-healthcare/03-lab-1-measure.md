@@ -1,7 +1,7 @@
 +++
 title       = "Lab 1 — Measure"
 description = "Splunk Agent Observability: run a baseline-vs-poisoned evaluation, score it with Luna, and surface the unknown unknowns."
-duration    = "30 min"
+duration    = "1 hour"
 weight      = 30
 aliases     = ["/lab-1-measure.html", "/workshops/ai-governance/03-lab-1-measure/"]
 +++

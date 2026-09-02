@@ -1,7 +1,7 @@
 +++
 title       = "Lab 2 — Secure"
 description = "Cisco AI Defense: turn the Lab 1 finding into a runtime guardrail and block non-compliant output live."
-duration    = "45 min"
+duration    = "1 hour"
 weight      = 40
 aliases     = ["/lab-2-secure.html", "/workshops/ai-governance/04-lab-2-secure/"]
 +++
