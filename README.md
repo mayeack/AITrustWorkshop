@@ -3,7 +3,7 @@
 Customer-facing site for the **One Cisco — Agentic AI Governance Workshop**, published with
 GitHub Pages at:
 
-**https://mayeack.github.io/AIGovernanceWorkshop/**
+**https://mayeack.github.io/AITrustWorkshop/**
 
 A hands-on workshop for governing agentic AI across four correlated pillars — **Measure,
 Secure, Observe, Govern** — on a live multi-agent demo application.
@@ -33,8 +33,8 @@ and published by GitHub Actions (`.github/workflows/pages.yml`) on every push to
 ## Editing
 
 ```bash
-git clone --recurse-submodules git@github.com:mayeack/AIGovernanceWorkshop.git
-hugo server          # local preview at http://localhost:1313/AIGovernanceWorkshop/
+git clone --recurse-submodules git@github.com:mayeack/AITrustWorkshop.git
+hugo server          # local preview at http://localhost:1313/AITrustWorkshop/
 ```
 
 Commit to `main` and push — the Pages workflow rebuilds the site (~1–2 min).

@@ -3,7 +3,7 @@
 # Local preview:  hugo server        (needs Hugo 0.161+ extended)
 # Production build happens in .github/workflows/pages.yml.
 
-baseURL = "https://mayeack.github.io/AIGovernanceWorkshop/"
+baseURL = "https://mayeack.github.io/AITrustWorkshop/"
 locale  = "en-us"
 title   = "Agentic AI Trust Workshop"
 defaultContentLanguage = "en"
@@ -92,10 +92,10 @@ theme = "hugo-theme-splunk-workshop"
 
   # ---- Repo ----
   editURL = ""
-  repoURL = "https://github.com/mayeack/AIGovernanceWorkshop"
+  repoURL = "https://github.com/mayeack/AITrustWorkshop"
 
   # ---- Footer version badge: off ----
   versionBadgeRepo = ""
 
   [params.social]
-    github = "https://github.com/mayeack/AIGovernanceWorkshop"
+    github = "https://github.com/mayeack/AITrustWorkshop"
