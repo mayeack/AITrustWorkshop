@@ -68,11 +68,13 @@ Explore sending various aberrant prompts and triggering non-compliant behavior. 
 
 We will explore how this non-compliant behavior is monitored in subsequent sections.
 
-### 3. Access Splunk Agent Observability
+### Lab 1.2 Monitor Production Behavior in Splunk Agent Observability
+
+#### 1.2.1 Access Splunk Agent Observability
 
 Go to **https://console.multitenant.galileocloud.io/splunkse** and enter the username / password provided by the facilitator.
 
-### 4. Review Overview
+#### 1.2.2 Review Overview
 
 ![alt text](/images/image-94.png)
 
@@ -94,7 +96,7 @@ Datasets — Curated "golden" reference sets used to grade the AI consistently. 
 
 Prompts — A versioned, centralized library of the instructions that drive the AI, enabling change-control over the core logic, reusable directly in code.
 
-### 5. Review Logs
+#### 1.2.3 Review Logs
 
 ![alt text](/images/image-96.png)
 
@@ -106,7 +108,7 @@ Logs — The running ledger of real user interactions, capturing what went in an
 
 Automated scoring (such as Output Toxicity, Prescriptive Overreach, Completeness) — Every response is auto-graded against safety and quality measures, including custom risk checks tuned to this use case. This is the core value: thousands of interactions evaluated without human review, with weak responses surfaced automatically for attention. You can click on each metric to understand the cost. Notice the significant cost difference between metrics computed using Luna (SLM) and frontier lab models.
 
-### 6. Review Signals
+#### 1.2.4 Review Signals
 
 ![alt text](/images/image-3.png)
 
@@ -122,7 +124,7 @@ Medical Hallucinations & Violations — Catches invented medical claims and unau
 
 Unexpected Harassment — Detects abusive or harassing language from the AI. A direct guard on brand safety and user trust.
 
-### 7. Review Log Details
+#### 1.2.5 Review Log Details
 
 Click on any log.
 
@@ -138,7 +140,7 @@ Metrics — One trace, examined from every angle: how it scored, how it was conf
 
 Feel free to explore the other tabs, such as **Latency** and **Trace Graph**.
 
-### 8. Review Trends
+#### 1.2.6 Review Trends
 
 ![alt text](/images/image-10.png)
 
@@ -164,10 +166,12 @@ Agent Cost — Translates that consumption into dollars. This is the line item l
 
 Feel free to explore additional metric charts.
 
-### 9. Review Experiments
+### Lab 1.3 Prove Before Shipping with Experiments
+
+#### 1.3.1 Review Experiments
 
 {{% notice style="WARNING" title="KNOWN BUG" %}}
-**NOTE: There is a known bug with ranking of Experiments; SKIP Section 9 & 10, and proceed to Section 11**
+**NOTE: There is a known bug with ranking of Experiments; SKIP Lab 1.3 (1.3.1 & 1.3.2), and proceed to Lab 1.4**
 {{% /notice %}}
 
 ![alt text](/images/image-5.png)
@@ -186,7 +190,7 @@ Dataset (with versions) — Records exactly which reference test set each run wa
 
 Scoring columns (Prompt Injection, Output Toxicity, Prescriptive Overreach, Completeness, etc.) — Grades each version across the safety and quality dimensions that matter most for this use case, including resistance to attacks and overstepping into unauthorized advice. The value is a multi-dimensional safety scorecard, not a single pass/fail.
 
-### 10. Compare Two Experiments
+#### 1.3.2 Compare Two Experiments
 
 ![alt text](/images/image-6.png)
 
@@ -196,7 +200,9 @@ Click on the checkbox next to the two experiments, then click **Compare Experime
 
 You can review two or more experiments side by side.
 
-### 11. Review Metrics
+### Lab 1.4 Standardize Metrics
+
+#### 1.4.1 Review Metrics
 
 ![alt text](/images/image-8.png)
 
@@ -210,7 +216,7 @@ Metric level (Trace, Session, LLM, Retriever) — Defines where each metric appl
 
 Tags & Modality — Organize the library by purpose (agents, RAG, safety) and data type. As the catalog grows, this is what keeps it navigable and manageable rather than a sprawl.
 
-### 12. Review Prescriptive Overreach Metric
+#### 1.4.2 Review Prescriptive Overreach Metric
 
 ![alt text](/images/image-98.png)
 

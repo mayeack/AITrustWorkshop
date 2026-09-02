@@ -32,11 +32,13 @@ The guardrail you applied in [Lab 2](../04-lab-2-secure/) made the response comp
 
 ## Labs
 
-### 1. Access Splunk Observability Cloud
+### Lab 3.1 Review AI Health in Splunk Observability Cloud
+
+#### 3.1.1 Access Splunk Observability Cloud
 
 You should have received an email with instructions on how to access your assigned Splunk Observability instance.
 
-### 2. Review Home
+#### 3.1.2 Review Home
 
 ![alt text](/images/image-22.png)
 
@@ -46,7 +48,7 @@ Active alerts — Shows how many issues are firing and how long they've gone unr
 
 Live feed — A real-time stream of what's breaking right now, including an AI Hallucination Detector alongside latency and error alerts. The standout point: AI-specific quality failures are monitored in the same operational pane as classic infrastructure problems — AI is treated as core business application, not a science project.
 
-### 3. Review AI Overview
+#### 3.1.3 Review AI Overview
 
 ![alt text](/images/image-23.png)
 
@@ -74,7 +76,7 @@ Token Usage and Cost (by model / provider) — Ties consumption directly to doll
 
 Quality and Risk (Quality issues, Risks) — The standout: alongside speed and cost, this grades responses for toxicity, bias, hallucination, and relevance, and watches for security risks. AI-specific failure modes are monitored with the same rigor as latency — quality is an operational metric, not an afterthought.
 
-### 4. Review AI Agents
+#### 3.1.4 Review AI Agents
 
 ![alt text](/images/image-104.png)
 
@@ -94,7 +96,7 @@ Per-agent table (Agent, Health, Requests, Errors, Latency, Tokens, Cost, Quality
 
 Health flags (Critical) & quality callouts (Irrelevant 100%, Negative Sentiment 100%) — Surfaces the specific failing agents and how they're failing. The value is precise triage — the platform points straight at the coordinator that's critical or the agent returning 100% irrelevant answers.
 
-### 5. Review AI Trace Data
+#### 3.1.5 Review AI Trace Data
 
 ![alt text](/images/image-106.png)
 
@@ -114,7 +116,9 @@ Trace table (Trace ID, Span, Operation, Content, Date, Duration, Cost, Tokens, Q
 
 Per-trace cost & token breakdown (In/Out) — Attributes spend down to a single request, split by input and output. The value is cost accountability at the finest grain — you can see exactly what one conversation cost and why.
 
-### 6. Review Alerts
+### Lab 3.2 Triage and Resolve a Latency Incident
+
+#### 3.2.1 Review Alerts
 
 ![alt text](/images/image-108.png)
 
@@ -124,7 +128,7 @@ Navigate to **Alerts -> Active Alerts**.
 
 The Active alerts view is the incident command center for the AI application — it consolidates every firing alert into one prioritized queue, ranked by severity, so teams know instantly what's broken, how badly, and where to act first.
 
-### 7. Generate Latency Incident
+#### 3.2.2 Generate Latency Incident
 
 ![alt text](/images/image-30.png)
 
@@ -132,7 +136,7 @@ Go to DemoBot, and open the left side-panel.
 
 Toggle **Trigger Demo Incident** on to trigger a series of alerts.
 
-### 8. Triage and Resolve an Alert
+#### 3.2.3 Triage and Resolve an Alert
 
 ![alt text](/images/image-110.png)
 

@@ -34,11 +34,13 @@ You will stage a real prompt-injection attack against DemoBot, watch it surface 
 
 ## Labs
 
-### 1. Access Splunk Cloud
+### Lab 4.1 Stage and Detect the Prompt Injection
+
+#### 4.1.1 Access Splunk Cloud
 
 You should have received an email with instructions on how to access your assigned Splunk Cloud instance.
 
-### 2. Stage the Prompt Injection
+#### 4.1.2 Stage the Prompt Injection
 
 ![alt text](/images/image-35.png)
 
@@ -52,7 +54,7 @@ Before sending the prompt, ensure that **Cisco AI Defense Policy Review** is tog
 
 Feel free to explore the behavior of other prompts, and the behavior with the Cisco AI Defense integration toggled off.
 
-### 3. Investigate the Prompt Injection
+#### 4.1.3 Investigate the Prompt Injection
 
 ![alt text](/images/image-44.png)
 
@@ -78,7 +80,9 @@ Top Injection Sources — Identifies where attacks originate, enabling blocking,
 
 Recent Detections — A live, row-level audit trail of individual attacks for investigation and forensics — the defensible record that proves what happened, when, and how it was handled.
 
-### 4. Review Correlation Search
+### Lab 4.2 Follow the Detection into Enterprise Security
+
+#### 4.2.1 Review Correlation Search
 
 ![alt text](/images/image-52.png)
 
@@ -100,7 +104,7 @@ Each section of this Enterprise Security detection editor turns AI threat-huntin
 
 This is where security logic is authored and version-controlled as a managed asset, not tribal knowledge. Putting detections under formal edit-and-save governance is what makes AI defense repeatable, reviewable, and defensible to auditors.
 
-### 5. Review Generated Notable Event
+#### 4.2.2 Review Generated Notable Event
 
 ![alt text](/images/image-56.png)
 
