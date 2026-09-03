@@ -116,15 +116,15 @@ Review the explanation provided by the agent.
 
 You can also ask the agent "How else can you help me with this detection?".
 
-### 4.3 Review Generated Notable Event
+### Lab 4.3 Respond to the Notable Event
 
-#### 4.3.1 Find the Generated Notable Event
+#### 4.3.1 Investigate with the Triage Agent
 
-![alt text](/images/image-56.png)
+![alt text](/images/image-136.png)
 
 Click on **Mission Control**.
 
-![alt text](/images/image-57.png)
+![alt text](/images/image-137.png)
 
 The Analyst Queue is where AI-security detections become accountable casework — every prompt-injection attack is triaged, owned, and dispositioned through a governed investigation workflow.
 
@@ -146,7 +146,7 @@ Details (Finding metadata, Entity, Source, Additional fields, Event) — The raw
 
 Click on **Start investigation**.
 
-## 4.3.2 Investigate the Notable Event
+#### 4.3.2 Respond with the Guided Response Agent
 
 ![alt text](/images/image-133.png)
 
