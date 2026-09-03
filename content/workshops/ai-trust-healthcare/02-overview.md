@@ -97,6 +97,22 @@ In the left side-panel, navigate to **Dashboards -> Tokenomics**.
 
 The Tokenomics dashboard is the financial-management view of the AI program — it treats agentic systems like any other budgeted line of business, tracking what's spent, who and what is driving it, how efficiently each model converts spend into work, and where cost is heading next.
 
+Its particular purpose is to bring **first-party and third-party AI spend into a single view**. Most enterprises run both, and the two report cost in completely different ways — self-hosted inference lands as infrastructure and GPU time, while provider traffic lands as metered tokens on a monthly invoice. That normally leaves the true cost of "AI" split across systems that never reconcile. This dashboard normalizes both onto the same token-and-dollar record, so cost per provider, app, model, and user is comparable no matter where the inference actually ran.
+
+{{% notice style="info" title="First-party vs. third-party AI" icon="layers" %}}
+**First-party AI** — you own and control the whole stack: the models, the infrastructure they run on, the data they are trained and grounded on, and the application around them. Cost is your own compute, and the telemetry is yours end to end.
+
+**Third-party AI** — you consume intelligence as a service from an intelligence provider such as OpenAI or Anthropic. You control the application and the prompts; the model and the infrastructure belong to someone else. Cost arrives as metered tokens on a provider bill, and direct visibility stops at the API boundary.
+
+Most organizations are a mix of the two — which is exactly the gap this dashboard closes.
+{{% /notice %}}
+
+{{% notice style="tip" title="When Lab 1's tokenomics is the better fit" icon="route" %}}
+If the customer's organization is primarily **first-party** — they own the models and the stack — the tokenomics views in [Lab 1 — Measure](/workshops/ai-trust-healthcare/03-lab-1-measure/#126-review-trends) serve them better. Splunk Agent Observability's System Metrics tie token consumption and Agent Cost directly to the trace, the agent, and the evaluation that produced them, so spend sits next to quality and safety for the same interaction.
+
+This Tokenomics dashboard earns its place when meaningful spend is going out to third-party providers and has to be reconciled against what runs in-house.
+{{% /notice %}}
+
 Key Tokenomics KPIs (Total Cost, Tokens, Requests, Avg Cost/Request, Avg Tokens/Request, Output:Input Ratio) — The headline economics of the AI in one row. These are the unit-cost figures a finance owner uses to know whether AI spend is efficient and under control, not just how big it is.
 
 Spend & Volume Trend (Cost / Tokens over time) — Plots dollars and consumption day by day, separating what goes in from what comes out. The value is seeing cost track demand — and spotting the spikes that warrant a closer look.
