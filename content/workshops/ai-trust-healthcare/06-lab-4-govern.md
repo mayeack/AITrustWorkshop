@@ -102,7 +102,7 @@ This is where security logic is authored and version-controlled as a managed ass
 
 Click on the **sparkle** icon to expand the Security Assistant right sidepanel.
 
-#### 4.2.1 Review Detection Builder Agent
+#### 4.2.1 Review the Detection Builder Agent
 
 ![alt text](/images/image-129.png)
 
