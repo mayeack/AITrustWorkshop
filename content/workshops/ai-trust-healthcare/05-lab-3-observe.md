@@ -28,7 +28,7 @@ After applying the guardrail in Cisco AI Defense, the response is now compliant.
 
 Splunk Observability Cloud instruments the AI application the way you'd instrument any production service — using **OpenTelemetry traces** that follow a request end-to-end, across every agent, model, and operation. Every turn carries the same identity used to score quality in Lab 1 and to record the AI Defense verdict in Lab 2. Operations, quality, and forensics are not three datasets — they are three views of one trace.
 
-The guardrail you applied in [Lab 2](../04-lab-2-secure/) made the response compliant — but latency has now breached SLO. Here you trace that exact request, isolate the slow span, and let the **Troubleshooting & Remediation Agent** pinpoint the bottleneck — instead of grepping logs. AI reliability, cost, and quality are managed on the same screen, as one operational discipline.
+The guardrail you applied in [Lab 2](/workshops/ai-trust-healthcare/04-lab-2-secure/) made the response compliant — but latency has now breached SLO. Here you trace that exact request, isolate the slow span, and let the **Troubleshooting & Remediation Agent** pinpoint the bottleneck — instead of grepping logs. AI reliability, cost, and quality are managed on the same screen, as one operational discipline.
 
 ## Labs
 
