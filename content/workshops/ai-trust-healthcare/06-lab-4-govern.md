@@ -44,7 +44,7 @@ You will stage a real prompt-injection attack against DemoBot, watch it surface 
 
 [How to Access DemoBot](/workshops/ai-trust-healthcare/01-setup/#1-how-to-access-demobot)
 
-![alt text](image.png)
+![alt text](/images/image-127.png)
 
 Ensure that **Cisco AI Defense Policy Review** is toggled on.
 
@@ -94,7 +94,7 @@ Navigate to **Security content -> Content management**.
 
 Search for "Prompt Injection Attack Correlation", and click on **GenAI - Prompt Injection Attack Correlation**.
 
-![alt text](image-6.png)
+![alt text](/images/image-128.png)
 
 Each section of this Enterprise Security detection editor turns AI threat-hunting into a governed, auditable control — codifying how prompt-injection attacks are detected, correlated, and turned into accountable action.
 
@@ -104,15 +104,15 @@ Click on the **sparkle** icon to expand the Security Assistant right sidepanel.
 
 #### 4.2.1 Review Detection Builder Agent
 
-![alt text](image-5.png)
+![alt text](/images/image-129.png)
 
 Click "Explain this Detection", or otherwise chat with the Detection Builder agent.
 
-![alt text](image-7.png)
+![alt text](/images/image-130.png)
 
 Review the explanation provided by the agent.
 
-![alt text](image-8.png)
+![alt text](/images/image-131.png)
 
 You can also ask the agent "How else can you help me with this detection?".
 
@@ -132,7 +132,7 @@ Analyst Queue — A prioritized, filterable list of every active security findin
 
 Click on any record with title **GenAI Prompt Injection Attack...**
 
-![Mission Control finding "GenAI Prompt Injection Attack: t.nguyen (critical)" open in the Analyst Queue, showing its triage fields and AI-assisted analysis](image-1.png)
+![Mission Control finding "GenAI Prompt Injection Attack: t.nguyen (critical)" open in the Analyst Queue, showing its triage fields and AI-assisted analysis](/images/image-132.png)
 
 Finding header (e.g. "GenAI Prompt Injection Attack: t.nguyen (critical)") — Names the threat by actor and severity. Naming the adversary, not just the event, is what turns detection into accountability.
 
@@ -148,11 +148,11 @@ Click on **Start investigation**.
 
 ## 4.3.2 Investigate the Notable Event
 
-![alt text](image-2.png)
+![alt text](/images/image-133.png)
 
 Click on the **sparkle** icon to expand the Security Assistant right sidepanel.
 
-![alt text](image-4.png)
+![alt text](/images/image-134.png)
 
 Ask the Security Assistant, powered by Splunk's Guided Response agent, how to respond to the event.
 
