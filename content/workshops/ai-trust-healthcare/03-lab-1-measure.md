@@ -38,7 +38,7 @@ Model evaluation, metric construction, and signal understanding is critical both
 
 ![alt text](/images/image-21.png)
 
-Go to the DemoBot instance and enter the access code provided by the facilitator.
+[How to Access DemoBot](/workshops/ai-trust-healthcare/01-setup/#1-how-to-access-demobot)
 
 {{% notice warning "Important" %}}
 Because we are using an open weight model, ensure that you select **gpt-4o-mini** from the **Static Emission** dropdown so that tokenomics calculates correctly!

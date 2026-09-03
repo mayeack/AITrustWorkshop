@@ -34,7 +34,7 @@ Cisco AI Defense is a live integration: it inspects the prompt (pre-LLM) and the
 
 #### 2.1.1 Access DemoBot
 
-Go to the DemoBot instance and enter the access code provided by the facilitator.
+[How to Access DemoBot](/workshops/ai-trust-healthcare/01-setup/#1-how-to-access-demobot)
 
 #### 2.1.2 Prompt Prescriptive Overreach
 
@@ -46,13 +46,15 @@ Cisco AI Defense Policy Review — Routes every prompt through AI Defense before
 
 Behavior injection toggles (Synthetic PII/PHI, Toxic Content, Hallucinated Content, Prescriptive Overreach) — The "poison" switches: deliberately force the AI to leak data, turn toxic, fabricate facts, or overstep its scope.
 
-Feel free to explore how the various toggles generate non-compliant behavior, and how that behavior is blocked when Cisco AI Defense is toggled on.
+Notice how when you have "Cisco AI Defense Policy Review" and "Prescriptive Overreach" toggled on, a non-compliant response is still received. This is because no policy to block this behavior has been created.
+
+We will next configure a policy in Cisco AI Defense to block the non-compliant responses.
 
 ### Lab 2.2 Review Current Policies in Cisco AI Defense
 
 #### 2.2.1 Access Cisco AI Defense
 
-You should have received an email with instructions on how to access Cisco AI Defense at **https://security.cisco.com/dashboard?enterpriseId=d87a65f7-f4f1-47ad-bdab-593226c85f3d**.
+[Access Cisco AI Defense](/workshops/ai-trust-healthcare/01-setup/#3-how-to-access-cisco-ai-defense)
 
 #### 2.2.2 Review Dashboard
 
@@ -91,8 +93,6 @@ Direction (Prompt / Response / both) — Each rule inspects the right side of th
 Action & Status (Block / Enabled) — Shows whether each guardrail is on and set to stop violations or just monitor them. This is enforcement, not observation — the difference between a policy on paper and a control that actually intervenes.
 
 Filter strength (Medium) — A tunable dial on how aggressively each rule fires. The value is balance — protection calibrated to the business's risk tolerance, tightenable where the stakes are higher.
-
-![alt text](/images/image-84.png)
 
 ### Lab 2.3 Create Probabilistic Policies
 
