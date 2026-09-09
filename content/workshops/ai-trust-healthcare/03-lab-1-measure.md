@@ -1,6 +1,6 @@
 +++
 title       = "Lab 1 — Measure"
-description = "Splunk Agent Observability: run a baseline-vs-poisoned evaluation, score it with Luna, and surface the unknown unknowns."
+description = "Splunk Agent Observability: evaluate different models, score them with Luna, and surface the unknown unknowns."
 duration    = "1 hour"
 weight      = 30
 aliases     = ["/lab-1-measure.html", "/workshops/ai-governance/03-lab-1-measure/", "/workshops/ai-governance-healthcare/03-lab-1-measure/"]
@@ -36,7 +36,7 @@ Model evaluation, metric construction, and signal understanding is critical both
 
 #### 1.1.1 Access DemoBot
 
-![alt text](/images/image-21.png)
+![alt text](/workshops/ai-trust-healthcare/image.png)
 
 [How to Access DemoBot](/workshops/ai-trust-healthcare/01-setup/#1-how-to-access-demobot)
 
@@ -46,15 +46,15 @@ Because we are using an open weight model, ensure that you select **gpt-4o-mini*
 
 #### 1.1.2 Explore the Baseline vs the Poisoned Model
 
-![alt text](/images/image-92.png)
+![alt text](/workshops/ai-trust-healthcare/image-1.png)
 
 Select **ollama** in **Provider**. DemoBot is pre-loaded with two models - one a baseline version, and one that has been intentionally poisoned to produce non-compliant responses, such as toxic content.
 
-![alt text](/images/image-119.png)
+![alt text](/workshops/ai-trust-healthcare/image-2.png)
 
 The left sidepanel also has a number of controls to force non-compliant behavior.
 
-Explore sending sample prompts to both the baseline and the poisoned model (via the model picker), and observe the difference in responses. We will then review how these differential responses can be automatically identified by Splunk Agent Observability.
+Explore sending sample prompts to both the baseline and the poisoned model (via the model picker), and observe the difference in responses. We review how these differential responses can be automatically identified by Splunk Agent Observability.
 
 #### 1.1.3 Prompt Aberrant Behavior
 
@@ -68,21 +68,23 @@ Explore sending various aberrant prompts and triggering non-compliant behavior. 
 
 We will explore how this non-compliant behavior is monitored in subsequent sections.
 
-### Lab 1.2 Monitor Production Behavior in Splunk Agent Observability
+### Lab 1.2 Monitor Behavior in Splunk Agent Observability
 
 #### 1.2.1 Access Splunk Agent Observability
 
-Go to **https://console.multitenant.galileocloud.io/splunkse** and enter the username / password provided by the facilitator.
+[How to Access Splunk Agent Observability & Splunk Observability Cloud](/workshops/ai-trust-healthcare/01-setup/#2-how-to-access-splunk-agent-observability--splunk-observability-cloud)
 
 #### 1.2.2 Review Overview
 
-![alt text](/images/image-94.png)
+![alt text](/workshops/ai-trust-healthcare/image-4.png)
 
-Search for the project **DemoBot**, and then click on it.
+Click on **Agent Observability -> All projects**.
 
-![alt text](/images/image-95.png)
+![alt text](/workshops/ai-trust-healthcare/image-5.png)
 
-Click on **Overview**.
+Click on the project **DemoBot**.
+
+![alt text](/workshops/ai-trust-healthcare/image-6.png)
 
 Each section of the Overview dashboard turns AI development into a measurable, evidence-backed discipline — testing safety, comparing versions objectively, and maintaining a defensible record of quality.
 
@@ -96,39 +98,25 @@ Datasets — Curated "golden" reference sets used to grade the AI consistently. 
 
 Prompts — A versioned, centralized library of the instructions that drive the AI, enabling change-control over the core logic, reusable directly in code.
 
-#### 1.2.3 Review Logs
+Click on **DemoBot** under **Agent Streams**.
 
-![alt text](/images/image-96.png)
+#### 1.2.3 Review Agent Stream
 
-Click on **Logs**.
+![alt text](/workshops/ai-trust-healthcare/image-7.png)
 
-The Log Stream view turns every live AI conversation into a graded, searchable record — the continuous audit trail that proves the application is behaving safely in production.
+Click on **DemoBot** under **Agent Streams**.
+
+![alt text](/workshops/ai-trust-healthcare/image-11.png)
+
+The **Agent Stream**  turns every live AI conversation into a graded, searchable record — the continuous audit trail that proves the application is behaving safely in production.
 
 Logs — The running ledger of real user interactions, capturing what went in and what the AI sent back. This is the system of record that makes behavior observable and reviewable rather than a black box.
 
-Automated scoring (such as Output Toxicity, Prescriptive Overreach, Completeness) — Every response is auto-graded against safety and quality measures, including custom risk checks tuned to this use case. This is the core value: thousands of interactions evaluated without human review, with weak responses surfaced automatically for attention. You can click on each metric to understand the cost. Notice the significant cost difference between metrics computed using Luna (SLM) and frontier lab models.
-
-#### 1.2.4 Review Signals
-
-![alt text](/images/image-3.png)
-
-Click on the **Signals** button. Click on **Refresh** if no signals appear. 
-
-The Signals panel is the AI watching the AI — it scans every logged conversation for risk patterns and surfaces them as named, prioritized issues, so the team learns where the application is failing without reading transcripts one by one. Whereas Metrics need to be defined by the user, Signals surface the unknown unknown issues, such as:
-
-Some example Signals (yours might vary):
-
-Sensitive PII Leakage — Flags responses that expose personal data. This is a top-tier compliance and privacy risk, surfaced automatically so it can be contained before it becomes a breach.
-
-Medical Hallucinations & Violations — Catches invented medical claims and unauthorized prescriptions. For a health-facing assistant this is the highest-stakes failure mode, where a wrong answer can cause real harm and liability.
-
-Unexpected Harassment — Detects abusive or harassing language from the AI. A direct guard on brand safety and user trust.
-
-#### 1.2.5 Review Log Details
+Automated scoring (such as Output Toxicity, Prescriptive Overreach, Output PII) — Every response is auto-graded against safety and quality measures, including custom risk checks tuned to this use case. This is the core value: thousands of interactions evaluated without human review, with weak responses surfaced automatically for attention. You can click on each metric to understand the cost. Notice the significant cost difference between metrics computed using Luna (SLM) and frontier lab models.
 
 Click on any log.
 
-![alt text](/images/image-4.png)
+![alt text](/workshops/ai-trust-healthcare/image-12.png)
 
 This single-trace view is the microscope of the platform — it opens up one AI conversation end to end, showing exactly how a multi-step agent produced its answer and how that answer scored on quality and safety.
 
@@ -140,17 +128,39 @@ Metrics — One trace, examined from every angle: how it scored, how it was conf
 
 Feel free to explore the other tabs, such as **Latency** and **Trace Graph**.
 
-#### 1.2.6 Review Trends
+#### 1.2.4 Review Signals
 
-![alt text](/images/image-10.png)
+![alt text](/workshops/ai-trust-healthcare/image-13.png)
 
-Click on the back arrow, then click on **Trends**.
+Click the back arrow to return to the **Agent Stream**.
+
+![alt text](/workshops/ai-trust-healthcare/image-8.png)
+
+Click on the **Signals** button. 
+
+![alt text](/workshops/ai-trust-healthcare/image-9.png)
+
+Click on **Re-run signals** if no signals appear. 
+
+The Signals panel is the AI watching the AI — it scans every logged conversation for risk patterns and surfaces them as named, prioritized issues, so the team learns where the application is failing without reading transcripts one by one. Whereas Metrics need to be defined by the user, Signals surface the unknown unknown issues, such as:
+
+Some example Signals (yours might vary):
+
+Fabricated Patient PII/PHI — Flags responses that expose personal data. This is a top-tier compliance and privacy risk, surfaced automatically so it can be contained before it becomes a breach.
+
+Systematic Fake Medication Hallucination — Catches invented medical claims and unauthorized prescriptions. For a health-facing assistant this is the highest-stakes failure mode, where a wrong answer can cause real harm and liability.
+
+Hostile and Abusive Tone — Detects abusive or harassing language from the AI. A direct guard on brand safety and user trust.
+
+#### 1.2.5 Review Trends
+
+![alt text](/workshops/ai-trust-healthcare/image-14.png)
+
+Click on **Trends**.
+
+![alt text](/workshops/ai-trust-healthcare/image-15.png)
 
 The Trends view is the over-time picture of AI quality and risk — it tracks whether the application is holding steady, improving, or drifting, turning a snapshot of scores into a story leadership can monitor like any other business metric.
-
-Metrics charts — Plots the application's domain-specific risks day by day, so emerging problems show up as a rising line before they become incidents. This is early warning for the failure modes that matter most to this business.
-
-![alt text](/images/image-97.png)
 
 Scroll down to **System Metrics**.
 
@@ -164,69 +174,65 @@ Traces Count — Tracks total volume of activity. This sizes the workload and gi
 
 Agent Cost — Translates that consumption into dollars. This is the line item leadership actually cares about: what is this AI costing us, tracked over time so spend never becomes a surprise.
 
-Feel free to explore additional metric charts.
+Feel free to explore additional metric charts, such as those under **Safety Metrics** and **Custom Evaluators**.
 
-### Lab 1.3 Prove Before Shipping with Experiments
+#### 1.2.6 Review Agent Graph
 
-#### 1.3.1 Review Experiments
+![alt text](/workshops/ai-trust-healthcare/image-17.png)
 
-{{% notice style="WARNING" title="KNOWN BUG" %}}
-**NOTE: There is a known bug with ranking of Experiments; SKIP Lab 1.3 (1.3.1 & 1.3.2), and proceed to Lab 1.4**
-{{% /notice %}}
+Click on **Agent Graph**.
 
-![alt text](/images/image-5.png)
+![alt text](/workshops/ai-trust-healthcare/image-18.png)
 
-Click on **Experiments**.
+The **Agent Graph** visualizes how AI agents coordinate across models and workflows, making complex agent behavior transparent, traceable, and easier to govern.
 
-Because Experiments can take 10+ minutes to execute, we have already executed an experiment for you to review the results.
+Click on any agent.
 
-The Experiments leaderboard is where AI changes are proven before they ship — it pits different versions of the application head-to-head on the same tests and ranks them by safety and quality, turning "we think this is better" into evidence.
+![alt text](/workshops/ai-trust-healthcare/image-19.png)
 
-Rank (with the crowned #1) — Orders every version best-to-worst based on the selected metrics, crowning a clear winner. This is the objective verdict leadership needs to decide which configuration is safe to trust.
+Each agent has individual metrics, such as latency, cost, or token consumption.
 
-Name (baseline vs. poisoned runs) — Identifies what each run is — including deliberately compromised "poisoned" versions tested against clean "baseline" ones. This shows the team can detect a degraded or tampered model rather than discovering it in production.
+### 1.2.7 Review Alerts
 
-Dataset (with versions) — Records exactly which reference test set each run was graded against, and which version of it. This is what makes a comparison fair and repeatable — everyone is measured against the same yardstick.
+![alt text](/workshops/ai-trust-healthcare/image-20.png)
 
-Scoring columns (Prompt Injection, Output Toxicity, Prescriptive Overreach, Completeness, etc.) — Grades each version across the safety and quality dimensions that matter most for this use case, including resistance to attacks and overstepping into unauthorized advice. The value is a multi-dimensional safety scorecard, not a single pass/fail.
+Click on **Alerts**.
 
-#### 1.3.2 Compare Two Experiments
+![alt text](/workshops/ai-trust-healthcare/image-21.png)
 
-![alt text](/images/image-6.png)
+Click on **Create alert**.
 
-Click on the checkbox next to the two experiments, then click **Compare Experiments**.
+![alt text](/workshops/ai-trust-healthcare/image-22.png)
 
-![alt text](/images/image-7.png)
+Alerts can be configured to trigger based on the output of any evaluator. Alerts can be fed into automated systems via email or Slack. For example, you could disable a system if cost exceeds a defined parameter.
 
-You can review two or more experiments side by side.
+### Lab 1.3 Evaluators
 
-### Lab 1.4 Standardize Metrics
+#### 1.3.1 Review Evaluators
 
-#### 1.4.1 Review Metrics
+![alt text](/workshops/ai-trust-healthcare/image-16.png)
 
-![alt text](/images/image-8.png)
+Click on **Agent Observability -> Metrics**.
 
-Click on **Metrics**.
+![alt text](/workshops/ai-trust-healthcare/image-23.png)
 
-The Metrics catalog is the rulebook for how every AI is graded — a central, reusable library of scoring criteria that makes "good" and "safe" mean the same thing across every project and every team. As you have seen, Metrics are leveraged at every point in the development and deployment lifecycle.
+The Evaluators catalog is the rulebook for how every AI is graded — a central, reusable library of scoring criteria that makes "good" and "safe" mean the same thing across every project and every team. As you have seen, Evaluators are leveraged at every point in the development and deployment lifecycle.
 
-Metric type (Luna, LLM) — Shows what does the grading — a fast lightweight evaluator (Luna) or a full language model. This lets the business balance cost and speed against depth, choosing the right rigor for each measure.
+Type (Luna, LLM) — Shows what does the grading — a fast lightweight evaluator (Luna) or a full language model. This lets the business balance cost and speed against depth, choosing the right rigor for each measure.
 
-Metric level (Trace, Session, LLM, Retriever) — Defines where each metric applies — a single step, a whole conversation, or a specific component. Precision here means problems get measured at exactly the layer they occur.
+Level (Trace, Session, LLM, Retriever) — Defines where each Evaluators applies — a single step, a whole conversation, or a specific component. Precision here means problems get measured at exactly the layer they occur.
 
 Tags & Modality — Organize the library by purpose (agents, RAG, safety) and data type. As the catalog grows, this is what keeps it navigable and manageable rather than a sprawl.
 
-#### 1.4.2 Review Prescriptive Overreach Metric
+#### 1.3.2 Review Prescriptive Overreach Evaluator
 
-![alt text](/images/image-98.png)
+![alt text](/workshops/ai-trust-healthcare/image-24.png)
 
-Scroll down to (or search for) the **Prescriptive Overreach Metric**, and click on it.
+Search for **prescriptive_overreach**, and click on it.
 
-![alt text](/images/image-99.png)
+![alt text](/workshops/ai-trust-healthcare/image-25.png)
 
-This is where a safety standard gets authored — the editor for a custom Prescriptive Overreach Metric, showing how an abstract risk is turned into a precise, automated, repeatable test that every AI response is graded against.
-
-Metric description (the intent) — States in plain terms what this metric watches for and how to read it — higher means worse, lower is better. This is the business definition of the risk, written so anyone reviewing results knows exactly what's being measured and which direction is good.
+This is where a safety standard gets authored — the editor for a custom Prescriptive Overreach Evaluator, showing how an abstract risk is turned into a precise, automated, repeatable test that every AI response is graded against.
 
 Configure Input (LLM model / Apply to) — Chooses which AI does the grading and what part of the conversation it judges. The value is deliberate control over how rigorous and how targeted the evaluation is.
 

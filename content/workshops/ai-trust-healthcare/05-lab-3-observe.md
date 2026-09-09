@@ -36,7 +36,7 @@ The guardrail you applied in [Lab 2](/workshops/ai-trust-healthcare/04-lab-2-sec
 
 #### 3.1.1 Access Splunk Observability Cloud
 
-You should have received an email with instructions on how to access your assigned Splunk Observability instance.
+[How to Access Splunk Observability Cloud](/workshops/ai-trust-healthcare/01-setup/#2-how-to-access-splunk-agent-observability--splunk-observability-cloud)
 
 #### 3.1.2 Review Home
 
