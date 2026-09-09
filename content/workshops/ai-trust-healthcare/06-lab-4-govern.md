@@ -48,15 +48,15 @@ You will stage a real prompt-injection attack against DemoBot, watch it surface 
 
 Ensure that **Cisco AI Defense Policy Review** is toggled on.
 
-Expand the left side-panel, and toggle "Prompt-Injection Spray" on. Set the duration to 60.
+Expand the left side-panel. Under "Prompt-Injection Spray", set the duration to 60s, then toggle "Prompt-Injection Spray" on.
 
 #### 4.1.3 Investigate the Prompt Injection Spray
 
-![alt text](/images/image-44.png)
+![alt text](/images/image-185.png)
 
 Return to Splunk, and navigate to **AI Governance -> Dashboards -> Prompt Injection Detection**.
 
-![alt text](/images/image-116.png)
+![alt text](/images/image-145.png)
 
 Each section of the Prompt Injection Detection dashboard turns AI security into a measurable, governed discipline — proving the organization can detect, classify, and defend against adversarial attacks on its AI models.
 
@@ -76,63 +76,228 @@ Top Injection Sources — Identifies where attacks originate, enabling blocking,
 
 Recent Detections — A live, row-level audit trail of individual attacks for investigation and forensics — the defensible record that proves what happened, when, and how it was handled.
 
-### Lab 4.2 Follow the Detection into Enterprise Security
+### Lab 4.2 Create a Response Plan using the SOP Agent
 
-#### 4.2.1 Review the Detection Search
-
-![alt text](/images/image-52.png)
+![alt text](/images/image-146.png)
 
 Click the Splunk logo in the top left to navigate home.
 
-In the left side-panel, click on **Enterprise Security**.
+In the left side-panel, click on **Enterprise Security**. Enter "Enterprise Security" in the search box if it does not appear.
 
-![alt text](/images/image-53.png)
+![alt text](/images/image-157.png)
+
+Click on **Configure -> All configurations**.
+
+![alt text](/images/image-158.png)
+
+Click on **Investigation types**.
+
+![alt text](/images/image-159.png)
+
+Click on **+ Investigation type** to create a new investigation type.
+
+![alt text](/images/image-162.png)
+
+Enter the following information, and then click **Next**.
+
+**Investigation type name:** prompt_injection
+**Investigation type description:** An attempted or actual prompt injection attack against an AI system.
+
+![alt text](/images/image-163.png)
+
+Click **Save**.
+
+![alt text](/images/image-164.png)
+
+Click on the created investigation type.
+
+![alt text](/images/image-165.png)
+
+Click **Create new response plan.**
+
+![alt text](/images/image-166.png)
+
+Click **Import**.
+
+![alt text](/images/image-167.png)
+
+The Guided Response agent works from a standard operating procedure. Download the SOP used for this scenario and load it into the agent to see the four-phase NIST 800-61 plan it generates.
+
+{{< button href="/files/prompt-injection-investigation-and-response-sop.md" icon="download" style="primary" >}}Download the SOP (Markdown){{< /button >}} {{< button href="/files/prompt-injection-investigation-and-response-sop.html" icon="file" style="secondary" target="_blank" >}}View in browser{{< /button >}}
+
+Upload the file in the box under **Import and generate with AI**.
+
+![alt text](/images/image-168.png)
+
+Click **Import**.
+
+![alt text](/images/image-169.png)
+
+Wait for generation to complete, then click on the created response plan.
+
+![alt text](/images/image-170.png)
+
+Feel free to explore the sections created by the SOP agent, then toggle to **Published**.
+
+![alt text](/images/image-171.png)
+
+Click **Save changes** if prompted.
+
+![alt text](/images/image-177.png)
+
+Click on **Configure -> All configurations**.
+
+![alt text](/images/image-178.png)
+
+Click on **Investigation types**.
+
+![alt text](/images/image-179.png)
+
+Click on **prompt_injection**.
+
+![alt text](/images/image-180.png)
+
+CLick on **Assign response plan**.
+
+![alt text](/images/image-181.png)
+
+Click on the response plan you just created **Prompt Injection Attack - Investigation and Response**, then click **Submit**.
+
+![alt text](/images/image-182.png)
+
+Click **Save changes**.
+
+## Lab 4.3 Configure the Detection Search
+
+#### 4.3.1 Review the Detection Search
+
+![alt text](/images/image-147.png)
 
 Navigate to **Security content -> Content management**.
 
-![alt text](/images/image-54.png)
+![alt text](/images/image-148.png)
 
 Search for "Prompt Injection Attack Correlation", and click on **GenAI - Prompt Injection Attack Correlation**.
 
-![alt text](/images/image-128.png)
+![alt text](/images/image-149.png)
 
 Each section of this Enterprise Security detection editor turns AI threat-hunting into a governed, auditable control — codifying how prompt-injection attacks are detected, correlated, and turned into accountable action.
 
 This is where security logic is authored and version-controlled as a managed asset, not tribal knowledge. Putting detections under formal edit-and-save governance is what makes AI defense repeatable, reviewable, and defensible to auditors.
 
+![alt text](/images/image-172.png)
+
+Scroll down to **Analyst queue information** and click on the arrow next to **Create a finding**.
+
+![alt text](/images/image-173.png)
+
+Click on the dropdown for **Investigation type**.
+
+![alt text](/images/image-174.png)
+
+Select the investigation type, **prompt_injection**, you just created.
+
+![alt text](/images/image-175.png)
+
+Click **Save**.
+
 Click on the **sparkle** icon to expand the Security Assistant right sidepanel.
 
-#### 4.2.1 Review the Detection Builder Agent
+#### 4.3.2 Review the Detection Builder Agent
 
-![alt text](/images/image-129.png)
+![alt text](/images/image-150.png)
 
-Click "Explain this Detection", or otherwise chat with the Detection Builder agent.
+This detetection was built using the Detection Builder Agent. If you would like to experiment with building your own detections, you use the below prompt.
 
-![alt text](/images/image-130.png)
+{{% expand title="Detection Prompt" %}}
+Core metadata:
+Name: GenAI - Prompt Injection Attack Correlation
+App: TA-gen_ai_cim
+Detection type: Event-Based Detection
+
+Goal:
+Detect actor-centric prompt injection attacks in GenAI telemetry by identifying any actor with at least one prompt injection attempt in the last 24 hours, then correlating that actor’s full related GenAI activity into a single finding. Aggregate repeat injections, policy blocks, guardrail triggers, safety violations, PII exposure, anomalous prompts, targeted apps, targeted models, and distinct sessions. Create both a finding and risk-based output. This rule is the actor-centric companion to GenAI - Prompt Injection Attempt Detected.
+
+Description:
+Detects prompt injection attacks (guardrail-, policy-, or pattern-based) and correlates each attacker's full GenAI activity into a single notable: repeat injections, policy blocks, guardrail trips, safety violations, PII exposure, anomalous prompts, and the apps/models/sessions targeted. Actor-centric companion to "GenAI - Prompt Injection Attempt Detected" (which is app-centric, ML-pipeline based). Seeded from event 858b92e6-9f26-49d9-aa53-ec48ad2884ef (Cisco AI Defense block of user x.collins). Raises a notable plus risk (RBA) against the offending identity and source address.
+
+Schedule
+Cron: */1 * * * *
+Earliest: -24h
+Latest: now
+Allow skew: 5m
+Trigger
+Trigger type: number of events
+Comparator: greater than
+Threshold: 0
+Throttling
+Throttle window: 86400s
+Throttle by field: actor
+Finding output
+Enable finding output with:
+
+Title: GenAI Prompt Injection Attack: $user$ ($severity$)
+Description: Actor "$user$" generated $injection_attempts$ prompt injection attempt(s) (max risk $max_risk_score$) across $apps_targeted$ app(s) and $distinct_sessions$ session(s) from $src$. Correlated activity: $policy_blocks$ policy block(s), $safety_violations$ safety violation(s), $pii_events$ PII exposure event(s), $anomalous_prompts$ anomalous prompt(s). Techniques: $techniques$. Investigate for jailbreak, guardrail bypass, or data exfiltration. Raw prompt text is deliberately NOT copied into this notable - use the drilldown to read it in gen_ai_log, where index-level access controls and retention apply.
+Security domain: threat
+Severity: high
+Investigation type: ai security incident
+Drilldown
+Configure a drilldown search:
+
+Name: View all GenAI activity for $user$
+Search: index=gen_ai_log \exclude_scoring_sourcetypes` (gen_ai.user.id="$user$" OR enduser.id="$user$" OR client.address="$src$") | sort - _time`
+Earliest offset: 1d
+Latest offset: 1h
+Recommended actions
+ai_defense_suspend_user
+ai_defense_revoke_session
+ai_defense_tighten_guardrail
+Next steps
+Use this next-steps content:
+
+Containment standard: 3 or more blocked prompt-injection attempts within 24 hours from one actor with no authorized-testing record means the account is inactivated pending review.
+
+Review the actor's raw prompts and sessions through the Contributing events drill-down (the finding deliberately carries no prompt text).
+Validate intent with the user's manager: is there an authorized red-team or testing record for this user?
+If the standard is met, inactivate the account: run the response plan's Containment task action on the paired SOAR - identity provider connector -> disable user for this finding's user (the Guided Response agent runs it from the prompt "Disable user "; the TA ships a simulated MedAdvice Identity Provider whose results carry simulated=true). Without a paired SOAR run [[action|ai_defense_suspend_user]].
+Revoke the actor's active sessions: identity provider connector -> clear user sessions, or [[action|ai_defense_revoke_session]].
+Tighten the guardrail for the technique observed so every user is covered: [[action|ai_defense_tighten_guardrail]].
+Record the disposition and rationale on the investigation; the Containment task requires a note.
+Risk output
+Enable risk output and create two risk objects:
+
+Risk object field: user
+Risk object type: user
+Risk score: 80
+and
+
+Risk object field: src
+Risk object type: `system
+{{% /expand %}}
+
+Click **Explain this Detection**, or otherwise chat with the Detection Builder agent.
+
+![alt text](/images/image-151.png)
 
 Review the explanation provided by the agent.
 
-![alt text](/images/image-131.png)
+### Lab 4.4 Respond to the Notable Event
 
-You can also ask the agent "How else can you help me with this detection?".
+#### 4.4.1 Investigate with the Triage Agent
 
-### Lab 4.3 Respond to the Notable Event
-
-#### 4.3.1 Investigate with the Triage Agent
-
-![alt text](/images/image-136.png)
+![alt text](/images/image-152.png)
 
 Click on **Mission Control**.
 
-![alt text](/images/image-137.png)
+![alt text](/images/image-153.png)
 
 The Analyst Queue is where AI-security detections become accountable casework — every prompt-injection attack is triaged, owned, and dispositioned through a governed investigation workflow.
 
 Analyst Queue — A prioritized, filterable list of every active security finding awaiting human judgment. This is the operational proof that detections don't just fire into the void — they land in a managed queue where someone is accountable for resolving each one.
 
-Click on any record with title **GenAI Prompt Injection Attack...**
+Click on any record with title **GenAI Prompt Injection Attack...** where AI Dispoistion is **True Positive**.
 
-![Mission Control finding "GenAI Prompt Injection Attack: t.nguyen (critical)" open in the Analyst Queue, showing its triage fields and AI-assisted analysis](/images/image-132.png)
+![alt text](/images/image-154.png)
 
 Finding header (e.g. "GenAI Prompt Injection Attack: t.nguyen (critical)") — Names the threat by actor and severity. Naming the adversary, not just the event, is what turns detection into accountability.
 
@@ -146,17 +311,25 @@ Details (Finding metadata, Entity, Source, Additional fields, Event) — The raw
 
 Click on **Start investigation**.
 
-#### 4.3.2 Respond with the Guided Response Agent
+#### 4.4.2 Respond with the Guided Response Agent
 
-![alt text](/images/image-133.png)
+![alt text](/images/image-155.png)
 
 Click on the **sparkle** icon to expand the Security Assistant right sidepanel.
 
-![alt text](/images/image-134.png)
+![alt text](/images/image-156.png)
 
-Ask the Security Assistant, powered by Splunk's Guided Response agent, how to respond to the event.
+You can leverage the Security Assistant to provide you more details about the investigation.
 
-For example, you could ask "How should I respond to the prompt injection attempt from t.nguyen?"
+Click on **Response**.
+
+![alt text](/images/image-184.png)
+
+The response plan that you previously created has been automatically attached to this investigation.
+
+Automated actions, such as disabling the user's account, can be triggered from the response plan.
+
+**Note:** Because this is a synthetic user, trigger the disable will result in an error.
 
 ## Outcome
 

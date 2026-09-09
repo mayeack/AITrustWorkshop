@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Prompt Injection Attack — Investigation and Response SOP</title>
+<style>
+:root{color-scheme:light dark;--ink:#0C1724;--muted:#585B61;--paper:#fff;--surface:#F4F6FA;--border:#E1E5EC;--accent:#BD0D5F}
+@media (prefers-color-scheme:dark){:root{--ink:#F4F1EA;--muted:#9CA3AF;--paper:#0C1724;--surface:#141E2F;--border:#1F2C44;--accent:#FF7DBA}}
+*{box-sizing:border-box}
+body{margin:0;padding:2.5rem 1.25rem 4rem;background:var(--paper);color:var(--ink);
+font:16px/1.65 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:820px;margin:0 auto}
+h1{font-size:1.9rem;line-height:1.25;margin:0 0 1.5rem;letter-spacing:-.02em}
+h2{font-size:1.35rem;margin:2.5rem 0 .75rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+h3{font-size:1.08rem;margin:1.75rem 0 .5rem;color:var(--accent)}
+p{margin:0 0 1rem}
+blockquote{margin:0 0 1.25rem;padding:.85rem 1.1rem;background:var(--surface);
+border-left:3px solid var(--accent);border-radius:0 6px 6px 0}
+blockquote p:last-child{margin-bottom:0}
+code{font:.87em/1.5 ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+background:var(--surface);padding:.12em .4em;border-radius:4px}
+pre{background:var(--surface);border:1px solid var(--border);border-radius:8px;
+padding:1rem;overflow-x:auto;margin:0 0 1.25rem}
+pre code{background:none;padding:0;font-size:.84rem;line-height:1.6}
+strong{font-weight:650}
+a{color:var(--accent)}
+</style>
+</head>
+<body>
+<main>
+<h1>Prompt Injection Attack - Investigation and Response SOP</h1>
+<blockquote>
+<p><strong>SOP Agent Instructions:</strong> This SOP contains exactly <strong>4 phases</strong> and <strong>2 tasks per phase</strong> (8 tasks total). Generate the response plan with the following structure and no additional tasks or phases:</p>
+<p>Phase 1: <strong>Detection and Analysis</strong> — Task 1.1, Task 1.2
+Phase 2: <strong>Containment</strong> — Task 2.1, Task 2.2
+Phase 3: <strong>Eradication</strong> — Task 3.1, Task 3.2
+Phase 4: <strong>Post-Incident Activity</strong> — Task 4.1, Task 4.2</p>
+<p><strong>Overview:</strong> This SOP guides security analysts through investigating and responding to findings related to a prompt injection attack against the MedAdvice patient-advice assistant. It applies to findings from the GenAI - Prompt Injection Attack Correlation detection set including instruction override, guardrail bypass, persona jailbreak, jailbreak mode, system prompt disclosure, and obfuscated payload. All containment actions run on the identity plane through the MedAdvice Identity Provider SOAR app. This SOP follows the NIST SP 800-61 Incident Response lifecycle.</p>
+</blockquote>
+<h2>Detection and Analysis</h2>
+<h3>Task 1.1 — Build the injection attack timeline</h3>
+<p>Correlate this finding across all MedAdvice GenAI telemetry to identify which stage of the attack triggered the alert and whether it is part of a sustained campaign. Use the actor and the client address from the finding to search gen_ai_log across every application, model, and session the actor touched. The finding deliberately carries no prompt text, so this search is the only place the raw prompts are read, under the index-level access controls that apply to gen_ai_log.</p>
+<pre><code>index=gen_ai_log `exclude_scoring_sourcetypes` earliest=-24h
+| eval actor=coalesce('gen_ai.user.id', 'enduser.id', 'client.address')
+| eval src_ip='client.address'
+| search actor=&quot;&lt;USERNAME&gt;&quot; OR src_ip=&quot;&lt;ATTACKER_IP&gt;&quot;
+| eval stage=case(
+    'gen_ai.policy.blocked'=&quot;true&quot; AND prompt_category=&quot;prompt_injection&quot;, &quot;Stage 1 - Injection blocked by policy&quot;,
+    'gen_ai.guardrail.triggered'=&quot;true&quot;, &quot;Stage 1 - Guardrail triggered&quot;,
+    'gen_ai.policy.blocked'=&quot;true&quot;, &quot;Stage 1 - Policy block (other category)&quot;,
+    'gen_ai.prompt.is_anomaly'=&quot;true&quot;, &quot;Stage 2 - Anomalous prompt allowed through&quot;,
+    'gen_ai.safety.violated'=&quot;true&quot;, &quot;Stage 3 - Safety violation in the response&quot;,
+    'gen_ai.pii.detected'=&quot;true&quot;, &quot;Stage 4 - PII/PHI returned to the actor&quot;,
+    true(), &quot;Context - &quot; . 'gen_ai.app.name')
+| table _time stage gen_ai.app.name gen_ai.request.model gen_ai.session.id actor src_ip risk_score
+| sort 0 _time
+</code></pre>
+<h3>Task 1.2 — Assess risk score and scope</h3>
+<p>Query the risk index to determine the cumulative risk score for the actor and identify all contributing detections. The correlation rule contributes 80 to the user risk object and 60 to the source address on every fire. A score above 160 across more than one session or application indicates a sustained campaign rather than an isolated attempt and requires immediate escalation to Containment.</p>
+<pre><code>index=risk risk_object=&quot;&lt;USERNAME&gt;&quot; earliest=-24h
+| stats sum(risk_score) as total_risk_score
+        count as risk_event_count
+        values(source) as contributing_detections
+        values(risk_message) as risk_messages
+        by risk_object risk_object_type
+| sort - total_risk_score
+</code></pre>
+<h2>Containment</h2>
+<h3>Task 2.1 — Disable the offending account and revoke its sessions</h3>
+<p><strong>Containment standard:</strong> three or more blocked prompt-injection attempts within 24 hours from one actor, with no authorized-testing record for that actor, means the account is inactivated pending review. The finding's <code>injection_attempts</code> and <code>policy_blocks</code> counts are the evidence, and the note on this task is the review record. Validate intent with the actor's manager before proceeding: an authorized red-team or model-evaluation record makes this a Benign Positive.</p>
+<p>If the standard is met, run the <strong>MedAdvice Identity Provider -&gt; disable user</strong> SOAR action from this task's Actions panel with the username taken from the finding's <code>user</code> field and a reason naming this incident. Then run <strong>MedAdvice Identity Provider -&gt; clear user sessions</strong> for the same username to invalidate any token issued before the account was inactivated. The Guided Response agent runs both from the prompt "Disable user \&lt;USERNAME&gt;". Results are recorded on this task and on the investigation's Automation tab, and <code>enable user</code> on the same app reverses the change during Eradication.</p>
+<p>The MedAdvice Identity Provider is a workshop simulator: every result carries <code>simulated: true</code> and no directory is touched. On a stack with no paired SOAR, run the adaptive response actions Suspend User (AI Defense) and Revoke Session / API Key instead; both are equally simulated and write their audit entry to gen_ai_log under sourcetype ai_cim:response:action. This task requires a note.</p>
+<h3>Task 2.2 — Identify injection attempts that were not blocked</h3>
+<p>Search for prompts from this actor that Cisco AI Defense allowed through during the attack window. These are the guardrail gaps: they reached the model and produced a real response, and they determine whether the incident is contained or still ongoing. If this search returns any results, the incident cannot be dispositioned as benign and the guardrail identified here must be tightened during Eradication.</p>
+<pre><code>index=gen_ai_log `exclude_scoring_sourcetypes` earliest=-24h
+    (gen_ai.user.id=&quot;&lt;USERNAME&gt;&quot; OR enduser.id=&quot;&lt;USERNAME&gt;&quot; OR client.address=&quot;&lt;ATTACKER_IP&gt;&quot;)
+    gen_ai.policy.blocked=&quot;false&quot;
+| table _time gen_ai.session.id gen_ai.app.name gen_ai.request.model prompt_category
+        gen_ai.prompt.is_anomaly gen_ai.safety.violated gen_ai.pii.detected gen_ai.pii.types
+| sort 0 _time
+</code></pre>
+<h2>Eradication</h2>
+<h3>Task 3.1 — Close the guardrail gap for the observed technique</h3>
+<p>Tighten the Cisco AI Defense guardrail profile for the technique family recorded in the finding's <code>techniques</code> field so the same prompt pattern is blocked for every user, not just this actor. Run the adaptive response action Tighten Guardrail Policy scoped to the application named in the finding, and work with the AI platform owner to make the policy change permanent rather than incident-scoped. Record the policy name and version before and after in the task notes. Verify that every response action has been logged with the search below.</p>
+<pre><code>index=gen_ai_log sourcetype=ai_cim:response:action
+    (target=&quot;&lt;USERNAME&gt;&quot; OR target=&quot;&lt;APP_NAME&gt;&quot;)
+| table _time action action_label target_type target status simulated executed_by search_name execution_id
+| sort 0 _time
+</code></pre>
+<h3>Task 3.2 — Restore the account after credential hygiene</h3>
+<p>Confirm that no new activity has arrived from the actor for at least 15 minutes and that the guardrail change from Task 3.1 is live. If the actor is a legitimate user whose account was misused, reset the credentials and re-enroll MFA through a verified out-of-band channel, then re-activate the account with the <strong>MedAdvice Identity Provider -&gt; enable user</strong> SOAR action, recording the justification in the task notes. If the actor is confirmed malicious, leave the account inactivated and record that decision instead.</p>
+<h2>Post-Incident Activity</h2>
+<h3>Task 4.1 — Document the full incident timeline</h3>
+<p>Build a complete chronological record of every event from the first injection attempt through to the last containment action, and record the total time between them as the response latency in the investigation case notes. This search deliberately omits the <code>exclude_scoring_sourcetypes</code> macro so the response actions appear alongside the attack events in one timeline.</p>
+<pre><code>index=gen_ai_log earliest=-24h
+| eval actor=coalesce('gen_ai.user.id', 'enduser.id', 'client.address', target)
+| search actor=&quot;&lt;USERNAME&gt;&quot; OR client.address=&quot;&lt;ATTACKER_IP&gt;&quot;
+| eval summary=case(
+    sourcetype=&quot;ai_cim:response:action&quot;, &quot;Response - &quot; . action_label . &quot; - &quot; . status . &quot; (simulated=&quot; . simulated . &quot;)&quot;,
+    'gen_ai.policy.blocked'=&quot;true&quot;, &quot;Blocked - &quot; . 'gen_ai.policy.name' . &quot; - &quot; . prompt_category,
+    'gen_ai.pii.detected'=&quot;true&quot;, &quot;PII exposure - &quot; . 'gen_ai.pii.types',
+    'gen_ai.safety.violated'=&quot;true&quot;, &quot;Safety violation - &quot; . 'gen_ai.app.name',
+    true(), &quot;Allowed - &quot; . 'gen_ai.app.name' . &quot; - &quot; . 'gen_ai.request.model')
+| table _time sourcetype summary gen_ai.session.id actor
+| sort 0 _time
+</code></pre>
+<h3>Task 4.2 — Close the finding and tune detections</h3>
+<p>Close the Mission Control finding with a True Positive, Benign Positive, or False Positive disposition, and state explicitly in the record that the containment actions were simulated. Map the incident to OWASP LLM Top 10 LLM01 (Prompt Injection) and MITRE ATLAS AML.T0051 (LLM Prompt Injection), adjusting the mapping if the campaign also achieved data exposure. File tuning requests for any technique family that reached the model without matching the correlation rule, and add the exact prompt pattern to the prompt injection training corpus so the detection covers it next time.</p>
+</main>
+</body>
+</html>
