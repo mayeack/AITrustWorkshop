@@ -123,7 +123,7 @@ Click **Import**.
 
 The Guided Response agent works from a standard operating procedure. Download the SOP used for this scenario and load it into the agent to see the four-phase NIST 800-61 plan it generates.
 
-{{< button href="/files/prompt-injection-investigation-and-response-sop.md" icon="download" style="primary" >}}Download the SOP (Markdown){{< /button >}} {{< button href="/files/prompt-injection-investigation-and-response-sop.html" icon="file" style="secondary" target="_blank" >}}View in browser{{< /button >}}
+{{< button href="/files/prompt-injection-investigation-and-response-sop.md" icon="download" style="primary" download="true" >}}Download the SOP (Markdown){{< /button >}} {{< button href="/files/prompt-injection-investigation-and-response-sop.html" icon="file" style="secondary" target="_blank" >}}View in browser{{< /button >}}
 
 Upload the file in the box under **Import and generate with AI**.
 
