@@ -26,7 +26,7 @@ Before you guard or operate anything, define and measure "good." You will run a 
 
 ## Background
 
-Splunk Agent Observability evaluates the **whole agent trace** and scores each turn against research-backed metrics (hallucination, context adherence, PII/PHI leakage, tool-selection quality) plus custom metrics you define, such as Prescriptive Overreach. Metrics are run by **Luna** — Cisco's small, purpose-built evaluator models — so continuous LLM-as-judge scoring is affordable rather than a frontier-model bill.
+Splunk Agent Observability evaluates the **whole agent trace** and scores each turn against research-backed metrics (hallucination, context adherence, PII/PHI leakage, tool-selection quality) plus custom evaluators you define, such as Prescriptive Overreach. Evaluators can be run by **Luna** — Cisco's small, purpose-built evaluator models — so continuous LLM-as-judge scoring is affordable rather than a frontier-model bill.
 
 Model evaluation, metric construction, and signal understanding is critical both to build trust in AI systems before deployment, and to monitor model drift over time.
 
