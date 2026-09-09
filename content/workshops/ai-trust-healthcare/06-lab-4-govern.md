@@ -76,7 +76,7 @@ Top Injection Sources — Identifies where attacks originate, enabling blocking,
 
 Recent Detections — A live, row-level audit trail of individual attacks for investigation and forensics — the defensible record that proves what happened, when, and how it was handled.
 
-### Lab 4.2 Create a Response Plan using the SOP Agent
+### Lab 4.2 Create a Response Plan with the SOP Agent
 
 ![alt text](/images/image-146.png)
 
@@ -167,7 +167,7 @@ Click on the response plan you just created **Prompt Injection Attack - Investig
 
 Click **Save changes**.
 
-## Lab 4.3 Configure the Detection Search
+### Lab 4.3 Configure the Detection Search
 
 #### 4.3.1 Review the Detection Search
 

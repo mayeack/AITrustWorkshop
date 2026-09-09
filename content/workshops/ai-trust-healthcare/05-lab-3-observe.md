@@ -60,7 +60,7 @@ Toggle **Trigger Demo Incident** on to trigger a series of alerts.
 
 ![alt text](/workshops/ai-trust-healthcare/image-30.png)
 
-Return to Observability Cloud, and click on any alert corresponding to the environment you previously selected, e.g. "medadviceX".
+Return to Observability Cloud, and click on any alert corresponding to the environment you previously selected, e.g. "sf_environment: demobot-ec2-1" in **Signal properties**.
 
 ![alt text](/workshops/ai-trust-healthcare/image-31.png)
 
