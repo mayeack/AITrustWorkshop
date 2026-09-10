@@ -30,7 +30,7 @@ Detection and observability tell you *what happened*. Governance is about being 
 
 In the earlier labs, every AI interaction was logged with full governance metadata and a shared correlation ID. That foundation is what makes this lab possible: an adversarial prompt-injection attempt isn't just blocked in the moment, it leaves a **permanent, immutable record** that can be reconstructed on demand.
 
-You will stage a real prompt-injection attack against DemoBot, watch it surface in Splunk's Prompt Injection Detection dashboard, trace it back through the correlation search that defines *how* the threat is detected, and follow it into Enterprise Security as a notable event landing in an analyst's queue. The point is the **end-to-end chain**: a live attack becomes a measurable detection, turning a security incident into a defensible story with a clear owner and outcome.
+You will stage a real prompt-injection attack against PseudoCo Assistant, watch it surface in Splunk's Prompt Injection Detection dashboard, trace it back through the correlation search that defines *how* the threat is detected, and follow it into Enterprise Security as a notable event landing in an analyst's queue. The point is the **end-to-end chain**: a live attack becomes a measurable detection, turning a security incident into a defensible story with a clear owner and outcome.
 
 ## Labs
 
@@ -42,7 +42,7 @@ You will stage a real prompt-injection attack against DemoBot, watch it surface 
 
 #### 4.1.2 Stage the Prompt Injection Spray
 
-[How to Access DemoBot](/workshops/ai-trust-healthcare/01-setup/#1-how-to-access-demobot)
+[How to Access PseudoCo Assistant](/workshops/ai-trust-healthcare/01-setup/#1-how-to-access-pseudoco-assistant)
 
 ![alt text](/images/image-127.png)
 

@@ -32,13 +32,13 @@ Model evaluation, metric construction, and signal understanding is critical both
 
 ## Labs
 
-### Lab 1.1 Explore Prompting in DemoBot
+### Lab 1.1 Explore Prompting in PseudoCo Assistant
 
-#### 1.1.1 Access DemoBot
+#### 1.1.1 Access PseudoCo Assistant
 
 ![alt text](/workshops/ai-trust-healthcare/image.png)
 
-[How to Access DemoBot](/workshops/ai-trust-healthcare/01-setup/#1-how-to-access-demobot)
+[How to Access PseudoCo Assistant](/workshops/ai-trust-healthcare/01-setup/#1-how-to-access-pseudoco-assistant)
 
 {{% notice warning "Important" %}}
 Because we are using an open weight model, ensure that you select **gpt-4o-mini** from the **Static Emission** dropdown so that tokenomics calculates correctly!
@@ -48,7 +48,7 @@ Because we are using an open weight model, ensure that you select **gpt-4o-mini*
 
 ![alt text](/workshops/ai-trust-healthcare/image-1.png)
 
-Select **ollama** in **Provider**. DemoBot is pre-loaded with two models - one a baseline version, and one that has been intentionally poisoned to produce non-compliant responses, such as toxic content.
+Select **ollama** in **Provider**. PseudoCo Assistant is pre-loaded with two models - one a baseline version, and one that has been intentionally poisoned to produce non-compliant responses, such as toxic content.
 
 ![alt text](/workshops/ai-trust-healthcare/image-2.png)
 
@@ -82,7 +82,7 @@ Click on **Agent Observability -> All projects**.
 
 ![alt text](/workshops/ai-trust-healthcare/image-5.png)
 
-Click on the project **DemoBot**.
+Click on the project **PseudoCo Assistant**.
 
 ![alt text](/workshops/ai-trust-healthcare/image-6.png)
 
@@ -98,13 +98,13 @@ Datasets — Curated "golden" reference sets used to grade the AI consistently. 
 
 Prompts — A versioned, centralized library of the instructions that drive the AI, enabling change-control over the core logic, reusable directly in code.
 
-Click on **DemoBot** under **Agent Streams**.
+Click on **PseudoCo Assistant** under **Agent Streams**.
 
 #### 1.2.3 Review Agent Stream
 
 ![alt text](/workshops/ai-trust-healthcare/image-7.png)
 
-Click on **DemoBot** under **Agent Streams**.
+Click on **PseudoCo Assistant** under **Agent Streams**.
 
 ![alt text](/workshops/ai-trust-healthcare/image-11.png)
 
@@ -242,7 +242,7 @@ Configure Output (type & roll-up) — Sets how individual scores combine into a 
 
 ## Outcome
 
-**Splunk Agent Observability** turns AI development from a black box into a measurable discipline you can trust. Using DemoBot — preloaded with a clean "baseline" model and an intentionally "poisoned" one — participants see firsthand how non-compliant AI behavior is automatically detected, scored, and contained.
+**Splunk Agent Observability** turns AI development from a black box into a measurable discipline you can trust. Using PseudoCo Assistant — preloaded with a clean "baseline" model and an intentionally "poisoned" one — participants see firsthand how non-compliant AI behavior is automatically detected, scored, and contained.
 
 The journey walks through six capabilities that make trust measurable:
 

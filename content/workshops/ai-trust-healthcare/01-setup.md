@@ -1,14 +1,14 @@
 +++
 title       = "Setup & Prerequisites"
-description = "Access DemoBot, Splunk Agent Observability, Cisco AI Defense, Splunk Observability Cloud, and Splunk Cloud."
+description = "Access PseudoCo Assistant, Splunk Agent Observability, Cisco AI Defense, Splunk Observability Cloud, and Splunk Cloud."
 duration    = "10 min"
 weight      = 10
 aliases     = ["/setup.html", "/workshops/ai-governance/01-setup/", "/workshops/ai-governance-healthcare/01-setup/"]
 +++
 
-### 1. How to Access DemoBot
+### 1. How to Access PseudoCo Assistant
 
-Go to the DemoBot instance and enter the access code provided by the facilitator.
+Go to the PseudoCo Assistant instance and enter the access code provided by the facilitator.
 
 ### 2. How to Access Splunk Agent Observability & Splunk Observability Cloud
 

@@ -30,17 +30,17 @@ Cisco AI Defense is a live integration: it inspects the prompt (pre-LLM) and the
 
 ## Labs
 
-### Lab 2.1 Prompt Prescriptive Overreach in DemoBot
+### Lab 2.1 Prompt Prescriptive Overreach in PseudoCo Assistant
 
-#### 2.1.1 Access DemoBot
+#### 2.1.1 Access PseudoCo Assistant
 
-[How to Access DemoBot](/workshops/ai-trust-healthcare/01-setup/#1-how-to-access-demobot)
+[How to Access PseudoCo Assistant](/workshops/ai-trust-healthcare/01-setup/#1-how-to-access-pseudoco-assistant)
 
 #### 2.1.2 Prompt Prescriptive Overreach
 
 ![alt text](/images/image-20.png)
 
-This is the DemoBot control panel — the behind-the-scenes settings that lets you deliberately inject unsafe AI behavior and switch defenses on and off.
+This is the PseudoCo Assistant control panel — the behind-the-scenes settings that lets you deliberately inject unsafe AI behavior and switch defenses on and off.
 
 Cisco AI Defense Policy Review — Routes every prompt through AI Defense before it reaches the assistant, blocking unsafe inputs up front.
 
@@ -176,9 +176,9 @@ Click on **Save changes**.
 
 ### Lab 2.4 Validate Prescriptive Overreach Guardrail
 
-#### 2.4.1 Access DemoBot
+#### 2.4.1 Access PseudoCo Assistant
 
-Navigate back to DemoBot. In the left sidepanel, toggle on **Prescriptive Overreach**.
+Navigate back to PseudoCo Assistant. In the left sidepanel, toggle on **Prescriptive Overreach**.
 
 #### 2.4.2 Prompt Prescriptive Overreach
 

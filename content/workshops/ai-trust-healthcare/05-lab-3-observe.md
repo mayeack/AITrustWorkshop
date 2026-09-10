@@ -52,7 +52,7 @@ The Active alerts view is the incident command center for the AI application —
 
 ![alt text](/workshops/ai-trust-healthcare/image-29.png)
 
-Go to DemoBot, and open the left side-panel.
+Go to PseudoCo Assistant, and open the left side-panel.
 
 Toggle **Trigger Demo Incident** on to trigger a series of alerts.
 
@@ -60,7 +60,7 @@ Toggle **Trigger Demo Incident** on to trigger a series of alerts.
 
 ![alt text](/workshops/ai-trust-healthcare/image-30.png)
 
-Return to Observability Cloud, and click on any alert corresponding to the environment you previously selected, e.g. "sf_environment: demobot-ec2-1" in **Signal properties**.
+Return to Observability Cloud, and click on any alert corresponding to the environment you previously selected, e.g. "sf_environment: pseudoco-assistant-ec2-1" in **Signal properties**.
 
 ![alt text](/workshops/ai-trust-healthcare/image-31.png)
 

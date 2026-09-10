@@ -55,5 +55,5 @@ Commit to `main` and push — the Pages workflow rebuilds the site (~1–2 min).
     `<!-- persona:start/end -->` markers.
   - Operational asides: `{{% notice note %}}`; cautions: `{{% notice warning %}}`.
 - The lab commands reference the demo application repo
-  ([DemoBot](https://github.com/mayeack/DemoBot)) — `scripts/demo/seed_governance_scenarios.py`,
+  ([PseudoCo Assistant](https://github.com/mayeack/PseudoCoAssistant)) — `scripts/demo/seed_governance_scenarios.py`,
   `scripts/demo/galileo_eval_prescription.py`, and the `/api/incident/*` endpoints.
