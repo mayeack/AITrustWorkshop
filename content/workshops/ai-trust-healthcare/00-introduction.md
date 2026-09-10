@@ -51,7 +51,7 @@ The four pillars of trust — and the question each one answers:
 | **Observe** | *Is it reliable?* End-to-end tracing, latency, and cost | Splunk Observability Cloud |
 | **Govern** | *Is it accountable?* Immutable audit trail + forensics + security incident response | Splunk Core / Enterprise Security |
 
-![alt text](/workshops/ai-trust-healthcare/image-3.png)
+![alt text](/workshops/ai-trust-healthcare/image-26.png)
 
 One Cisco Agentic AI Trust architecture: production AI traffic flows through Cisco Cloud Control, Cisco AI Defense, and Cisco Data Fabric into Splunk Observability Cloud and Splunk Core, with Splunk Agent Observability closing the continuous feedback loop back to the AI system — one cohesive architecture for delivering agentic AI trust.
 
