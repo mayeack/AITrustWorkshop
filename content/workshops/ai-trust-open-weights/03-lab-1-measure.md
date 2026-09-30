@@ -1,7 +1,7 @@
 +++
 title       = "Lab 1 — Measure"
 description = "Splunk Agent Observability: evaluate different models, score them with Luna, and surface the unknown unknowns."
-duration    = "1 hour"
+duration    = "40 min"
 weight      = 30
 +++
 

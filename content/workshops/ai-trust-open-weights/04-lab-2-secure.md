@@ -1,7 +1,7 @@
 +++
 title       = "Lab 2 — Secure"
 description = "Cisco AI Defense: turn the Lab 1 finding into a runtime guardrail and block non-compliant output live."
-duration    = "1 hour"
+duration    = "20 min"
 weight      = 40
 +++
 
