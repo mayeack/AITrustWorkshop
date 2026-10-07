@@ -38,7 +38,15 @@ The guardrail you applied in [Lab 2](/workshops/ai-trust/04-lab-2-secure/) made 
 
 [How to Access Splunk Observability Cloud](/workshops/ai-trust/01-setup/#2-how-to-access-splunk-agent-observability--splunk-observability-cloud)
 
-#### 3.1.2 Review Alerts
+#### 3.1.2 Generate Latency Incident
+
+![alt text](/workshops/ai-trust/image-29.png)
+
+Go to PseudoCo Assistant, and open the left side-panel.
+
+Toggle **Trigger Demo Incident** on to trigger a series of alerts. With the default values it adds 20 s latency and 50% errors for 600 s for everyone on the instance. Alerts can take a few minutes to appear; if none appear after 5 minutes, let your instructor know.
+
+#### 3.1.3 Review Alerts
 
 ![alt text](/workshops/ai-trust/image-27.png)
 
@@ -48,19 +56,11 @@ Navigate to **Alerts -> Active alerts**.
 
 The Active alerts view is the incident command center for the AI application — it consolidates every firing alert into one prioritized queue, ranked by severity, so teams know instantly what's broken, how badly, and where to act first. This workshop org is shared, so you will also see alerts from other services.
 
-#### 3.1.3 Generate Latency Incident
-
-![alt text](/workshops/ai-trust/image-29.png)
-
-Go to PseudoCo Assistant, and open the left side-panel.
-
-Toggle **Trigger Demo Incident** on to trigger a series of alerts. With the default values it adds 20 s latency and 50% errors for 600 s for everyone on the instance. Alerts can take a few minutes to appear; if none appear after 5 minutes, let your instructor know.
-
 #### 3.1.4 Triage and Resolve an Alert
 
 ![alt text](/workshops/ai-trust/image-30.png)
 
-Return to Observability Cloud. In **Active alerts**, set **Service** to **demobot-v3**, then click any alert. Its signal details should show "sf_environment=demobot-ec2-1, sf_service=demobot-v3".
+Return to Observability Cloud. In **Active alerts**, set **Service** to **demobot-v3**, then click any alert.
 
 ![alt text](/workshops/ai-trust/image-31.png)
 
@@ -84,7 +84,9 @@ Troubleshooting tools (Runbooks, Related content, Data links) — Connects the a
 
 ![alt text](/workshops/ai-trust/image-34.png)
 
-Because we triggered the alert synthetically, there is nothing to fix. Go ahead and click **Resolve alert**. Once everyone on your instance is done, return to PseudoCo Assistant and toggle **Trigger Demo Incident** off. Resolving the alert does not stop the incident; it slows every chat on the instance until it is off or its 600 s run ends.
+Because we triggered the alert synthetically, there is nothing to fix. Go ahead and click **Resolve alert**. 
+
+Once everyone on your instance is done, return to PseudoCo Assistant and toggle **Trigger Demo Incident** off. Resolving the alert does not stop the incident; it slows every chat on the instance until it is off or its 600 s run ends.
 
 ## Outcome
 

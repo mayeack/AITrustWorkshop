@@ -40,7 +40,7 @@ In healthcare, the finding is **Prescriptive Overreach**, and this lab builds a 
 
 [How to Access PseudoCo Assistant](/workshops/ai-trust/01-setup/#1-how-to-access-pseudoco-assistant)
 
-Before you begin, check that **Model** shows the baseline **mistral-nemo:12b**, not **mistral-nemo:12b-poisoned**, and select it if needed. The model setting is shared by everyone on your instance.
+Before you begin, check that **Model** shows the baseline **mistral-nemo:12b**, not **mistral-nemo:12b-poisoned**, and select it if needed.
 
 #### 2.1.2 Prompt an Outside-of-Authority Response
 

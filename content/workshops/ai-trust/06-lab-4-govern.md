@@ -34,7 +34,7 @@ You will stage a real prompt-injection attack against PseudoCo Assistant, watch 
 
 ## Labs
 
-### Lab 4.1 Stage and Detect the Prompt Injection
+### Lab 4.1 Stage the Prompt Injection Spray Attack
 
 #### 4.1.1 Access Splunk Cloud
 
@@ -48,7 +48,9 @@ You will stage a real prompt-injection attack against PseudoCo Assistant, watch 
 
 Ensure that **Cisco AI Defense Policy Review** is toggled on.
 
-Expand the left side-panel and make sure **Trigger Demo Incident** is off. Under **Prompt Injection Spray**, set the duration to 300s and replace the default actor **t.nguyen** with a unique name (for example, your initials), then toggle **Prompt Injection Spray** on. AI Defense reviews every turn, so only a few turns run per minute.
+Expand the left side-panel and make sure **Trigger Demo Incident** is off. 
+
+Under **Prompt Injection Spray**, set the duration to 300s and replace the default actor **t.nguyen** with a unique name (for example, your initials), then toggle **Prompt Injection Spray** on.
 
 #### 4.1.3 Investigate the Prompt Injection Spray
 
@@ -123,7 +125,9 @@ Click **Import**.
 
 The Guided Response agent works from a standard operating procedure. Download the SOP used for this scenario and load it into the agent to see the four-phase NIST 800-61 plan it generates.
 
+{{% expand title="Prompt Injection SOP - Healthcare" %}}
 {{< button href="/files/prompt-injection-investigation-and-response-sop.md" icon="download" style="primary" download="true" >}}Download the SOP (.md){{< /button >}} {{< button href="/files/prompt-injection-investigation-and-response-sop.html" icon="file" style="secondary" target="_blank" >}}View in browser{{< /button >}}
+{{% /expand %}}
 
 Upload the file in the box under **Import and generate with AI**.
 
