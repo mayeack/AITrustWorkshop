@@ -28,7 +28,7 @@ During an audit, review immutable AI interaction logs, surface a prompt-injectio
 
 Detection and observability tell you *what happened*. Governance is about being able to **prove it** — to an auditor, a regulator, or your own board — and to show that a human was accountable for the response. It is the pillar where trust becomes evidence.
 
-In the earlier labs, every AI interaction was logged with full governance metadata and a shared correlation ID. That foundation is what makes this lab possible: an adversarial prompt-injection attempt isn't just blocked in the moment, it leaves a **permanent, immutable record** that can be reconstructed on demand.
+In the earlier labs, every AI interaction was logged with full governance metadata. That foundation is what makes this lab possible: an adversarial prompt-injection attempt isn't just blocked in the moment, it leaves a **permanent, immutable record** that can be reconstructed on demand.
 
 You will stage a real prompt-injection attack against PseudoCo Assistant, watch it surface in Splunk's Prompt Injection Detection dashboard, trace it back through the correlation search that defines *how* the threat is detected, and follow it into Enterprise Security as a notable event landing in an analyst's queue. The point is the **end-to-end chain**: a live attack becomes a measurable detection, turning a security incident into a defensible story with a clear owner and outcome.
 
@@ -48,7 +48,7 @@ You will stage a real prompt-injection attack against PseudoCo Assistant, watch 
 
 Ensure that **Cisco AI Defense Policy Review** is toggled on.
 
-Expand the left side-panel. Under "Prompt-Injection Spray", set the duration to 60s, then toggle "Prompt-Injection Spray" on.
+Expand the left side-panel and make sure **Trigger Demo Incident** is off. Under **Prompt Injection Spray**, set the duration to 300s and replace the default actor **t.nguyen** with a unique name (for example, your initials), then toggle **Prompt Injection Spray** on. AI Defense reviews every turn, so only a few turns run per minute.
 
 #### 4.1.3 Investigate the Prompt Injection Spray
 
@@ -60,7 +60,7 @@ Return to Splunk, and navigate to **AI Governance -> Dashboards -> Prompt Inject
 
 Each section of the Prompt Injection Detection dashboard turns AI security into a measurable, governed discipline — proving the organization can detect, classify, and defend against adversarial attacks on its AI models.
 
-Total Scanned — Establishes the denominator of coverage: how much AI traffic is actually being inspected for attacks. It answers the first governance question — "are we even looking?" — and proves monitoring is comprehensive, not selective.
+Total Scanned — Establishes the denominator of coverage: how much AI traffic is being inspected for attacks. It answers the first governance question — "are we even looking?" — and proves monitoring is comprehensive, not selective.
 
 Injections Detected, Injections by Severity, and Detection Rate — The headline count of adversarial prompt-injection attempts caught. This is the tangible evidence that the AI is under active threat and that defenses are working, translating an abstract risk into a tracked number leadership can act on.
 
@@ -157,7 +157,7 @@ Click on **prompt_injection**.
 
 ![alt text](/images/image-180.png)
 
-CLick on **Assign response plan**.
+Click on **Assign response plan**.
 
 ![alt text](/images/image-181.png)
 
@@ -207,7 +207,7 @@ Click on the **sparkle** icon to expand the Security Assistant right sidepanel.
 
 ![alt text](/images/image-150.png)
 
-This detetection was built using the Detection Builder Agent. If you would like to experiment with building your own detections, you use the below prompt.
+This detection was built using the Detection Builder Agent. If you would like to experiment with building your own detections, you can use the prompt below.
 
 {{% expand title="Detection Prompt" %}}
 Core metadata:
@@ -240,12 +240,12 @@ Title: GenAI Prompt Injection Attack: $user$ ($severity$)
 Description: Actor "$user$" generated $injection_attempts$ prompt injection attempt(s) (max risk $max_risk_score$) across $apps_targeted$ app(s) and $distinct_sessions$ session(s) from $src$. Correlated activity: $policy_blocks$ policy block(s), $safety_violations$ safety violation(s), $pii_events$ PII exposure event(s), $anomalous_prompts$ anomalous prompt(s). Techniques: $techniques$. Investigate for jailbreak, guardrail bypass, or data exfiltration. Raw prompt text is deliberately NOT copied into this notable - use the drilldown to read it in gen_ai_log, where index-level access controls and retention apply.
 Security domain: threat
 Severity: high
-Investigation type: ai security incident
+Investigation type: prompt_injection
 Drilldown
 Configure a drilldown search:
 
 Name: View all GenAI activity for $user$
-Search: index=gen_ai_log \exclude_scoring_sourcetypes` (gen_ai.user.id="$user$" OR enduser.id="$user$" OR client.address="$src$") | sort - _time`
+Search: ``index=gen_ai_log `exclude_scoring_sourcetypes` (gen_ai.user.id="$user$" OR enduser.id="$user$" OR client.address="$src$") | sort - _time``
 Earliest offset: 1d
 Latest offset: 1h
 Recommended actions
@@ -272,7 +272,8 @@ Risk score: 80
 and
 
 Risk object field: src
-Risk object type: `system
+Risk object type: system
+Risk score: 60
 {{% /expand %}}
 
 Click **Explain this Detection**, or otherwise chat with the Detection Builder agent.
@@ -295,7 +296,7 @@ The Analyst Queue is where AI-security detections become accountable casework �
 
 Analyst Queue — A prioritized, filterable list of every active security finding awaiting human judgment. This is the operational proof that detections don't just fire into the void — they land in a managed queue where someone is accountable for resolving each one.
 
-Click on any record with title **GenAI Prompt Injection Attack...** where AI Dispoistion is **True Positive**.
+Click on any record with title **GenAI Prompt Injection Attack...**, preferably one where AI Disposition is **True Positive**. The AI Disposition can take about 10 minutes to appear, and not every finding is judged True Positive.
 
 ![alt text](/images/image-154.png)
 
@@ -325,16 +326,16 @@ Click on **Response**.
 
 ![alt text](/images/image-184.png)
 
-The response plan that you previously created has been automatically attached to this investigation.
+If the response plan you created is not already attached, click **+ Response**, select **Prompt Injection Attack - Investigation and Response**, and click **Submit**.
 
 Automated actions, such as disabling the user's account, can be triggered from the response plan.
 
-**Note:** Because this is a synthetic user, trigger the disable will result in an error.
+**Note:** Because this is a synthetic user, triggering the disable action will result in an error.
 
 ## Outcome
 
 - The logs are **immutable** and complete. Every turn carries full governance metadata — auditability you can defend.
-- One search, one identifier, the whole story: what was asked, what the model said, what Splunk Agent Observability scored, what AI Defense ruled, what the detection pipelines flagged.
+- One search per actor, the whole story: what was asked, what the model said, what AI Defense ruled, and what the detection flagged.
 - The injection attempt didn't just get blocked — it left **evidence**, and that evidence became **accountable casework**: a named actor, an owner, and a documented disposition. That correlated record is exactly what Enterprise Security would promote to a notable in production.
 
 The prompt injection turn is visible and flagged in the search results; the Prompt Injection dashboard shows the detection. The correlation search identifies the event, and then escalates a notable event as the evidence in Enterprise Security.

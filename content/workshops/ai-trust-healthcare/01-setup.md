@@ -6,18 +6,18 @@ weight      = 10
 aliases     = ["/setup.html", "/workshops/ai-governance/01-setup/", "/workshops/ai-governance-healthcare/01-setup/"]
 +++
 
-### 1. How to Access PseudoCo Assistant
+## 1. How to Access PseudoCo Assistant
 
 Go to the PseudoCo Assistant instance and enter the access code provided by the facilitator.
 
-### 2. How to Access Splunk Agent Observability & Splunk Observability Cloud
+## 2. How to Access Splunk Agent Observability & Splunk Observability Cloud
 
 You should have received an email with instructions on how to access your assigned Splunk Observability instance.
 
-### 3. How to Access Cisco AI Defense
+## 3. How to Access Cisco AI Defense
 
-You should have received an email with instructions on how to access Cisco AI Defense at **https://security.cisco.com/aidefense/overview/?enterpriseId=d87a65f7-f4f1-47ad-bdab-593226c85f3d**.
+You should have received an email with instructions on how to access Cisco AI Defense. Open the **[Cisco AI Defense console](https://security.cisco.com/aidefense/overview/?enterpriseId=d87a65f7-f4f1-47ad-bdab-593226c85f3d)**.
 
-### 5. How to Access Splunk
+## 4. How to Access Splunk Cloud {#5-how-to-access-splunk}
 
 You should have received an email with instructions on how to access your assigned Splunk Cloud instance.

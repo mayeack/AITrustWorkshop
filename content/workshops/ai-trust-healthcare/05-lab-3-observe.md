@@ -21,14 +21,14 @@ aliases     = ["/lab-3-observe.html", "/workshops/ai-governance/05-lab-3-observe
 <!-- persona:end -->
 
 {{% notice style="info" title="Objective" icon="target" %}}
-After applying the guardrail in Cisco AI Defense, the response is now compliant. However, latency has spiked beyond SLO. Use the Troubleshooting & Remediation Agent to trace the request end-to-end, isolate the bottleneck, and restore performance.
+After applying the guardrail in Cisco AI Defense, the response is now compliant. However, the service is now slowing down and returning errors. Use the AI Troubleshooting Agent to investigate the alert, identify the root cause, and restore performance.
 {{% /notice %}}
 
 ## Background
 
-Splunk Observability Cloud instruments the AI application the way you'd instrument any production service — using **OpenTelemetry traces** that follow a request end-to-end, across every agent, model, and operation. Every turn carries the same identity used to score quality in Lab 1 and to record the AI Defense verdict in Lab 2. Operations, quality, and forensics are not three datasets — they are three views of one trace.
+Splunk Observability Cloud instruments the AI application the way you'd instrument any production service — using **OpenTelemetry traces** that follow a request end-to-end, across every agent, model, and operation. The same turns you scored for quality in Lab 1 and screened with AI Defense in Lab 2 also appear here as traces and metrics, so operations, quality, and forensics live on one platform.
 
-The guardrail you applied in [Lab 2](/workshops/ai-trust-healthcare/04-lab-2-secure/) made the response compliant — but latency has now breached SLO. Here you trace that exact request, isolate the slow span, and let the **Troubleshooting & Remediation Agent** pinpoint the bottleneck — instead of grepping logs. AI reliability, cost, and quality are managed on the same screen, as one operational discipline.
+The guardrail you applied in [Lab 2](/workshops/ai-trust-healthcare/04-lab-2-secure/) made the response compliant — but the service is now slowing down and returning errors. Here you open the resulting alert and let the **AI Troubleshooting Agent** pinpoint the root cause — instead of grepping logs. AI reliability, cost, and quality are managed on the same screen, as one operational discipline.
 
 ## Labs
 
@@ -42,11 +42,11 @@ The guardrail you applied in [Lab 2](/workshops/ai-trust-healthcare/04-lab-2-sec
 
 ![alt text](/workshops/ai-trust-healthcare/image-27.png)
 
-Navigate to **Alerts -> Active Alerts**.
+Navigate to **Alerts -> Active alerts**.
 
 ![alt text](/workshops/ai-trust-healthcare/image-28.png)
 
-The Active alerts view is the incident command center for the AI application — it consolidates every firing alert into one prioritized queue, ranked by severity, so teams know instantly what's broken, how badly, and where to act first.
+The Active alerts view is the incident command center for the AI application — it consolidates every firing alert into one prioritized queue, ranked by severity, so teams know instantly what's broken, how badly, and where to act first. This workshop org is shared, so you will also see alerts from other services.
 
 #### 3.1.3 Generate Latency Incident
 
@@ -54,17 +54,17 @@ The Active alerts view is the incident command center for the AI application —
 
 Go to PseudoCo Assistant, and open the left side-panel.
 
-Toggle **Trigger Demo Incident** on to trigger a series of alerts.
+Toggle **Trigger Demo Incident** on to trigger a series of alerts. With the default values it adds 20 s latency and 50% errors for 600 s for everyone on the instance. Alerts can take a few minutes to appear; if none appear after 5 minutes, let your instructor know.
 
 #### 3.1.4 Triage and Resolve an Alert
 
 ![alt text](/workshops/ai-trust-healthcare/image-30.png)
 
-Return to Observability Cloud, and click on any alert corresponding to the environment you previously selected, e.g. "sf_environment: pseudoco-assistant-ec2-1" in **Signal properties**.
+Return to Observability Cloud. In **Active alerts**, set **Service** to **demobot-v3**, then click any alert. Its signal details should show "sf_environment=demobot-ec2-1, sf_service=demobot-v3".
 
 ![alt text](/workshops/ai-trust-healthcare/image-31.png)
 
-You might need to toggle **AI Troubleshooting Agent** to **On**.
+You might need to toggle **AI Troubleshooting Agent** to **On**. The root cause analysis can take a few minutes to appear.
 
 ![alt text](/workshops/ai-trust-healthcare/image-32.png)
 
@@ -84,15 +84,15 @@ Troubleshooting tools (Runbooks, Related content, Data links) — Connects the a
 
 ![alt text](/workshops/ai-trust-healthcare/image-34.png)
 
-Because we triggered the alert synthetically, there is nothing to fix. Go ahead and click **Resolve alert**.
+Because we triggered the alert synthetically, there is nothing to fix. Go ahead and click **Resolve alert**. Once everyone on your instance is done, return to PseudoCo Assistant and toggle **Trigger Demo Incident** off. Resolving the alert does not stop the incident; it slows every chat on the instance until it is off or its 600 s run ends.
 
 ## Outcome
 
-A latency spike was traced to its exact cause — and resolved — without reading a single log line. The slow request was isolated, diagnosed by an AI agent, and performance returned to baseline.
+A latency and error spike was diagnosed by an AI agent — without reading a single log line — and resolved. Once the demo incident was switched off, performance returned to baseline.
 
-- **One platform, one turn.** The slow turn in APM is the *same* turn as the audit log and the quality score — operations, quality, and
+- **One platform, three views.** APM, the audit log, and the quality scores all describe the same AI service — operations, quality, and forensics in one place.
   forensics share one identity.
-- **The agent traces; you don't grep.** A Troubleshooting & Remediation Agent follows the request end-to-end and points at the bottleneck automatically.
+- **The agent investigates; you don't grep.** The AI Troubleshooting Agent works the alert end to end and points at the root cause automatically.
 - **Cost and latency, on the very same turn.** Observe shows token spend and latency on the very turns Splunk Agent Observability already scored for quality — not in a separate dashboard.
 
 <!-- exec-outcome:start -->

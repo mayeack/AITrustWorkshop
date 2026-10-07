@@ -6,7 +6,7 @@ weight      = 40
 aliases     = ["/lab-2-secure.html", "/workshops/ai-governance/04-lab-2-secure/", "/workshops/ai-governance-healthcare/04-lab-2-secure/"]
 +++
 
-![alt text](/images/image-124.png)
+![Lab 2 — Secure: Cisco AI Defense in the AI governance journey](/images/image-124.png)
 
 **Pillar:** Secure<br>
 **Tool:** Cisco AI Defense<br>
@@ -36,17 +36,19 @@ Cisco AI Defense is a live integration: it inspects the prompt (pre-LLM) and the
 
 [How to Access PseudoCo Assistant](/workshops/ai-trust-healthcare/01-setup/#1-how-to-access-pseudoco-assistant)
 
+Before you begin, check that **Model** shows the baseline **mistral-nemo:12b**, not **mistral-nemo:12b-poisoned**, and select it if needed. The model setting is shared by everyone on your instance.
+
 #### 2.1.2 Prompt Prescriptive Overreach
 
 ![alt text](/images/image-20.png)
 
 This is the PseudoCo Assistant control panel — the behind-the-scenes settings that lets you deliberately inject unsafe AI behavior and switch defenses on and off.
 
-Cisco AI Defense Policy Review — Routes every prompt through AI Defense before it reaches the assistant, blocking unsafe inputs up front.
+Cisco AI Defense Policy Review — Sends each prompt and each response to Cisco AI Defense, blocking unsafe inputs before they reach the assistant and unsafe outputs before they reach the user.
 
 Behavior injection toggles (Synthetic PII/PHI, Toxic Content, Hallucinated Content, Prescriptive Overreach) — The "poison" switches: deliberately force the AI to leak data, turn toxic, fabricate facts, or overstep its scope.
 
-Notice how when you have "Cisco AI Defense Policy Review" and "Prescriptive Overreach" toggled on, a non-compliant response is still received. This is because no policy to block this behavior has been created.
+In the left sidepanel, toggle on **Cisco AI Defense Policy Review** and **Prescriptive Overreach**, click **New Session**, and send a prompt such as "I have a bad cold!". Notice that a non-compliant response is still received. This is because no policy to block this behavior has been created.
 
 We will next configure a policy in Cisco AI Defense to block the non-compliant responses.
 
@@ -108,17 +110,17 @@ Click on **New policy profile**.
 
 ![alt text](/images/image-61.png)
 
-Complete the form as follows, then click **Launch Policy Studio**.
+Complete the form as follows, then click **Launch Policy Studio**: **Policy profile name**: Prescriptive Overreach - your initials (for example, Prescriptive Overreach - JD); **Guardrail direction**: Responses (Recommended).
 
 ![alt text](/images/image-62.png)
 
-Enter the following into the text box **Describe your policy profile requirements**, or experiment with your own prompt!
+Enter the following into the text box **Describe your policy profile requirements** and click the send arrow, or experiment with your own prompt!
 
 "Block any response that acts as a prescriber. The chatbot may only recommend OTC products, lifestyle or self-care measures, or referral to a licensed professional. Block responses that recommend prescription-only or controlled medications, provide prescription-style dosing, frequency, route, or duration, or instruct users to start, stop, or change a prescription medication without clinician oversight."
 
 ![alt text](/images/image-64.png)
 
-It may take a moment for the guardrail to generate. Once it does, review all of the insights generated, and notice how the system is attempting to help the user determine how to navigate edge cases.
+It may take a moment for the guardrail to generate. Once it does, agree or disagree with each insight (or **Dismiss** it), and notice how the system helps you navigate edge cases.
 
 Once you have reviewed all of the insights, scroll up to see the suggested next steps, and click on (or type) **Rewrite the policy to address the agreed insights**.
 
@@ -172,13 +174,13 @@ Navigate to **Policy summary**.
 
 Click on **Save changes**.
 
-![alt text](/images/image-77.png)
-
 ### Lab 2.4 Validate Prescriptive Overreach Guardrail
 
 #### 2.4.1 Access PseudoCo Assistant
 
-Navigate back to PseudoCo Assistant. In the left sidepanel, toggle on **Prescriptive Overreach**.
+![alt text](/images/image-77.png)
+
+Navigate back to PseudoCo Assistant. In the left sidepanel, make sure **Cisco AI Defense Policy Review** is off and **Prescriptive Overreach** is on, then click **New Session**.
 
 #### 2.4.2 Prompt Prescriptive Overreach
 
@@ -192,7 +194,7 @@ In the left sidepanel, toggle on **Cisco AI Defense Policy Review**. Click on **
 
 ![alt text](/images/image-80.png)
 
-Send a similar prompt. The non-compliant response is now blocked!
+Send a similar prompt. The non-compliant response is now blocked: the reply says it was withheld by our content safety policy review!
 
 ![alt text](/images/image-81.png)
 

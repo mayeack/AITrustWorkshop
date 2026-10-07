@@ -52,7 +52,7 @@ Select **ollama** in **Provider**. PseudoCo Assistant is pre-loaded with two mod
 
 ![alt text](/workshops/ai-trust-healthcare/image-2.png)
 
-The left sidepanel also has a number of controls to force non-compliant behavior.
+Click the **>** tab on the left edge to open **Demo Controls**, which has a number of toggles to force non-compliant behavior.
 
 Explore sending sample prompts to both the baseline and the poisoned model (via the model picker), and observe the difference in responses. We review how these differential responses can be automatically identified by Splunk Agent Observability.
 
@@ -88,7 +88,7 @@ Click on the project **PseudoCo Assistant**.
 
 Each section of the Overview dashboard turns AI development into a measurable, evidence-backed discipline — testing safety, comparing versions objectively, and maintaining a defensible record of quality.
 
-Log Streams — Captures live records of how the AI application behaves in real use, providing a continuous audit trail for monitoring quality and catching issues in production.
+Agent Streams — Captures live records of how the AI application behaves in real use, providing a continuous audit trail for monitoring quality and catching issues in production.
 
 Playgrounds — A sandbox for safely experimenting with prompts and model behavior, helping the team iterate and innovate without touching the live system.
 
@@ -110,17 +110,17 @@ Click on **PseudoCo Assistant** under **Agent Streams**.
 
 The **Agent Stream**  turns every live AI conversation into a graded, searchable record — the continuous audit trail that proves the application is behaving safely in production.
 
-Logs — The running ledger of real user interactions, capturing what went in and what the AI sent back. This is the system of record that makes behavior observable and reviewable rather than a black box.
+Traces — The running ledger of real user interactions, capturing what went in and what the AI sent back. This is the system of record that makes behavior observable and reviewable rather than a black box.
 
 Automated scoring (such as Output Toxicity, Prescriptive Overreach, Output PII) — Every response is auto-graded against safety and quality measures, including custom risk checks tuned to this use case. This is the core value: thousands of interactions evaluated without human review, with weak responses surfaced automatically for attention. You can click on each metric to understand the cost. Notice the significant cost difference between metrics computed using Luna (SLM) and frontier lab models.
 
-Click on any log.
+Click on any trace. Other participants' turns share this stream, so look for your own prompt in the **Input** column.
 
 ![alt text](/workshops/ai-trust-healthcare/image-12.png)
 
 This single-trace view is the microscope of the platform — it opens up one AI conversation end to end, showing exactly how a multi-step agent produced its answer and how that answer scored on quality and safety.
 
-Trace tree (Session → chat turn → agents) — Exposes the full chain of reasoning behind one response, including the specialist agents and underlying model that handled it. This turns a single answer into a traceable, explainable record — essential when you need to prove why the AI said what it said.
+Trace tree (chat turn → agents) — Exposes the full chain of reasoning behind one response, including the agents and underlying model that handled it. This turns a single answer into a traceable, explainable record — essential when you need to prove why the AI said what it said.
 
 Input / Output panel — Shows the exact user request and the verbatim response side by side. This is the ground truth for any review, audit, or dispute — what was actually asked, and what was actually returned.
 
@@ -192,7 +192,7 @@ Click on any agent.
 
 Each agent has individual metrics, such as latency, cost, or token consumption.
 
-### 1.2.7 Review Alerts
+#### 1.2.7 Review Alerts
 
 ![alt text](/workshops/ai-trust-healthcare/image-20.png)
 
@@ -212,7 +212,7 @@ Alerts can be configured to trigger based on the output of any evaluator. Alerts
 
 ![alt text](/workshops/ai-trust-healthcare/image-16.png)
 
-Click on **Agent Observability -> Metrics**.
+Click on **Agent Observability -> Evaluators**.
 
 ![alt text](/workshops/ai-trust-healthcare/image-23.png)
 
@@ -220,7 +220,7 @@ The Evaluators catalog is the rulebook for how every AI is graded — a central,
 
 Type (Luna, LLM) — Shows what does the grading — a fast lightweight evaluator (Luna) or a full language model. This lets the business balance cost and speed against depth, choosing the right rigor for each measure.
 
-Level (Trace, Session, LLM, Retriever) — Defines where each Evaluators applies — a single step, a whole conversation, or a specific component. Precision here means problems get measured at exactly the layer they occur.
+Level (Trace, Session, LLM, Retriever) — Defines where each evaluator applies — a single step, a whole conversation, or a specific component. Precision here means problems get measured at exactly the layer they occur.
 
 Tags & Modality — Organize the library by purpose (agents, RAG, safety) and data type. As the catalog grows, this is what keeps it navigable and manageable rather than a sprawl.
 
@@ -256,7 +256,7 @@ The journey walks through six capabilities that make trust measurable:
 
 **Prove before shipping** — Experiments rank model versions head-to-head on a fixed benchmark, producing objective evidence of which configuration is safest — and reliably flagging the poisoned model.
 
-**Standardize** — A central Metrics catalog defines what "good" and "safe" mean once and applies it everywhere, with each metric authored as a precise, version-controlled rubric.
+**Standardize** — A central Evaluators catalog defines what "good" and "safe" mean once and applies it everywhere, with each evaluator authored as a precise, version-controlled rubric.
 
 The takeaway: AI risk becomes quantifiable and auditable. Safety, quality, and cost are measured continuously and automatically — at scale, without human review of every interaction — giving the business the defensible evidence it needs to deploy AI with confidence.
 

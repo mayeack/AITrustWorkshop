@@ -6,7 +6,7 @@ weight      = 20
 aliases     = ["/section-0-overview.html", "/workshops/ai-governance/02-overview/", "/workshops/ai-governance-healthcare/02-overview/"]
 +++
 
-![alt text](/images/image-122.png)
+![The AI Governance Journey: Splunk baseline, then Labs 1–4](/images/image-122.png)
 
 **Pillar:** AI Governance Overview<br>
 **Tool:** Splunk<br>
@@ -21,7 +21,7 @@ The **CIO / CTO** and **AI Governance leaders** who need the whole AI program on
 <!-- persona:end -->
 
 {{% notice style="info" title="Objective" icon="target" %}}
-Establish the thesis: every turn — and the quality and security scores that make it trustworthy — lives in one view, and you drill from there into any pillar.
+Establish the thesis: every turn — with its usage, cost, and safety signals — lives in one view, and every pillar that follows builds on it.
 {{% /notice %}}
 
 ## Background
@@ -47,27 +47,27 @@ One dataset. Every pillar. That's what lets a leader go from a number on the scr
 
 ### 2. Navigate to AI Governance App
 
-![alt text](/images/image-138.png)
+![Splunk Cloud home page with AI Governance in the Apps side panel](/images/image-138.png)
 
 In the left side-panel to view all apps, and click on **AI Governance**.
 
 ### 3. Review AI Governance Overview Dashboard
 
-![alt text](/images/image-139.png)
+![AI Governance Dashboards menu with AI Governance Overview selected](/images/image-139.png)
 
-From the dropdown, select to **Dashboards -> AI Governance Overview**.
+The app opens on **AI Governance Overview**. If it doesn't, select **Dashboards > AI Governance Overview**.
 
-![alt text](/images/image-140.png)
+![AI Governance Overview: Key Performance Indicators, Safety & Compliance Metrics, and Trend Analysis](/images/image-140.png)
 
-The AI Governance Overview is the single-pane executive scorecard for AI across the enterprise — it consolidates usage, cost, performance, and risk into board-level numbers, complementing the deep per-conversation analysis with a top-down view spanning every model, app, and session.
+The AI Governance Overview is the single-pane executive scorecard for AI across the enterprise — it consolidates usage, cost, performance, and risk into board-level numbers, complementing the per-conversation analysis you'll do in Lab 1 with a top-down view spanning every model, app, and session.
 
 Key Performance Indicators (Requests, Sessions, Token Usage, Cost, Latency) — The vital signs of the AI footprint: how much it's used, what it costs, and how fast it responds. These are the figures an executive tracks to know the program is healthy and spend is under control.
 
 Safety & Compliance Metrics (Safety Violations, PII Detected, Policy Blocked, Guardrails Triggered, Retries) — The risk dashboard in one row: how often the AI crossed a line and how often the guardrails caught it. This is the proof that controls are active and working — and a live count of exposure.
 
-Trend Analysis (Request Volume, Token Usage over time) — Plots demand and consumption over time, so growth, spikes, and anomalies are visible at a glance. This is the early-warning view for both cost and unusual activity.
+Trend Analysis (Request Volume, Token Usage, and Latency over time) — Plots demand and consumption over time, so growth, spikes, and anomalies are visible at a glance. This is the early-warning view for both cost and unusual activity.
 
-![alt text](/images/image-141.png)
+![AI Governance Overview: Cost Analysis, Service Analysis, and Model Analysis panels](/images/image-141.png)
 
 Cost Analysis (Cost Over Time, Cost by Service) — Shows when money is spent and which service drives it. The value is attribution: cost stops being a lump sum and becomes traceable to the application responsible, so spend can be owned and controlled.
 
@@ -75,15 +75,15 @@ Service Analysis (Requests by Service, Performance Comparison) — Ranks service
 
 Model Analysis (Model Usage Statistics) — Breaks activity down by the specific model behind it. The value is a clear inventory of what's running where — essential for governing which models are approved and in use.
 
-![alt text](/images/image-142.png)
+![AI Governance Overview: Session Analysis, Status & Errors, and Recent AI Requests panels](/images/image-142.png)
 
 Session Analysis (Session Activity) — Drills to the individual user session, with its interactions, cost, tokens, and latency. This is the bridge back to the human experience — letting you trace an anomaly all the way down to a single conversation.
 
 Status & Errors (Status Outcome, Errors by Service) — Shows the mix of successful versus blocked or violating responses, and which service generates the most errors. The value is a clean read on whether the AI is mostly behaving — and a finger pointed at the worst-offending service when it isn't.
 
-Recent AI Requests (Detailed Log) — The raw, timestamped record of individual requests with their model, tokens, cost, and safety flags. This is the ground-truth evidence layer — proof that every headline number traces back to real, inspectable events.
+Recent AI Requests (Detailed Log) — The raw, timestamped record of individual requests with their model, tokens, cost, and safety flags. This is the ground-truth evidence layer — proof that every headline number traces back to real, inspectable events. To see the raw events behind any panel, hover over it and click the **Open in search** (magnifying glass) icon.
 
-![alt text](/images/image-143.png)
+![AI Governance Overview: Compliance Summary panel](/images/image-143.png)
 
 Compliance Summary (Safety Compliance %) — Rolls everything into the one figure leadership and auditors care about: the share of events that passed safely. This is the board-level headline — a defensible, quantified compliance posture rather than an assurance.
 
@@ -99,7 +99,7 @@ The takeaway: AI is no longer a black box trusted on faith. It's a measurable, a
 <!-- exec-outcome:start -->
 
 {{% notice style="info" title="Executive outcome" icon="star" %}}
-**Executive outcome - Unified Visibility & Control.** You see the posture of the AI program at a glance — and know that any number on the screen is one click from the evidence behind it.
+**Executive outcome — Unified Visibility & Control.** You see the posture of the AI program at a glance — and know that any number on the screen is one click from the evidence behind it.
 {{% /notice %}}
 
 <!-- exec-outcome:end -->
