@@ -21,16 +21,20 @@ The **CISO** and **AI Security / AppSec** teams. Primary question: _Is our AI sa
 <!-- persona:end -->
 
 {{% notice style="info" title="Objective" icon="target" %}}
-Turn the Lab 1 finding into enforcement: a medical-advice response is **non-compliant**; you update the runtime policy and re-run to ensure a **trusted** response.
+Turn the Lab 1 finding into enforcement: a response that oversteps the assistant's authority is **non-compliant**; you update the runtime policy and re-run to ensure a **trusted** response.
 {{% /notice %}}
 
 ## Background
 
-Cisco AI Defense is a live integration: it inspects the prompt (pre-LLM) and the response (post-LLM) against **multiple guardrails** and blocks non-compliant content. The **Prescriptive Overreach** finding measured in [Lab 1](/workshops/ai-trust-healthcare/03-lab-1-measure/) is authored here as a **custom response-direction guardrail**.
+Cisco AI Defense is a live integration: it inspects the prompt (pre-LLM) and the response (post-LLM) against **multiple guardrails** and blocks non-compliant content. The outside-of-authority finding measured in [Lab 1](/workshops/ai-trust-healthcare/03-lab-1-measure/) is authored here as a **custom response-direction guardrail**.
+
+{{% expand title="The Guardrail - Healthcare" %}}
+In healthcare, the finding is **Prescriptive Overreach**, and this lab builds a guardrail that blocks it.
+{{% /expand %}}
 
 ## Labs
 
-### Lab 2.1 Prompt Prescriptive Overreach in PseudoCo Assistant
+### Lab 2.1 Prompt an Outside-of-Authority Response in PseudoCo Assistant
 
 #### 2.1.1 Access PseudoCo Assistant
 
@@ -38,7 +42,7 @@ Cisco AI Defense is a live integration: it inspects the prompt (pre-LLM) and the
 
 Before you begin, check that **Model** shows the baseline **mistral-nemo:12b**, not **mistral-nemo:12b-poisoned**, and select it if needed. The model setting is shared by everyone on your instance.
 
-#### 2.1.2 Prompt Prescriptive Overreach
+#### 2.1.2 Prompt an Outside-of-Authority Response
 
 ![alt text](/images/image-20.png)
 
@@ -46,9 +50,13 @@ This is the PseudoCo Assistant control panel — the behind-the-scenes settings 
 
 Cisco AI Defense Policy Review — Sends each prompt and each response to Cisco AI Defense, blocking unsafe inputs before they reach the assistant and unsafe outputs before they reach the user.
 
-Behavior injection toggles (Synthetic PII/PHI, Toxic Content, Hallucinated Content, Prescriptive Overreach) — The "poison" switches: deliberately force the AI to leak data, turn toxic, fabricate facts, or overstep its scope.
+Behavior injection toggles (Synthetic PII, Toxic Content, Hallucinated Content, Outside of Authority) — The "poison" switches: deliberately force the AI to leak data, turn toxic, fabricate facts, or overstep its scope.
 
-In the left sidepanel, toggle on **Cisco AI Defense Policy Review** and **Prescriptive Overreach**, click **New Session**, and send a prompt such as "I have a bad cold!". Notice that a non-compliant response is still received. This is because no policy to block this behavior has been created.
+In the left sidepanel, toggle on **Cisco AI Defense Policy Review** and the **Outside of Authority** toggle, click **New Session**, and send a prompt. Notice that a non-compliant response is still received. This is because no policy to block this behavior has been created.
+
+{{% expand title="Toggle and Sample Prompt - Healthcare" %}}
+Toggle on **Prescriptive Overreach** and send a prompt such as "I have a bad cold!".
+{{% /expand %}}
 
 We will next configure a policy in Cisco AI Defense to block the non-compliant responses.
 
@@ -98,7 +106,7 @@ Filter strength (Medium) — A tunable dial on how aggressively each rule fires.
 
 ### Lab 2.3 Create Probabilistic Policies
 
-#### 2.3.1 Create Prescriptive Overreach Guardrail
+#### 2.3.1 Create an Outside-of-Authority Guardrail
 
 ![alt text](/images/image-59.png)
 
@@ -110,13 +118,19 @@ Click on **New policy profile**.
 
 ![alt text](/images/image-61.png)
 
-Complete the form as follows, then click **Launch Policy Studio**: **Policy profile name**: Prescriptive Overreach - your initials (for example, Prescriptive Overreach - JD); **Guardrail direction**: Responses (Recommended).
+Complete the form as follows, then click **Launch Policy Studio**: **Policy profile name**: your industry's guardrail name followed by your initials; **Guardrail direction**: Responses (Recommended).
+
+{{% expand title="Policy Profile Name - Healthcare" %}}
+**Policy profile name**: Prescriptive Overreach - your initials (for example, Prescriptive Overreach - JD).
+{{% /expand %}}
 
 ![alt text](/images/image-62.png)
 
-Enter the following into the text box **Describe your policy profile requirements** and click the send arrow, or experiment with your own prompt!
+Enter your industry's policy requirements into the text box **Describe your policy profile requirements** and click the send arrow, or experiment with your own prompt!
 
+{{% expand title="Policy Requirements - Healthcare" %}}
 "Block any response that acts as a prescriber. The chatbot may only recommend OTC products, lifestyle or self-care measures, or referral to a licensed professional. Block responses that recommend prescription-only or controlled medications, provide prescription-style dosing, frequency, route, or duration, or instruct users to start, stop, or change a prescription medication without clinician oversight."
+{{% /expand %}}
 
 ![alt text](/images/image-64.png)
 
@@ -174,19 +188,19 @@ Navigate to **Policy summary**.
 
 Click on **Save changes**.
 
-### Lab 2.4 Validate Prescriptive Overreach Guardrail
+### Lab 2.4 Validate the Outside-of-Authority Guardrail
 
 #### 2.4.1 Access PseudoCo Assistant
 
 ![alt text](/images/image-77.png)
 
-Navigate back to PseudoCo Assistant. In the left sidepanel, make sure **Cisco AI Defense Policy Review** is off and **Prescriptive Overreach** is on, then click **New Session**.
+Navigate back to PseudoCo Assistant. In the left sidepanel, make sure **Cisco AI Defense Policy Review** is off and the **Outside of Authority** toggle is on, then click **New Session**.
 
-#### 2.4.2 Prompt Prescriptive Overreach
+#### 2.4.2 Prompt an Outside-of-Authority Response
 
 ![alt text](/images/image-78.png)
 
-Send any prompt, and notice how the agent response contains prescriptive overreach.
+Send any prompt, and notice how the agent response oversteps the assistant's authority.
 
 ![alt text](/images/image-79.png)
 
@@ -198,7 +212,7 @@ Send a similar prompt. The non-compliant response is now blocked: the reply says
 
 ![alt text](/images/image-81.png)
 
-In the left sidepanel, toggle off **Prescriptive Overreach**. Click on **New Session**.
+In the left sidepanel, toggle off the **Outside of Authority** toggle. Click on **New Session**.
 
 ![alt text](/images/image-82.png)
 
@@ -206,7 +220,7 @@ Send a similar prompt. Compliant responses are not blocked.
 
 ## Outcome
 
-A risky medical response went from **non-compliant to trusted**. The unsafe output never reached the user; the policy was authored and tuned on the spot; the fix was re-validated against the live app immediately.
+A risky out-of-authority response went from **non-compliant to trusted**. The unsafe output never reached the user; the policy was authored and tuned on the spot; the fix was re-validated against the live app immediately.
 
 - **Threats are stopped, not just seen.** Cisco AI Defense inspects every prompt and every response, and blocks what crosses the line in real time.
 - **Trust is a runtime control.** Policy is written and tuned the moment a gap appears — not filed as a quarterly change request.
@@ -215,7 +229,7 @@ A risky medical response went from **non-compliant to trusted**. The unsafe outp
 <!-- exec-outcome:start -->
 
 {{% notice style="info" title="Executive outcome" icon="star" %}}
-**Executive outcome — Trusted AI.** You turn written policy into machine-speed enforcement. Unsafe interactions can be detected and blocked before they create patient, regulatory, or reputational exposure, while controls can be continuously tuned as requirements and risks evolve.
+**Executive outcome — Trusted AI.** You turn written policy into machine-speed enforcement. Unsafe interactions can be detected and blocked before they create customer, regulatory, or reputational exposure, while controls can be continuously tuned as requirements and risks evolve.
 {{% /notice %}}
 
 <!-- exec-outcome:end -->

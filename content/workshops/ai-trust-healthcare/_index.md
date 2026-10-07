@@ -1,6 +1,6 @@
 +++
 title       = "Agentic AI Trust Workshop"
-linkTitle   = "AI Trust - Healthcare"
+linkTitle   = "AI Trust"
 description = "Delivering agentic AI trust end to end — measure, secure, observe, and govern every AI interaction."
 duration    = "4 hours 15 min"
 difficulty  = "intermediate"

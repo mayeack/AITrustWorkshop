@@ -26,7 +26,11 @@ Before you guard or operate anything, define and measure "good." You will run a 
 
 ## Background
 
-Splunk Agent Observability evaluates the **whole agent trace** and scores each turn against research-backed metrics (hallucination, context adherence, PII/PHI leakage, tool-selection quality) plus custom evaluators you define, such as Prescriptive Overreach. Evaluators can be run by **Luna** — Cisco's small, purpose-built evaluator models — so continuous LLM-as-judge scoring is affordable rather than a frontier-model bill.
+Splunk Agent Observability evaluates the **whole agent trace** and scores each turn against research-backed metrics (hallucination, context adherence, PII leakage, tool-selection quality) plus custom evaluators you define for your industry's risks. Evaluators can be run by **Luna** — Cisco's small, purpose-built evaluator models — so continuous LLM-as-judge scoring is affordable rather than a frontier-model bill.
+
+{{% expand title="Custom Evaluator - Healthcare" %}}
+In healthcare, the custom evaluator is **Prescriptive Overreach**, which flags responses that act as a prescriber.
+{{% /expand %}}
 
 Model evaluation, metric construction, and signal understanding is critical both to build trust in AI systems before deployment, and to monitor model drift over time.
 
@@ -60,11 +64,15 @@ Explore sending sample prompts to both the baseline and the poisoned model (via 
 
 Explore sending various aberrant prompts and triggering non-compliant behavior. At minimum:
 
-- Send a prompt with **Prescriptive Overreach** toggled on
-- Send a prompt with **Include Synthetic PII/PHI in Responses** toggled on
+- Send a prompt with the **Outside of Authority** toggle on (its label depends on your industry)
+- Send a prompt with **Include Synthetic PII in Responses** toggled on
 - Send a prompt with various PII, such as a phone number, email address, SSN, or address
 - Send a prompt with a toxic or aggressive tone
 - Send a prompt with a prompt injection attempt
+
+{{% expand title="Toggle Names - Healthcare" %}}
+In the MedAdvice (healthcare) theme, the Outside of Authority toggle is labelled **Prescriptive Overreach**, and the PII toggle is labelled **Include Synthetic PII/PHI in Responses**.
+{{% /expand %}}
 
 We will explore how this non-compliant behavior is monitored in subsequent sections.
 
@@ -112,7 +120,7 @@ The **Agent Stream**  turns every live AI conversation into a graded, searchable
 
 Traces — The running ledger of real user interactions, capturing what went in and what the AI sent back. This is the system of record that makes behavior observable and reviewable rather than a black box.
 
-Automated scoring (such as Output Toxicity, Prescriptive Overreach, Output PII) — Every response is auto-graded against safety and quality measures, including custom risk checks tuned to this use case. This is the core value: thousands of interactions evaluated without human review, with weak responses surfaced automatically for attention. You can click on each metric to understand the cost. Notice the significant cost difference between metrics computed using Luna (SLM) and frontier lab models.
+Automated scoring (such as Output Toxicity, Output PII, and your industry's custom evaluators) — Every response is auto-graded against safety and quality measures, including custom risk checks tuned to this use case. This is the core value: thousands of interactions evaluated without human review, with weak responses surfaced automatically for attention. You can click on each metric to understand the cost. Notice the significant cost difference between metrics computed using Luna (SLM) and frontier lab models.
 
 Click on any trace. Other participants' turns share this stream, so look for your own prompt in the **Input** column.
 
@@ -146,11 +154,13 @@ The Signals panel is the AI watching the AI — it scans every logged conversati
 
 Some example Signals (yours might vary):
 
+Hostile and Abusive Tone — Detects abusive or harassing language from the AI. A direct guard on brand safety and user trust.
+
+{{% expand title="Example Signals - Healthcare" %}}
 Fabricated Patient PII/PHI — Flags responses that expose personal data. This is a top-tier compliance and privacy risk, surfaced automatically so it can be contained before it becomes a breach.
 
 Systematic Fake Medication Hallucination — Catches invented medical claims and unauthorized prescriptions. For a health-facing assistant this is the highest-stakes failure mode, where a wrong answer can cause real harm and liability.
-
-Hostile and Abusive Tone — Detects abusive or harassing language from the AI. A direct guard on brand safety and user trust.
+{{% /expand %}}
 
 #### 1.2.5 Review Trends
 
@@ -224,19 +234,23 @@ Level (Trace, Session, LLM, Retriever) — Defines where each evaluator applies 
 
 Tags & Modality — Organize the library by purpose (agents, RAG, safety) and data type. As the catalog grows, this is what keeps it navigable and manageable rather than a sprawl.
 
-#### 1.3.2 Review Prescriptive Overreach Evaluator
+#### 1.3.2 Review a Custom Evaluator
 
+Open the custom evaluator for your industry.
+
+{{% expand title="Prescriptive Overreach Evaluator - Healthcare" %}}
 ![alt text](/workshops/ai-trust-healthcare/image-24.png)
 
 Search for **prescriptive_overreach**, and click on it.
 
 ![alt text](/workshops/ai-trust-healthcare/image-25.png)
+{{% /expand %}}
 
-This is where a safety standard gets authored — the editor for a custom Prescriptive Overreach Evaluator, showing how an abstract risk is turned into a precise, automated, repeatable test that every AI response is graded against.
+This is where a safety standard gets authored — the editor for a custom evaluator, showing how an abstract risk is turned into a precise, automated, repeatable test that every AI response is graded against.
 
 Configure Input (LLM model / Apply to) — Chooses which AI does the grading and what part of the conversation it judges. The value is deliberate control over how rigorous and how targeted the evaluation is.
 
-Prompt (the scoring rubric) — The heart of it: explicit instructions and graded anchors that define exactly what counts as a minor lapse versus an egregious violation. This converts a fuzzy worry — "is the bot making up medical facts?" — into a consistent, defensible score that doesn't drift with opinion. You can use the **Help me write** toggle to enhance your prompts.
+Prompt (the scoring rubric) — The heart of it: explicit instructions and graded anchors that define exactly what counts as a minor lapse versus an egregious violation. This converts a fuzzy worry — "is the bot making up facts?" — into a consistent, defensible score that doesn't drift with opinion. You can use the **Help me write** toggle to enhance your prompts.
 
 Configure Output (type & roll-up) — Sets how individual scores combine into a single number that rolls up across the whole experiment. This is what makes one response's grade aggregate into a board-level quality figure.
 
@@ -248,7 +262,7 @@ The journey walks through six capabilities that make trust measurable:
 
 **Monitor** — Logs capture every live AI interaction as a searchable, auto-graded audit trail, so production behavior is observable and reviewable rather than a black box.
 
-**Detect the unknown** — Signals surface risks no one thought to define (PII leakage, medical hallucinations, harassment), catching the "unknown unknowns" before they become incidents.
+**Detect the unknown** — Signals surface risks no one thought to define (PII leakage, hallucinations, harassment), catching the "unknown unknowns" before they become incidents.
 
 **Investigate** — Trace-level detail opens any single conversation end to end, providing a defensible case file of how and why the AI answered as it did.
 
@@ -260,7 +274,7 @@ The journey walks through six capabilities that make trust measurable:
 
 The takeaway: AI risk becomes quantifiable and auditable. Safety, quality, and cost are measured continuously and automatically — at scale, without human review of every interaction — giving the business the defensible evidence it needs to deploy AI with confidence.
 
-Now that we have identified the critical metric Prescriptive Overreach, let's operationalize that in **Cisco AI Defense**.
+Now that we have identified a critical custom metric for your industry, let's operationalize it in **Cisco AI Defense**.
 
 <!-- exec-outcome:start -->
 

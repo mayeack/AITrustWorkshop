@@ -8,7 +8,7 @@ aliases     = ["/wrap-up.html", "/workshops/ai-governance/07-wrap-up/", "/worksh
 
 ## Outcome
 
-**The gap.** Agentic AI is in production, deciding and talking to customers and patients at machine speed. Every interaction can leak PII or PHI, absorb an injection, fabricate an answer, or drift from what it was certified with — and each is *simultaneously* a security, operations, quality, and compliance event.
+**The gap.** Agentic AI is in production, deciding and talking to customers at machine speed. Every interaction can leak PII or other regulated data, absorb an injection, fabricate an answer, or drift from what it was certified with — and each is *simultaneously* a security, operations, quality, and compliance event.
 
 **The value.** One Cisco captures every AI interaction **once** and correlates it — so security, operations, quality, and audit become **one investigation, not four.**
 
@@ -16,7 +16,7 @@ aliases     = ["/wrap-up.html", "/workshops/ai-governance/07-wrap-up/", "/worksh
 | --- | --- | --- |
 | **Unified Visibility & Control** | See the posture of your AI program at a glance, with every material signal traceable to the evidence behind it. | AI Governance Overview Dashboard |
 | **Improved Outcomes** | Turn AI quality, safety, and cost into measurable operating metrics, establish a baseline before release, identify emerging risks in production, and continuously improve against evidence. | Splunk Agent Observability |
-| **Trusted AI** | Turn written policy into machine-speed enforcement, detecting and blocking unsafe interactions before they create patient, regulatory, or reputational exposure. | Cisco AI Defense |
+| **Trusted AI** | Turn written policy into machine-speed enforcement, detecting and blocking unsafe interactions before they create customer, regulatory, or reputational exposure. | Cisco AI Defense |
 | **Operational Excellence** | Move AI incidents faster from detection to root cause and resolution, reducing operational effort while protecting performance, user experience, and the economics of AI at scale. | Splunk Observability Cloud |
 | **Accountability & Evidence** | Make consequential AI interactions attributable, explainable, and actionable, with audit evidence available on demand and security findings flowing directly into AI-assisted investigation and response. | Splunk Enterprise Security |
 
