@@ -17,8 +17,9 @@ and everything else is generated from it:
                                          ../00 - Archive/collateral/ by default. Home's front
                                          matter supplies the title block (`# `, `### `, pillars);
                                          the Executive-outcome notice callouts are unwrapped back
-                                         to bare paragraphs and `/images/image-NN.png` paths go
-                                         back to relative.
+                                         to bare paragraphs, collapsible expand/details panels
+                                         become a bold lead line plus their content, and
+                                         `/images/image-NN.png` paths go back to relative.
   3. the five lab/overview pages       — each page's full Executive outcome is written between
                                          `<!-- exec-outcome:start -->` / `<!-- exec-outcome:end -->`
                                          markers, so it never drifts from the Introduction.
@@ -60,6 +61,8 @@ OUTCOME_TITLE = "Executive outcome"
 NOTICE_CLOSE = "{{% /notice %}}"
 MARK_START = "<!-- exec-outcome:start -->"
 MARK_END = "<!-- exec-outcome:end -->"
+PANEL_OPEN = re.compile(r"^\{\{%\s*(?:expand|details)\b(.*?)%\}\}\s*$")
+PANEL_CLOSE = re.compile(r"^\{\{%\s*/(?:expand|details)\s*%\}\}\s*$")
 
 for required in (INTRO, HOME):
     if not required.exists():
@@ -123,6 +126,16 @@ print(f"wrote {HOME} (front matter preserved; body = descriptor + "
 unwrapped = []
 in_notice = False
 for ln in rest:
+    # Collapsible panels ({{% expand %}} / {{% details %}}) read as plain content in the
+    # narrative: the panel title becomes a bold lead line and the shortcode tags drop out.
+    panel = PANEL_OPEN.match(ln)
+    if panel:
+        label = re.search(r'(?:title|summary)="([^"]*)"|^\s*"([^"]*)"', panel.group(1))
+        if label:
+            unwrapped.extend(["", f"**{label.group(1) or label.group(2)}**", ""])
+        continue
+    if PANEL_CLOSE.match(ln):
+        continue
     if ln.startswith("{{% notice"):
         if in_notice:
             sys.exit(f"{INTRO} nests notice callouts — cannot flatten them for the narrative")

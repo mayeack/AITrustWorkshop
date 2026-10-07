@@ -20,8 +20,7 @@ That gap — between the speed of agentic AI and the speed at which you can prov
 
 ---
 
-## The Scenario
-
+{{% expand title="The Scenario - Healthcare" %}}
 ![The Opportunity: Triage at Machine Cost - illustrative nurse-line deflection economics](/images/image-120.png)
 
 MedAdvice has demonstrated the value of agentic AI in healthcare: reducing the cost of routine patient interactions, accelerating access to guidance, and allowing skilled clinical staff to focus on higher-acuity cases where their expertise delivers the greatest impact.
@@ -33,6 +32,7 @@ That creates a compelling opportunity to improve both operating efficiency and p
 But scaling that value introduces material risk to the trust it depends on. Hallucinations, PII exposure, and prescriptive overreach can quickly turn an efficiency gain into a clinical, regulatory, or reputational event.
 
 **The value of MedAdvice can scale. So can the risk. Trust — proven, not assumed — is what makes the economics sustainable.**
+{{% /expand %}}
 
 ---
 
