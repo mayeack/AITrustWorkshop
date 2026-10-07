@@ -13,7 +13,8 @@ and everything else is generated from it:
                                          PRESERVED verbatim. The body is a LANDING PAGE, not the
                                          whole narrative: the italic descriptor plus the opening
                                          section ("The Problem") and nothing after it.
-  2. ../collateral/1 - narrative.md    — the narrative export for decks/collateral. Home's front
+  2. 1 - narrative.md                  — the narrative export for decks/collateral, written to
+                                         ../00 - Archive/collateral/ by default. Home's front
                                          matter supplies the title block (`# `, `### `, pillars);
                                          the Executive-outcome notice callouts are unwrapped back
                                          to bare paragraphs and `/images/image-NN.png` paths go
@@ -41,7 +42,8 @@ import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-DEFAULT_NARRATIVE = HERE.parent / "collateral" / "1 - narrative.md"
+# The collateral folder now lives in the project's "00 - Archive" folder.
+DEFAULT_NARRATIVE = HERE.parent / "00 - Archive" / "collateral" / "1 - narrative.md"
 
 narrative_path = Path(
     sys.argv[1] if len(sys.argv) > 1 else os.environ.get("NARRATIVE_MD", DEFAULT_NARRATIVE)
