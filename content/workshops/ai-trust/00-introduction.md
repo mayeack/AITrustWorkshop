@@ -3,7 +3,7 @@ title       = "Introduction"
 description = "Measured. Secured. Observable. Governed. Trusted. One Cisco, end to end."
 duration    = "15 min"
 weight      = 5
-aliases     = ["/workshops/ai-governance/00-introduction/", "/workshops/ai-governance-healthcare/00-introduction/"]
+aliases     = ["/workshops/ai-governance/00-introduction/", "/workshops/ai-governance-healthcare/00-introduction/", "/workshops/ai-trust-healthcare/00-introduction/"]
 +++
 
 *A field workshop for the executives accountable for AI — and the engineers who run it.*
@@ -51,7 +51,7 @@ The four pillars of trust — and the question each one answers:
 | **Observe** | *Is it reliable?* End-to-end tracing, latency, and cost | Splunk Observability Cloud |
 | **Govern** | *Is it accountable?* Immutable audit trail + forensics + security incident response | Splunk Core / Enterprise Security |
 
-![One Cisco Agentic AI Trust architecture diagram](/workshops/ai-trust-healthcare/image-26.png)
+![One Cisco Agentic AI Trust architecture diagram](/workshops/ai-trust/image-26.png)
 
 One Cisco Agentic AI Trust architecture: production AI traffic flows through Cisco Cloud Control, Cisco AI Defense, and Cisco Data Fabric into Splunk Observability Cloud and Splunk Core, with Splunk Agent Observability closing the continuous feedback loop back to the AI system — one cohesive architecture for delivering agentic AI trust.
 

@@ -3,7 +3,7 @@ title       = "Lab 2 — Secure"
 description = "Cisco AI Defense: turn the Lab 1 finding into a runtime guardrail and block non-compliant output live."
 duration    = "1 hour"
 weight      = 40
-aliases     = ["/lab-2-secure.html", "/workshops/ai-governance/04-lab-2-secure/", "/workshops/ai-governance-healthcare/04-lab-2-secure/"]
+aliases     = ["/lab-2-secure.html", "/workshops/ai-governance/04-lab-2-secure/", "/workshops/ai-governance-healthcare/04-lab-2-secure/", "/workshops/ai-trust-healthcare/04-lab-2-secure/"]
 +++
 
 ![Lab 2 — Secure: Cisco AI Defense in the AI governance journey](/images/image-124.png)
@@ -26,7 +26,7 @@ Turn the Lab 1 finding into enforcement: a response that oversteps the assistant
 
 ## Background
 
-Cisco AI Defense is a live integration: it inspects the prompt (pre-LLM) and the response (post-LLM) against **multiple guardrails** and blocks non-compliant content. The outside-of-authority finding measured in [Lab 1](/workshops/ai-trust-healthcare/03-lab-1-measure/) is authored here as a **custom response-direction guardrail**.
+Cisco AI Defense is a live integration: it inspects the prompt (pre-LLM) and the response (post-LLM) against **multiple guardrails** and blocks non-compliant content. The outside-of-authority finding measured in [Lab 1](/workshops/ai-trust/03-lab-1-measure/) is authored here as a **custom response-direction guardrail**.
 
 {{% expand title="The Guardrail - Healthcare" %}}
 In healthcare, the finding is **Prescriptive Overreach**, and this lab builds a guardrail that blocks it.
@@ -38,7 +38,7 @@ In healthcare, the finding is **Prescriptive Overreach**, and this lab builds a 
 
 #### 2.1.1 Access PseudoCo Assistant
 
-[How to Access PseudoCo Assistant](/workshops/ai-trust-healthcare/01-setup/#1-how-to-access-pseudoco-assistant)
+[How to Access PseudoCo Assistant](/workshops/ai-trust/01-setup/#1-how-to-access-pseudoco-assistant)
 
 Before you begin, check that **Model** shows the baseline **mistral-nemo:12b**, not **mistral-nemo:12b-poisoned**, and select it if needed. The model setting is shared by everyone on your instance.
 
@@ -64,7 +64,7 @@ We will next configure a policy in Cisco AI Defense to block the non-compliant r
 
 #### 2.2.1 Access Cisco AI Defense
 
-[Access Cisco AI Defense](/workshops/ai-trust-healthcare/01-setup/#3-how-to-access-cisco-ai-defense)
+[Access Cisco AI Defense](/workshops/ai-trust/01-setup/#3-how-to-access-cisco-ai-defense)
 
 #### 2.2.2 Review Dashboard
 

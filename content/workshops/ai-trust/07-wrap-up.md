@@ -3,7 +3,7 @@ title       = "Wrap-Up & Outcomes"
 description = "Four pillars, one integrated architecture, five executive outcomes."
 duration    = "5 min"
 weight      = 70
-aliases     = ["/wrap-up.html", "/workshops/ai-governance/07-wrap-up/", "/workshops/ai-governance-healthcare/07-wrap-up/"]
+aliases     = ["/wrap-up.html", "/workshops/ai-governance/07-wrap-up/", "/workshops/ai-governance-healthcare/07-wrap-up/", "/workshops/ai-trust-healthcare/07-wrap-up/"]
 +++
 
 ## Outcome

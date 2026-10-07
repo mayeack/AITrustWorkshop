@@ -3,7 +3,7 @@ title       = "AI Governance Overview"
 description = "The single pane of glass: usage, cost, risk, and compliance — every number one click from its evidence."
 duration    = "15 min"
 weight      = 20
-aliases     = ["/section-0-overview.html", "/workshops/ai-governance/02-overview/", "/workshops/ai-governance-healthcare/02-overview/"]
+aliases     = ["/section-0-overview.html", "/workshops/ai-governance/02-overview/", "/workshops/ai-governance-healthcare/02-overview/", "/workshops/ai-trust-healthcare/02-overview/"]
 +++
 
 ![The AI Governance Journey: Splunk baseline, then Labs 1–4](/images/image-122.png)
@@ -43,7 +43,7 @@ One dataset. Every pillar. That's what lets a leader go from a number on the scr
 
 ### 1. Access Splunk Cloud
 
-[How to Access Splunk](/workshops/ai-trust-healthcare/01-setup/#5-how-to-access-splunk)
+[How to Access Splunk](/workshops/ai-trust/01-setup/#5-how-to-access-splunk)
 
 ### 2. Navigate to AI Governance App
 

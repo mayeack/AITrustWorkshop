@@ -3,7 +3,7 @@ title       = "Lab 1 — Measure"
 description = "Splunk Agent Observability: evaluate different models, score them with Luna, and surface the unknown unknowns."
 duration    = "1 hour"
 weight      = 30
-aliases     = ["/lab-1-measure.html", "/workshops/ai-governance/03-lab-1-measure/", "/workshops/ai-governance-healthcare/03-lab-1-measure/"]
+aliases     = ["/lab-1-measure.html", "/workshops/ai-governance/03-lab-1-measure/", "/workshops/ai-governance-healthcare/03-lab-1-measure/", "/workshops/ai-trust-healthcare/03-lab-1-measure/"]
 +++
 
 ![alt text](/images/image-123.png)
@@ -40,9 +40,9 @@ Model evaluation, metric construction, and signal understanding is critical both
 
 #### 1.1.1 Access PseudoCo Assistant
 
-![alt text](/workshops/ai-trust-healthcare/image.png)
+![alt text](/workshops/ai-trust/image.png)
 
-[How to Access PseudoCo Assistant](/workshops/ai-trust-healthcare/01-setup/#1-how-to-access-pseudoco-assistant)
+[How to Access PseudoCo Assistant](/workshops/ai-trust/01-setup/#1-how-to-access-pseudoco-assistant)
 
 {{% notice warning "Important" %}}
 Because we are using an open weight model, ensure that you select **gpt-4o-mini** from the **Static Emission** dropdown so that tokenomics calculates correctly!
@@ -50,11 +50,11 @@ Because we are using an open weight model, ensure that you select **gpt-4o-mini*
 
 #### 1.1.2 Explore the Baseline vs the Poisoned Model
 
-![alt text](/workshops/ai-trust-healthcare/image-1.png)
+![alt text](/workshops/ai-trust/image-1.png)
 
 Select **ollama** in **Provider**. PseudoCo Assistant is pre-loaded with two models - one a baseline version, and one that has been intentionally poisoned to produce non-compliant responses, such as toxic content.
 
-![alt text](/workshops/ai-trust-healthcare/image-2.png)
+![alt text](/workshops/ai-trust/image-2.png)
 
 Click the **>** tab on the left edge to open **Demo Controls**, which has a number of toggles to force non-compliant behavior.
 
@@ -80,19 +80,19 @@ We will explore how this non-compliant behavior is monitored in subsequent secti
 
 #### 1.2.1 Access Splunk Agent Observability
 
-[How to Access Splunk Agent Observability & Splunk Observability Cloud](/workshops/ai-trust-healthcare/01-setup/#2-how-to-access-splunk-agent-observability--splunk-observability-cloud)
+[How to Access Splunk Agent Observability & Splunk Observability Cloud](/workshops/ai-trust/01-setup/#2-how-to-access-splunk-agent-observability--splunk-observability-cloud)
 
 #### 1.2.2 Review Overview
 
-![alt text](/workshops/ai-trust-healthcare/image-4.png)
+![alt text](/workshops/ai-trust/image-4.png)
 
 Click on **Agent Observability -> All projects**.
 
-![alt text](/workshops/ai-trust-healthcare/image-5.png)
+![alt text](/workshops/ai-trust/image-5.png)
 
 Click on the project **PseudoCo Assistant**.
 
-![alt text](/workshops/ai-trust-healthcare/image-6.png)
+![alt text](/workshops/ai-trust/image-6.png)
 
 Each section of the Overview dashboard turns AI development into a measurable, evidence-backed discipline — testing safety, comparing versions objectively, and maintaining a defensible record of quality.
 
@@ -110,11 +110,11 @@ Click on **PseudoCo Assistant** under **Agent Streams**.
 
 #### 1.2.3 Review Agent Stream
 
-![alt text](/workshops/ai-trust-healthcare/image-7.png)
+![alt text](/workshops/ai-trust/image-7.png)
 
 Click on **PseudoCo Assistant** under **Agent Streams**.
 
-![alt text](/workshops/ai-trust-healthcare/image-11.png)
+![alt text](/workshops/ai-trust/image-11.png)
 
 The **Agent Stream**  turns every live AI conversation into a graded, searchable record — the continuous audit trail that proves the application is behaving safely in production.
 
@@ -124,7 +124,7 @@ Automated scoring (such as Output Toxicity, Output PII, and your industry's cust
 
 Click on any trace. Other participants' turns share this stream, so look for your own prompt in the **Input** column.
 
-![alt text](/workshops/ai-trust-healthcare/image-12.png)
+![alt text](/workshops/ai-trust/image-12.png)
 
 This single-trace view is the microscope of the platform — it opens up one AI conversation end to end, showing exactly how a multi-step agent produced its answer and how that answer scored on quality and safety.
 
@@ -138,15 +138,15 @@ Feel free to explore the other tabs, such as **Latency** and **Trace Graph**.
 
 #### 1.2.4 Review Signals
 
-![alt text](/workshops/ai-trust-healthcare/image-13.png)
+![alt text](/workshops/ai-trust/image-13.png)
 
 Click the back arrow to return to the **Agent Stream**.
 
-![alt text](/workshops/ai-trust-healthcare/image-8.png)
+![alt text](/workshops/ai-trust/image-8.png)
 
 Click on the **Signals** button. 
 
-![alt text](/workshops/ai-trust-healthcare/image-9.png)
+![alt text](/workshops/ai-trust/image-9.png)
 
 Click on **Re-run signals** if no signals appear. 
 
@@ -164,11 +164,11 @@ Systematic Fake Medication Hallucination — Catches invented medical claims and
 
 #### 1.2.5 Review Trends
 
-![alt text](/workshops/ai-trust-healthcare/image-14.png)
+![alt text](/workshops/ai-trust/image-14.png)
 
 Click on **Trends**.
 
-![alt text](/workshops/ai-trust-healthcare/image-15.png)
+![alt text](/workshops/ai-trust/image-15.png)
 
 The Trends view is the over-time picture of AI quality and risk — it tracks whether the application is holding steady, improving, or drifting, turning a snapshot of scores into a story leadership can monitor like any other business metric.
 
@@ -188,31 +188,31 @@ Feel free to explore additional metric charts, such as those under **Safety Metr
 
 #### 1.2.6 Review Agent Graph
 
-![alt text](/workshops/ai-trust-healthcare/image-17.png)
+![alt text](/workshops/ai-trust/image-17.png)
 
 Click on **Agent Graph**.
 
-![alt text](/workshops/ai-trust-healthcare/image-18.png)
+![alt text](/workshops/ai-trust/image-18.png)
 
 The **Agent Graph** visualizes how AI agents coordinate across models and workflows, making complex agent behavior transparent, traceable, and easier to govern.
 
 Click on any agent.
 
-![alt text](/workshops/ai-trust-healthcare/image-19.png)
+![alt text](/workshops/ai-trust/image-19.png)
 
 Each agent has individual metrics, such as latency, cost, or token consumption.
 
 #### 1.2.7 Review Alerts
 
-![alt text](/workshops/ai-trust-healthcare/image-20.png)
+![alt text](/workshops/ai-trust/image-20.png)
 
 Click on **Alerts**.
 
-![alt text](/workshops/ai-trust-healthcare/image-21.png)
+![alt text](/workshops/ai-trust/image-21.png)
 
 Click on **Create alert**.
 
-![alt text](/workshops/ai-trust-healthcare/image-22.png)
+![alt text](/workshops/ai-trust/image-22.png)
 
 Alerts can be configured to trigger based on the output of any evaluator. Alerts can be fed into automated systems via email or Slack. For example, you could disable a system if cost exceeds a defined parameter.
 
@@ -220,11 +220,11 @@ Alerts can be configured to trigger based on the output of any evaluator. Alerts
 
 #### 1.3.1 Review Evaluators
 
-![alt text](/workshops/ai-trust-healthcare/image-16.png)
+![alt text](/workshops/ai-trust/image-16.png)
 
 Click on **Agent Observability -> Evaluators**.
 
-![alt text](/workshops/ai-trust-healthcare/image-23.png)
+![alt text](/workshops/ai-trust/image-23.png)
 
 The Evaluators catalog is the rulebook for how every AI is graded — a central, reusable library of scoring criteria that makes "good" and "safe" mean the same thing across every project and every team. As you have seen, Evaluators are leveraged at every point in the development and deployment lifecycle.
 
@@ -239,11 +239,11 @@ Tags & Modality — Organize the library by purpose (agents, RAG, safety) and da
 Open the custom evaluator for your industry.
 
 {{% expand title="Prescriptive Overreach Evaluator - Healthcare" %}}
-![alt text](/workshops/ai-trust-healthcare/image-24.png)
+![alt text](/workshops/ai-trust/image-24.png)
 
 Search for **prescriptive_overreach**, and click on it.
 
-![alt text](/workshops/ai-trust-healthcare/image-25.png)
+![alt text](/workshops/ai-trust/image-25.png)
 {{% /expand %}}
 
 This is where a safety standard gets authored — the editor for a custom evaluator, showing how an abstract risk is turned into a precise, automated, repeatable test that every AI response is graded against.

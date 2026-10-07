@@ -3,7 +3,7 @@ title       = "Lab 4 — Govern"
 description = "Splunk and Enterprise Security: immutable audit trail, prompt-injection detection, and accountable casework."
 duration    = "1 hour"
 weight      = 60
-aliases     = ["/lab-4-govern.html", "/workshops/ai-governance/06-lab-4-govern/", "/workshops/ai-governance-healthcare/06-lab-4-govern/"]
+aliases     = ["/lab-4-govern.html", "/workshops/ai-governance/06-lab-4-govern/", "/workshops/ai-governance-healthcare/06-lab-4-govern/", "/workshops/ai-trust-healthcare/06-lab-4-govern/"]
 +++
 
 ![alt text](/images/image-126.png)
@@ -38,11 +38,11 @@ You will stage a real prompt-injection attack against PseudoCo Assistant, watch 
 
 #### 4.1.1 Access Splunk Cloud
 
-[How to Access Splunk](/workshops/ai-trust-healthcare/01-setup/#5-how-to-access-splunk)
+[How to Access Splunk](/workshops/ai-trust/01-setup/#5-how-to-access-splunk)
 
 #### 4.1.2 Stage the Prompt Injection Spray
 
-[How to Access PseudoCo Assistant](/workshops/ai-trust-healthcare/01-setup/#1-how-to-access-pseudoco-assistant)
+[How to Access PseudoCo Assistant](/workshops/ai-trust/01-setup/#1-how-to-access-pseudoco-assistant)
 
 ![alt text](/images/image-127.png)
 

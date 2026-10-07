@@ -50,9 +50,9 @@ narrative_path = Path(
     sys.argv[1] if len(sys.argv) > 1 else os.environ.get("NARRATIVE_MD", DEFAULT_NARRATIVE)
 )
 # Slug of the vertical being built. Each verticalized workshop is its own section under
-# content/workshops/ (ai-trust-healthcare, ai-trust-finserv, …) so the URLs stay
+# content/workshops/ (ai-trust, ai-trust-open-weights, …) so the URLs stay
 # distinct; override with WORKSHOP_SLUG when generating a different vertical.
-WORKSHOP_SLUG = os.environ.get("WORKSHOP_SLUG", "ai-trust-healthcare")
+WORKSHOP_SLUG = os.environ.get("WORKSHOP_SLUG", "ai-trust")
 WORKSHOP_DIR = HERE / "content" / "workshops" / WORKSHOP_SLUG
 INTRO = WORKSHOP_DIR / "00-introduction.md"
 HOME = HERE / "content" / "_index.md"
