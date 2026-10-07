@@ -30,9 +30,13 @@ Detection and observability tell you *what happened*. Governance is about being 
 
 In the earlier labs, every AI interaction was logged with full governance metadata. That foundation is what makes this lab possible: an adversarial prompt-injection attempt isn't just blocked in the moment, it leaves a **permanent, immutable record** that can be reconstructed on demand.
 
-You will stage a real prompt-injection attack against PseudoCo Assistant, watch it surface in Splunk's Prompt Injection Detection dashboard, trace it back through the correlation search that defines *how* the threat is detected, and follow it into Enterprise Security as a notable event landing in an analyst's queue. The point is the **end-to-end chain**: a live attack becomes a measurable detection, turning a security incident into a defensible story with a clear owner and outcome.
+You will first prepare Enterprise Security for the attack: an investigation type with a response plan generated from a standard operating procedure, wired to the correlation search that defines *how* the threat is detected. Then you will stage a real prompt-injection attack against PseudoCo Assistant, watch it surface in Splunk's Prompt Injection Detection dashboard, and follow it into Enterprise Security as a finding that lands in an analyst's queue with its response plan already attached. The point is the **end-to-end chain**: a live attack becomes a measurable detection, turning a security incident into a defensible story with a clear owner and outcome.
 
 ## Labs
+
+{{% notice style="warning" title="Configure first, then attack" icon="route" %}}
+A finding takes the investigation type its detection carries **at the moment it fires**, and it fires about a minute after the first injection turn. Create the investigation type and response plan (4.1) and point the detection at it (4.2) **before** you stage the spray (4.3). A finding raised earlier keeps the type *default* and no response plan.
+{{% /notice %}}
 
 ### Lab 4.1 Create a Response Plan with the SOP Agent
 
@@ -40,9 +44,9 @@ You will stage a real prompt-injection attack against PseudoCo Assistant, watch 
 
 [How to Access Splunk](/workshops/ai-trust/01-setup/#5-how-to-access-splunk)
 
-![alt text](/images/image-146.png)
+#### 4.1.2 Create the Investigation Type and Response Plan
 
-#### 4.1.2 Create the Response Plan
+![alt text](/images/image-146.png)
 
 Click the Splunk logo in the top left to navigate home.
 
@@ -133,53 +137,9 @@ Click on the response plan you just created **Prompt Injection Attack - Investig
 
 Click **Save changes**.
 
-### Lab 4.2 Stage the Prompt Injection Spray Attack
+### Lab 4.2 Configure the Detection Search
 
-#### 4.2.1 Access Splunk Cloud
-
-[How to Access Splunk](/workshops/ai-trust/01-setup/#5-how-to-access-splunk)
-
-#### 4.2.2 Stage the Prompt Injection Spray
-
-[How to Access PseudoCo Assistant](/workshops/ai-trust/01-setup/#1-how-to-access-pseudoco-assistant)
-
-![alt text](/images/image-127.png)
-
-Ensure that **Cisco AI Defense Policy Review** is toggled on.
-
-Expand the left side-panel and make sure **Trigger Demo Incident** is off. 
-
-Under **Prompt Injection Spray**, set the duration to 300s and replace the default actor **t.nguyen** with a unique name (for example, your initials), then toggle **Prompt Injection Spray** on.
-
-#### 4.2.3 Investigate the Prompt Injection Spray
-
-![alt text](/images/image-185.png)
-
-Return to Splunk, and navigate to **AI Governance -> Dashboards -> Prompt Injection Detection**.
-
-![alt text](/images/image-145.png)
-
-Each section of the Prompt Injection Detection dashboard turns AI security into a measurable, governed discipline — proving the organization can detect, classify, and defend against adversarial attacks on its AI models.
-
-Total Scanned — Establishes the denominator of coverage: how much AI traffic is being inspected for attacks. It answers the first governance question — "are we even looking?" — and proves monitoring is comprehensive, not selective.
-
-Injections Detected, Injections by Severity, and Detection Rate — The headline count of adversarial prompt-injection attempts caught. This is the tangible evidence that the AI is under active threat and that defenses are working, translating an abstract risk into a tracked number leadership can act on.
-
-Detection Trend — Shows whether attack volume and detection are rising or falling over time, turning point-in-time alerts into a directional signal for emerging campaigns and capacity planning.
-
-Injections by Technique — Breaks attacks down by method, revealing how adversaries are trying to manipulate the AI. This intelligence drives where defenses and training need to be hardened next.
-
-Severity & Confidence Distribution — Shows how threats spread across severity levels and how sure the detection model is of its calls. Confidence is the audit lens — it separates high-certainty threats from noise and keeps the system's own judgment accountable.
-
-Top Injection Sources — Identifies where attacks originate, enabling blocking, rate-limiting, and attribution. Knowing the source converts passive detection into active defense.
-
-![alt text](/images/image-117.png)
-
-Recent Detections — A live, row-level audit trail of individual attacks for investigation and forensics — the defensible record that proves what happened, when, and how it was handled.
-
-### Lab 4.3 Configure the Detection Search
-
-#### 4.3.1 Review the Detection Search
+#### 4.2.1 Review the Detection Search
 
 ![alt text](/images/image-147.png)
 
@@ -213,7 +173,7 @@ Click **Save**.
 
 Click on the **sparkle** icon to expand the Security Assistant right sidepanel.
 
-#### 4.3.2 Review the Detection Builder Agent
+#### 4.2.2 Review the Detection Builder Agent
 
 ![alt text](/images/image-150.png)
 
@@ -226,7 +186,7 @@ App: TA-gen_ai_cim
 Detection type: Event-Based Detection
 
 Goal:
-Detect actor-centric prompt injection attacks in GenAI telemetry by identifying any actor with at least one prompt injection attempt in the last 24 hours, then correlating that actor’s full related GenAI activity into a single finding. Aggregate repeat injections, policy blocks, guardrail triggers, safety violations, PII exposure, anomalous prompts, targeted apps, targeted models, and distinct sessions. Create both a finding and risk-based output. This rule is the actor-centric companion to GenAI - Prompt Injection Attempt Detected.
+Detect actor-centric prompt injection attacks in GenAI telemetry by identifying any actor with at least one prompt injection attempt in the last 24 hours whose most recent attempt is under 5 minutes old, then correlating that actor’s full related GenAI activity into a single finding. Aggregate repeat injections, policy blocks, guardrail triggers, safety violations, PII exposure, anomalous prompts, targeted apps, targeted models, and distinct sessions. Create both a finding and risk-based output. This rule is the actor-centric companion to GenAI - Prompt Injection Attempt Detected.
 
 Description:
 Detects prompt injection attacks (guardrail-, policy-, or pattern-based) and correlates each attacker's full GenAI activity into a single notable: repeat injections, policy blocks, guardrail trips, safety violations, PII exposure, anomalous prompts, and the apps/models/sessions targeted. Actor-centric companion to "GenAI - Prompt Injection Attempt Detected" (which is app-centric, ML-pipeline based). Seeded from event 858b92e6-9f26-49d9-aa53-ec48ad2884ef (Cisco AI Defense block of user x.collins). Raises a notable plus risk (RBA) against the offending identity and source address.
@@ -241,7 +201,7 @@ Trigger type: number of events
 Comparator: greater than
 Threshold: 0
 Throttling
-Throttle window: 86400s
+Throttle window: 600s
 Throttle by field: actor
 Finding output
 Enable finding output with:
@@ -291,6 +251,48 @@ Click **Explain this Detection**, or otherwise chat with the Detection Builder a
 ![alt text](/images/image-151.png)
 
 Review the explanation provided by the agent.
+
+### Lab 4.3 Stage the Prompt Injection Spray Attack
+
+#### 4.3.1 Stage the Prompt Injection Spray
+
+[How to Access PseudoCo Assistant](/workshops/ai-trust/01-setup/#1-how-to-access-pseudoco-assistant)
+
+![alt text](/images/image-127.png)
+
+Ensure that **Cisco AI Defense Policy Review** is toggled on.
+
+Expand the left side-panel and make sure **Trigger Demo Incident** is off. 
+
+Under **Prompt Injection Spray**, set the duration to 300s and replace the default actor **t.nguyen** with a unique name (for example, your initials), then toggle **Prompt Injection Spray** on.
+
+About a minute after the first injection turn, the detection raises one finding for your actor, typed **prompt_injection** with your response plan attached. Spraying again later raises a new finding.
+
+#### 4.3.2 Investigate the Prompt Injection Spray
+
+![alt text](/images/image-185.png)
+
+Return to Splunk, and navigate to **AI Governance -> Dashboards -> Prompt Injection Detection**.
+
+![alt text](/images/image-145.png)
+
+Each section of the Prompt Injection Detection dashboard turns AI security into a measurable, governed discipline — proving the organization can detect, classify, and defend against adversarial attacks on its AI models.
+
+Total Scanned — Establishes the denominator of coverage: how much AI traffic is being inspected for attacks. It answers the first governance question — "are we even looking?" — and proves monitoring is comprehensive, not selective.
+
+Injections Detected, Injections by Severity, and Detection Rate — The headline count of adversarial prompt-injection attempts caught. This is the tangible evidence that the AI is under active threat and that defenses are working, translating an abstract risk into a tracked number leadership can act on.
+
+Detection Trend — Shows whether attack volume and detection are rising or falling over time, turning point-in-time alerts into a directional signal for emerging campaigns and capacity planning.
+
+Injections by Technique — Breaks attacks down by method, revealing how adversaries are trying to manipulate the AI. This intelligence drives where defenses and training need to be hardened next.
+
+Severity & Confidence Distribution — Shows how threats spread across severity levels and how sure the detection model is of its calls. Confidence is the audit lens — it separates high-certainty threats from noise and keeps the system's own judgment accountable.
+
+Top Injection Sources — Identifies where attacks originate, enabling blocking, rate-limiting, and attribution. Knowing the source converts passive detection into active defense.
+
+![alt text](/images/image-117.png)
+
+Recent Detections — A live, row-level audit trail of individual attacks for investigation and forensics — the defensible record that proves what happened, when, and how it was handled.
 
 ### Lab 4.4 Respond to the Finding
 
