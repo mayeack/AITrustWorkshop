@@ -25,7 +25,11 @@ Before you guard or operate anything, define and measure "good." You will see ag
 
 ## Background
 
-Splunk Agent Observability evaluates the **whole agent trace** and scores each turn against industry standard risks (hallucination, context adherence, PII/PHI leakage, tool-selection quality) plus custom evaluators you define, such as Prescriptive Overreach. Evaluators can be run by **Luna** — Cisco's small, purpose-built evaluator models — so continuous LLM-as-judge scoring is affordable rather than a frontier-model bill.
+Splunk Agent Observability evaluates the **whole agent trace** and scores each turn against industry standard risks (hallucination, context adherence, PII leakage, tool-selection quality) plus custom evaluators you define for your industry's risks. Evaluators can be run by **Luna** — Cisco's small, purpose-built evaluator models — so continuous LLM-as-judge scoring is affordable rather than a frontier-model bill.
+
+{{% expand title="Custom Evaluator - Healthcare" %}}
+In healthcare, the custom evaluator is **Prescriptive Overreach**, which flags responses that act as a prescriber.
+{{% /expand %}}
 
 Model evaluation, evaluator construction, and signal understanding is critical both to build trust in AI systems before deployment, and to monitor model drift over time.
 
@@ -43,10 +47,14 @@ Click **Open PseudoCo Assistant**.
 
 Ensure that the following fields are set:
 
-**Application Theme:** MedAdvice<br>
+**Application Theme:** the theme for your industry<br>
 **Provider:** openai<br>
 **Model:** nvidia/nemotron-3-super<br>
 **Static Emission:** gpt-4o
+
+{{% expand title="Application Theme - Healthcare" %}}
+In healthcare, set **Application Theme** to **MedAdvice**.
+{{% /expand %}}
 
 Because Nemotron is an open-weight model, **Static Emission** reports its token usage as gpt-4o so that cost calculates correctly. That is why traces show gpt-4o.
 
@@ -54,7 +62,7 @@ Because Nemotron is an open-weight model, **Static Emission** reports its token 
 
 ![alt text](/workshops/ai-trust-open-weights/image-12.png)
 
-Click the **>** tab on the left edge to open the side-panel. The left side-panel manipulates the PseudoCo Assistant to produce aberrant behavior, such as toxic responses, synthetic PII, or prescriptive overreach.
+Click the **>** tab on the left edge to open the side-panel. The left side-panel manipulates the PseudoCo Assistant to produce aberrant behavior, such as toxic responses, synthetic PII, or responses outside the assistant's authority.
 
 ![alt text](/workshops/ai-trust-open-weights/image-13.png)
 
@@ -64,11 +72,15 @@ Click **Prompts** to open the **Prompt Library**, which contains a set of sample
 
 Explore sending various aberrant prompts and triggering non-compliant behavior. At minimum:
 
-- Send a prompt with **Prescriptive Overreach** toggled on
-- Send a prompt with **Include Synthetic PII/PHI in Responses** toggled on
+- Send a prompt with the **Outside of Authority** toggle on (its label depends on your industry)
+- Send a prompt with **Include Synthetic PII in Responses** toggled on
 - Send a prompt with various PII, such as a phone number, email address, SSN, or address
 - Send a prompt with a toxic or aggressive tone
 - Send a prompt with a prompt injection attempt
+
+{{% expand title="Toggle Names - Healthcare" %}}
+In the MedAdvice (healthcare) theme, the Outside of Authority toggle is labelled **Prescriptive Overreach**, and the PII toggle is labelled **Include Synthetic PII/PHI in Responses**.
+{{% /expand %}}
 
 We will explore how this non-compliant behavior is monitored in subsequent sections.
 
@@ -99,11 +111,15 @@ Click **Agent Observability** under **Apps**.
 Ensure that the following filters are set:
 
 **Project:** PseudoCo Assistant<br>
-**Agent stream:** MedAdvice
+**Agent stream:** the stream for your industry's theme
+
+{{% expand title="Agent Stream - Healthcare" %}}
+In healthcare, the agent stream is **MedAdvice**.
+{{% /expand %}}
 
 **Overview:** Displays the selected AI project and agent stream, with filters for time range.<br>
 **Usage and performance:** Summarizes total requests, tool and LLM failures, token consumption, and estimated agent cost.<br>
-**Signals generated:** Surfaces detected AI trust and safety issues, including harmful responses, unlicensed medical advice, and sensitive PII.<br>
+**Signals generated:** Surfaces detected AI trust and safety issues, including harmful responses, advice outside the assistant's authority, and sensitive PII.<br>
 **Controls applied:** Shows which governance controls were triggered and whether activity was observed, denied, steered, or allowed to proceed without a trigger.<br>
 **Evaluator trends:** Tracks evaluator results over time, including action completion, context adherence, and tool selection quality.
 
@@ -115,7 +131,7 @@ Click **View project details** to drill into Agent Observability. The project op
 
 ![alt text](/workshops/ai-trust-open-weights/image-10.png)
 
-Click on **MedAdvice**.
+Click on the agent stream for your industry's theme.
 
 ![alt text](/workshops/ai-trust-open-weights/image-23.png)
 
@@ -123,7 +139,7 @@ The **Agent Stream**  turns every live AI conversation into a graded, searchable
 
 Tracing — The running ledger of real user interactions, capturing what went in and what the AI sent back. This is the system of record that makes behavior observable and reviewable rather than a black box.
 
-Automated scoring (such as Output Toxicity, Prescriptive Overreach, Output PII) — Every response is auto-graded against safety and quality measures, including custom risk checks tuned to this use case. This is the core value: thousands of interactions evaluated without human review, with problematic responses surfaced automatically for attention. Scroll right to see each evaluator's column.
+Automated scoring (such as Output Toxicity, Output PII, and your industry's custom evaluators) — Every response is auto-graded against safety and quality measures, including custom risk checks tuned to this use case. This is the core value: thousands of interactions evaluated without human review, with problematic responses surfaced automatically for attention. Scroll right to see each evaluator's column.
 
 Click on any trace.
 
@@ -153,14 +169,18 @@ Click on **Signals**.
 
 The Signals panel is the AI watching the AI — it scans every logged conversation for risk patterns and surfaces them as named, prioritized issues, so the team learns where the application is failing without reading transcripts one by one. Whereas Evaluators need to be defined by the user, Signals surface the unknown unknown issues.
 
-Click on **Unlicensed Medication Advice**.
+Click on the example signal for your industry.
+
+{{% expand title="Example Signal - Healthcare" %}}
+Click on **Unlicensed Medication Advice**. It identifies responses where the LLM provided prescription guidance to a user without sufficient medical or identity context, and recommends adding a pre-check to verify user identity before medication advice is given.
+{{% /expand %}}
 
 ![alt text](/workshops/ai-trust-open-weights/image-28.png)
 
-**Signal summary:** Identifies an Unlicensed Medication Advice signal where the LLM provided prescription guidance to a user without sufficient medical or identity context.<br>
+**Signal summary:** Names the risk pattern the signal found and the behavior behind it.<br>
 **Scope and impact:** Shows the affected spans, traces, and sessions associated with the signal, along with when the issue was created and last updated.<br>
 **Root cause analysis:** Explains the behavior that triggered the signal and links it to the relevant policy or prompt enforcement gap.<br>
-**Recommendation:** Provides a suggested remediation, in this case adding a pre-check to verify user identity before medication advice is given.<br>
+**Recommendation:** Provides a suggested remediation for the gap.<br>
 **Evidence details:** Visualizes when affected spans occurred and provides example interactions that contributed to the signal.<br>
 **Trace linkage:** Lets the user drill into the underlying session, trace, and span for direct investigation of the agent behavior.
 
@@ -200,21 +220,23 @@ Click on **Agent Observability -> Evaluators**.
 
 The Evaluators catalog is the rulebook for how every AI is graded — a central, reusable library of scoring criteria that makes "good" and "safe" mean the same thing across every project and every team. Evaluators can be leveraged at every point in the development and deployment lifecycle.
 
-#### 1.3.2 Review Prescriptive Overreach Evaluator
+#### 1.3.2 Review a Custom Evaluator
 
-NOTE: This custom evaluator needs to be added to the dCloud instance
+Open the custom evaluator for your industry.
 
+{{% expand title="Prescriptive Overreach Evaluator - Healthcare" %}}
 ![alt text](/images/image-208.png)
 
 Search for **prescriptive_overreach**, and click on it.
 
 ![alt text](/images/image-209.png)
+{{% /expand %}}
 
-This is where a safety standard gets authored — the editor for a custom Prescriptive Overreach Evaluator, showing how an abstract risk is turned into a precise, automated, repeatable test that every AI response is graded against.
+This is where a safety standard gets authored — the editor for a custom evaluator, showing how an abstract risk is turned into a precise, automated, repeatable test that every AI response is graded against.
 
 Configure Input (LLM model / Apply to) — Chooses which AI does the grading and what part of the conversation it judges. The value is deliberate control over how rigorous and how targeted the evaluation is.
 
-Prompt (the scoring rubric) — The heart of it: explicit instructions and graded anchors that define exactly what counts as a minor lapse versus an egregious violation. This converts a fuzzy worry — "is the bot acting like a prescriber?" — into a consistent, defensible score that doesn't drift with opinion. You can use the **Help me write** toggle to enhance your prompts.
+Prompt (the scoring rubric) — The heart of it: explicit instructions and graded anchors that define exactly what counts as a minor lapse versus an egregious violation. This converts a fuzzy worry — "is the bot overstepping its authority?" — into a consistent, defensible score that doesn't drift with opinion. You can use the **Help me write** toggle to enhance your prompts.
 
 Configure Output (type & roll-up) — Sets how individual scores combine into a single number that rolls up across many responses. This is what makes one response's grade aggregate into a board-level quality figure.
 
@@ -226,7 +248,7 @@ The journey walks through five capabilities that make trust measurable:
 
 **Monitor** — Logs capture every live AI interaction as a searchable, auto-graded audit trail, so production behavior is observable and reviewable rather than a black box.
 
-**Detect the unknown** — Signals surface risks no one thought to define (harassing responses, unlicensed medication advice, sensitive PII in prompts), catching the "unknown unknowns" before they become incidents.
+**Detect the unknown** — Signals surface risks no one thought to define (harassing responses, advice outside the assistant's authority, sensitive PII in prompts), catching the "unknown unknowns" before they become incidents.
 
 **Investigate** — Trace-level detail opens any single conversation end to end, providing a defensible case file of how and why the AI answered as it did.
 
@@ -236,7 +258,7 @@ The journey walks through five capabilities that make trust measurable:
 
 The takeaway: AI risk becomes quantifiable and auditable. Safety, quality, and cost are measured continuously and automatically — at scale, without human review of every interaction — giving the business the defensible evidence it needs to deploy AI with confidence.
 
-Now that we have identified the critical evaluator Prescriptive Overreach, let's operationalize that in **Agent Security**.
+Now that we have identified a critical custom evaluator for your industry, let's operationalize it in **Agent Security**.
 
 <!-- exec-outcome:start -->
 

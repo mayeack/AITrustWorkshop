@@ -15,7 +15,7 @@ All lab work happens in your web browser; there is nothing to install. Before yo
 
 | **Environment** | **What it is** | **Used in** |
 | --- | --- | --- |
-| **PseudoCo Assistant** | The multi-agent healthcare assistant you prompt, running on Cisco Secure AI Factory with NVIDIA, using NVIDIA NIM microservices and Nemotron open models | Lab 1 and Lab 2 |
+| **PseudoCo Assistant** | The multi-agent assistant you prompt, themed for your industry, running on Cisco Secure AI Factory with NVIDIA, using NVIDIA NIM microservices and Nemotron open models | Lab 1 and Lab 2 |
 | **Splunk Agent Observability** | Evaluates and scores every agent interaction; reached through Cisco Cloud Control | Lab 1 |
 | **Cisco Cloud Control** | Cisco's single sign-in point for its cloud applications, opened from the splash page; you reach Agent Observability and Agent Security here | Lab 1 and Lab 2 |
 | **Agent Security** | Runtime guardrails on every prompt and response | Lab 2 |
