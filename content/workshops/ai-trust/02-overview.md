@@ -47,17 +47,17 @@ One dataset. Every pillar. That's what lets a leader go from a number on the scr
 
 ### 2. Navigate to AI Governance App
 
-![Splunk Cloud home page with AI Governance in the Apps side panel](/images/image-138.png)
+![alt text](/images/image-212.png)
 
 In the left side-panel to view all apps, and click on **AI Governance**.
 
 ### 3. Review AI Governance Overview Dashboard
 
-![AI Governance Dashboards menu with AI Governance Overview selected](/images/image-139.png)
+![alt text](/images/image-213.png)
 
 The app opens on **AI Governance Overview**. If it doesn't, select **Dashboards > AI Governance Overview**.
 
-![AI Governance Overview: Key Performance Indicators, Safety & Compliance Metrics, and Trend Analysis](/images/image-140.png)
+![alt text](/images/image-214.png)
 
 The AI Governance Overview is the single-pane executive scorecard for AI across the enterprise — it consolidates usage, cost, performance, and risk into board-level numbers, complementing the per-conversation analysis you'll do in Lab 1 with a top-down view spanning every model, app, and session.
 
@@ -67,7 +67,7 @@ Safety & Compliance Metrics (Safety Violations, PII Detected, Policy Blocked, Gu
 
 Trend Analysis (Request Volume, Token Usage, and Latency over time) — Plots demand and consumption over time, so growth, spikes, and anomalies are visible at a glance. This is the early-warning view for both cost and unusual activity.
 
-![AI Governance Overview: Cost Analysis, Service Analysis, and Model Analysis panels](/images/image-141.png)
+![alt text](/images/image-215.png)
 
 Cost Analysis (Cost Over Time, Cost by Service) — Shows when money is spent and which service drives it. The value is attribution: cost stops being a lump sum and becomes traceable to the application responsible, so spend can be owned and controlled.
 
@@ -75,17 +75,13 @@ Service Analysis (Requests by Service, Performance Comparison) — Ranks service
 
 Model Analysis (Model Usage Statistics) — Breaks activity down by the specific model behind it. The value is a clear inventory of what's running where — essential for governing which models are approved and in use.
 
-![AI Governance Overview: Session Analysis, Status & Errors, and Recent AI Requests panels](/images/image-142.png)
+![alt text](/images/image-216.png)
 
 Session Analysis (Session Activity) — Drills to the individual user session, with its interactions, cost, tokens, and latency. This is the bridge back to the human experience — letting you trace an anomaly all the way down to a single conversation.
 
 Status & Errors (Status Outcome, Errors by Service) — Shows the mix of successful versus blocked or violating responses, and which service generates the most errors. The value is a clean read on whether the AI is mostly behaving — and a finger pointed at the worst-offending service when it isn't.
 
 Recent AI Requests (Detailed Log) — The raw, timestamped record of individual requests with their model, tokens, cost, and safety flags. This is the ground-truth evidence layer — proof that every headline number traces back to real, inspectable events. To see the raw events behind any panel, hover over it and click the **Open in search** (magnifying glass) icon.
-
-![AI Governance Overview: Compliance Summary panel](/images/image-143.png)
-
-Compliance Summary (Safety Compliance %) — Rolls everything into the one figure leadership and auditors care about: the share of events that passed safely. This is the board-level headline — a defensible, quantified compliance posture rather than an assurance.
 
 ## Outcome
 

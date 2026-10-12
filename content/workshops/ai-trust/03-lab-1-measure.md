@@ -84,15 +84,15 @@ We will explore how this non-compliant behavior is monitored in subsequent secti
 
 #### 1.2.2 Review Overview
 
-![alt text](/workshops/ai-trust/image-4.png)
+![alt text](/images/image-217.png)
 
 Click on **Agent Observability -> All projects**.
 
-![alt text](/workshops/ai-trust/image-5.png)
+![alt text](/images/image-218.png)
 
 Click on the project **PseudoCo Assistant**.
 
-![alt text](/workshops/ai-trust/image-6.png)
+![alt text](/images/image-219.png)
 
 Each section of the Overview dashboard turns AI development into a measurable, evidence-backed discipline — testing safety, comparing versions objectively, and maintaining a defensible record of quality.
 
@@ -110,11 +110,12 @@ Click on **PseudoCo Assistant** under **Agent Streams**.
 
 #### 1.2.3 Review Agent Stream
 
-![alt text](/workshops/ai-trust/image-7.png)
+![alt text](/images/image-220.png)
+![alt text](/images/image-221.png)
 
-Click on **PseudoCo Assistant** under **Agent Streams**.
+Click on **MedAdvice** under **Agent Streams**. You might need to click on **View all**.
 
-![alt text](/workshops/ai-trust/image-11.png)
+![alt text](/images/image-222.png)
 
 The **Agent Stream**  turns every live AI conversation into a graded, searchable record — the continuous audit trail that proves the application is behaving safely in production.
 
@@ -124,7 +125,7 @@ Automated scoring (such as Output Toxicity, Output PII, and your industry's cust
 
 Click on any trace. Other participants' turns share this stream, so look for your own prompt in the **Input** column.
 
-![alt text](/workshops/ai-trust/image-12.png)
+![alt text](/images/image-223.png)
 
 This single-trace view is the microscope of the platform — it opens up one AI conversation end to end, showing exactly how a multi-step agent produced its answer and how that answer scored on quality and safety.
 
@@ -138,15 +139,15 @@ Feel free to explore the other tabs, such as **Latency** and **Trace Graph**.
 
 #### 1.2.4 Review Signals
 
-![alt text](/workshops/ai-trust/image-13.png)
+![alt text](/images/image-224.png)
 
 Click the back arrow to return to the **Agent Stream**.
 
-![alt text](/workshops/ai-trust/image-8.png)
+![alt text](/images/image-225.png)
 
 Click on the **Signals** button. 
 
-![alt text](/workshops/ai-trust/image-9.png)
+![alt text](/images/image-226.png)
 
 Click on **Re-run signals** if no signals appear. 
 
@@ -164,11 +165,11 @@ Systematic Fake Medication Hallucination — Catches invented medical claims and
 
 #### 1.2.5 Review Trends
 
-![alt text](/workshops/ai-trust/image-14.png)
+![alt text](/images/image-227.png)
 
 Click on **Trends**.
 
-![alt text](/workshops/ai-trust/image-15.png)
+![alt text](/images/image-228.png)
 
 The Trends view is the over-time picture of AI quality and risk — it tracks whether the application is holding steady, improving, or drifting, turning a snapshot of scores into a story leadership can monitor like any other business metric.
 
@@ -188,31 +189,31 @@ Feel free to explore additional metric charts, such as those under **Safety Metr
 
 #### 1.2.6 Review Agent Graph
 
-![alt text](/workshops/ai-trust/image-17.png)
+![alt text](/images/image-229.png)
 
 Click on **Agent Graph**.
 
-![alt text](/workshops/ai-trust/image-18.png)
+![alt text](/images/image-230.png)
 
 The **Agent Graph** visualizes how AI agents coordinate across models and workflows, making complex agent behavior transparent, traceable, and easier to govern.
 
 Click on any agent.
 
-![alt text](/workshops/ai-trust/image-19.png)
+![alt text](/images/image-231.png)
 
 Each agent has individual metrics, such as latency, cost, or token consumption.
 
 #### 1.2.7 Review Alerts
 
-![alt text](/workshops/ai-trust/image-20.png)
+![alt text](/images/image-232.png)
 
 Click on **Alerts**.
 
-![alt text](/workshops/ai-trust/image-21.png)
+![alt text](/images/image-233.png)
 
 Click on **Create alert**.
 
-![alt text](/workshops/ai-trust/image-22.png)
+![alt text](/images/image-234.png)
 
 Alerts can be configured to trigger based on the output of any evaluator. Alerts can be fed into automated systems via email or Slack. For example, you could disable a system if cost exceeds a defined parameter.
 
@@ -220,11 +221,11 @@ Alerts can be configured to trigger based on the output of any evaluator. Alerts
 
 #### 1.3.1 Review Evaluators
 
-![alt text](/workshops/ai-trust/image-16.png)
+![alt text](/images/image-235.png)
 
 Click on **Agent Observability -> Evaluators**.
 
-![alt text](/workshops/ai-trust/image-23.png)
+![alt text](/images/image-236.png)
 
 The Evaluators catalog is the rulebook for how every AI is graded — a central, reusable library of scoring criteria that makes "good" and "safe" mean the same thing across every project and every team. As you have seen, Evaluators are leveraged at every point in the development and deployment lifecycle.
 
@@ -239,12 +240,14 @@ Tags & Modality — Organize the library by purpose (agents, RAG, safety) and da
 Open the custom evaluator for your industry.
 
 {{% expand title="Prescriptive Overreach Evaluator - Healthcare" %}}
-![alt text](/workshops/ai-trust/image-24.png)
+![alt text](/images/image-237.png)
 
 Search for **prescriptive_overreach**, and click on it.
 
 ![alt text](/workshops/ai-trust/image-25.png)
 {{% /expand %}}
+
+![alt text](/images/image-238.png)
 
 This is where a safety standard gets authored — the editor for a custom evaluator, showing how an abstract risk is turned into a precise, automated, repeatable test that every AI response is graded against.
 

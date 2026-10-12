@@ -46,48 +46,50 @@ A finding takes the investigation type its detection carries **at the moment it 
 
 #### 4.1.2 Create the Investigation Type and Response Plan
 
-![alt text](/images/image-146.png)
+![alt text](/images/image-276.png)
 
 Click the Splunk logo in the top left to navigate home.
 
 In the left side-panel, click on **Enterprise Security**. Enter "Enterprise Security" in the search box if it does not appear.
 
-![alt text](/images/image-157.png)
+![alt text](/images/image-277.png)
 
 Click on **Configure -> All configurations**.
 
-![alt text](/images/image-158.png)
+![alt text](/images/image-278.png)
 
 Click on **Investigation types**.
 
-![alt text](/images/image-159.png)
+![alt text](/images/image-279.png)
 
 Click on **+ Investigation type** to create a new investigation type.
 
-![alt text](/images/image-162.png)
+![alt text](/images/image-280.png)
 
-Enter the following information, and then click **Next**.
+Enter the following information:
 
 **Investigation type name:** prompt_injection
 **Investigation type description:** An attempted or actual prompt injection attack against an AI system.
 
-![alt text](/images/image-163.png)
+Click on **Next**.
+
+![alt text](/images/image-281.png)
 
 Click **Save**.
 
-![alt text](/images/image-164.png)
+![alt text](/images/image-282.png)
 
 Click on the created investigation type.
 
-![alt text](/images/image-165.png)
+![alt text](/images/image-283.png)
 
 Click **Create new response plan.**
 
-![alt text](/images/image-166.png)
+![alt text](/images/image-284.png)
 
 Click **Import**.
 
-![alt text](/images/image-167.png)
+![alt text](/images/image-285.png)
 
 The Guided Response agent works from a standard operating procedure. Download the SOP used for this scenario and load it into the agent to see the four-phase NIST 800-61 plan it generates.
 
@@ -97,43 +99,43 @@ The Guided Response agent works from a standard operating procedure. Download th
 
 Upload the file in the box under **Import and generate with AI**.
 
-![alt text](/images/image-168.png)
+![alt text](/images/image-286.png)
 
 Click **Import**.
 
-![alt text](/images/image-169.png)
+![alt text](/images/image-287.png)
 
 Wait for generation to complete, then click on the created response plan.
 
-![alt text](/images/image-170.png)
+![alt text](/images/image-288.png)
 
 Feel free to explore the sections created by the SOP agent, then toggle to **Published**.
 
-![alt text](/images/image-171.png)
+![alt text](/images/image-289.png)
 
 Click **Save changes** if prompted.
 
-![alt text](/images/image-177.png)
+![alt text](/images/image-290.png)
 
 Click on **Configure -> All configurations**.
 
-![alt text](/images/image-178.png)
+![alt text](/images/image-291.png)
 
 Click on **Investigation types**.
 
-![alt text](/images/image-179.png)
+![alt text](/images/image-292.png)
 
 Click on **prompt_injection**.
 
-![alt text](/images/image-180.png)
+![alt text](/images/image-293.png)
 
 Click on **Assign response plan**.
 
-![alt text](/images/image-181.png)
+![alt text](/images/image-294.png)
 
 Click on the response plan you just created **Prompt Injection Attack - Investigation and Response**, then click **Submit**.
 
-![alt text](/images/image-182.png)
+![alt text](/images/image-295.png)
 
 Click **Save changes**.
 
@@ -141,41 +143,41 @@ Click **Save changes**.
 
 #### 4.2.1 Review the Detection Search
 
-![alt text](/images/image-147.png)
+![alt text](/images/image-296.png)
 
 Navigate to **Security content -> Content management**.
 
-![alt text](/images/image-148.png)
+![alt text](/images/image-297.png)
 
-Search for "Prompt Injection Attack Correlation", and click on **GenAI - Prompt Injection Attack Correlation**.
+Search for "Prompt Injection Attack", and click on **GenAI - Prompt Injection Attack Correlation**.
 
-![alt text](/images/image-149.png)
+![alt text](/images/image-298.png)
 
 Each section of this Enterprise Security detection editor turns AI threat-hunting into a governed, auditable control — codifying how prompt-injection attacks are detected, correlated, and turned into accountable action.
 
 This is where security logic is authored and version-controlled as a managed asset, not tribal knowledge. Putting detections under formal edit-and-save governance is what makes AI defense repeatable, reviewable, and defensible to auditors.
 
-![alt text](/images/image-172.png)
+![alt text](/images/image-299.png)
 
 Scroll down to **Analyst queue information** and click on the arrow next to **Create a finding**.
 
-![alt text](/images/image-173.png)
+![alt text](/images/image-300.png)
 
 Click on the dropdown for **Investigation type**.
 
-![alt text](/images/image-174.png)
+![alt text](/images/image-301.png)
 
 Select the investigation type, **prompt_injection**, you just created.
 
-![alt text](/images/image-175.png)
-
 Click **Save**.
 
-Click on the **sparkle** icon to expand the Security Assistant right sidepanel.
+![alt text](/images/image-302.png)
+
+Click on **Close**, and then the **sparkle** icon to expand the Security Assistant right sidepanel.
 
 #### 4.2.2 Review the Detection Builder Agent
 
-![alt text](/images/image-150.png)
+![alt text](/images/image-303.png)
 
 This detection was built using the Detection Builder Agent. If you would like to experiment with building your own detections, you can use the prompt below.
 
@@ -248,7 +250,7 @@ Risk score: 60
 
 Click **Explain this Detection**, or otherwise chat with the Detection Builder agent.
 
-![alt text](/images/image-151.png)
+![alt text](/images/image-304.png)
 
 Review the explanation provided by the agent.
 
@@ -258,23 +260,24 @@ Review the explanation provided by the agent.
 
 [How to Access PseudoCo Assistant](/workshops/ai-trust/01-setup/#1-how-to-access-pseudoco-assistant)
 
-![alt text](/images/image-127.png)
+![alt text](/images/image-305.png)
+![alt text](/images/image-306.png)
 
 Ensure that **Cisco AI Defense Policy Review** is toggled on.
 
 Expand the left side-panel and make sure **Trigger Demo Incident** is off. 
 
-Under **Prompt Injection Spray**, set the duration to 300s and replace the default actor **t.nguyen** with a unique name (for example, your initials), then toggle **Prompt Injection Spray** on.
+Under **Prompt Injection Spray**, set the duration to 60s and replace the default actor **t.nguyen** with a unique name (for example, your initials), then toggle **Prompt Injection Spray** on.
 
-About a minute after the first injection turn, the detection raises one finding for your actor, typed **prompt_injection** with your response plan attached. Spraying again later raises a new finding.
+About a minute after the first injection turn, the detection raises one finding for your actor with your response plan attached. Spraying again later raises a new finding.
 
 #### 4.3.2 Investigate the Prompt Injection Spray
 
-![alt text](/images/image-185.png)
+![alt text](/images/image-307.png)
 
 Return to Splunk, and navigate to **AI Governance -> Dashboards -> Prompt Injection Detection**.
 
-![alt text](/images/image-145.png)
+![alt text](/images/image-308.png)
 
 Each section of the Prompt Injection Detection dashboard turns AI security into a measurable, governed discipline — proving the organization can detect, classify, and defend against adversarial attacks on its AI models.
 
@@ -290,19 +293,23 @@ Severity & Confidence Distribution — Shows how threats spread across severity 
 
 Top Injection Sources — Identifies where attacks originate, enabling blocking, rate-limiting, and attribution. Knowing the source converts passive detection into active defense.
 
-![alt text](/images/image-117.png)
-
 Recent Detections — A live, row-level audit trail of individual attacks for investigation and forensics — the defensible record that proves what happened, when, and how it was handled.
 
 ### Lab 4.4 Respond to the Finding
 
 #### 4.4.1 Investigate with the Triage Agent
 
-![alt text](/images/image-152.png)
+![alt text](/images/image-309.png)
+
+Click the Splunk logo in the top left to navigate home.
+
+In the left side-panel, click on **Enterprise Security**. Enter "Enterprise Security" in the search box if it does not appear.
+
+![alt text](/images/image-310.png)
 
 Click on **Mission Control**.
 
-![alt text](/images/image-153.png)
+![alt text](/images/image-311.png)
 
 The Analyst Queue is where AI-security detections become accountable casework — every prompt-injection attack is triaged, owned, and dispositioned through a governed investigation workflow.
 

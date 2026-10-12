@@ -38,9 +38,9 @@ The guardrail you applied in [Lab 2](/workshops/ai-trust/04-lab-2-secure/) made 
 
 [How to Access Splunk Observability Cloud](/workshops/ai-trust/01-setup/#2-how-to-access-splunk-agent-observability--splunk-observability-cloud)
 
-#### 3.1.2 Generate Latency Incident
+#### 3.1.2 Trigger a Latency Incident
 
-![alt text](/workshops/ai-trust/image-29.png)
+![alt text](/images/image-271.png)
 
 Go to PseudoCo Assistant, and open the left side-panel.
 
@@ -48,25 +48,23 @@ Toggle **Trigger Demo Incident** on to trigger a series of alerts. With the defa
 
 #### 3.1.3 Review Alerts
 
-![alt text](/workshops/ai-trust/image-27.png)
+![alt text](/images/image-272.png)
 
 Navigate to **Alerts -> Active alerts**.
 
-![alt text](/workshops/ai-trust/image-28.png)
+![alt text](/images/image-273.png)
 
 The Active alerts view is the incident command center for the AI application — it consolidates every firing alert into one prioritized queue, ranked by severity, so teams know instantly what's broken, how badly, and where to act first. This workshop org is shared, so you will also see alerts from other services.
 
+It may take a few minutes for the alert to appear.
+
 #### 3.1.4 Triage and Resolve an Alert
 
-![alt text](/workshops/ai-trust/image-30.png)
+![alt text](/images/image-274.png)
 
-Return to Observability Cloud. In **Active alerts**, set **Service** to **demobot-v3**, then click any alert.
+Click on any alert with "pseudoco-assistant..." in the signal properties.
 
-![alt text](/workshops/ai-trust/image-31.png)
-
-You might need to toggle **AI Troubleshooting Agent** to **On**. The root cause analysis can take a few minutes to appear.
-
-![alt text](/workshops/ai-trust/image-32.png)
+![alt text](/images/image-275.png)
 
 This is the alert investigation experience — drilling into a single firing incident to see what broke, what it affected, and why, with an AI Troubleshooting Agent automatically working the root cause. This is where monitoring stops being a dashboard and becomes an answer.
 
@@ -75,14 +73,6 @@ Overview / Root Cause Analysis / Evidence tabs — Structures the investigation 
 Alert summary & detail chart — Lays out exactly what triggered: the rule, the condition breached, current versus historical error rate, and the precise moment it spiked. The value is unambiguous detection — not "something feels off," but a measured deviation with a timestamp and a threshold.
 
 Root cause (AI-generated, with confidence) — Delivers a plain-language verdict on the likely cause — and, crucially, states its confidence and admits when evidence is insufficient. The value is honest automation: it accelerates diagnosis without pretending to certainty it doesn't have, which is exactly what you want from AI in a high-stakes operational role.
-
-![alt text](/workshops/ai-trust/image-33.png)
-
-Impact summary — Quantifies the blast radius: which service and how many business transactions are affected, and confirms what's not impacted. This is the business-language translation of a technical alert — "what does this actually break for users?"
-
-Troubleshooting tools (Runbooks, Related content, Data links) — Connects the alert to the next actions: established procedures, related dashboards, and deeper traces. This is how an incident moves from understood to resolved, fast.
-
-![alt text](/workshops/ai-trust/image-34.png)
 
 Because we triggered the alert synthetically, there is nothing to fix. Go ahead and click **Resolve alert**. 
 
