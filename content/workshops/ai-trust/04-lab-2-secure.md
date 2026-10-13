@@ -107,7 +107,7 @@ Action & Status (Block / Enabled) — Shows whether each guardrail is on and set
 
 Filter strength (Medium) — A tunable dial on how aggressively each rule fires. The value is balance — protection calibrated to the business's risk tolerance, tightenable where the stakes are higher.
 
-Notice how there are no adpative guardrails. We will now create one.
+Notice how there are no adaptive guardrails. We will now create one.
 
 ### Lab 2.3 Create Probabilistic Policies
 
@@ -132,7 +132,7 @@ Complete the form as follows:
 **Policy profile name**: Prescriptive Overreach - your initials (for example, Prescriptive Overreach - JD).
 {{% /expand %}}
 
-Click on **Launch Policy Studio**: 
+Click on **Launch Policy Studio**.
 
 ![alt text](/images/image-250.png)
 
@@ -182,7 +182,7 @@ Navigate to **Secure -> Runtime Policies**.
 
 ![alt text](/images/image-259.png)
 
-Click on **PseudoCo Protect Protect**.
+Click on **PseudoCo Protect**.
 
 ![alt text](/images/image-260.png)
 
