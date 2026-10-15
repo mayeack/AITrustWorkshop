@@ -25,6 +25,8 @@ Turn the Lab 1 evaluator into a guardrail: a response that oversteps the assista
 
 ## Background
 
+Agent Security is also known as Cisco AI Defense; you will see the two names used interchangeably.
+
 Agent Security is a live integration: it inspects the prompt (pre-LLM) and the response (post-LLM) against **multiple guardrails** and blocks non-compliant content. The outside-of-authority evaluator measured in [Lab 1](/workshops/ai-trust-open-weights/03-lab-1-measure/) is enforced here as a **custom guardrail** on both prompts and responses.
 
 {{% expand title="The Guardrail - Healthcare" %}}
@@ -152,7 +154,7 @@ Send any prompt. This time the response is withheld, so the non-compliant output
 
 ![alt text](/workshops/ai-trust-open-weights/image-47.png)
 
-Return to the tab for Agent Security.
+Return to the tab for **Agent Security**.
 
 ![alt text](/workshops/ai-trust-open-weights/image-48.png)
 

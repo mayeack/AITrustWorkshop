@@ -97,7 +97,7 @@ Click on **PseudoCo Protect**.
 
 ![alt text](/images/image-246.png)
 
-This is where AI protection gets enforced — the Yeack Protect policy in Cisco AI Defense shows the live guardrails wrapped around our agentic system, turning security intent into specific rules that actively block threats in real time.
+This is where AI protection gets enforced — the PseudoCo Protect policy in Cisco AI Defense shows the live guardrails wrapped around our agentic system, turning security intent into specific rules that actively block threats in real time.
 
 Guardrail profiles — Organizes protection into the three dimensions that matter — keeping attackers out, keeping data private, and keeping responses appropriate. The value is comprehensive coverage in one policy, not a single narrow filter.
 
@@ -119,7 +119,9 @@ Click on **Policy Studio**.
 
 ![alt text](/images/image-248.png)
 
-Click on **New policy profile**. Do not make any changes to any existing policies.
+Click on **New policy profile**. 
+
+**Do not make any changes to any existing policies.**
 
 ![alt text](/images/image-249.png)
 
@@ -174,7 +176,7 @@ Click on **Go to adaptive guardrail profiles**.
 
 #### 2.3.2 Apply the Custom Guardrail
 
-NOTE: Because this is a shared environment, your instructor will perform the following actions.
+**Because this is a shared environment, your instructor will perform the following actions.**
 
 ![alt text](/images/image-258.png)
 

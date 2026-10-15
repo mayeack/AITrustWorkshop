@@ -69,6 +69,7 @@ Click on **+ Investigation type** to create a new investigation type.
 Enter the following information:
 
 **Investigation type name:** prompt_injection
+
 **Investigation type description:** An attempted or actual prompt injection attack against an AI system.
 
 Click on **Next**.
@@ -105,7 +106,7 @@ Click **Import**.
 
 ![alt text](/images/image-287.png)
 
-Wait for generation to complete, then click on the created response plan.
+Wait for generation to complete and change to status **draft**, then click on the created response plan.
 
 ![alt text](/images/image-288.png)
 
@@ -159,7 +160,7 @@ This is where security logic is authored and version-controlled as a managed ass
 
 ![alt text](/images/image-299.png)
 
-Scroll down to **Analyst queue information** and click on the arrow next to **Create a finding**.
+Scroll down to **Analyst queue information** and click on the **>** arrow next to **Create a finding**.
 
 ![alt text](/images/image-300.png)
 
@@ -315,13 +316,15 @@ The Analyst Queue is where AI-security detections become accountable casework �
 
 Analyst Queue — A prioritized, filterable list of every active security finding awaiting human judgment. This is the operational proof that detections don't just fire into the void — they land in a managed queue where someone is accountable for resolving each one.
 
+![alt text](/images/image-318.png)
+
 Click on any record with title **GenAI Prompt Injection Attack...**, where AI Disposition is **True Positive**. 
 
-The AI Disposition can take about 10 minutes to appear, and not every finding is judged True Positive.
+The AI Disposition can take a few minutes to appear, and not every finding is judged True Positive.
 
 ![alt text](/images/image-154.png)
 
-Finding header (e.g. "GenAI Prompt Injection Attack: t.nguyen (critical)") — Names the threat by actor and severity. Naming the adversary, not just the event, is what turns detection into accountability.
+Finding header — Names the threat by actor and severity. Naming the adversary, not just the event, is what turns detection into accountability.
 
 Finding narrative — A plain-language summary of the actor, the attempts, the apps and sessions targeted, the source IPs, and the correlated policy blocks and safety violations. The auditable story of what happened, written so a human can act without decoding raw logs.
 

@@ -106,8 +106,6 @@ Datasets — Curated "golden" reference sets used to grade the AI consistently. 
 
 Prompts — A versioned, centralized library of the instructions that drive the AI, enabling change-control over the core logic, reusable directly in code.
 
-Click on **PseudoCo Assistant** under **Agent Streams**.
-
 #### 1.2.3 Review Agent Stream
 
 ![alt text](/images/image-220.png)
@@ -125,7 +123,7 @@ Automated scoring (such as Output Toxicity, Output PII, and your industry's cust
 
 Click on any trace. Other participants' turns share this stream, so look for your own prompt in the **Input** column.
 
-![alt text](/images/image-223.png)
+![alt text](/images/image-315.png)
 
 This single-trace view is the microscope of the platform — it opens up one AI conversation end to end, showing exactly how a multi-step agent produced its answer and how that answer scored on quality and safety.
 
@@ -139,7 +137,7 @@ Feel free to explore the other tabs, such as **Latency** and **Trace Graph**.
 
 #### 1.2.4 Review Signals
 
-![alt text](/images/image-224.png)
+![alt text](/images/image-316.png)
 
 Click the back arrow to return to the **Agent Stream**.
 
@@ -193,7 +191,7 @@ Feel free to explore additional metric charts, such as those under **Safety Metr
 
 Click on **Agent Graph**.
 
-![alt text](/images/image-230.png)
+![alt text](/images/image-317.png)
 
 The **Agent Graph** visualizes how AI agents coordinate across models and workflows, making complex agent behavior transparent, traceable, and easier to govern.
 

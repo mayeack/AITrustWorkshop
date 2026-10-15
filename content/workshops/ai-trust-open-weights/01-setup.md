@@ -22,9 +22,19 @@ All lab work happens in your web browser; there is nothing to install. Before yo
 
 ## Access
 
-![alt text](/images/image-210.png)
+![alt text](/images/image-312.png)
 
-Go to https://dcloud2-sjc.cisco.com/content/instantdemo/cisco-secure-ai-factory-with-nvidia-hidden and click **View** to open the splash page, which has all of the tiles you will need for these labs. There will be more tiles than you will use.
+Your laptop should start on the page above; if not, navigate to https://www.ciscodcloud.com/apps/expo/1j3l4te516ynjzcm8qe0amj0i .
+
+Click on **Explore** under SYD Sessions.
+
+![alt text](/images/image-313.png)
+
+In the pop-up, enter your email address, then click **Launch**.
+
+![alt text](/images/image-314.png)
+
+Click **Launch**.
 
 {{% notice note %}}
 Keep PseudoCo Assistant open in its own browser tab for the whole workshop. Both labs start in the assistant, and Lab 2 returns to it after you work in Agent Security.
