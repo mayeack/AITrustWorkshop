@@ -56,7 +56,7 @@ Ensure that the following fields are set:
 In healthcare, set **Application Theme** to **MedAdvice**.
 {{% /expand %}}
 
-Because Nemotron is an open-weight model, **Static Emission** reports its token usage as gpt-4o so that cost calculates correctly. That is why traces show gpt-4o.
+Because Nemotron is an open-weight model, **Static Emission** reports its token usage as gpt-4o so that Agent Observability can estimate its cost. That is why traces show gpt-4o. On your own AI Factory that price is a stand-in, and the **Beyond Tokens** panel under **Review Trends** shows how to measure the real cost from GPU utilization and power.
 
 #### 1.1.2 Explore PseudoCo Assistant's Behavior
 
@@ -86,7 +86,15 @@ We will explore how this non-compliant behavior is monitored in subsequent secti
 
 ### Lab 1.2 Monitor Behavior in Splunk Agent Observability
 
-#### 1.2.1 Access Cisco Cloud Control
+#### 1.2.1 Initiate SSO for Agent Observability
+
+![alt text](/workshops/ai-trust-open-weights/image-14.png)
+
+On the splash page, click **Open Splunk O11y Cloud**.
+
+After you have done so, return to the splash page.
+
+#### 1.2.2 Access Cisco Cloud Control
 
 ![alt text](/workshops/ai-trust-open-weights/image-14.png)
 
@@ -102,7 +110,7 @@ Click the nine dots in the upper left corner.
 
 Click **Agent Observability** under **Apps**.
 
-#### 1.2.2 Review Agent Observability Overview
+#### 1.2.3 Review Agent Observability Overview
 
 ![alt text](/workshops/ai-trust-open-weights/image-17.png)
 ![alt text](/workshops/ai-trust-open-weights/image-18.png)
@@ -127,7 +135,7 @@ In healthcare, the agent stream is **MedAdvice**.
 
 Click **View project details** to drill into Agent Observability. The project opens in Splunk Observability Cloud.
 
-#### 1.2.3 Review Agent Stream
+#### 1.2.4 Review Agent Stream
 
 ![alt text](/workshops/ai-trust-open-weights/image-10.png)
 
@@ -155,7 +163,7 @@ Evaluators — One trace, examined from every angle: how it scored, how it was c
 
 Feel free to explore the other tabs, such as **Latency** and **Trace graph**.
 
-#### 1.2.4 Review Signals
+#### 1.2.5 Review Signals
 
 ![alt text](/workshops/ai-trust-open-weights/image-25.png)
 
@@ -184,7 +192,7 @@ Click on **Unlicensed Medication Advice**. It identifies responses where the LLM
 **Evidence details:** Visualizes when affected spans occurred and provides example interactions that contributed to the signal.<br>
 **Trace linkage:** Lets the user drill into the underlying session, trace, and span for direct investigation of the agent behavior.
 
-#### 1.2.5 Review Trends
+#### 1.2.6 Review Trends
 
 ![alt text](/workshops/ai-trust-open-weights/image-29.png)
 
@@ -205,6 +213,31 @@ API Failures — Counts how often the underlying service broke. This is the reli
 Traces Count — Tracks total volume of activity. This sizes the workload and gives every other metric context — quality and cost only mean something against how much the system is handling.
 
 Agent Cost — Translates that consumption into dollars. This is the line item leadership actually cares about: what is this AI costing us, tracked over time so spend never becomes a surprise.
+
+{{% expand title="Beyond Tokens: Measuring Cost on Your Own AI Factory" %}}
+Agent Cost prices every token at a hosted model's rate, which is why Static Emission reports Nemotron's usage as gpt-4o. When the model runs on your own Cisco Secure AI Factory with NVIDIA, there is no per-token bill. You pay for the GPU servers and the electricity that runs them, whether they are busy or idle. Tokens still measure the work the AI does. GPU utilization and power measure what that work costs you.
+
+When Splunk Observability Cloud also monitors the Cisco AI POD the model runs on, four infrastructure metrics give you that cost:
+
+GPU Utilization (`DCGM_FI_DEV_GPU_UTIL`) — The share of time each GPU is running work, reported by NVIDIA DCGM. Low utilization means you are paying for idle capacity. Sustained high utilization means you are getting full value from the hardware and are close to needing more of it.
+
+GPU Power (`DCGM_FI_DEV_POWER_USAGE`) — The watts each GPU is drawing right now. Power rises and falls with inference load, so this is the live view of what the AI is spending on electricity.
+
+GPU Energy (`DCGM_FI_DEV_TOTAL_ENERGY_CONSUMPTION`) — The energy each GPU has used since it booted, in millijoules. The difference between two readings is the energy used in between.
+
+Server Power (`intersight.ucs.host.power`) — The watts drawn by the whole Cisco UCS server, reported by Cisco Intersight. It adds the CPUs, memory, and fans that the GPU metrics leave out.
+
+To turn these into a cost per token for any time window, such as the last hour:
+
+1. **Energy:** Average Server Power in watts, summed across the servers that run the model, × hours ÷ 1,000 = kilowatt-hours (kWh). For the GPUs alone, divide the change in GPU Energy by 3,600,000,000.
+2. **Electricity cost:** kWh × your electricity rate × your data center's power usage effectiveness (PUE), the ratio that adds cooling and facility overhead.
+3. **Hardware cost:** The servers' purchase price spread over their service life, for the same number of hours.
+4. **Cost per token:** (Electricity cost + Hardware cost) ÷ Total Tokens for the same window, from System Metrics. Compare it with Agent Cost to see what the same tokens would cost from a hosted provider.
+
+For example, with round illustrative numbers: a server that averages 4,000 watts for one hour uses 4 kWh. At $0.15 per kWh and a PUE of 1.5, that hour's electricity costs 4 × $0.15 × 1.5 = $0.90. If the server generated 3 million tokens in that hour, electricity adds $0.30 per million tokens, before hardware cost.
+
+Hardware cost is fixed, so the more tokens the GPUs serve each hour, the less each token costs. That makes GPU utilization the main lever on cost per token. Tokens per joule (tokens per second ÷ watts) is the matching efficiency score: use it to compare models, GPU generations, and serving settings on the same hardware. If the GPUs serve more than one application, split the cost by each application's share of the tokens.
+{{% /expand %}}
 
 Feel free to explore additional metric charts, such as those under **Safety Metrics** and **Security**.
 
