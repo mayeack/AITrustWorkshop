@@ -33,6 +33,10 @@ In healthcare, the custom evaluator is **Prescriptive Overreach**, which flags r
 
 Model evaluation, evaluator construction, and signal understanding is critical both to build trust in AI systems before deployment, and to monitor model drift over time.
 
+Evaluation accuracy depends on a feedback loop. The orange tags mark the steps this lab covers.
+
+![Eval Engineering Lifecycle: create new LLM evals, add SME annotations, tune the eval with Autotune, achieve visibility, fine-tune an SLM as judge, guardrail the agent, and identify edge cases. Tags show where the workshop covers each step: in Lab 1, the prescriptive_overreach custom evaluator, Signals such as Unlicensed Medication Advice, evaluator scores in the trace view, and the Agent Stream and Trends; in Lab 2, the Agent Security guardrail. Fine-tuning an SLM as judge is out of scope for this workshop](/images/image-320.png)
+
 ## Labs
 
 ### Lab 1.1 Explore Prompting in PseudoCo Assistant
@@ -290,6 +294,10 @@ The journey walks through five capabilities that make trust measurable:
 **Standardize** — A central evaluator catalog defines what "good" and "safe" mean once and applies it everywhere, with each evaluator authored as a precise, version-controlled rubric.
 
 The takeaway: AI risk becomes quantifiable and auditable. Safety, quality, and cost are measured continuously and automatically — at scale, without human review of every interaction — giving the business the defensible evidence it needs to deploy AI with confidence.
+
+![Eval Engineering Lifecycle: create new LLM evals, add SME annotations, tune the eval with Autotune, achieve visibility, fine-tune an SLM as judge, guardrail the agent, and identify edge cases. Tags show where the workshop covers each step: in Lab 1, the prescriptive_overreach custom evaluator, Signals such as Unlicensed Medication Advice, evaluator scores in the trace view, and the Agent Stream and Trends; in Lab 2, the Agent Security guardrail. Fine-tuning an SLM as judge is out of scope for this workshop](/images/image-320.png)
+
+Back on the lifecycle, you have now covered each Lab 1 step: every turn scored in the Agent Stream, evaluator scores checked in the trace view, edge cases surfaced by Signals, and a custom evaluator that defines the risk. The next step in the loop, guardrailing the agent, is Lab 2.
 
 Now that we have identified a critical custom evaluator for your industry, let's operationalize it in **Agent Security**.
 
