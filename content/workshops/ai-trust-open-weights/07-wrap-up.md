@@ -16,6 +16,8 @@ weight      = 70
 
 **The value.** Trust becomes a loop you can run and prove. NVIDIA Nemotron open models, served as NVIDIA NIM microservices on Cisco Secure AI Factory with NVIDIA, provide the **intelligence**. Splunk Agent Observability provides the **evidence**. Agent Security provides the **enforcement**. In this workshop, the outside-of-authority risk you measured in Lab 1 became the guardrail you enforced in Lab 2 — **one loop, from finding to guardrail.**
 
+![The Trusted AI Stack: a pyramid with Cisco Secure AI Factory with NVIDIA at the base, NVIDIA NIM inference with Nemotron open models in the middle, and Splunk Agent Observability beside Cisco Agent Security at the top, with a chevron pointing to Trusted AI as the outcome](/images/image-319.png)
+
 | **Outcome** | **What it means** | **Grounded in** |
 | --- | --- | --- |
 | **Improved Outcomes** | Turn AI quality, safety, and cost into measurable operating metrics, establish a baseline before release, identify emerging risks in production, and continuously improve against evidence. | Splunk Agent Observability |

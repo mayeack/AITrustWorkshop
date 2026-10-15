@@ -41,6 +41,8 @@ But control over the model is not control over the answer. Asked about a routine
 
 This workshop takes a practical approach to AI trust, with a clear job for each layer of the stack.
 
+![The Trusted AI Stack: a pyramid with Cisco Secure AI Factory with NVIDIA at the base, NVIDIA NIM inference with Nemotron open models in the middle, and Splunk Agent Observability beside Cisco Agent Security at the top, with a chevron pointing to Trusted AI as the outcome](/images/image-319.png)
+
 > **NVIDIA Nemotron open models provide the intelligence. Continuous evaluation provides the evidence. Runtime enforcement keeps AI aligned with intended business outcomes.**
 
 | **Layer** | **What it answers** | **Platform** |
