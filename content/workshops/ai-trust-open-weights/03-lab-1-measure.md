@@ -139,39 +139,11 @@ In healthcare, the agent stream is **MedAdvice**.
 
 Click **View project details** to drill into Agent Observability. The project opens in Splunk Observability Cloud.
 
-#### 1.2.4 Review Agent Stream
+#### 1.2.4 Review Signals
 
 ![alt text](/workshops/ai-trust-open-weights/image-10.png)
 
 Click on the agent stream for your industry's theme.
-
-![alt text](/workshops/ai-trust-open-weights/image-23.png)
-
-The **Agent Stream**  turns every live AI conversation into a graded, searchable record — the continuous audit trail that proves the application is behaving safely in production.
-
-Tracing — The running ledger of real user interactions, capturing what went in and what the AI sent back. This is the system of record that makes behavior observable and reviewable rather than a black box.
-
-Automated scoring (such as Output Toxicity, Output PII, and your industry's custom evaluators) — Every response is auto-graded against safety and quality measures, including custom risk checks tuned to this use case. This is the core value: thousands of interactions evaluated without human review, with problematic responses surfaced automatically for attention. Scroll right to see each evaluator's column.
-
-Click on any trace.
-
-![alt text](/workshops/ai-trust-open-weights/image-24.png)
-
-This single-trace view is the microscope of the platform — it opens up one AI conversation end to end, showing exactly how a multi-step agent produced its answer and how that answer scored on quality and safety.
-
-Trace tree (Session → chat turn → agents) — Exposes the full chain of reasoning behind one response, including the specialist agents and underlying model that handled it. This turns a single answer into a traceable, explainable record — essential when you need to prove why the AI said what it said.
-
-Input / Output panel — Shows the exact user request above the verbatim response. This is the ground truth for any review, audit, or dispute — what was actually asked, and what was actually returned.
-
-Evaluators — One trace, examined from every angle: how it scored, how it was configured, human notes, and flagged risks. The value is a complete case file for any interaction worth investigating.
-
-Feel free to explore the other tabs, such as **Latency** and **Trace graph**.
-
-#### 1.2.5 Review Signals
-
-![alt text](/workshops/ai-trust-open-weights/image-25.png)
-
-Click the back arrow to return to the **Agent Stream**.
 
 ![alt text](/workshops/ai-trust-open-weights/image-26.png)
 
@@ -196,9 +168,41 @@ Click on **Unlicensed Medication Advice**. It identifies responses where the LLM
 **Evidence details:** Visualizes when affected spans occurred and provides example interactions that contributed to the signal.<br>
 **Trace linkage:** Lets the user drill into the underlying session, trace, and span for direct investigation of the agent behavior.
 
-#### 1.2.6 Review Trends
+#### 1.2.5 Review Agent Stream
 
 ![alt text](/workshops/ai-trust-open-weights/image-29.png)
+
+Click on **Tracing** to return to the **Agent Stream**.
+
+![alt text](/workshops/ai-trust-open-weights/image-23.png)
+
+The **Agent Stream**  turns every live AI conversation into a graded, searchable record — the continuous audit trail that proves the application is behaving safely in production.
+
+Tracing — The running ledger of real user interactions, capturing what went in and what the AI sent back. This is the system of record that makes behavior observable and reviewable rather than a black box.
+
+Automated scoring (such as Output Toxicity, Output PII, and your industry's custom evaluators) — Every response is auto-graded against safety and quality measures, including custom risk checks tuned to this use case. This is the core value: thousands of interactions evaluated without human review, with problematic responses surfaced automatically for attention. Scroll right to see each evaluator's column.
+
+Click on any trace.
+
+![alt text](/workshops/ai-trust-open-weights/image-24.png)
+
+This single-trace view is the microscope of the platform — it opens up one AI conversation end to end, showing exactly how a multi-step agent produced its answer and how that answer scored on quality and safety.
+
+Trace tree (Session → chat turn → agents) — Exposes the full chain of reasoning behind one response, including the specialist agents and underlying model that handled it. This turns a single answer into a traceable, explainable record — essential when you need to prove why the AI said what it said.
+
+Input / Output panel — Shows the exact user request above the verbatim response. This is the ground truth for any review, audit, or dispute — what was actually asked, and what was actually returned.
+
+Evaluators — One trace, examined from every angle: how it scored, how it was configured, human notes, and flagged risks. The value is a complete case file for any interaction worth investigating.
+
+Feel free to explore the other tabs, such as **Latency** and **Trace graph**.
+
+#### 1.2.6 Review Trends
+
+![alt text](/workshops/ai-trust-open-weights/image-25.png)
+
+Click the back arrow to return to the **Agent Stream**.
+
+![alt text](/workshops/ai-trust-open-weights/image-26.png)
 
 Click on **Trends**.
 
@@ -297,7 +301,7 @@ The takeaway: AI risk becomes quantifiable and auditable. Safety, quality, and c
 
 ![Eval Engineering Lifecycle: create new LLM evals, add SME annotations, tune the eval with Autotune, achieve visibility, fine-tune an SLM as judge, guardrail the agent, and identify edge cases. Tags show where the workshop covers each step: in Lab 1, the prescriptive_overreach custom evaluator, Signals such as Unlicensed Medication Advice, evaluator scores in the trace view, and the Agent Stream and Trends; in Lab 2, the Agent Security guardrail. Fine-tuning an SLM as judge is out of scope for this workshop](/images/image-320.png)
 
-Back on the lifecycle, you have now covered each Lab 1 step: every turn scored in the Agent Stream, evaluator scores checked in the trace view, edge cases surfaced by Signals, and a custom evaluator that defines the risk. The next step in the loop, guardrailing the agent, is Lab 2.
+Back on the lifecycle, you have now covered each Lab 1 step: edge cases surfaced by Signals, every turn scored in the Agent Stream, evaluator scores checked in the trace view, and a custom evaluator that defines the risk. The next step in the loop, guardrailing the agent, is Lab 2.
 
 Now that we have identified a critical custom evaluator for your industry, let's operationalize it in **Agent Security**.
 
