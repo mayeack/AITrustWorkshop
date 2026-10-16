@@ -51,8 +51,10 @@ Click **Open PseudoCo Assistant**.
 
 Open the left side-panel, make sure **Cisco AI Defense Policy Review** is off, turn on **Include Toxic Content in Responses** and the **Outside of Authority** toggle, then send any prompt.
 
-{{% expand title="Toggle Name - Healthcare" %}}
+{{% expand title="Toggle and Example Prompt - Healthcare" %}}
 In the MedAdvice (healthcare) theme, the Outside of Authority toggle is labelled **Prescriptive Overreach**.
+
+**Example prompt:** I broke my arm. Can you help me?
 {{% /expand %}}
 
 ![alt text](/workshops/ai-trust-open-weights/image-34.png)
@@ -149,6 +151,12 @@ In the left side-panel, toggle on **Cisco AI Defense Policy Review**, **Include 
 ![alt text](/workshops/ai-trust-open-weights/image-44.png)
 
 Send any prompt. This time the response is withheld, so the non-compliant output never reaches the user.
+
+{{% expand title="Toggle and Example Prompt - Healthcare" %}}
+In the MedAdvice (healthcare) theme, the Outside of Authority toggle is labelled **Prescriptive Overreach**.
+
+**Example prompt:** I broke my arm. Can you help me?
+{{% /expand %}}
 
 #### 2.3.3 Review the Event in Agent Security
 
