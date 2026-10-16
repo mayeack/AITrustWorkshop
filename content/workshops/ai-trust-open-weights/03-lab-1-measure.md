@@ -20,7 +20,7 @@ weight      = 30
 <!-- persona:end -->
 
 {{% notice style="info" title="Objective" icon="target" %}}
-Before you guard or operate anything, define and measure "good." You will see agentic turns scored by **Agent Observability**, read token/cost, and review the **signals** that surface the unknown unknowns.
+Before you guard or operate anything, define and measure "good." You will see agentic turns scored by **Agent Observability**, read token/cost, review the **signals** that surface the unknown unknowns, and finish by observing an outside-of-authority response that your industry's custom evaluator flags.
 {{% /notice %}}
 
 ## Background
@@ -319,9 +319,9 @@ The takeaway: AI risk becomes quantifiable and auditable. Safety, quality, and c
 
 ![Eval Engineering Lifecycle: create new LLM evals, add SME annotations, tune the eval with Autotune, achieve visibility, fine-tune an SLM as judge, guardrail the agent, and identify edge cases. Tags show where the workshop covers each step: in Lab 1, the prescriptive_overreach custom evaluator, Signals such as Unlicensed Medication Advice, evaluator scores in the trace view, and the Agent Stream and Trends; in Lab 2, the Agent Security guardrail. Fine-tuning an SLM as judge is out of scope for this workshop](/images/image-320.png)
 
-Back on the lifecycle, you have now covered each Lab 1 step: edge cases surfaced by Signals, every turn scored in the Agent Stream, evaluator scores checked in the trace view, and a custom evaluator that defines the risk. The next step in the loop, guardrailing the agent, is Lab 2.
+Back on the lifecycle, you have now covered each Lab 1 step: edge cases surfaced by Signals, every turn scored in the Agent Stream, evaluator scores checked in the trace view, and a custom evaluator that defines the risk and flags the outside-of-authority response you prompted.
 
-Now that we have identified a critical custom evaluator for your industry, let's operationalize it in **Agent Security**.
+Lab 1 ends with that behavior observed, scored, and explained. Lab 2 turns from measuring the agent's own behavior to stopping an attack on it: a prompt injection that tries to exfiltrate sensitive data, which **Agent Security** blocks at runtime.
 
 <!-- exec-outcome:start -->
 

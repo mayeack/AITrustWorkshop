@@ -49,7 +49,7 @@ This workshop takes a practical approach to AI trust, with a clear job for each 
 | --- | --- | --- |
 | **Intelligence** | *What runs, and where?* Open models whose weights, serving, and placement the enterprise decides | NVIDIA Nemotron open models as NVIDIA NIM microservices, on Cisco Secure AI Factory with NVIDIA |
 | **Evidence** (Lab 1 — Measure) | *Is it good?* Every agent interaction measured against trust criteria such as accuracy, safety, and policy alignment, surfacing hallucination, PII leakage, prompt injection, and responses outside the assistant's authority | Splunk Agent Observability |
-| **Enforcement** (Lab 2 — Secure) | *Is it safe?* Runtime guardrails on every prompt and response, built from what the evidence shows | Agent Security |
+| **Enforcement** (Lab 2 — Secure) | *Is it safe?* Runtime guardrails on every prompt and response that stop attacks such as prompt injection and data exfiltration before they reach the model | Agent Security |
 
 {{% notice note "The foundation: open models on infrastructure you control" %}}
 **NVIDIA Nemotron** is a family of open models that NVIDIA builds for agentic AI. NVIDIA publishes the model weights, training recipes, and large portions of the training data, so enterprises can inspect and adapt the models they deploy.
@@ -59,15 +59,15 @@ This workshop takes a practical approach to AI trust, with a clear job for each 
 **Cisco Secure AI Factory with NVIDIA** is a modular reference architecture, built from Cisco AI PODs, that combines high-performance AI infrastructure with full-stack security and observability. In this workshop, it is the platform PseudoCo Assistant runs on.
 {{% /notice %}}
 
-Trust is not a single product or a one-time test. It is a loop — intelligence, evidence, enforcement — and the two labs run it once, end to end, on a single risk:
+Trust is not a single product or a one-time test. It is a loop — intelligence, evidence, enforcement — and the two labs walk through each layer of it:
 
 1. **Intelligence answers.** PseudoCo Assistant, a multi-agent assistant themed for your industry, responds to user questions using open models.
-2. **Evidence finds the risk.** Splunk Agent Observability scores every interaction and surfaces what is going wrong. That includes responses outside the assistant's authority, which you examine as a custom evaluator for your industry at the end of Lab 1.
-3. **Enforcement acts on it.** In Lab 2, you review the runtime guardrail in Agent Security that prevents that same aberrant behavior, then turn it on for the assistant.
-4. **Proof closes the loop.** You re-run the interaction against the live application. The non-compliant response is blocked, and the block shows up as an event in Agent Security.
+2. **Evidence finds the risk.** Splunk Agent Observability scores every interaction and surfaces what is going wrong. Lab 1 ends with a response outside the assistant's authority, flagged by a custom evaluator for your industry.
+3. **Enforcement stops the attack.** In Lab 2, a prompt injection hidden in a document tries to pull sensitive data out through the assistant. Without a guardrail, the response carries that data. With Agent Security policy review on, the request is blocked before it reaches the model.
+4. **Proof closes the loop.** You re-run the attack against the live application, and the block shows up as an event in Agent Security.
 
-{{% expand title="The Risk - Healthcare" %}}
-In healthcare, the risk is **Prescriptive Overreach**: the assistant acting like a prescriber. Lab 1 examines it as a custom evaluator, and in Lab 2 the guardrail blocks the prescriptive response.
+{{% expand title="The Risks - Healthcare" %}}
+In healthcare, Lab 1's risk is **Prescriptive Overreach**: the assistant acting like a prescriber, which the custom evaluator flags. Lab 2's attack hides instructions in a patient history to exfiltrate the patient's identifiers and medical history.
 {{% /expand %}}
 
 Because evaluation runs continuously, the loop does not stop there. As models, prompts, and real-world traffic change, the evidence keeps showing you where the next guardrail belongs.
