@@ -2,7 +2,7 @@
 title       = "Agentic AI Trust Workshop"
 linkTitle   = "AI Trust"
 description = "Delivering agentic AI trust end to end — measure, secure, observe, and govern every AI interaction."
-duration    = "4 hours 15 min"
+duration    = "3 hours 45 min"
 difficulty  = "intermediate"
 product     = "Cisco + Splunk"
 weight      = 1
@@ -12,4 +12,4 @@ tagline     = "FY'27 · Hands-on"
 aliases     = ["/workshops/ai-governance/", "/workshops/ai-governance-healthcare/", "/workshops/ai-trust-healthcare/"]
 +++
 
-Four labs, one live agentic application. You will measure AI quality objectively, block non-compliant output at runtime, trace a latency incident end to end, and prove it all — on the same trusted turns.
+Four labs, one live agentic application. You will measure AI quality objectively, block a prompt-injection data-exfiltration attack before it reaches the model, trace a latency incident end to end, and prove it all — on the same trusted turns.

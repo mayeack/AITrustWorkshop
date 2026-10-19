@@ -257,7 +257,7 @@ Configure Output (type & roll-up) — Sets how individual scores combine into a 
 
 ## Outcome
 
-**Splunk Agent Observability** turns AI development from a black box into a measurable discipline you can trust. Using PseudoCo Assistant — preloaded with a clean "baseline" model and an intentionally "poisoned" one — participants see firsthand how non-compliant AI behavior is automatically detected, scored, and contained.
+**Splunk Agent Observability** turns AI development from a black box into a measurable discipline you can trust. Using PseudoCo Assistant — preloaded with a clean "baseline" model and an intentionally "poisoned" one — participants see firsthand how non-compliant AI behavior is automatically detected and scored.
 
 The journey walks through six capabilities that make trust measurable:
 
@@ -275,7 +275,7 @@ The journey walks through six capabilities that make trust measurable:
 
 The takeaway: AI risk becomes quantifiable and auditable. Safety, quality, and cost are measured continuously and automatically — at scale, without human review of every interaction — giving the business the defensible evidence it needs to deploy AI with confidence.
 
-Now that we have identified a critical custom metric for your industry, let's operationalize it in **Cisco AI Defense**.
+Lab 1 ends with the agent's own behavior measured, scored, and explained, including the responses your industry's custom evaluator flags for overstepping the assistant's authority. Lab 2 turns from measuring behavior to securing the agent against attackers at runtime: a prompt injection hidden in content the assistant is asked to process tries to exfiltrate sensitive data, and an existing guardrail in **Cisco AI Defense** blocks it before the model reads it.
 
 <!-- exec-outcome:start -->
 

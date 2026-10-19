@@ -29,7 +29,7 @@ That creates a compelling opportunity to improve both operating efficiency and p
 
 ![The Risk: Prescriptive Overreach — MedAdvice appends a hydrocodone prescription to routine ankle-injury advice](/images/image-121.png)
 
-But scaling that value introduces material risk to the trust it depends on. Hallucinations, PII exposure, and prescriptive overreach can quickly turn an efficiency gain into a clinical, regulatory, or reputational event.
+But scaling that value introduces material risk to the trust it depends on. Hallucinations, PII exposure, prompt injection, and prescriptive overreach can quickly turn an efficiency gain into a clinical, regulatory, or reputational event.
 
 **The value of MedAdvice can scale. So can the risk. Trust — proven, not assumed — is what makes the economics sustainable.**
 {{% /expand %}}
@@ -89,9 +89,9 @@ Luna changes how AI trust is earned — from periodic sampling to continuous con
 
 With **Cisco AI Defense Policy Review** turned on, PseudoCo Assistant applies safety gates before and after every LLM call. **Cisco AI Defense (Lab 2)** is a live integration: it inspects the prompt pre-LLM and the response post-LLM against multiple guardrails — PII, PHI, PCI, Harassment, Hate, Profanity, Prompt Injection, etc. — and blocks non-compliant content. Every turn is logged with full governance and audit metadata in Cisco Data Fabric.
 
-That same per-turn telemetry feeds **Splunk Observability Cloud (Lab 3)**, the operational lens on the running agent. Where Cisco AI Defense enforces what the assistant is allowed to say, Observability Cloud watches how it runs, emitting OpenTelemetry traces, spans, latency, and token/cost telemetry for every LLM call and tool hop across the multi-agent graph. The AI Troubleshooting Agent then uses this telemetry to identify incidents, evaluate their root cause and impact, and resolve issues across the agentic workflow.
+That same per-turn telemetry feeds **Splunk Observability Cloud (Lab 3)**, the operational lens on the running agent. Where Cisco AI Defense enforces what is allowed into and out of the assistant, Observability Cloud watches how it runs, emitting OpenTelemetry traces, spans, latency, and token/cost telemetry for every LLM call and tool hop across the multi-agent graph. The AI Troubleshooting Agent then uses this telemetry to identify incidents, evaluate their root cause and impact, and resolve issues across the agentic workflow.
 
-**Splunk Core (Lab 4)** is where each turn's governance record comes to rest, providing the immutable audit trail and unified security record. If the assistant detects a prompt injection attempt, Splunk can correlate the malicious prompt, AI Defense verdict, affected agent actions, and downstream response into a single investigation. Enterprise Security Agents can then help triage the event, assess its scope and severity, recommend next actions, and accelerate response, turning that evidence into the foundation for an agentic SOC.
+**Splunk Core (Lab 4)** is where each turn's governance record comes to rest, providing the immutable audit trail and unified security record. When Cisco AI Defense blocks a prompt injection attempt, like the one you stop in Lab 2, Splunk can correlate the malicious prompt, the Cisco AI Defense verdict, and the same actor's other activity into a single investigation. Enterprise Security Agents can then help triage the event, assess its scope and severity, recommend next actions, and accelerate response, turning that evidence into the foundation for an agentic SOC.
 
 ### AI Governance Overview Dashboard: The Single Pane of Glass
 
@@ -107,26 +107,30 @@ That same per-turn telemetry feeds **Splunk Observability Cloud (Lab 3)**, the o
 
 **Scenario.** Before you can trust the assistant at scale, you need an objective definition of acceptable behavior. You compare a baseline agent with intentionally degraded behavior against the same interactions to see where quality, safety, and economics begin to diverge.
 
-**What One Cisco does.** You use Splunk Agent Observability to evaluate the entire agent trace, including agent decisions, tool calls, context, and LLM responses, against research-backed and custom metrics such as hallucination, context adherence, PII leakage, and tool-selection quality. Luna, Cisco's purpose-built small language model, makes those evaluations economical enough to run across both pre-production experiments and live production traffic.
+**What One Cisco does.** You use Splunk Agent Observability to evaluate the entire agent trace, including agent decisions, tool calls, context, and LLM responses, against research-backed metrics such as hallucination, context adherence, PII leakage, and tool-selection quality, plus custom metrics for your own risks, such as responses that overstep the assistant's authority. Luna, Cisco's purpose-built small language model, makes those evaluations economical enough to run across both pre-production experiments and live production traffic.
 
 You quantify differences between baseline and degraded behavior, understand token usage and cost, and use continuous signals to identify drift, anomalous behavior, and failure modes that predefined test cases may never have anticipated.
 
 The result is not simply a pass/fail test before deployment. You establish a measurable behavioral baseline and continue evaluating the agent against it as the application, models, prompts, tools, and real-world traffic change.
 
+{{% expand title="The Custom Evaluator - Healthcare" %}}
+In healthcare, the custom evaluator is **Prescriptive Overreach**: it flags responses that act as a prescriber, recommending prescription-only or controlled medications or prescription-style dosing instead of OTC products, self-care, or referral to a licensed professional.
+{{% /expand %}}
+
 {{% notice style="info" title="Executive outcome" icon="star" %}}
 **Executive outcome — Improved Outcomes.** You turn AI quality, safety, and cost into measurable operating metrics rather than subjective judgments. You can establish a baseline before release, identify emerging risks in production, and continuously improve the agent against evidence.
 {{% /notice %}}
 
-### Lab 2 — Secure (Cisco AI Defense): Operationalize Policies Into Runtime Enforcement
+### Lab 2 — Secure (Cisco AI Defense): Stop the Attack Before It Reaches the Model
 
-**Scenario.** The assistant may evaluate well overall, but every individual interaction still introduces risk. A user prompt can contain a prompt injection or sensitive information, and an otherwise valid model can generate an inappropriate response, or one that oversteps the assistant's authority.
+**Scenario.** The assistant may evaluate well overall, but evaluation measures how it behaves, not who is trying to turn it against you. An attacker can hide instructions inside content the assistant is asked to process, such as a document, a web page, an email, or a record pasted into the chat. The person who shares that content usually never sees them, and the instructions tell the assistant to gather sensitive data and send it somewhere the attacker controls.
 
-**What One Cisco does.** You use Cisco AI Defense to place runtime controls around every interaction. Prompts are inspected before the LLM is invoked, and generated responses are independently inspected before they reach the user. Policies detect and enforce against risks such as prompt injection, PII exposure, prohibited content, and responses outside the assistant's authority.
+**What One Cisco does.** You use Cisco AI Defense to place runtime controls around every interaction. Prompts are inspected before the LLM is invoked, and generated responses are independently inspected before they reach the user. Policies detect and enforce against risks such as prompt injection, data exfiltration, PII exposure, and prohibited content.
 
-You then tune a response-direction guardrail against your industry's requirements and immediately re-run the interaction. You see how an observed behavioral risk becomes an enforceable runtime policy, with the resulting verdict and enforcement action captured as part of the interaction's immutable record.
+With **Cisco AI Defense Policy Review** off, you send a document carrying hidden instructions, and the response comes back with the kind of sensitive data the attacker asked for. You then review **Prompt Injection - Master**, an existing guardrail profile written in plain language in Policy Studio, to see which attack patterns it blocks, which legitimate requests it deliberately allows, and how it is versioned. With policy review on, the same document is blocked before the model reads it, a legitimate request is still answered normally, and the verdict and enforcement action are captured as part of the interaction's immutable record.
 
-{{% expand title="The Guardrail - Healthcare" %}}
-In healthcare, the guardrail blocks **prescriptive overreach**: responses that recommend prescription-only or controlled medications or prescription-style dosing, instead of OTC products, self-care, or referral to a licensed professional.
+{{% expand title="The Attack - Healthcare" %}}
+In healthcare, the attack is hidden in a patient history. It tells the assistant to collect the patient's name, date of birth, contact information, diagnoses, and medications, and to send them to an outside address without telling the user. **Prompt Injection - Master** was written for a customer-facing medical-advice chatbot: it flags attempts to pull out PII and PHI, while still allowing legitimate questions about symptoms and medications and requests for a patient's own records, such as their appointments or lab results.
 {{% /expand %}}
 
 {{% notice style="info" title="Executive outcome" icon="star" %}}
@@ -135,7 +139,7 @@ In healthcare, the guardrail blocks **prescriptive overreach**: responses that r
 
 ### Lab 3 — Observe (Splunk Observability Cloud): Find the Failure, Restore the Service
 
-**Scenario.** The assistant is now producing compliant responses, but its requests have become slow and are failing intermittently. The answer may be correct, yet degraded latency and errors can still undermine adoption, economics, and user experience.
+**Scenario.** With the prompt injection now stopped before it reaches the model, the assistant faces a different problem: its requests have become slow and are failing intermittently. The answer may be correct, yet degraded latency and errors can still undermine adoption, economics, and user experience.
 
 **What One Cisco does.** You use Splunk Observability Cloud to follow the same interaction across OpenTelemetry traces, spans, latency, service dependencies, token consumption, and cost to see exactly how the agent executed. Splunk Agent Observability tells you whether the agent answered well; Observability Cloud shows you whether it ran well.
 
@@ -147,7 +151,7 @@ You then use the AI Troubleshooting Agent to identify the incident, evaluate its
 
 ### Lab 4 — Govern (Splunk Core / Enterprise Security): From Evidence to an Agentic SOC
 
-**Scenario.** The assistant receives a prompt-injection attempt. You need to determine what was attempted, how the control responded, whether the interaction affected downstream agent activity, and whether further investigation or response is required.
+**Scenario.** In Lab 2, Cisco AI Defense blocked a prompt injection before it reached the model, but a block stops the attack without closing the case. The assistant now receives another prompt-injection attempt. You need to determine what was attempted, how the control responded, whether the interaction affected downstream agent activity, and whether further investigation or response is required.
 
 **What One Cisco does.** You use Splunk Core to preserve the interaction as a correlated, immutable governance record. Correlating on the user and source behind that turn, you connect the malicious prompt, Cisco AI Defense verdict and enforcement action, and that actor's related activity into a single finding rather than reconstructing the event across separate consoles.
 

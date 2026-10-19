@@ -30,7 +30,7 @@ Detection and observability tell you *what happened*. Governance is about being 
 
 In the earlier labs, every AI interaction was logged with full governance metadata. That foundation is what makes this lab possible: an adversarial prompt-injection attempt isn't just blocked in the moment, it leaves a **permanent, immutable record** that can be reconstructed on demand.
 
-You will first prepare Enterprise Security for the attack: an investigation type with a response plan generated from a standard operating procedure, wired to the correlation search that defines *how* the threat is detected. Then you will stage a real prompt-injection attack against PseudoCo Assistant, watch it surface in Splunk's Prompt Injection Detection dashboard, and follow it into Enterprise Security as a finding that lands in an analyst's queue with its response plan already attached. The point is the **end-to-end chain**: a live attack becomes a measurable detection, turning a security incident into a defensible story with a clear owner and outcome.
+You will first prepare Enterprise Security for the attack: an investigation type with a response plan generated from a standard operating procedure, wired to the correlation search that defines *how* the threat is detected. Then you will stage prompt injection at scale, the same threat class you blocked in Lab 2: a spray against PseudoCo Assistant in which one actor tries many techniques across several sessions. You will watch it surface in Splunk's Prompt Injection Detection dashboard, and follow it into Enterprise Security as a finding that lands in an analyst's queue with its response plan already attached. The point is the **end-to-end chain**: a live attack becomes a measurable detection, turning a security incident into a defensible story with a clear owner and outcome.
 
 ## Labs
 
@@ -361,8 +361,8 @@ Automated actions, such as disabling the user's account, can be triggered by the
 ## Outcome
 
 - The logs are **immutable** and complete. Every turn carries full governance metadata — auditability you can defend.
-- One search per actor, the whole story: what was asked, what the model said, what AI Defense ruled, and what the detection flagged.
-- The injection attempt didn't just get blocked — it left **evidence**, and that evidence became **accountable casework**: a named actor, an owner, and a documented disposition. That correlated record is exactly what Enterprise Security would promote to a notable in production.
+- One search per actor, the whole story: what was asked, what the model said, what Cisco AI Defense ruled, and what the detection flagged.
+- Like your attack in Lab 2, the injection attempts were blocked at the door, and they also left **evidence**; that evidence became **accountable casework**: a named actor, an owner, and a documented disposition. That correlated record is exactly what Enterprise Security would promote to a notable in production.
 
 The prompt injection turn is visible and flagged in the search results; the Prompt Injection dashboard shows the detection. The correlation search identifies the event, and then escalates a notable event as the evidence in Enterprise Security.
 

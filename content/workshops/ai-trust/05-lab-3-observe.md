@@ -21,14 +21,14 @@ aliases     = ["/lab-3-observe.html", "/workshops/ai-governance/05-lab-3-observe
 <!-- persona:end -->
 
 {{% notice style="info" title="Objective" icon="target" %}}
-After applying the guardrail in Cisco AI Defense, the response is now compliant. However, the service is now slowing down and returning errors. Use the AI Troubleshooting Agent to investigate the alert, identify the root cause, and restore performance.
+With prompt injection blocked at runtime, the next problem is reliability: the service is slowing down and returning errors. Use the AI Troubleshooting Agent to investigate the alert, identify the root cause, and restore performance.
 {{% /notice %}}
 
 ## Background
 
-Splunk Observability Cloud instruments the AI application the way you'd instrument any production service — using **OpenTelemetry traces** that follow a request end-to-end, across every agent, model, and operation. The same turns you scored for quality in Lab 1 and screened with AI Defense in Lab 2 also appear here as traces and metrics, so operations, quality, and forensics live on one platform.
+Splunk Observability Cloud instruments the AI application the way you'd instrument any production service — using **OpenTelemetry traces** that follow a request end-to-end, across every agent, model, and operation. The same turns you scored for quality in Lab 1 and screened with Cisco AI Defense in Lab 2 also appear here as traces and metrics, so operations, quality, and forensics live on one platform.
 
-The guardrail you applied in [Lab 2](/workshops/ai-trust/04-lab-2-secure/) made the response compliant — but the service is now slowing down and returning errors. Here you open the resulting alert and let the **AI Troubleshooting Agent** pinpoint the root cause — instead of grepping logs. AI reliability, cost, and quality are managed on the same screen, as one operational discipline.
+In [Lab 2](/workshops/ai-trust/04-lab-2-secure/), Cisco AI Defense stopped a data-exfiltration attack at the prompt — but a secure assistant still has to be a reliable one, and the service is now slowing down and returning errors. Here you open the resulting alert and let the **AI Troubleshooting Agent** pinpoint the root cause — instead of grepping logs. AI reliability, cost, and quality are managed on the same screen, as one operational discipline.
 
 ## Labs
 
@@ -83,7 +83,6 @@ Once everyone on your instance is done, return to PseudoCo Assistant and toggle 
 A latency and error spike was diagnosed by an AI agent — without reading a single log line — and resolved. Once the demo incident was switched off, performance returned to baseline.
 
 - **One platform, three views.** APM, the audit log, and the quality scores all describe the same AI service — operations, quality, and forensics in one place.
-  forensics share one identity.
 - **The agent investigates; you don't grep.** The AI Troubleshooting Agent works the alert end to end and points at the root cause automatically.
 - **Cost and latency, on the very same turn.** Observe shows token spend and latency on the very turns Splunk Agent Observability already scored for quality — not in a separate dashboard.
 
