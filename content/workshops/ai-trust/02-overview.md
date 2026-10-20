@@ -41,17 +41,19 @@ One dataset. Every pillar. That's what lets a leader go from a number on the scr
 
 ## Labs
 
-### Lab 0.1 Access Splunk Cloud
+### Lab 0.1 Review AI Governance App
+
+#### 0.1.1 Access Splunk Cloud
 
 [How to Access Splunk](/workshops/ai-trust/01-setup/#5-how-to-access-splunk)
 
-### Lab 0.2 Navigate to AI Governance App
+#### 0.1.2 Navigate to AI Governance App
 
 ![alt text](/images/image-212.png)
 
 In the left side-panel to view all apps, and click on **AI Governance**.
 
-### Lab 0.3 Review AI Governance Overview Dashboard
+#### 0.1.3 Review AI Governance Overview Dashboard
 
 ![alt text](/images/image-213.png)
 
