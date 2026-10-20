@@ -1,5 +1,5 @@
 +++
-title       = "AI Governance Overview"
+title       = "Lab 0 — AI Governance Overview"
 description = "The single pane of glass: usage, cost, risk, and compliance — every number one click from its evidence."
 duration    = "15 min"
 weight      = 20
@@ -41,17 +41,17 @@ One dataset. Every pillar. That's what lets a leader go from a number on the scr
 
 ## Labs
 
-### 1. Access Splunk Cloud
+### Lab 0.1 Access Splunk Cloud
 
 [How to Access Splunk](/workshops/ai-trust/01-setup/#5-how-to-access-splunk)
 
-### 2. Navigate to AI Governance App
+### Lab 0.2 Navigate to AI Governance App
 
 ![alt text](/images/image-212.png)
 
 In the left side-panel to view all apps, and click on **AI Governance**.
 
-### 3. Review AI Governance Overview Dashboard
+### Lab 0.3 Review AI Governance Overview Dashboard
 
 ![alt text](/images/image-213.png)
 
