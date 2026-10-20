@@ -356,7 +356,7 @@ The journey walks through six capabilities that make trust measurable:
 
 The takeaway: AI risk becomes quantifiable and auditable. Safety, quality, and cost are measured continuously and automatically — at scale, without human review of every interaction — giving the business the defensible evidence it needs to deploy AI with confidence.
 
-Lab 1 ends with the agent's own behavior measured, scored, and explained, including the responses your industry's custom evaluator flags for overstepping the assistant's authority. Lab 2 turns from measuring behavior to securing the agent against attackers at runtime: a prompt injection hidden in content the assistant is asked to process tries to exfiltrate sensitive data, and an existing guardrail in **Cisco AI Defense** blocks it before the model reads it.
+Lab 1 ends with the agent's own behavior measured, scored, and explained, including the responses your industry's custom evaluator flags for overstepping the assistant's authority. Lab 2 turns from measuring behavior to securing the agent against attackers at runtime: a prompt injection embedded as JSON at the end of a routine question tries to exfiltrate sensitive data, and an existing guardrail in **Cisco AI Defense** blocks it before the model reads it.
 
 <!-- exec-outcome:start -->
 

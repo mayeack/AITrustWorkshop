@@ -7,7 +7,7 @@
 > Phase 3: **Eradication** — Task 3.1, Task 3.2
 > Phase 4: **Post-Incident Activity** — Task 4.1, Task 4.2
 
-> **Overview:** This SOP guides security analysts through investigating and responding to findings related to a prompt injection attack against the Retail Support customer-care assistant. It applies to findings from the GenAI - Prompt Injection Attack Correlation detection set including instruction override, guardrail bypass, persona jailbreak, jailbreak mode, system prompt disclosure, obfuscated payload, and prompt injections flagged by Cisco AI Defense, such as instructions hidden in pasted content that try to exfiltrate customer data. All containment actions run on the identity plane through the MedAdvice Identity Provider SOAR app. This SOP follows the NIST SP 800-61 Incident Response lifecycle.
+> **Overview:** This SOP guides security analysts through investigating and responding to findings related to a prompt injection attack against the Retail Support customer-care assistant. It applies to findings from the GenAI - Prompt Injection Attack Correlation detection set including instruction override, guardrail bypass, persona jailbreak, jailbreak mode, system prompt disclosure, obfuscated payload, and prompt injections flagged by Cisco AI Defense, such as instructions embedded in a prompt that try to exfiltrate customer data. All containment actions run on the identity plane through the MedAdvice Identity Provider SOAR app. This SOP follows the NIST SP 800-61 Incident Response lifecycle.
 
 ## Detection and Analysis
 

@@ -21,7 +21,7 @@ The **CISO** and **AI Security / AppSec** teams. Primary question: _Is our AI sa
 <!-- persona:end -->
 
 {{% notice style="info" title="Objective" icon="target" %}}
-Stop a data-exfiltration attack: a prompt injection hidden in pasted content pulls sensitive data into the response, which is **non-compliant**. You review **Prompt Injection - Master**, an existing guardrail profile in Cisco AI Defense, then turn on policy review and re-run the attack to ensure a **trusted** outcome, with the attack blocked before it reaches the model.
+Stop a data-exfiltration attack: a prompt injection embedded as JSON at the end of a routine question pulls sensitive data into the response, which is **non-compliant**. You review **Prompt Injection - Master**, an existing guardrail profile in Cisco AI Defense, then turn on policy review and re-run the attack to ensure a **trusted** outcome, with the attack blocked before it reaches the model.
 {{% /notice %}}
 
 ## Background
@@ -296,7 +296,7 @@ That verdict also travels with the turn's governance record into Splunk. In [Lab
 
 ## Outcome
 
-A data-exfiltration attack went from **non-compliant to blocked**. With policy review off, a prompt injection hidden in pasted content pulled sensitive data into the response. You reviewed **Prompt Injection - Master**, an existing guardrail profile written in plain language, then turned on Cisco AI Defense Policy Review: the same prompt was blocked before the model read it, and the block was recorded as an event in Cisco AI Defense that names the profile and explains its verdict.
+A data-exfiltration attack went from **non-compliant to blocked**. With policy review off, a prompt injection embedded as JSON at the end of a routine question pulled sensitive data into the response. You reviewed **Prompt Injection - Master**, an existing guardrail profile written in plain language, then turned on Cisco AI Defense Policy Review: the same prompt was blocked before the model read it, and the block was recorded as an event in Cisco AI Defense that names the profile and explains its verdict.
 
 - **Threats are stopped, not just seen.** Cisco AI Defense inspects every prompt and every response, and blocks what crosses the line in real time.
 - **Hidden instructions are caught at the door.** Prompts are inspected before the model reads them, so an injection is stopped before the agent can act on it.
