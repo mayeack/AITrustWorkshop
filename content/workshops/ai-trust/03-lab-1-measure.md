@@ -28,8 +28,20 @@ Before you guard or operate anything, define and measure "good." You will run a 
 
 Splunk Agent Observability evaluates the **whole agent trace** and scores each turn against research-backed metrics (hallucination, context adherence, PII leakage, tool-selection quality) plus custom evaluators you define for your industry's risks. Evaluators can be run by **Luna** — Cisco's small, purpose-built evaluator models — so continuous LLM-as-judge scoring is affordable rather than a frontier-model bill.
 
+{{% expand title="Custom Evaluator - Financial Services" %}}
+In financial services, the custom evaluator is **Securities Fraud**, which flags responses that encourage illegal trading or investment fraud.
+{{% /expand %}}
+
 {{% expand title="Custom Evaluator - Healthcare" %}}
 In healthcare, the custom evaluator is **Prescriptive Overreach**, which flags responses that act as a prescriber.
+{{% /expand %}}
+
+{{% expand title="Custom Evaluator - Manufacturing" %}}
+In manufacturing, the custom evaluator is **Safety Override**, which flags responses that act as a supervisor with sign-off authority.
+{{% /expand %}}
+
+{{% expand title="Custom Evaluator - Retail" %}}
+In retail, the custom evaluator is **Unauthorized Refund**, which flags responses that grant concessions the assistant has no authority to approve.
 {{% /expand %}}
 
 Model evaluation, metric construction, and signal understanding is critical both to build trust in AI systems before deployment, and to monitor model drift over time.
@@ -66,12 +78,41 @@ Explore sending various aberrant prompts and triggering non-compliant behavior. 
 
 - Send a prompt with the **Outside of Authority** toggle on (its label depends on your industry)
 - Send a prompt with **Include Synthetic PII in Responses** toggled on
+- Send a prompt with **Include Hallucinated Content in Responses** toggled on
 - Send a prompt with various PII, such as a phone number, email address, SSN, or address
 - Send a prompt with a toxic or aggressive tone
 - Send a prompt with a prompt injection attempt
 
+{{% expand title="Toggle Names - Financial Services" %}}
+In the FinanceAdvice (financial services) theme, the Outside of Authority toggle is labelled **Securities Fraud**, and the PII toggle is labelled **Include Synthetic PII in Responses**.
+{{% /expand %}}
+
 {{% expand title="Toggle Names - Healthcare" %}}
 In the MedAdvice (healthcare) theme, the Outside of Authority toggle is labelled **Prescriptive Overreach**, and the PII toggle is labelled **Include Synthetic PII/PHI in Responses**.
+{{% /expand %}}
+
+{{% expand title="Toggle Names - Manufacturing" %}}
+In the Manufacturing Ops (manufacturing) theme, the Outside of Authority toggle is labelled **Safety Override**, and the PII toggle is labelled **Include Synthetic PII in Responses**.
+{{% /expand %}}
+
+{{% expand title="Toggle Names - Retail" %}}
+In the Retail Support (retail) theme, the Outside of Authority toggle is labelled **Unauthorized Refund**, and the PII toggle is labelled **Include Synthetic PII in Responses**.
+{{% /expand %}}
+
+{{% expand title="Example Prompt - Financial Services" %}}
+**Example prompt:** What are some general tips for building an emergency fund?
+{{% /expand %}}
+
+{{% expand title="Example Prompt - Healthcare" %}}
+**Example prompt:** I have a mild cold. What do you recommend?
+{{% /expand %}}
+
+{{% expand title="Example Prompt - Manufacturing" %}}
+**Example prompt:** Our conveyor keeps jamming at the transfer point. What should we check first?
+{{% /expand %}}
+
+{{% expand title="Example Prompt - Retail" %}}
+**Example prompt:** How do returns work if I lost my receipt?
 {{% /expand %}}
 
 We will explore how this non-compliant behavior is monitored in subsequent sections.
@@ -111,7 +152,7 @@ Prompts — A versioned, centralized library of the instructions that drive the 
 ![alt text](/images/image-220.png)
 ![alt text](/images/image-221.png)
 
-Click on **MedAdvice** under **Agent Streams**. You might need to click on **View all**.
+Click on your theme's stream under **Agent Streams**: **MedAdvice**, **FinanceAdvice**, **Manufacturing**, or **Retail**. You might need to click on **View all**.
 
 ![alt text](/images/image-222.png)
 
@@ -155,10 +196,28 @@ Some example Signals (yours might vary):
 
 Hostile and Abusive Tone — Detects abusive or harassing language from the AI. A direct guard on brand safety and user trust.
 
+{{% expand title="Example Signals - Financial Services" %}}
+Spontaneous PII Hallucination Without Attack — Flags responses that expose personal data. This is a top-tier compliance and privacy risk, surfaced automatically so it can be contained before it becomes a breach.
+
+Hallucinated Citations and Fictional Products — Catches invented research citations and financial products that do not exist. For a customer-facing financial assistant this is the highest-stakes failure mode, where a wrong answer can cause real harm and liability.
+{{% /expand %}}
+
 {{% expand title="Example Signals - Healthcare" %}}
 Fabricated Patient PII/PHI — Flags responses that expose personal data. This is a top-tier compliance and privacy risk, surfaced automatically so it can be contained before it becomes a breach.
 
 Systematic Fake Medication Hallucination — Catches invented medical claims and unauthorized prescriptions. For a health-facing assistant this is the highest-stakes failure mode, where a wrong answer can cause real harm and liability.
+{{% /expand %}}
+
+{{% expand title="Example Signals - Manufacturing" %}}
+Hallucinated PII in Responses — Flags responses that expose personal data. This is a top-tier compliance and privacy risk, surfaced automatically so it can be contained before it becomes a breach.
+
+Critical Safety Violations — Catches guidance to bypass safety interlocks or skip lockout/tagout. For a plant-floor assistant this is the highest-stakes failure mode, where a wrong answer can cause real harm and liability.
+{{% /expand %}}
+
+{{% expand title="Example Signals - Retail" %}}
+Hallucinated Sensitive PII — Flags responses that expose personal data. This is a top-tier compliance and privacy risk, surfaced automatically so it can be contained before it becomes a breach.
+
+Critical Action Hallucinations — Catches false claims of refunds, discounts, and warranty extensions that were never actually processed. For a customer-facing retail assistant this is the highest-stakes failure mode, where a wrong answer can cause real harm and liability.
 {{% /expand %}}
 
 #### 1.2.5 Review Trends
@@ -237,6 +296,14 @@ Tags & Modality — Organize the library by purpose (agents, RAG, safety) and da
 
 Open the custom evaluator for your industry.
 
+{{% expand title="Securities Fraud Evaluator - Financial Services" %}}
+![alt text](/images/image-332.png)
+
+Search for **securities_fraud**, and click on it.
+
+![alt text](/images/image-333.png)
+{{% /expand %}}
+
 {{% expand title="Prescriptive Overreach Evaluator - Healthcare" %}}
 ![alt text](/images/image-237.png)
 
@@ -245,7 +312,21 @@ Search for **prescriptive_overreach**, and click on it.
 ![alt text](/workshops/ai-trust/image-25.png)
 {{% /expand %}}
 
-![alt text](/images/image-238.png)
+{{% expand title="Safety Override Evaluator - Manufacturing" %}}
+![alt text](/images/image-336.png)
+
+Search for **safety_override**, and click on it.
+
+![alt text](/images/image-337.png)
+{{% /expand %}}
+
+{{% expand title="Unauthorized Refund Evaluator - Retail" %}}
+![alt text](/images/image-340.png)
+
+Search for **unauthorized_refund**, and click on it.
+
+![alt text](/images/image-341.png)
+{{% /expand %}}
 
 This is where a safety standard gets authored — the editor for a custom evaluator, showing how an abstract risk is turned into a precise, automated, repeatable test that every AI response is graded against.
 

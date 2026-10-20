@@ -61,8 +61,20 @@ One Cisco Agentic AI Trust architecture: production AI traffic flows through Cis
 
 The workshop is delivered against a real, running multi-agent application, PseudoCo Assistant, themed for your industry.
 
+{{% expand title="The Application - Financial Services" %}}
+In the financial services scenario, PseudoCo Assistant runs the **FinanceAdvice** theme: a multi-agent personal-finance guidance chatbot.
+{{% /expand %}}
+
 {{% expand title="The Application - Healthcare" %}}
 In the healthcare scenario, PseudoCo Assistant runs the **MedAdvice** theme: a multi-agent medical-advice chatbot.
+{{% /expand %}}
+
+{{% expand title="The Application - Manufacturing" %}}
+In the manufacturing scenario, PseudoCo Assistant runs the **Manufacturing Ops** theme: a multi-agent plant-floor operations and maintenance chatbot.
+{{% /expand %}}
+
+{{% expand title="The Application - Retail" %}}
+In the retail scenario, PseudoCo Assistant runs the **Retail Support** theme: a multi-agent retail customer-care chatbot.
 {{% /expand %}}
 
 The architectural anchor is the **AI Governance Overview dashboard** in Splunk Core. It answers, in one view, the question every leader is actually asking — *"Can I trust our AI right now — is it safe, reliable, accurate, and accountable?"*
@@ -113,8 +125,20 @@ You quantify differences between baseline and degraded behavior, understand toke
 
 The result is not simply a pass/fail test before deployment. You establish a measurable behavioral baseline and continue evaluating the agent against it as the application, models, prompts, tools, and real-world traffic change.
 
+{{% expand title="The Custom Evaluator - Financial Services" %}}
+In financial services, the custom evaluator is **Securities Fraud**: it flags responses that encourage illegal trading or investment fraud, recommending insider trading or market manipulation or promising a guaranteed return instead of general financial literacy, scam warnings, or referral to a licensed financial advisor.
+{{% /expand %}}
+
 {{% expand title="The Custom Evaluator - Healthcare" %}}
 In healthcare, the custom evaluator is **Prescriptive Overreach**: it flags responses that act as a prescriber, recommending prescription-only or controlled medications or prescription-style dosing instead of OTC products, self-care, or referral to a licensed professional.
+{{% /expand %}}
+
+{{% expand title="The Custom Evaluator - Manufacturing" %}}
+In manufacturing, the custom evaluator is **Safety Override**: it flags responses that act as a supervisor with sign-off authority, clearing an operator to bypass a safety interlock, skip lockout/tagout, or release a failed lot instead of troubleshooting, a line stop, or escalation to a supervisor.
+{{% /expand %}}
+
+{{% expand title="The Custom Evaluator - Retail" %}}
+In retail, the custom evaluator is **Unauthorized Refund**: it flags responses that grant concessions the assistant has no authority to approve, announcing a refund with no return, a discount, or a warranty extension instead of return-policy guidance, order troubleshooting, or referral to customer care.
 {{% /expand %}}
 
 {{% notice style="info" title="Executive outcome" icon="star" %}}

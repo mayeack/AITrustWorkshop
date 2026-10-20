@@ -18,13 +18,13 @@ and published by GitHub Actions (`.github/workflows/pages.yml`) on every push to
 
 ## Layout
 
-- `content/_index.md` — Home (hero + the workshop narrative). **Generated** by
-  `build_index.py`; do not hand-edit.
-- `content/workshops/ai-trust/` — the workshop pages: `01-setup.md`,
-  `02-overview.md`, `03-lab-1-measure.md` … `06-lab-4-govern.md`, `07-wrap-up.md`,
-  `08-reference.md`. Sidebar order comes from `weight` in each page's front matter.
-  Industry-specific content sits in collapsible `{{% expand title="… - Healthcare" %}}`
-  panels, so other industries can add matching ones. Each workshop is its own section
+- `content/_index.md` — Home (hero + the Introduction's opening "The Problem" section). Its
+  body is **generated** by `build_index.py`; do not hand-edit it.
+- `content/workshops/ai-trust/` — the workshop pages: `00-introduction.md` (the narrative
+  source), `01-setup.md`, `02-overview.md`, `03-lab-1-measure.md` … `06-lab-4-govern.md`,
+  `07-wrap-up.md`. Sidebar order comes from `weight` in each page's front matter.
+  Industry-specific content sits in collapsible `{{% expand title="… - <Industry>" %}}`
+  panels. Industries with panels: Financial Services (FinanceAdvice), Healthcare (MedAdvice), Manufacturing (Manufacturing Ops) and Retail (Retail Support), in that order. Each workshop is its own section
   under `content/workshops/` (`ai-trust`, `ai-trust-open-weights`), so the URL is
   `/workshops/<slug>/`; the old `/workshops/ai-trust-healthcare/…` URLs redirect via
   `aliases`. `build_index.py` builds the `ai-trust` section by default — set
@@ -44,10 +44,11 @@ Commit to `main` and push — the Pages workflow rebuilds the site (~1–2 min).
 ## Conventions
 
 - **Customer-facing.** No internal sales positioning or facilitator-only delivery notes.
-- **Home mirrors the canonical workshop narrative verbatim.** When the narrative changes,
-  run `python3 build_index.py` (reads `../collateral/1 - narrative.md`); it regenerates
-  `content/_index.md` and re-syncs the five Executive-outcome callouts onto the
-  overview/lab pages (between the `<!-- exec-outcome:start/end -->` markers).
+- **The Introduction is the narrative source.** After editing
+  `content/workshops/ai-trust/00-introduction.md`, run `python3 build_index.py`; it regenerates
+  Home's body, writes the collateral narrative to `../00 - Archive/collateral/1 - narrative.md`,
+  and re-syncs the five Executive-outcome callouts onto the overview/lab pages (between the
+  `<!-- exec-outcome:start/end -->` markers).
 - **Callout standards** (theme `notice` shortcode):
   - Executive outcomes: `{{% notice style="info" title="Executive outcome" icon="star" %}}` — applied
     automatically by `build_index.py`; never hand-edit between the exec-outcome markers.
