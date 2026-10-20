@@ -6,7 +6,7 @@ weight      = 40
 aliases     = ["/lab-2-secure.html", "/workshops/ai-governance/04-lab-2-secure/", "/workshops/ai-governance-healthcare/04-lab-2-secure/", "/workshops/ai-trust-healthcare/04-lab-2-secure/"]
 +++
 
-![The AI Governance Journey, Lab 2 Secure: Cisco AI Defense. Stop a prompt injection attack and block data exfiltration before the model reads it: every prompt and response inspected against guardrails; hidden instructions caught before they reach the model; guardrails written in plain language and versioned; every block recorded as a security event](/images/image-323.png)
+![The AI Governance Journey, Lab 2 Secure: Cisco AI Defense. Stop a prompt injection attack and block data exfiltration before the model reads it: every prompt and response inspected against guardrails; embedded instructions caught before they reach the model; guardrails written in plain language and versioned; every block recorded as a security event](/images/image-323.png)
 
 **Pillar:** Secure<br>
 **Tool:** Cisco AI Defense<br>
@@ -30,7 +30,7 @@ Stop a data-exfiltration attack: a prompt injection hidden in pasted content pul
 
 Cisco AI Defense is a live integration: it inspects the prompt (pre-LLM) and the response (post-LLM) against **multiple guardrails** and blocks non-compliant content.
 
-This lab uses one of the most common attacks on AI agents: **data exfiltration through prompt injection**. An attacker hides instructions inside content the agent is asked to process, such as a document, a web page, an email, or a record pasted into the chat. The person who shares that content with the assistant usually never sees them. The hidden instructions tell the agent to gather sensitive data and send it somewhere the attacker controls.
+This lab uses one of the most common attacks on AI agents: **data exfiltration through prompt injection**. An attacker embeds instructions inside content the agent is asked to process — a document, a web page, an email, or a record passed into the chat as structured data. Sometimes a third party plants them and the person sharing the content never notices; sometimes the attacker types them straight into the chat, as in this lab. Either way, the instructions tell the agent to gather sensitive data it can reach and reveal it — reading it straight back into the reply, or sending it somewhere the attacker controls.
 
 You will not write a policy in this lab. The guardrail built for this kind of attack already exists: **Prompt Injection - Master**, an adaptive guardrail profile created in Cisco AI Defense **Policy Studio** from requirements written in plain language. It inspects each prompt and blocks an injection before the model reads it. You will see the attack succeed with policy review off, review how the profile was written, what it blocks, and what it deliberately allows, then turn policy review on and send the same attack again.
 
