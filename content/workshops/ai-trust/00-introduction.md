@@ -20,6 +20,20 @@ That gap — between the speed of agentic AI and the speed at which you can prov
 
 ---
 
+{{% expand title="The Scenario - Financial Services" %}}
+![The Opportunity: Guidance at Machine Cost - illustrative bank contact-center deflection economics](/images/image-330.png)
+
+FinanceAdvice has demonstrated the value of agentic AI in financial services: reducing the cost of routine customer interactions, accelerating access to guidance, and allowing skilled financial advisors to focus on complex planning needs where their expertise delivers the greatest impact.
+
+That creates a compelling opportunity to improve both operating efficiency and customer outcomes.
+
+![The Risk: Securities Fraud — FinanceAdvice appends an insider-trading tip with a guaranteed return to routine emergency-fund advice](/images/image-331.png)
+
+But scaling that value introduces material risk to the trust it depends on. Hallucinations, PII exposure, prompt injection, and securities fraud can quickly turn an efficiency gain into a legal, regulatory, or reputational event.
+
+**The value of FinanceAdvice can scale. So can the risk. Trust — proven, not assumed — is what makes the economics sustainable.**
+{{% /expand %}}
+
 {{% expand title="The Scenario - Healthcare" %}}
 ![The Opportunity: Triage at Machine Cost - illustrative nurse-line deflection economics](/images/image-120.png)
 
@@ -32,6 +46,34 @@ That creates a compelling opportunity to improve both operating efficiency and p
 But scaling that value introduces material risk to the trust it depends on. Hallucinations, PII exposure, prompt injection, and prescriptive overreach can quickly turn an efficiency gain into a clinical, regulatory, or reputational event.
 
 **The value of MedAdvice can scale. So can the risk. Trust — proven, not assumed — is what makes the economics sustainable.**
+{{% /expand %}}
+
+{{% expand title="The Scenario - Manufacturing" %}}
+![The Opportunity: Troubleshooting at Machine Cost - illustrative maintenance-call deflection economics](/images/image-334.png)
+
+Manufacturing Ops has demonstrated the value of agentic AI in manufacturing: reducing the cost of routine operator interactions, accelerating access to guidance, and allowing skilled maintenance staff to focus on complex faults where their expertise delivers the greatest impact.
+
+That creates a compelling opportunity to improve both operating efficiency and workplace safety.
+
+![The Risk: Safety Override — Manufacturing Ops appends a safety-interlock bypass and a failed-lot release to routine conveyor-jam advice](/images/image-335.png)
+
+But scaling that value introduces material risk to the trust it depends on. Hallucinations, PII exposure, prompt injection, and safety overrides can quickly turn an efficiency gain into a safety, regulatory, or reputational event.
+
+**The value of Manufacturing Ops can scale. So can the risk. Trust — proven, not assumed — is what makes the economics sustainable.**
+{{% /expand %}}
+
+{{% expand title="The Scenario - Retail" %}}
+![The Opportunity: Support at Machine Cost - illustrative contact-center deflection economics](/images/image-338.png)
+
+Retail Support has demonstrated the value of agentic AI in retail: reducing the cost of routine customer interactions, accelerating access to guidance, and allowing skilled customer-care staff to focus on complex cases where their expertise delivers the greatest impact.
+
+That creates a compelling opportunity to improve both operating efficiency and customer experience.
+
+![The Risk: Unauthorized Refund — Retail Support opens routine returns help by announcing a refund with no return required](/images/image-339.png)
+
+But scaling that value introduces material risk to the trust it depends on. Hallucinations, PII exposure, prompt injection, and unauthorized refunds can quickly turn an efficiency gain into a financial, regulatory, or reputational event.
+
+**The value of Retail Support can scale. So can the risk. Trust — proven, not assumed — is what makes the economics sustainable.**
 {{% /expand %}}
 
 ---

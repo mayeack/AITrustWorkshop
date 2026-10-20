@@ -94,8 +94,20 @@ Click **Import**.
 
 The Guided Response agent works from a standard operating procedure. Download the SOP used for this scenario and load it into the agent to see the four-phase NIST 800-61 plan it generates.
 
+{{% expand title="Prompt Injection SOP - Financial Services" %}}
+{{< button href="/files/prompt-injection-investigation-and-response-sop-financial-services.md" icon="download" style="primary" download="prompt-injection-investigation-and-response-sop.md" >}}Download the SOP (.md){{< /button >}} {{< button href="/files/prompt-injection-investigation-and-response-sop-financial-services.html" icon="file" style="secondary" target="_blank" >}}View in browser{{< /button >}}
+{{% /expand %}}
+
 {{% expand title="Prompt Injection SOP - Healthcare" %}}
 {{< button href="/files/prompt-injection-investigation-and-response-sop.md" icon="download" style="primary" download="true" >}}Download the SOP (.md){{< /button >}} {{< button href="/files/prompt-injection-investigation-and-response-sop.html" icon="file" style="secondary" target="_blank" >}}View in browser{{< /button >}}
+{{% /expand %}}
+
+{{% expand title="Prompt Injection SOP - Manufacturing" %}}
+{{< button href="/files/prompt-injection-investigation-and-response-sop-manufacturing.md" icon="download" style="primary" download="prompt-injection-investigation-and-response-sop.md" >}}Download the SOP (.md){{< /button >}} {{< button href="/files/prompt-injection-investigation-and-response-sop-manufacturing.html" icon="file" style="secondary" target="_blank" >}}View in browser{{< /button >}}
+{{% /expand %}}
+
+{{% expand title="Prompt Injection SOP - Retail" %}}
+{{< button href="/files/prompt-injection-investigation-and-response-sop-retail.md" icon="download" style="primary" download="prompt-injection-investigation-and-response-sop.md" >}}Download the SOP (.md){{< /button >}} {{< button href="/files/prompt-injection-investigation-and-response-sop-retail.html" icon="file" style="secondary" target="_blank" >}}View in browser{{< /button >}}
 {{% /expand %}}
 
 Upload the file in the box under **Import and generate with AI**.
