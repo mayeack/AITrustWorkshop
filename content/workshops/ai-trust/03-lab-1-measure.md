@@ -21,7 +21,7 @@ aliases     = ["/lab-1-measure.html", "/workshops/ai-governance/03-lab-1-measure
 <!-- persona:end -->
 
 {{% notice style="info" title="Objective" icon="target" %}}
-Before you guard or operate anything, define and measure "good." You will run a **baseline-vs-poisoned** evaluation, see it scored by **Luna**, read token/cost, and the **signals** that surface the unknown unknowns.
+Before you guard or operate anything, define and measure "good." You will compare a **baseline** and a **poisoned** model, see their responses scored by **Luna**, read token usage and cost, and review the **signals** that surface the unknown unknowns.
 {{% /notice %}}
 
 ## Background
@@ -44,7 +44,7 @@ In manufacturing, the custom evaluator is **Safety Override**, which flags respo
 In retail, the custom evaluator is **Unauthorized Refund**, which flags responses that grant concessions the assistant has no authority to approve.
 {{% /expand %}}
 
-Model evaluation, metric construction, and signal understanding is critical both to build trust in AI systems before deployment, and to monitor model drift over time.
+Model evaluation, metric construction, and signal understanding are critical both to build trust in AI systems before deployment, and to monitor model drift over time.
 
 ## Labs
 
@@ -198,7 +198,7 @@ Click on the **Signals** button.
 
 Click on **Re-run signals** if no signals appear. 
 
-The Signals panel is the AI watching the AI — it scans every logged conversation for risk patterns and surfaces them as named, prioritized issues, so the team learns where the application is failing without reading transcripts one by one. Whereas Metrics need to be defined by the user, Signals surface the unknown unknown issues, such as:
+The Signals panel is the AI watching the AI — it scans every logged conversation for risk patterns and surfaces them as named, prioritized issues, so the team learns where the application is failing without reading transcripts one by one. Whereas Metrics need to be defined by the user, Signals surface the unknown unknown issues.
 
 Some example Signals (yours might vary):
 
@@ -234,15 +234,15 @@ Click on any Signal.
 
 The Signal Details view provides an AI-generated investigation of detected agent behavior, connecting identified issues to their underlying causes, supporting evidence, and recommended remediation.
 
-Signal Summary: Provides a high-level description of the detected issue, including the affected traces, spans, and sessions.
+Signal Summary — Provides a high-level description of the detected issue, including the affected traces, spans, and sessions.
 
-Root Cause Analysis: Examines agent behavior, tool interactions, and execution patterns to explain why the issue occurred.
+Root Cause Analysis — Examines agent behavior, tool interactions, and execution patterns to explain why the issue occurred.
 
-Recommendations: Suggests actionable changes to prompts, tool configurations, or agent workflows to address the identified issue.
+Recommendations — Suggests actionable changes to prompts, tool configurations, or agent workflows to address the identified issue.
 
-Create Evaluator: Converts the detected issue into a reusable evaluation criterion, enabling automated detection of similar behavior in future interactions.
+Create Evaluator — Converts the detected issue into a reusable evaluation criterion, enabling automated detection of similar behavior in future interactions.
 
-Evidence Details: Provides supporting telemetry and historical trends to validate the finding and understand its scope.
+Evidence Details — Provides supporting telemetry and historical trends to validate the finding and understand its scope.
 
 #### 1.2.5 Review Trends
 
@@ -366,7 +366,7 @@ Configure Output (type & roll-up) — Sets how individual scores combine into a 
 
 The journey walks through six capabilities that make trust measurable:
 
-**Monitor** — Logs capture every live AI interaction as a searchable, auto-graded audit trail, so production behavior is observable and reviewable rather than a black box.
+**Monitor** — The Agent Stream captures every live AI interaction as a searchable, auto-graded audit trail, so production behavior is observable and reviewable rather than a black box.
 
 **Detect the unknown** — Signals surface risks no one thought to define (PII leakage, hallucinations, harassment), catching the "unknown unknowns" before they become incidents.
 
