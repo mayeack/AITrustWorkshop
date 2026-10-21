@@ -164,7 +164,7 @@ Automated scoring (such as Output Toxicity, Output PII, and your industry's cust
 
 ![alt text](/images/image-343.png)
 
-Click the checkbox next to any trace, and then click on **Add to Annotation Queue**.
+Click the checkbox next to any trace, then click on **Add to Annotation Queue** and add it to the queue for your theme: **MedAdvice Continuous Feedback**, **FinanceAdvice Continuous Feedback**, **Manufacturing Continuous Feedback**, or **Retail Continuous Feedback**.
 
 The Annotation Queue is used for continuously improving the agentic system. Return to the **Agent Stream**.
 
