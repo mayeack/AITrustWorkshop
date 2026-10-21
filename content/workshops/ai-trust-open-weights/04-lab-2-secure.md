@@ -5,7 +5,7 @@ duration    = "20 min"
 weight      = 40
 +++
 
-![The AI Trust Journey, step 3 of 3, Lab 2 Secure: Cisco Agent Security. Stop a data-exfiltration attack at runtime: every prompt and response inspected against guardrails; a prompt injection hidden in a document pulls PII/PHI into the response; with policy review on, the Prompt Injection guardrail blocks the request; re-run live, the attack never reaches the model](/images/image-321.png)
+![The AI Trust Journey, step 3 of 3, Lab 2 Secure: Cisco Agent Security. Stop a data-exfiltration attack at runtime: every prompt and response inspected against guardrails; a prompt injection sent as a JSON request pulls PII/PHI into the response; with policy review on, the Prompt Injection guardrail blocks the request; re-run live, the attack never reaches the model](/images/image-321.png)
 
 **Pillar:** Secure<br>
 **Tool:** Agent Security<br>
