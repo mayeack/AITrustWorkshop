@@ -147,48 +147,12 @@ Datasets — Curated "golden" reference sets used to grade the AI consistently. 
 
 Prompts — A versioned, centralized library of the instructions that drive the AI, enabling change-control over the core logic, reusable directly in code.
 
-#### 1.2.3 Review Agent Stream
+#### 1.2.3 Review Signals
 
 ![alt text](/images/image-349.png)
 ![alt text](/images/image-221.png)
 
 Click on your theme's stream under **Agent Streams**: **MedAdvice**, **FinanceAdvice**, **Manufacturing**, or **Retail**. You might need to click on **View all**.
-
-![alt text](/images/image-342.png)
-
-The **Agent Stream**  turns every live AI conversation into a graded, searchable record — the continuous audit trail that proves the application is behaving safely in production.
-
-Traces — The running ledger of real user interactions, capturing what went in and what the AI sent back. This is the system of record that makes behavior observable and reviewable rather than a black box.
-
-Automated scoring (such as Output Toxicity, Output PII, and your industry's custom evaluators) — Every response is auto-graded against safety and quality measures, including custom risk checks tuned to this use case. This is the core value: thousands of interactions evaluated without human review, with weak responses surfaced automatically for attention. You can click on each metric to understand the cost. Notice the significant cost difference between metrics computed using Luna (SLM) and frontier lab models.
-
-![alt text](/images/image-343.png)
-
-Click the checkbox next to any trace, then click on **Add to Annotation Queue** and add it to the queue for your theme: **MedAdvice Continuous Feedback**, **FinanceAdvice Continuous Feedback**, **Manufacturing Continuous Feedback**, or **Retail Continuous Feedback**.
-
-The Annotation Queue is used for continuously improving the agentic system. Return to the **Agent Stream**.
-
-![alt text](/images/image-344.png)
-
-Click on any trace. Other participants' turns share this stream, so look for your own prompt in the **Input** column.
-
-![alt text](/images/image-345.png)
-
-This single-trace view is the microscope of the platform — it opens up one AI conversation end to end, showing exactly how a multi-step agent produced its answer and how that answer scored on quality and safety.
-
-Trace tree (chat turn → agents) — Exposes the full chain of reasoning behind one response, including the agents and underlying model that handled it. This turns a single answer into a traceable, explainable record — essential when you need to prove why the AI said what it said.
-
-Input / Output panel — Shows the exact user request and the verbatim response side by side. This is the ground truth for any review, audit, or dispute — what was actually asked, and what was actually returned.
-
-Metrics — One trace, examined from every angle: how it scored, how it was configured, human notes, and flagged risks. The value is a complete case file for any interaction worth investigating.
-
-Feel free to explore the other tabs, such as **Latency** and **Trace Graph**.
-
-#### 1.2.4 Review Signals
-
-![alt text](/images/image-316.png)
-
-Click the back arrow to return to the **Agent Stream**.
 
 ![alt text](/images/image-225.png)
 
@@ -244,9 +208,49 @@ Create Evaluator — Converts the detected issue into a reusable evaluation crit
 
 Evidence Details — Provides supporting telemetry and historical trends to validate the finding and understand its scope.
 
+#### 1.2.4 Review Agent Stream
+
+![alt text](/images/image-347.png)
+
+Click on **Tracing** to return to the **Agent Stream**.
+
+![alt text](/images/image-342.png)
+
+The **Agent Stream**  turns every live AI conversation into a graded, searchable record — the continuous audit trail that proves the application is behaving safely in production.
+
+Traces — The running ledger of real user interactions, capturing what went in and what the AI sent back. This is the system of record that makes behavior observable and reviewable rather than a black box.
+
+Automated scoring (such as Output Toxicity, Output PII, and your industry's custom evaluators) — Every response is auto-graded against safety and quality measures, including custom risk checks tuned to this use case. This is the core value: thousands of interactions evaluated without human review, with weak responses surfaced automatically for attention. You can click on each metric to understand the cost. Notice the significant cost difference between metrics computed using Luna (SLM) and frontier lab models.
+
+![alt text](/images/image-343.png)
+
+Click the checkbox next to any trace, then click on **Add to Annotation Queue** and add it to the queue for your theme: **MedAdvice Continuous Feedback**, **FinanceAdvice Continuous Feedback**, **Manufacturing Continuous Feedback**, or **Retail Continuous Feedback**.
+
+The Annotation Queue is used for continuously improving the agentic system. Return to the **Agent Stream**.
+
+![alt text](/images/image-344.png)
+
+Click on any trace. Other participants' turns share this stream, so look for your own prompt in the **Input** column.
+
+![alt text](/images/image-345.png)
+
+This single-trace view is the microscope of the platform — it opens up one AI conversation end to end, showing exactly how a multi-step agent produced its answer and how that answer scored on quality and safety.
+
+Trace tree (chat turn → agents) — Exposes the full chain of reasoning behind one response, including the agents and underlying model that handled it. This turns a single answer into a traceable, explainable record — essential when you need to prove why the AI said what it said.
+
+Input / Output panel — Shows the exact user request and the verbatim response side by side. This is the ground truth for any review, audit, or dispute — what was actually asked, and what was actually returned.
+
+Metrics — One trace, examined from every angle: how it scored, how it was configured, human notes, and flagged risks. The value is a complete case file for any interaction worth investigating.
+
+Feel free to explore the other tabs, such as **Latency** and **Trace Graph**.
+
 #### 1.2.5 Review Trends
 
-![alt text](/images/image-227.png)
+![alt text](/images/image-316.png)
+
+Click the back arrow to return to the **Agent Stream**.
+
+![alt text](/images/image-342.png)
 
 Click on **Trends**.
 
