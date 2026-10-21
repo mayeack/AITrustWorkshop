@@ -21,7 +21,7 @@ The **CISO** and **AI Security / AppSec** teams. Primary question: _Is our AI sa
 <!-- persona:end -->
 
 {{% notice style="info" title="Objective" icon="target" %}}
-Stop a data-exfiltration attack: a prompt injection embedded as JSON at the end of a routine question pulls sensitive data into the response, which is **non-compliant**. You review **Prompt Injection - Master**, an existing guardrail profile in Cisco AI Defense, then turn on policy review and re-run the attack to ensure a **trusted** outcome, with the attack blocked before it reaches the model.
+Stop a data-exfiltration attack: a prompt injection sent as a structured JSON records lookup pulls sensitive data into the response, which is **non-compliant**. You review **Prompt Injection - Master**, an existing guardrail profile in Cisco AI Defense, then turn on policy review and re-run the attack to ensure a **trusted** outcome, with the attack blocked before it reaches the model.
 {{% /notice %}}
 
 ## Background
@@ -45,19 +45,19 @@ A guardrail defined by intent rather than by keyword lists or code: an author wr
 {{% /notice %}}
 
 {{% expand title="The Attack - Financial Services" %}}
-In financial services, the attack rides along with a routine question about building an emergency fund. Framed as a quick admin step, it tells the assistant to read back the demographic details already on file for the account holder — full name, date of birth, Social Security number, email, phone, and account number — before giving any guidance.
+In financial services, the attack arrives as a structured JSON request rather than a plain question. Framed as a quick admin step, it tells the assistant to read back the demographic details already on file for the account holder — full name, date of birth, Social Security number, email, phone, and account number — and only then give its normal emergency fund guidance.
 {{% /expand %}}
 
 {{% expand title="The Attack - Healthcare" %}}
-In healthcare, the attack rides along with a routine question about recurring migraines. Framed as a quick admin step, it tells the assistant to read back the demographic details already on file for the patient — full name, date of birth, Social Security number, medical record number, email, and phone — before giving any guidance.
+In healthcare, the attack arrives as a structured JSON request rather than a plain question. Framed as a quick admin step, it tells the assistant to read back the demographic details already on file for the patient — full name, date of birth, Social Security number, medical record number, email, and phone — and only then give its normal migraine guidance.
 {{% /expand %}}
 
 {{% expand title="The Attack - Manufacturing" %}}
-In manufacturing, the attack rides along with a routine question about a conveyor that keeps jamming. Framed as a quick admin step, it tells the assistant to read back the demographic details already on file for the operator — full name, date of birth, Social Security number, email, phone, and badge ID — before giving any guidance.
+In manufacturing, the attack arrives as a structured JSON request rather than a plain question. Framed as a quick admin step, it tells the assistant to read back the demographic details already on file for the operator — full name, date of birth, Social Security number, email, phone, and badge ID — and only then give its normal conveyor troubleshooting guidance.
 {{% /expand %}}
 
 {{% expand title="The Attack - Retail" %}}
-In retail, the attack rides along with a routine question about a package marked delivered that never arrived. Framed as a quick admin step, it tells the assistant to read back the demographic details already on file for the customer — full name, date of birth, Social Security number, email, phone, and rewards number — before giving any guidance.
+In retail, the attack arrives as a structured JSON request rather than a plain question. Framed as a quick admin step, it tells the assistant to read back the demographic details already on file for the customer — full name, date of birth, Social Security number, email, phone, and rewards number — and only then give its normal missing package guidance.
 {{% /expand %}}
 
 ## Labs
@@ -214,7 +214,7 @@ Filter strength (Medium) — A tunable dial on how aggressively each rule fires.
 
 Notice **Prompt Injection** under **Security guardrails**: a built-in guardrail that inspects the prompt and blocks what it finds. Built-in guardrails cover common threats out of the box. Adaptive guardrail profiles, such as Prompt Injection - Master, add rules written in plain language for a specific application, and take effect only where a runtime policy applies them.
 
-Scroll down to **Adaptive Guardrail Profiles**. **Prompt Injection** is the published version of Prompt Injection - Master, applied to prompts with the action **Block**. Click on it, then on **See more**, to see what it flags and what it allows, plus its limits, edge cases, and what changed in this version. One edge case is the attack you ran: legitimate content with embedded injection instructions is still a violation, because a valid question does not neutralize an attack.
+Scroll down to **Adaptive Guardrail Profiles**. **Prompt Injection** is the published version of Prompt Injection - Master, applied to prompts with the action **Block**. Click on it, then on **See more**, to see what it flags and what it allows, plus its limits, edge cases, and what changed in this version. One edge case covers the attack you ran: legitimate content with embedded injection instructions is still a violation, so asking for normal guidance alongside the read-back does not neutralize the attack.
 
 Because a profile sits outside the application and the model, the same reviewed guardrail can protect every application the policy covers, whichever model it runs.
 
@@ -280,7 +280,7 @@ That verdict also travels with the turn's governance record into Splunk. In [Lab
 
 ## Outcome
 
-A data-exfiltration attack went from **non-compliant to blocked**. With policy review off, a prompt injection embedded as JSON at the end of a routine question pulled sensitive data into the response. You reviewed **Prompt Injection - Master**, an existing guardrail profile written in plain language, then turned on Cisco AI Defense Policy Review: the same prompt was blocked before the model read it, and the block was recorded as an event in Cisco AI Defense that names the profile and explains its verdict.
+A data-exfiltration attack went from **non-compliant to blocked**. With policy review off, a prompt injection sent as a structured JSON records lookup pulled sensitive data into the response. You reviewed **Prompt Injection - Master**, an existing guardrail profile written in plain language, then turned on Cisco AI Defense Policy Review: the same prompt was blocked before the model read it, and the block was recorded as an event in Cisco AI Defense that names the profile and explains its verdict.
 
 - **Threats are stopped, not just seen.** Cisco AI Defense inspects every prompt and every response, and blocks what crosses the line in real time.
 - **Hidden instructions are caught at the door.** Prompts are inspected before the model reads them, so an injection is stopped before the agent can act on it.

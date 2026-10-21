@@ -133,7 +133,7 @@ Click on **Agent Observability -> All projects**.
 
 Click on the project **PseudoCo Assistant**.
 
-![alt text](/images/image-219.png)
+![alt text](image-3.png)
 
 Each section of the Overview dashboard turns AI development into a measurable, evidence-backed discipline — testing safety, comparing versions objectively, and maintaining a defensible record of quality.
 
@@ -380,7 +380,7 @@ The journey walks through six capabilities that make trust measurable:
 
 The takeaway: AI risk becomes quantifiable and auditable. Safety, quality, and cost are measured continuously and automatically — at scale, without human review of every interaction — giving the business the defensible evidence it needs to deploy AI with confidence.
 
-Lab 1 ends with the agent's own behavior measured, scored, and explained, including the responses your industry's custom evaluator flags for overstepping the assistant's authority. Lab 2 turns from measuring behavior to securing the agent against attackers at runtime: a prompt injection embedded as JSON at the end of a routine question tries to exfiltrate sensitive data, and an existing guardrail in **Cisco AI Defense** blocks it before the model reads it.
+Lab 1 ends with the agent's own behavior measured, scored, and explained, including the responses your industry's custom evaluator flags for overstepping the assistant's authority. Lab 2 turns from measuring behavior to securing the agent against attackers at runtime: a prompt injection sent as a structured JSON records lookup tries to exfiltrate sensitive data, and an existing guardrail in **Cisco AI Defense** blocks it before the model reads it.
 
 <!-- exec-outcome:start -->
 
