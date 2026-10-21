@@ -163,7 +163,7 @@ Click **View project details** to drill into Agent Observability. The project op
 
 Click on the agent stream for your industry's theme.
 
-![alt text](/workshops/ai-trust-open-weights/image-26.png)
+![alt text](/images/image-350.png)
 
 Click on **Signals**. 
 
@@ -171,13 +171,9 @@ Click on **Signals**.
 
 The Signals panel is the AI watching the AI — it scans every logged conversation for risk patterns and surfaces them as named, prioritized issues, so the team learns where the application is failing without reading transcripts one by one. Whereas Evaluators need to be defined by the user, Signals surface the unknown unknown issues.
 
-Click on the example signal for your industry.
+Click on any Signal.
 
-{{% expand title="Example Signal - Healthcare" %}}
-Click on **Unlicensed Medication Advice**. It identifies responses where the LLM provided prescription guidance to a user without sufficient medical or identity context, and recommends adding a pre-check to verify user identity before medication advice is given.
-{{% /expand %}}
-
-![alt text](/workshops/ai-trust-open-weights/image-28.png)
+![alt text](/images/image-351.png)
 
 **Signal summary:** Names the risk pattern the signal found and the behavior behind it.<br>
 **Scope and impact:** Shows the affected spans, traces, and sessions associated with the signal, along with when the issue was created and last updated.<br>
@@ -202,7 +198,7 @@ Automated scoring (such as Output Toxicity, Output PII, and your industry's cust
 
 Click on any trace.
 
-![alt text](/workshops/ai-trust-open-weights/image-24.png)
+![alt text](/images/image-352.png)
 
 This single-trace view is the microscope of the platform — it opens up one AI conversation end to end, showing exactly how a multi-step agent produced its answer and how that answer scored on quality and safety.
 
@@ -216,7 +212,7 @@ Feel free to explore the other tabs, such as **Latency** and **Trace graph**.
 
 #### 1.2.6 Review Trends
 
-![alt text](/workshops/ai-trust-open-weights/image-25.png)
+![alt text](/images/image-352.png)
 
 Click the back arrow to return to the **Agent Stream**.
 
