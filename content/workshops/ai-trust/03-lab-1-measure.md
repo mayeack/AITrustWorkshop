@@ -149,7 +149,7 @@ Prompts — A versioned, centralized library of the instructions that drive the 
 
 #### 1.2.3 Review Agent Stream
 
-![alt text](/images/image-220.png)
+![alt text](/images/image-349.png)
 ![alt text](/images/image-221.png)
 
 Click on your theme's stream under **Agent Streams**: **MedAdvice**, **FinanceAdvice**, **Manufacturing**, or **Retail**. You might need to click on **View all**.
