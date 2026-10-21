@@ -122,7 +122,9 @@ Wait for generation to complete and change to status **draft**, then click on th
 
 ![alt text](/images/image-288.png)
 
-Feel free to explore the sections created by the SOP agent, then toggle to **Published**.
+Feel free to explore the sections created by the SOP agent. Notice how specific phases, with specific tasks, were created.
+
+Toggle **Status** to **Published**.
 
 ![alt text](/images/image-289.png)
 
@@ -284,11 +286,13 @@ Under **Prompt Injection Spray**, set the duration to 60s and replace the defaul
 
 About a minute after the first injection turn, the detection raises one finding for your actor with your response plan attached. Spraying again later raises a new finding.
 
-#### 4.3.2 Investigate the Prompt Injection Spray
+#### 4.3.2 Review the Prompt Injection Spray
 
 ![alt text](/images/image-307.png)
 
-Return to Splunk, and navigate to **AI Governance -> Dashboards -> Prompt Injection Detection**.
+Return to Splunk, and click the Splunk logo in the top left to navigate home.
+
+Navigate to **AI Governance -> Dashboards -> Prompt Injection Detection**.
 
 ![alt text](/images/image-308.png)
 
@@ -347,6 +351,12 @@ Analysis panel — Splunk's Triage agent: a determination ("True Positive - Susp
 Details (Finding metadata, Entity, Source, Additional fields, Event) — The raw event behind the summary, so an auditor can verify the story rather than take it on trust.
 
 Click on **Start investigation**.
+
+{{% notice warning "Important" %}}
+![alt text](/images/image-348.png)
+
+Ensure that the **Investigation type** is prompt_injection, or you might encounter an error.
+{{% /notice %}}
 
 #### 4.4.2 Respond with the Guided Response Agent
 

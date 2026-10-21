@@ -57,7 +57,7 @@ Model evaluation, metric construction, and signal understanding is critical both
 [How to Access PseudoCo Assistant](/workshops/ai-trust/01-setup/#1-how-to-access-pseudoco-assistant)
 
 {{% notice warning "Important" %}}
-Because we are using an open weight model, ensure that you select **gpt-4o-mini** from the **Static Emission** dropdown so that tokenomics calculates correctly!
+Because we are using an open weight model, ensure that you select **gpt-4o** from the **Static Emission** dropdown so that tokenomics calculates correctly!
 {{% /notice %}}
 
 #### 1.1.2 Explore the Baseline vs the Poisoned Model
@@ -154,7 +154,7 @@ Prompts — A versioned, centralized library of the instructions that drive the 
 
 Click on your theme's stream under **Agent Streams**: **MedAdvice**, **FinanceAdvice**, **Manufacturing**, or **Retail**. You might need to click on **View all**.
 
-![alt text](/images/image-222.png)
+![alt text](/images/image-342.png)
 
 The **Agent Stream**  turns every live AI conversation into a graded, searchable record — the continuous audit trail that proves the application is behaving safely in production.
 
@@ -162,9 +162,17 @@ Traces — The running ledger of real user interactions, capturing what went in 
 
 Automated scoring (such as Output Toxicity, Output PII, and your industry's custom evaluators) — Every response is auto-graded against safety and quality measures, including custom risk checks tuned to this use case. This is the core value: thousands of interactions evaluated without human review, with weak responses surfaced automatically for attention. You can click on each metric to understand the cost. Notice the significant cost difference between metrics computed using Luna (SLM) and frontier lab models.
 
+![alt text](/images/image-343.png)
+
+Click the checkbox next to any trace, and then click on **Add to Annotation Queue**.
+
+The Annotation Queue is used for continuously improving the agentic system. Return to the **Agent Stream**.
+
+![alt text](/images/image-344.png)
+
 Click on any trace. Other participants' turns share this stream, so look for your own prompt in the **Input** column.
 
-![alt text](/images/image-315.png)
+![alt text](/images/image-345.png)
 
 This single-trace view is the microscope of the platform — it opens up one AI conversation end to end, showing exactly how a multi-step agent produced its answer and how that answer scored on quality and safety.
 
@@ -186,7 +194,7 @@ Click the back arrow to return to the **Agent Stream**.
 
 Click on the **Signals** button. 
 
-![alt text](/images/image-226.png)
+![alt text](/images/image-346.png)
 
 Click on **Re-run signals** if no signals appear. 
 
@@ -219,6 +227,22 @@ Hallucinated Sensitive PII — Flags responses that expose personal data. This i
 
 Critical Action Hallucinations — Catches false claims of refunds, discounts, and warranty extensions that were never actually processed. For a customer-facing retail assistant this is the highest-stakes failure mode, where a wrong answer can cause real harm and liability.
 {{% /expand %}}
+
+Click on any Signal.
+
+![alt text](/images/image-347.png)
+
+The Signal Details view provides an AI-generated investigation of detected agent behavior, connecting identified issues to their underlying causes, supporting evidence, and recommended remediation.
+
+Signal Summary: Provides a high-level description of the detected issue, including the affected traces, spans, and sessions.
+
+Root Cause Analysis: Examines agent behavior, tool interactions, and execution patterns to explain why the issue occurred.
+
+Recommendations: Suggests actionable changes to prompts, tool configurations, or agent workflows to address the identified issue.
+
+Create Evaluator: Converts the detected issue into a reusable evaluation criterion, enabling automated detection of similar behavior in future interactions.
+
+Evidence Details: Provides supporting telemetry and historical trends to validate the finding and understand its scope.
 
 #### 1.2.5 Review Trends
 

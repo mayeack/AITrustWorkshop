@@ -51,7 +51,7 @@ One dataset. Every pillar. That's what lets a leader go from a number on the scr
 
 ![alt text](/images/image-212.png)
 
-In the left side-panel to view all apps, and click on **AI Governance**.
+Click the **>** on the left side-panel to view all apps, and then click on **AI Governance**.
 
 #### 0.1.3 Review AI Governance Overview Dashboard
 
