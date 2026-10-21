@@ -370,9 +370,9 @@ Configure Output (type & roll-up) — Sets how individual scores combine into a 
 
 The journey walks through six capabilities that make trust measurable:
 
-**Monitor** — The Agent Stream captures every live AI interaction as a searchable, auto-graded audit trail, so production behavior is observable and reviewable rather than a black box.
-
 **Detect the unknown** — Signals surface risks no one thought to define (PII leakage, hallucinations, harassment), catching the "unknown unknowns" before they become incidents.
+
+**Monitor** — The Agent Stream captures every live AI interaction as a searchable, auto-graded audit trail, so production behavior is observable and reviewable rather than a black box.
 
 **Investigate** — Trace-level detail opens any single conversation end to end, providing a defensible case file of how and why the AI answered as it did.
 
