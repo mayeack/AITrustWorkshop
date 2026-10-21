@@ -8,7 +8,7 @@ weight      = 70
 ## What You Did
 
 - **Lab 1 — Measure.** In PseudoCo Assistant you saw how aberrant behavior is identified, observed, and evaluated. In Splunk Agent Observability you saw every interaction scored automatically, surfaced unanticipated risks with Signals, tracked token usage and cost, saw how a custom evaluator for your industry is authored, and observed it flag a response outside the assistant's authority.
-- **Lab 2 — Secure.** In PseudoCo Assistant you sent a document with a hidden prompt injection and saw the response carry the sensitive data it asked for. You then turned on Agent Security policy review, proved against the live application that the attack is blocked before it reaches the model, and traced the Prompt Injection block event in Agent Security.
+- **Lab 2 — Secure.** In PseudoCo Assistant you sent a prompt injection as a structured JSON request and saw the response carry the sensitive data it asked for. You then turned on Agent Security policy review, proved against the live application that the attack is blocked before it reaches the model, and traced the Prompt Injection block event in Agent Security.
 
 ## Outcome
 

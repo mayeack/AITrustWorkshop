@@ -63,11 +63,11 @@ Trust is not a single product or a one-time test. It is a loop — intelligence,
 
 1. **Intelligence answers.** PseudoCo Assistant, a multi-agent assistant themed for your industry, responds to user questions using open models.
 2. **Evidence finds the risk.** Splunk Agent Observability scores every interaction and surfaces what is going wrong. Lab 1 ends with a response outside the assistant's authority, flagged by a custom evaluator for your industry.
-3. **Enforcement stops the attack.** In Lab 2, a prompt injection hidden in a document tries to pull sensitive data out through the assistant. Without a guardrail, the response carries that data. With Agent Security policy review on, the request is blocked before it reaches the model.
+3. **Enforcement stops the attack.** In Lab 2, a prompt injection sent as a structured JSON records lookup tries to pull sensitive data out through the assistant. Without a guardrail, the response carries that data. With Agent Security policy review on, the request is blocked before it reaches the model.
 4. **Proof closes the loop.** You re-run the attack against the live application, and the block shows up as an event in Agent Security.
 
 {{% expand title="The Risks - Healthcare" %}}
-In healthcare, Lab 1's risk is **Prescriptive Overreach**: the assistant acting like a prescriber, which the custom evaluator flags. Lab 2's attack hides instructions in a patient history to exfiltrate the patient's identifiers and medical history.
+In healthcare, Lab 1's risk is **Prescriptive Overreach**: the assistant acting like a prescriber, which the custom evaluator flags. Lab 2's attack is a structured JSON request that tells the assistant to read back the identifiers on file for two patients, including Social Security and medical record numbers.
 {{% /expand %}}
 
 Because evaluation runs continuously, the loop does not stop there. As models, prompts, and real-world traffic change, the evidence keeps showing you where the next guardrail belongs.
