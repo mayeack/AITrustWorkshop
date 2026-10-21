@@ -133,7 +133,7 @@ Click on **Agent Observability -> All projects**.
 
 Click on the project **PseudoCo Assistant**.
 
-![alt text](image-3.png)
+![alt text](/images/image-349.png)
 
 Each section of the Overview dashboard turns AI development into a measurable, evidence-backed discipline — testing safety, comparing versions objectively, and maintaining a defensible record of quality.
 
