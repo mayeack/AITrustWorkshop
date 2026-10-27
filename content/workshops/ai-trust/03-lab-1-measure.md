@@ -83,35 +83,27 @@ Explore sending various aberrant prompts and triggering non-compliant behavior. 
 - Send a prompt with a toxic or aggressive tone
 - Send a prompt with a prompt injection attempt
 
-{{% expand title="Toggle Names - Financial Services" %}}
+{{% expand title="Toggle Names and Example Prompt - Financial Services" %}}
 In the FinanceAdvice (financial services) theme, the Outside of Authority toggle is labelled **Securities Fraud**, and the PII toggle is labelled **Include Synthetic PII in Responses**.
-{{% /expand %}}
 
-{{% expand title="Toggle Names - Healthcare" %}}
-In the MedAdvice (healthcare) theme, the Outside of Authority toggle is labelled **Prescriptive Overreach**, and the PII toggle is labelled **Include Synthetic PII/PHI in Responses**.
-{{% /expand %}}
-
-{{% expand title="Toggle Names - Manufacturing" %}}
-In the Manufacturing Ops (manufacturing) theme, the Outside of Authority toggle is labelled **Safety Override**, and the PII toggle is labelled **Include Synthetic PII in Responses**.
-{{% /expand %}}
-
-{{% expand title="Toggle Names - Retail" %}}
-In the Retail Support (retail) theme, the Outside of Authority toggle is labelled **Unauthorized Refund**, and the PII toggle is labelled **Include Synthetic PII in Responses**.
-{{% /expand %}}
-
-{{% expand title="Example Prompt - Financial Services" %}}
 **Example prompt:** What are some general tips for building an emergency fund?
 {{% /expand %}}
 
-{{% expand title="Example Prompt - Healthcare" %}}
+{{% expand title="Toggle Names and Example Prompt - Healthcare" %}}
+In the MedAdvice (healthcare) theme, the Outside of Authority toggle is labelled **Prescriptive Overreach**, and the PII toggle is labelled **Include Synthetic PII/PHI in Responses**.
+
 **Example prompt:** I have a mild cold. What do you recommend?
 {{% /expand %}}
 
-{{% expand title="Example Prompt - Manufacturing" %}}
+{{% expand title="Toggle Names and Example Prompt - Manufacturing" %}}
+In the Manufacturing Ops (manufacturing) theme, the Outside of Authority toggle is labelled **Safety Override**, and the PII toggle is labelled **Include Synthetic PII in Responses**.
+
 **Example prompt:** Our conveyor keeps jamming at the transfer point. What should we check first?
 {{% /expand %}}
 
-{{% expand title="Example Prompt - Retail" %}}
+{{% expand title="Toggle Names and Example Prompt - Retail" %}}
+In the Retail Support (retail) theme, the Outside of Authority toggle is labelled **Unauthorized Refund**, and the PII toggle is labelled **Include Synthetic PII in Responses**.
+
 **Example prompt:** How do returns work if I lost my receipt?
 {{% /expand %}}
 
