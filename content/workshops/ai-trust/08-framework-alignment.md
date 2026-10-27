@@ -11,9 +11,9 @@ Risk, compliance, and security teams measure AI trust against a small set of pub
 **Alignment, not certification.** The labs demonstrate controls that these frameworks call for. Completing them does not make an AI system compliant or certified. That depends on how the controls are deployed, operated, and evidenced in your own environment, and on how your AI systems are classified.
 {{% /notice %}}
 
-![Framework alignment matrix. Columns are Lab 0 Overview (Splunk), Lab 1 Measure (Splunk Agent Observability), Lab 2 Secure (Cisco AI Defense), Lab 3 Observe (Splunk Observability Cloud), and Lab 4 Govern (Splunk Enterprise Security). Rows are the OWASP Top 10 for LLM Applications, MITRE ATLAS techniques, NIST AI RMF functions, ISO/IEC 42001 Annex A controls, and EU AI Act articles. A filled dot marks a control demonstrated hands-on, a ring marks one shown in the product, and Not covered marks items outside the workshop. The tables below list the same coverage.](/images/image-357.png)
-
 ## How to Read the Coverage
+
+Each framework below starts with a chart of its items across the five labs, followed by a table that links each item to the lab steps where you see it.
 
 **Demonstrated:** You do it hands-on in the lab, and the control visibly acts: a score, a block, a detection, or a finding.
 
@@ -22,6 +22,8 @@ Risk, compliance, and security teams measure AI trust against a small set of pub
 **Not covered:** Outside the scope of this workshop. See [Not Covered in This Workshop](#not-covered-in-this-workshop).
 
 ## OWASP Top 10 for LLM Applications (2025)
+
+![OWASP Top 10 for LLM Applications coverage by lab. Demonstrated: LLM01 Prompt Injection, LLM02 Sensitive Information Disclosure, LLM04 Data and Model Poisoning, and LLM09 Misinformation. Shown: LLM03 Supply Chain, LLM05 Improper Output Handling, LLM06 Excessive Agency, LLM07 System Prompt Leakage, and LLM10 Unbounded Consumption. Not covered: LLM08 Vector and Embedding Weaknesses. The table below lists the labs for each risk.](/images/image-358.png)
 
 | **Risk** | **Coverage** | **Where you see it** |
 | --- | --- | --- |
@@ -40,6 +42,8 @@ Risk, compliance, and security teams measure AI trust against a small set of pub
 
 Technique IDs and names are from the ATLAS 2026.09 release.
 
+![MITRE ATLAS coverage by lab. Demonstrated: AML.T0051 LLM Prompt Injection, AML.T0057 LLM Data Leakage, and AML.T0018 Manipulate AI Model. Shown: AML.T0054 LLM Jailbreak, AML.T0056 Extract LLM System Prompt, AML.T0029 Denial of AI Service, and AML.T0034 Cost Harvesting. The table below lists the labs for each technique.](/images/image-359.png)
+
 | **Technique** | **Coverage** | **Where you see it** |
 | --- | --- | --- |
 | **AML.T0051** LLM Prompt Injection | Demonstrated | A direct prompt injection (AML.T0051.000) is blocked at the prompt ([Lab 2.3.1](/workshops/ai-trust/04-lab-2-secure/#231-send-the-attack-with-policy-review-on)) and detected as a finding for the actor behind it ([Lab 4.2.1](/workshops/ai-trust/06-lab-4-govern/#421-review-the-detection-search), [Lab 4.4.1](/workshops/ai-trust/06-lab-4-govern/#441-investigate-with-the-triage-agent)). You also send a first injection attempt in [Lab 1.1.3](/workshops/ai-trust/03-lab-1-measure/#113-prompt-aberrant-behavior). |
@@ -51,6 +55,8 @@ Technique IDs and names are from the ATLAS 2026.09 release.
 | **AML.T0034** Cost Harvesting | Shown | Token consumption and agent cost are tracked over time ([Lab 0.1.3](/workshops/ai-trust/02-overview/#013-review-ai-governance-overview-dashboard), [Lab 1.2.5](/workshops/ai-trust/03-lab-1-measure/#125-review-trends)). |
 
 ## NIST AI RMF 1.0
+
+![NIST AI RMF 1.0 coverage by lab. Demonstrated: GOVERN, MEASURE, and MANAGE. Shown: MAP. The table below lists the labs for each function.](/images/image-360.png)
 
 | **Function** | **Coverage** | **Where you see it** | **Related subcategories** |
 | --- | --- | --- | --- |
@@ -65,6 +71,8 @@ The Lab 4 response plan follows the incident response phases of NIST SP 800-61.
 
 Control titles refer to Annex A of ISO/IEC 42001:2023. See the standard for the normative text.
 
+![ISO/IEC 42001 Annex A coverage by lab. Demonstrated: A.6.2.4 verification and validation, A.6.2.6 operation and monitoring, A.6.2.8 recording of event logs, and A.9 use of AI systems. Shown: A.7 data for AI systems. Not covered: A.5 assessing impacts of AI systems. The table below lists the labs for each control.](/images/image-361.png)
+
 | **Control** | **Coverage** | **Where you see it** |
 | --- | --- | --- |
 | **A.5** Assessing impacts of AI systems | Not covered | — |
@@ -77,6 +85,8 @@ Control titles refer to Annex A of ISO/IEC 42001:2023. See the standard for the 
 ## EU AI Act
 
 The Act's obligations depend on how an AI system is classified. The articles below apply to high-risk AI systems.
+
+![EU AI Act coverage by lab. Demonstrated: Art. 12 record-keeping, Art. 14 human oversight, Art. 15 accuracy, robustness and cybersecurity, and Art. 72 post-market monitoring. Shown: Art. 9 risk management system and Art. 73 reporting of serious incidents. Not covered: Art. 6 high-risk classification, Art. 10 data and data governance, and Art. 27 fundamental rights impact assessment. The table below lists the labs for each article.](/images/image-362.png)
 
 | **Article** | **Coverage** | **Where you see it** |
 | --- | --- | --- |
