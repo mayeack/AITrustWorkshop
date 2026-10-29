@@ -376,15 +376,17 @@ If the response plan you created is not already attached, click **+ Response**, 
 
 ![alt text](/images/image-366.png)
 
-Automated actions, such as disabling the user's account, can be triggered by the guided response agent. Prompt the agent `Disable user m.yeack1 using MedAdvice Identity Provider`, replacing the 'm.yeack1' with the user / entity associated to your finding. 
+Automated actions, such as disabling the user's account and clearing their sessions, can be triggered by the guided response agent. Prompt the agent with the example below, replacing USERNAME (both times) with the user / entity associated to your finding and INVESTIGATION-ID with your investigation's ID (for example, ES-00001).
+
+**Example prompt:** Using MedAdvice Identity Provider, disable user USERNAME and clear user sessions for USERNAME. Reason: INVESTIGATION-ID prompt injection containment
 
 ![alt text](/images/image-367.png)
 
-Click **Run action**.
+The agent asks you to confirm each action. Click **Run action** on both confirmations: disable user, then clear user sessions.
 
 ![alt text](/images/image-368.png)
 
-The user disable has been successfully executed.
+The user disable and session clear have been successfully executed, with the reason recorded.
 
 ## Outcome
 
