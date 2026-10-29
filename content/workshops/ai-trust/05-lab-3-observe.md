@@ -38,6 +38,8 @@ In [Lab 2](/workshops/ai-trust/04-lab-2-secure/), Cisco AI Defense stopped a dat
 
 [How to Access Splunk Observability Cloud](/workshops/ai-trust/01-setup/#2-how-to-access-splunk-agent-observability--splunk-observability-cloud)
 
+Ensure that you select the Organization **Observability Workshop AMER**.
+
 #### 3.1.2 Trigger a Latency Incident
 
 ![alt text](/images/image-271.png)

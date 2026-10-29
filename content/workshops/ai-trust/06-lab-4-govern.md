@@ -366,7 +366,7 @@ Click on the **sparkle** icon to expand the Security Assistant right sidepanel.
 
 ![alt text](/images/image-156.png)
 
-You can leverage the Security Assistant to provide you more details about the investigation.
+You can leverage the Security Assistant to provide you more details about the investigation. For example, click on **Generate a report for this investigation**.
 
 Click on **Response**.
 
@@ -374,11 +374,17 @@ Click on **Response**.
 
 If the response plan you created is not already attached, click **+ Response**, select **Prompt Injection Attack - Investigation and Response**, and click **Submit**.
 
-![alt text](/images/image-211.png)
+![alt text](/images/image-366.png)
 
-Automated actions, such as disabling the user's account, can be triggered by the guided response agent. Prompt the agent `Disable user <entity>`.
+Automated actions, such as disabling the user's account, can be triggered by the guided response agent. Prompt the agent `Disable user m.yeack1 using MedAdvice Identity Provider`, replacing the 'm.yeack1' with the user / entity associated to your finding. 
 
-**Note:** Because this is a synthetic user, triggering the disable action will result in an error.
+![alt text](/images/image-367.png)
+
+Click **Run action**.
+
+![alt text](/images/image-368.png)
+
+The user disable has been successfully executed.
 
 ## Outcome
 

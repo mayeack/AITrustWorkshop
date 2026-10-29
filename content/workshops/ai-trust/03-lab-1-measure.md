@@ -56,6 +56,8 @@ Model evaluation, metric construction, and signal understanding are critical bot
 
 [How to Access PseudoCo Assistant](/workshops/ai-trust/01-setup/#1-how-to-access-pseudoco-assistant)
 
+Ensure that you select the Organization **Observability Workshop AMER**.
+
 {{% notice warning "Important" %}}
 Because we are using an open weight model, ensure that you select **gpt-4o** from the **Static Emission** dropdown so that tokenomics calculates correctly!
 {{% /notice %}}
@@ -157,8 +159,6 @@ Click on **Re-run signals** if no signals appear.
 The Signals panel is the AI watching the AI — it scans every logged conversation for risk patterns and surfaces them as named, prioritized issues, so the team learns where the application is failing without reading transcripts one by one. Whereas Metrics need to be defined by the user, Signals surface the unknown unknown issues.
 
 Some example Signals (yours might vary):
-
-Hostile and Abusive Tone — Detects abusive or harassing language from the AI. A direct guard on brand safety and user trust.
 
 {{% expand title="Example Signals - Financial Services" %}}
 Spontaneous PII Hallucination Without Attack — Flags responses that expose personal data. This is a top-tier compliance and privacy risk, surfaced automatically so it can be contained before it becomes a breach.

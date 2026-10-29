@@ -14,7 +14,7 @@ Go to the PseudoCo Assistant instance and enter the access code provided by the 
 
 You should have received an email with instructions on how to access your assigned Splunk Observability instance.
 
-![alt text](/images/image-363.png)
+![alt text](/images/image-365.png)
 
 Ensure that you select the Organization **Observability Workshop AMER**.
 
