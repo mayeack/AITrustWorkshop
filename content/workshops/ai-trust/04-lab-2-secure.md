@@ -142,15 +142,15 @@ Applications & Protection status — Inventories the AI applications in use and 
 
 AI Assets — A complete map of the AI attack surface: the agents, models, data, and third-party apps employees touch. This is asset discovery for AI — the foundation of any security program, surfacing shadow AI before it becomes a breach.
 
-Click on **Policy Studio**.
+Click on **Secure -> Adaptive Guardrail Profiles**.
 
 #### 2.2.3 Open the Prompt Injection - Master
 
-![alt text](/images/image-324.png)
+![alt text](/images/image-364.png)
 
-Policy Studio is where adaptive guardrail profiles are created, evaluated, and fine-tuned from plain-language intent. Each card shows a profile's summary, its version, and whether it is published, so the library of guardrails is as reviewable as the rules they enforce.
+Adaptive Guardrail Profiles is where published guardrails are managed and associated with security policies. Each profile displays its purpose, associated policies, enforcement direction, and last modified date, providing a centralized view of the protections in place and direct access to Policy Studio for further refinement.
 
-Search for **Prompt Injection** and click on **Prompt Injection - Master**.
+Search for **Prompt Injection** and click on **Prompt Injection**.
 
 ![alt text](/images/image-325.png)
 

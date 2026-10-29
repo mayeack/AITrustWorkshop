@@ -14,6 +14,10 @@ Go to the PseudoCo Assistant instance and enter the access code provided by the 
 
 You should have received an email with instructions on how to access your assigned Splunk Observability instance.
 
+![alt text](/images/image-363.png)
+
+Ensure that you select the Organization **Observability Workshop AMER**.
+
 ## 3. How to Access Cisco AI Defense
 
 You should have received an email with instructions on how to access Cisco AI Defense. Open the **[Cisco AI Defense console](https://security.cisco.com/aidefense/overview/?enterpriseId=d87a65f7-f4f1-47ad-bdab-593226c85f3d)**.

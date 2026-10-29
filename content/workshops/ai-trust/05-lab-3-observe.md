@@ -62,7 +62,7 @@ It may take a few minutes for the alert to appear.
 
 ![alt text](/images/image-274.png)
 
-Click on any alert with "pseudoco-assistant..." in the signal properties.
+Click on any alert with "pseudoco-assistant..." in the signal properties, or add filter for **Service = demobot-v3**.
 
 ![alt text](/images/image-275.png)
 
