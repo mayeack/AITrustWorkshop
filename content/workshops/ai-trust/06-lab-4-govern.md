@@ -374,17 +374,21 @@ Click on **Response**.
 
 If the response plan you created is not already attached, click **+ Response**, select **Prompt Injection Attack - Investigation and Response**, and click **Submit**.
 
-![alt text](/images/image-366.png)
+![alt text](/images/image-369.png)
 
 Automated actions, such as disabling the user's account and clearing their sessions, can be triggered by the guided response agent. Prompt the agent with the example below, replacing USERNAME (both times) with the user / entity associated to your finding and INVESTIGATION-ID with your investigation's ID (for example, ES-00001).
 
 **Example prompt:** Using MedAdvice Identity Provider, disable user USERNAME and clear user sessions for USERNAME. Reason: INVESTIGATION-ID prompt injection containment
 
-![alt text](/images/image-367.png)
+![alt text](/images/image-370.png)
 
-The agent asks you to confirm each action. Click **Run action** on both confirmations: disable user, then clear user sessions.
+Click **Run action** on both confirmations: disable user, then clear user sessions.
 
-![alt text](/images/image-368.png)
+![alt text](/images/image-371.png)
+
+Click **Run action**.
+
+![alt text](/images/image-372.png)
 
 The user disable and session clear have been successfully executed, with the reason recorded.
 
