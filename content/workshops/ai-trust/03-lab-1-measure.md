@@ -66,7 +66,7 @@ Because we are using an open weight model, ensure that you select **gpt-4o** fro
 
 ![alt text](/workshops/ai-trust/image-1.png)
 
-Select **ollama** in **Provider**. PseudoCo Assistant is pre-loaded with two models - one a baseline version, and one that has been intentionally poisoned to produce non-compliant responses, such as toxic content.
+Select **ollama** in **Provider**. PseudoCo Assistant is pre-loaded with two models - one a baseline version, and a tampered copy of the same open-weight model whose packaged prompt template carries a hidden directive, so it produces non-compliant responses such as toxic content.
 
 ![alt text](/workshops/ai-trust/image-2.png)
 

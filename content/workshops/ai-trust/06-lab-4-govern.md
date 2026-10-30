@@ -92,7 +92,7 @@ Click **Import**.
 
 ![alt text](/images/image-285.png)
 
-The Guided Response agent works from a standard operating procedure. Download the SOP used for this scenario and load it into the agent to see the four-phase NIST 800-61 plan it generates.
+The Guided Response agent works from a standard operating procedure. Download the SOP used for this scenario and load it into the agent to see the four-phase response plan it generates, modeled on the NIST SP 800-61 incident handling life cycle.
 
 {{% expand title="Prompt Injection SOP - Financial Services" %}}
 {{< button href="/files/prompt-injection-investigation-and-response-sop-financial-services.md" icon="download" style="primary" download="prompt-injection-investigation-and-response-sop.md" >}}Download the SOP (.md){{< /button >}} {{< button href="/files/prompt-injection-investigation-and-response-sop-financial-services.html" icon="file" style="secondary" target="_blank" >}}View in browser{{< /button >}}
