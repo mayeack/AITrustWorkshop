@@ -95,7 +95,7 @@ The four pillars of trust — and the question each one answers:
 
 ![One Cisco Agentic AI Trust architecture diagram](/images/image-373.png)
 
-One Cisco Agentic AI Trust architecture: production AI traffic flows through Cisco Cloud Control, Cisco AI Defense, and Cisco Data Fabric into Splunk Observability Cloud and Splunk Core, with Splunk Agent Observability closing the continuous feedback loop back to the AI system — one cohesive architecture for delivering agentic AI trust.
+One Cisco Agentic AI Trust architecture: production AI traffic flows through Cisco AI Defense and Cisco Data Fabric into Splunk Observability Cloud and Splunk Core, with Splunk Agent Observability closing the continuous feedback loop back to the AI system — one cohesive architecture for delivering agentic AI trust.
 
 ---
 
