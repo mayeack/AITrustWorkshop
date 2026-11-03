@@ -30,133 +30,27 @@ Detection and observability tell you *what happened*. Governance is about being 
 
 In the earlier labs, every AI interaction was logged with full governance metadata. That foundation is what makes this lab possible: an adversarial prompt-injection attempt isn't just blocked in the moment, it leaves a **permanent, immutable record** that can be reconstructed on demand.
 
-You will first prepare Enterprise Security for the attack: an investigation type with a response plan generated from a standard operating procedure, wired to the correlation search that defines *how* the threat is detected. Then you will stage prompt injection at scale, the same threat class you blocked in Lab 2: a spray against PseudoCo Assistant in which one actor tries many techniques across several sessions. You will watch it surface in Splunk's Prompt Injection Detection dashboard, and follow it into Enterprise Security as a finding that lands in an analyst's queue with its response plan already attached. The point is the **end-to-end chain**: a live attack becomes a measurable detection, turning a security incident into a defensible story with a clear owner and outcome.
+Enterprise Security is already prepared for the attack: an investigation type with a response plan built from a standard operating procedure, wired to the correlation search that defines *how* the threat is detected. You will review that correlation search and stage prompt injection at scale, the same threat class you blocked in Lab 2: a spray against PseudoCo Assistant in which one actor tries many techniques across several sessions. You will watch it surface in Splunk's Prompt Injection Detection dashboard, and follow it into Enterprise Security as a finding that lands in an analyst's queue with its response plan already attached. The point is the **end-to-end chain**: a live attack becomes a measurable detection, turning a security incident into a defensible story with a clear owner and outcome.
 
 ## Labs
 
-{{% notice style="warning" title="Configure first, then attack" icon="route" %}}
-A finding takes the investigation type its detection carries **at the moment it fires**, and it fires about a minute after the first injection turn. Create the investigation type and response plan (4.1) and point the detection at it (4.2) **before** you stage the spray (4.3). A finding raised earlier keeps the type *default* and no response plan.
+{{% notice note %}}
+The **prompt_injection** investigation type and its response plan are already set up on your instance, and the detection already carries that type, so every finding it raises arrives typed, and an investigation you start from it opens with the response plan attached. The Triage agent waits about 10 minutes before it judges a new finding.
 {{% /notice %}}
 
-### Lab 4.1 Create a Response Plan with the SOP Agent
+### Lab 4.1 Review the Detection Search
 
 #### 4.1.1 Access Splunk Cloud
 
 [How to Access Splunk](/workshops/ai-trust/01-setup/#5-how-to-access-splunk)
 
-#### 4.1.2 Create the Investigation Type and Response Plan
+#### 4.1.2 Review the Detection Search
 
 ![alt text](/images/image-276.png)
 
 Click the Splunk logo in the top left to navigate home.
 
 In the left side-panel, click on **Enterprise Security**. Enter "Enterprise Security" in the search box if it does not appear.
-
-![alt text](/images/image-277.png)
-
-Click on **Configure -> All configurations**.
-
-![alt text](/images/image-278.png)
-
-Click on **Investigation types**.
-
-![alt text](/images/image-279.png)
-
-Click on **+ Investigation type** to create a new investigation type.
-
-![alt text](/images/image-280.png)
-
-Enter the following information:
-
-**Investigation type name:** prompt_injection
-
-**Investigation type description:** An attempted or actual prompt injection attack against an AI system.
-
-Click on **Next**.
-
-![alt text](/images/image-281.png)
-
-Click **Save**.
-
-![alt text](/images/image-282.png)
-
-Click on the created investigation type.
-
-![alt text](/images/image-283.png)
-
-Click **Create new response plan.**
-
-![alt text](/images/image-284.png)
-
-Click **Import**.
-
-![alt text](/images/image-285.png)
-
-The Guided Response agent works from a standard operating procedure. Download the SOP used for this scenario and load it into the agent to see the four-phase response plan it generates, modeled on the NIST SP 800-61 incident handling life cycle.
-
-{{% expand title="Prompt Injection SOP - Financial Services" %}}
-{{< button href="/files/prompt-injection-investigation-and-response-sop-financial-services.md" icon="download" style="primary" download="prompt-injection-investigation-and-response-sop.md" >}}Download the SOP (.md){{< /button >}} {{< button href="/files/prompt-injection-investigation-and-response-sop-financial-services.html" icon="file" style="secondary" target="_blank" >}}View in browser{{< /button >}}
-{{% /expand %}}
-
-{{% expand title="Prompt Injection SOP - Healthcare" %}}
-{{< button href="/files/prompt-injection-investigation-and-response-sop.md" icon="download" style="primary" download="true" >}}Download the SOP (.md){{< /button >}} {{< button href="/files/prompt-injection-investigation-and-response-sop.html" icon="file" style="secondary" target="_blank" >}}View in browser{{< /button >}}
-{{% /expand %}}
-
-{{% expand title="Prompt Injection SOP - Manufacturing" %}}
-{{< button href="/files/prompt-injection-investigation-and-response-sop-manufacturing.md" icon="download" style="primary" download="prompt-injection-investigation-and-response-sop.md" >}}Download the SOP (.md){{< /button >}} {{< button href="/files/prompt-injection-investigation-and-response-sop-manufacturing.html" icon="file" style="secondary" target="_blank" >}}View in browser{{< /button >}}
-{{% /expand %}}
-
-{{% expand title="Prompt Injection SOP - Retail" %}}
-{{< button href="/files/prompt-injection-investigation-and-response-sop-retail.md" icon="download" style="primary" download="prompt-injection-investigation-and-response-sop.md" >}}Download the SOP (.md){{< /button >}} {{< button href="/files/prompt-injection-investigation-and-response-sop-retail.html" icon="file" style="secondary" target="_blank" >}}View in browser{{< /button >}}
-{{% /expand %}}
-
-Upload the file in the box under **Import and generate with AI**.
-
-![alt text](/images/image-286.png)
-
-Click **Import**.
-
-![alt text](/images/image-287.png)
-
-Wait for generation to complete and change to status **draft**, then click on the created response plan.
-
-![alt text](/images/image-288.png)
-
-Feel free to explore the sections created by the SOP agent. Notice how specific phases, with specific tasks, were created.
-
-Toggle **Status** to **Published**.
-
-![alt text](/images/image-289.png)
-
-Click **Save changes** if prompted.
-
-![alt text](/images/image-290.png)
-
-Click on **Configure -> All configurations**.
-
-![alt text](/images/image-291.png)
-
-Click on **Investigation types**.
-
-![alt text](/images/image-292.png)
-
-Click on **prompt_injection**.
-
-![alt text](/images/image-293.png)
-
-Click on **Assign response plan**.
-
-![alt text](/images/image-294.png)
-
-Click on the response plan you just created **Prompt Injection Attack - Investigation and Response**, then click **Submit**.
-
-![alt text](/images/image-295.png)
-
-Click **Save changes**.
-
-### Lab 4.2 Configure the Detection Search
-
-#### 4.2.1 Review the Detection Search
 
 ![alt text](/images/image-296.png)
 
@@ -176,21 +70,17 @@ This is where security logic is authored and version-controlled as a managed ass
 
 Scroll down to **Analyst queue information** and click on the **>** arrow next to **Create a finding**.
 
-![alt text](/images/image-300.png)
+![alt text](/images/image-379.png)
 
-Click on the dropdown for **Investigation type**.
+The **Investigation type** is already set to **prompt_injection**, so every finding this detection raises arrives with the response plan attached.
 
-![alt text](/images/image-301.png)
+{{% notice warning "Important" %}}
+This is a shared environment, so this part of the lab is **review only**. Do not change **GenAI - Prompt Injection Attack Correlation** or click **Save**: every attendee's spray depends on it.
+{{% /notice %}}
 
-Select the investigation type, **prompt_injection**, you just created.
+Click on the **sparkle** icon to expand the Security Assistant right sidepanel.
 
-Click **Save**.
-
-![alt text](/images/image-302.png)
-
-Click on **Close**, and then the **sparkle** icon to expand the Security Assistant right sidepanel.
-
-#### 4.2.2 Review the Detection Builder Agent
+#### 4.1.3 Review the Detection Builder Agent
 
 ![alt text](/images/image-303.png)
 
@@ -244,12 +134,13 @@ Use this next-steps content:
 
 Containment standard: 3 or more blocked prompt-injection attempts within 24 hours from one actor with no authorized-testing record means the account is inactivated pending review.
 
-Review the actor's raw prompts and sessions through the Contributing events drill-down (the finding deliberately carries no prompt text).
-Validate intent with the user's manager: is there an authorized red-team or testing record for this user?
-If the standard is met, inactivate the account: run the response plan's Containment task action on the paired SOAR - identity provider connector -> disable user for this finding's user (the Guided Response agent runs it from the prompt "Disable user "; the TA ships a simulated MedAdvice Identity Provider whose results carry simulated=true). Without a paired SOAR run [[action|ai_defense_suspend_user]].
-Revoke the actor's active sessions: identity provider connector -> clear user sessions, or [[action|ai_defense_revoke_session]].
-Tighten the guardrail for the technique observed so every user is covered: [[action|ai_defense_tighten_guardrail]].
-Record the disposition and rationale on the investigation; the Containment task requires a note.
+1. Review the actor's raw prompts and sessions through the Contributing events drill-down (the finding deliberately carries no prompt text).
+2. Validate intent with the user's manager: is there an authorized red-team or testing record for this user?
+3. If the standard is met, inactivate the account: run the response plan's Containment task action on the paired SOAR - identity provider connector -> disable user for this finding's user (the Guided Response agent runs it from the prompt "Disable user &lt;user&gt;"; the TA ships a simulated MedAdvice Identity Provider whose results carry simulated=true). Without a paired SOAR run [[action|ai_defense_suspend_user]].
+4. Revoke the actor's active sessions: identity provider connector -> clear user sessions, or [[action|ai_defense_revoke_session]].
+5. Tighten the guardrail for the technique observed so every user is covered: [[action|ai_defense_tighten_guardrail]].
+6. Record the disposition and rationale on the investigation; the Containment task requires a note.
+
 Risk output
 Enable risk output and create two risk objects:
 
@@ -269,9 +160,9 @@ Click **Explain this Detection**, or otherwise chat with the Detection Builder a
 
 Review the explanation provided by the agent.
 
-### Lab 4.3 Stage the Prompt Injection Spray Attack
+### Lab 4.2 Stage the Prompt Injection Spray Attack
 
-#### 4.3.1 Stage the Prompt Injection Spray
+#### 4.2.1 Stage the Prompt Injection Spray
 
 [How to Access PseudoCo Assistant](/workshops/ai-trust/01-setup/#1-how-to-access-pseudoco-assistant)
 
@@ -284,9 +175,9 @@ Expand the left side-panel and make sure **Trigger Demo Incident** is off.
 
 Under **Prompt Injection Spray**, set the duration to 60s and replace the default actor **t.nguyen** with a unique name (for example, your initials), then toggle **Prompt Injection Spray** on.
 
-About a minute after the first injection turn, the detection raises one finding for your actor with your response plan attached. Spraying again later raises a new finding.
+About a minute after the first injection turn, the detection raises one finding for your actor, with the response plan attached. Spraying again raises a new finding, at most one every 10 minutes per actor.
 
-#### 4.3.2 Review the Prompt Injection Spray
+#### 4.2.2 Review the Prompt Injection Spray
 
 ![alt text](/images/image-307.png)
 
@@ -312,9 +203,9 @@ Top Injection Sources — Identifies where attacks originate, enabling blocking,
 
 Recent Detections — A live, row-level audit trail of individual attacks for investigation and forensics — the defensible record that proves what happened, when, and how it was handled.
 
-### Lab 4.4 Respond to the Finding
+### Lab 4.3 Respond to the Finding
 
-#### 4.4.1 Investigate with the Triage Agent
+#### 4.3.1 Investigate with the Triage Agent
 
 ![alt text](/images/image-309.png)
 
@@ -338,7 +229,7 @@ Click on any record with title **GenAI Prompt Injection Attack...**, where AI Di
 
 The AI Disposition can take a few minutes to appear, and not every finding is judged True Positive.
 
-![alt text](/images/image-154.png)
+![alt text](/images/image-380.png)
 
 Finding header — Names the threat by actor and severity. Naming the adversary, not just the event, is what turns detection into accountability.
 
@@ -346,7 +237,7 @@ Finding narrative — A plain-language summary of the actor, the attempts, the a
 
 Triage fields (Owner, Status, Urgency, Sensitivity, Disposition) — Who owns the case, where it stands, and how it was judged. Still *unassigned*, *New*, and *Undetermined*, this finding is an open obligation; filling these fields is what closes it with a name attached.
 
-Analysis panel — Splunk's Triage agent: a determination ("True Positive - Suspicious Activity"), a severity, and a confidence score (72%), backed by expandable **Justification**, **Tools**, **Evidence**, and **Analysis Details**. The machine's judgment arrives with its evidence attached, so a human can accept or overturn it — and that review is itself recorded.
+Analysis panel — Splunk's Triage agent: a determination ("True Positive - Suspicious Activity"), a severity, and a confidence score, backed by expandable **Justification**, **Tools**, **Evidence**, and **Analysis Details**. The machine's judgment arrives with its evidence attached, so a human can accept or overturn it — and that review is itself recorded.
 
 Details (Finding metadata, Entity, Source, Additional fields, Event) — The raw event behind the summary, so an auditor can verify the story rather than take it on trust.
 
@@ -358,7 +249,7 @@ Click on **Start investigation**.
 Ensure that the **Investigation type** is prompt_injection, or you might encounter an error.
 {{% /notice %}}
 
-#### 4.4.2 Respond with the Guided Response Agent
+#### 4.3.2 Respond with the Guided Response Agent
 
 ![alt text](/images/image-155.png)
 
@@ -368,11 +259,11 @@ Click on the **sparkle** icon to expand the Security Assistant right sidepanel.
 
 You can leverage the Security Assistant to provide you more details about the investigation. For example, click on **Generate a report for this investigation**.
 
-Click on **Response**.
+Click on **Response**. The **Prompt Injection Attack - Investigation and Response** plan is modeled on the NIST SP 800-61 incident handling life cycle. Its four phases (Detection and Analysis, Containment, Eradication, and Post-Incident Activity) each hold specific tasks.
 
 ![alt text](/images/image-184.png)
 
-If the response plan you created is not already attached, click **+ Response**, select **Prompt Injection Attack - Investigation and Response**, and click **Submit**.
+If the response plan is not already attached, click **+ Response**, select **Prompt Injection Attack - Investigation and Response**, and click **Submit**.
 
 ![alt text](/images/image-369.png)
 
