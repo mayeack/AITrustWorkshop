@@ -152,9 +152,9 @@ Click on your theme's stream under **Agent Streams**: **MedAdvice**, **FinanceAd
 
 Click on the **Signals** button. 
 
-![alt text](/images/image-346.png)
+![alt text](/images/image-391.png)
 
-Click on **Re-run signals** if no signals appear. 
+If no signals appear, click **Scan now**, choose **Last 12 hours** and **Claude Sonnet 4.6**, click **Start scan**, and wait until **Scan history** shows the scan completed. If the scan fails, click **View Legacy Signals** to see signals from an earlier scan.
 
 The Signals panel is the AI watching the AI — it scans every logged conversation for risk patterns and surfaces them as named, prioritized issues, so the team learns where the application is failing without reading transcripts one by one. Whereas Metrics need to be defined by the user, Signals surface the unknown unknown issues.
 
