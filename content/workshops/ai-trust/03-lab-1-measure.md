@@ -154,7 +154,13 @@ Click on the **Signals** button.
 
 ![alt text](/images/image-391.png)
 
-If no signals appear, click **Scan now**, choose **Last 12 hours** and **Claude Sonnet 4.6**, click **Start scan**, and wait until **Scan history** shows the scan completed. If the scan fails, click **View Legacy Signals** to see signals from an earlier scan.
+If no signals appear, click **Scan now**, choose **Last 12 hours** and **Claude Sonnet 4.6**, click **Start scan**, and wait until **Scan history** shows the scan completed. If the scan fails, the page shows **The latest Signal scan failed**.
+
+![alt text](/images/image-392.png)
+
+Click on **View Legacy Signals** to see signals from an earlier scan.
+
+![alt text](/images/image-346.png)
 
 The Signals panel is the AI watching the AI — it scans every logged conversation for risk patterns and surfaces them as named, prioritized issues, so the team learns where the application is failing without reading transcripts one by one. Whereas Metrics need to be defined by the user, Signals surface the unknown unknown issues.
 
