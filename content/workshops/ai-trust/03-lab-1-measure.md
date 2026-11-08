@@ -152,10 +152,6 @@ Click on your theme's stream under **Agent Streams**: **MedAdvice**, **FinanceAd
 
 Click on the **Signals** button. 
 
-![alt text](/images/image-391.png)
-
-If no signals appear, click **Scan now**, choose **Last 12 hours** and **Claude Sonnet 4.6**, click **Start scan**, and wait until **Scan history** shows the scan completed. If the scan fails, the page shows **The latest Signal scan failed**.
-
 ![alt text](/images/image-392.png)
 
 Click on **View Legacy Signals** to see signals from an earlier scan.
