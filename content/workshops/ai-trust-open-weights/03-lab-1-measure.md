@@ -161,9 +161,9 @@ Click **View project details** to drill into Agent Observability. The project op
 
 ![alt text](/workshops/ai-trust-open-weights/image-10.png)
 
-Click on the agent stream for your industry's theme.
+Click on MedAdvice.
 
-![alt text](/images/image-350.png)
+![alt text](/images/image-399.png)
 
 Click on **Signals**. 
 
