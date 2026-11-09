@@ -188,7 +188,7 @@ Click on any Signal.
 
 #### 1.2.5 Review Agent Stream
 
-![alt text](/workshops/ai-trust-open-weights/image-29.png)
+![alt text](/images/image-395.png)
 
 Click on **Tracing** to return to the **Agent Stream**.
 
