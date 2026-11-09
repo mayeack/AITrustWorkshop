@@ -202,7 +202,7 @@ Automated scoring (such as Output Toxicity, Output PII, and your industry's cust
 
 Click on any trace.
 
-![alt text](/images/image-352.png)
+![alt text](/images/image-400.png)
 
 This single-trace view is the microscope of the platform — it opens up one AI conversation end to end, showing exactly how a multi-step agent produced its answer and how that answer scored on quality and safety.
 
@@ -216,7 +216,7 @@ Feel free to explore the other tabs, such as **Latency** and **Trace graph**.
 
 #### 1.2.6 Review Trends
 
-![alt text](/images/image-352.png)
+![alt text](/images/image-400.png)
 
 Click the back arrow to return to the **Agent Stream**.
 
@@ -284,11 +284,11 @@ The Evaluators catalog is the rulebook for how every AI is graded — a central,
 Open the custom evaluator for your industry.
 
 {{% expand title="Prescriptive Overreach Evaluator - Healthcare" %}}
-![alt text](/images/image-208.png)
+![alt text](/images/image-401.png)
 
 Search for **prescriptive_overreach**, and click on it.
 
-![alt text](/images/image-209.png)
+![alt text](/images/image-402.png)
 {{% /expand %}}
 
 This is where a safety standard gets authored — the editor for a custom evaluator, showing how an abstract risk is turned into a precise, automated, repeatable test that every AI response is graded against.
