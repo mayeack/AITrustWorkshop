@@ -22,17 +22,17 @@ All lab work happens in your web browser; there is nothing to install. Before yo
 
 ## Access
 
-![alt text](/images/image-312.png)
+![alt text](/images/image-396.png)
 
-Your laptop should start on the page above; if not, navigate to https://www.ciscodcloud.com/apps/expo/1j3l4te516ynjzcm8qe0amj0i .
+Your laptop should start on the page above; if not, navigate to https://www.ciscodcloud.com/apps/expo/9err5kzbdj5s242s2nw3dzwa9 .
 
-Click on **Explore** under SYD Sessions.
+Click on **Explore**.
 
-![alt text](/images/image-313.png)
+![alt text](/images/image-397.png)
 
-In the pop-up, enter your email address, then click **Launch**.
+Enter your email address, and accept the terms and conditions, and click **Launch**.
 
-![alt text](/images/image-314.png)
+![alt text](/images/image-398.png)
 
 Click **Launch**.
 
