@@ -167,7 +167,11 @@ Click on the agent stream for your industry's theme.
 
 Click on **Signals**. 
 
-![alt text](/workshops/ai-trust-open-weights/image-27.png)
+![alt text](/images/image-393.png)
+
+Click on **View Legacy Signals**.
+
+![alt text](/images/image-394.png)
 
 The Signals panel is the AI watching the AI — it scans every logged conversation for risk patterns and surfaces them as named, prioritized issues, so the team learns where the application is failing without reading transcripts one by one. Whereas Evaluators need to be defined by the user, Signals surface the unknown unknown issues.
 
