@@ -177,7 +177,7 @@ The Signals panel is the AI watching the AI — it scans every logged conversati
 
 Click on any Signal.
 
-![alt text](/images/image-351.png)
+![alt text](/images/image-395.png)
 
 **Signal summary:** Names the risk pattern the signal found and the behavior behind it.<br>
 **Scope and impact:** Shows the affected spans, traces, and sessions associated with the signal, along with when the issue was created and last updated.<br>
