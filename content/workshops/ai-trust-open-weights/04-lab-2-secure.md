@@ -1,7 +1,7 @@
 +++
 title       = "Lab 2 — Secure"
 description = "Agent Security: block a prompt injection that tries to exfiltrate sensitive data, and prove the block against the live assistant."
-duration    = "20 min"
+duration    = "15 min"
 weight      = 40
 +++
 
