@@ -14,6 +14,11 @@ style = "primary"
 label = "Jump to the labs"
 href  = "/workshops/ai-trust/02-overview/"
 style = "ghost"
+
+[[cta]]
+label = "Take the interactive tour"
+href  = "https://aitrust.navattic.com/6kk0c85"
+style = "ghost"
 +++
 
 *A field workshop for the executives accountable for AI — and the engineers who run it.*
