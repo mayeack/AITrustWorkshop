@@ -1,0 +1,44 @@
+{{- /*
+  PROJECT OVERRIDE of themes/hugo-theme-splunk-workshop/layouts/_partials/nav/sidebar-tree.html
+
+  Identical to the theme partial except for one thing: a section whose page
+  uses the `redirect` layout gets no "Overview" self-link. Those pages render
+  nothing and forward straight to the section's Introduction, so the self-link
+  was a second, slower route to the link directly beneath it.
+
+  Dropping it also unblocks progress roll-up: the self-link carried a
+  data-page-url that could never be marked visited (the redirect fires long
+  before the dwell timer), so the chapter could never show as complete.
+
+  Delete this file if the theme grows its own handling for redirecting
+  section pages.
+*/ -}}
+{{- $section := .section -}}
+{{- $current := .current -}}
+{{- $depth   := .depth | default 0 -}}
+
+{{- /* .Pages already includes sub-section index pages; no need to union .Sections. */ -}}
+{{- $items := partial "workshop/visible-pages.html" $section.Pages -}}
+{{- $items = sort $items "Weight" -}}
+
+<ol class="sidebar-tree sidebar-tree--depth-{{ $depth }}">
+{{- range $items -}}
+  {{- $isCurrent := eq .RelPermalink $current.RelPermalink -}}
+  {{- $hasChildren := and (eq .Kind "section") (gt (len .Pages) 0) -}}
+  {{- $isOnPath := or $isCurrent (and (ne .RelPermalink "/") (hasPrefix $current.RelPermalink .RelPermalink)) -}}
+  {{- $redirects := eq .Layout "redirect" -}}
+  {{- if $hasChildren -}}
+<li class="sidebar-tree__group{{ if $isOnPath }} is-open{{ end }}">
+<details{{ if $isOnPath }} open{{ end }} data-section-url="{{ .RelPermalink }}">
+<summary class="sidebar-tree__summary"><span class="sidebar-tree__chev" aria-hidden="true"></span><span class="sidebar-tree__chapter">{{ .LinkTitle }}</span></summary>
+{{ if not $redirects }}<a class="sidebar-tree__self{{ if $isCurrent }} is-active{{ end }}" href="{{ .RelPermalink }}" data-page-url="{{ .RelPermalink }}"{{ if $isCurrent }} aria-current="page"{{ end }}>{{ i18n "overview" | default "Overview" }}</a>
+{{ end }}{{ partial "nav/sidebar-tree.html" (dict "section" . "current" $current "depth" (add $depth 1)) }}
+</details>
+</li>
+  {{- else -}}
+<li class="sidebar-tree__leaf">
+<a class="sidebar-tree__link{{ if $isCurrent }} is-active{{ end }}" href="{{ .RelPermalink }}" data-page-url="{{ .RelPermalink }}"{{ if $isCurrent }} aria-current="page"{{ end }}>{{ .LinkTitle }}</a>
+</li>
+  {{- end -}}
+{{- end -}}
+</ol>
