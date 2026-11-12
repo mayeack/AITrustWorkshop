@@ -101,7 +101,12 @@ try:
 except StopIteration:
     sys.exit(f"{INTRO} has no '## ' heading — layout changed?")
 
-preamble = [ln for ln in body_lines[:first_h2] if ln.strip()]
+# A shortcode-only line in the preamble (e.g. the Introduction's "Take the interactive
+# tour" button) is site UI, not narrative: Home has its own hero and the collateral
+# narrative must stay plain Markdown, so drop those lines from both outputs.
+SHORTCODE_ONLY = re.compile(r"^\s*\{\{[<%].*[>%]\}\}\s*$")
+preamble = [ln for ln in body_lines[:first_h2]
+            if ln.strip() and not SHORTCODE_ONLY.match(ln)]
 rest = body_lines[first_h2:]
 
 # --- 1. Home: preserved front matter (hero + CTAs) + preamble + the FIRST section only ------

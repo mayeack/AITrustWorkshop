@@ -8,6 +8,8 @@ aliases     = ["/workshops/ai-governance/00-introduction/", "/workshops/ai-gover
 
 *A field workshop for the executives accountable for AI — and the engineers who run it.*
 
+{{< button href="https://aitrust.navattic.com/6kk0c85" style="secondary" icon="play" target="_blank" >}}Take the interactive tour{{< /button >}}
+
 ## The Problem: AI Is Moving Faster Than Trust Can Be Earned
 
 Enterprises are shipping agentic AI into production faster than they can trust it. Autonomous and semi-autonomous agents now make decisions, call tools, and generate language that reaches customers and regulators — at machine speed, around the clock, at a volume no human review queue can keep pace with.

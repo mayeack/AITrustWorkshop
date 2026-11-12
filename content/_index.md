@@ -4,21 +4,6 @@ hero_title    = "One Cisco: Delivering Agentic AI Trust *End to End*"
 eyebrow       = "The Agentic AI Trust Workshop — FY'27"
 description   = "Measured. Secured. Observable. Governed. Trusted. One Cisco, end to end."
 home_sections = ["workshops"]
-
-[[cta]]
-label = "Start: Setup & Prerequisites"
-href  = "/workshops/ai-trust/01-setup/"
-style = "primary"
-
-[[cta]]
-label = "Jump to the labs"
-href  = "/workshops/ai-trust/02-overview/"
-style = "ghost"
-
-[[cta]]
-label = "Take the interactive tour"
-href  = "https://aitrust.navattic.com/6kk0c85"
-style = "ghost"
 +++
 
 *A field workshop for the executives accountable for AI — and the engineers who run it.*
