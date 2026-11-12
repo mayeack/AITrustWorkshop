@@ -1,6 +1,7 @@
 +++
 title = "Workshops"
 description = "Hands-on workshops for delivering agentic AI trust end to end. Powered by NVIDIA intelligence."
-layout = "hero"
+layout = "redirect"
+redirect_to = "/"
 subsections = true
 +++

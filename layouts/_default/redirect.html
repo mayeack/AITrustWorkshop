@@ -1,0 +1,47 @@
+{{- /*
+  Redirect layout — a landing page that forwards instead of rendering.
+
+  Set in a page's front matter:
+
+    layout      = "redirect"
+    redirect_to = "/workshops/ai-trust/00-introduction/"
+
+  Why this exists: a workshop section needs its `_index.md` to keep the
+  section's legacy `aliases` and to make the directory a page bundle (that is
+  the only reason the screenshots beside it publish). The file therefore has
+  to stay even when the landing page itself adds nothing over the workshop's
+  first chapter. This layout keeps the file and skips the page.
+
+  Deliberately NOT layouts/alias.html: that one shows a "This page moved"
+  card, which is right for an old URL someone bookmarked and wrong here —
+  nothing moved, the reader is just being sent on. No visible body, so there
+  is no flash of content before the forward.
+*/ -}}
+{{- $target := .Params.redirect_to -}}
+{{- if not $target -}}
+  {{- errorf "redirect layout: %q sets layout=\"redirect\" but no `redirect_to`" .Path -}}
+{{- end -}}
+{{- $href := partial "site-href.html" $target -}}
+{{- with site.GetPage $target }}{{ else }}
+  {{- warnidf "redirect-target-missing" "redirect layout: %q forwards to %q, which is not a page on this site." $.Path $target -}}
+{{- end -}}
+<!doctype html>
+<html lang="{{ site.Language.Lang | default "en" }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{{ .Title | markdownify | plainify }} · {{ site.Title }}</title>
+  <meta name="robots" content="noindex">
+  {{- /* Canonical points at the destination so search engines fold this URL into it. */}}
+  <link rel="canonical" href="{{ $href | absURL }}">
+  <meta http-equiv="refresh" content="0; url={{ $href }}">
+  {{- /* location.replace, not href: the landing page must not sit in history,
+         or Back from the destination bounces straight through it again.
+         Quote the action inside the JS string literal and let Go escape it —
+         `jsonify` here would be escaped twice and yield a quoted path. */}}
+  <script>location.replace("{{ $href }}");</script>
+</head>
+<body>
+  <p><a href="{{ $href }}">Continue to {{ with site.GetPage $target }}{{ .LinkTitle }}{{ else }}the workshop{{ end }}</a></p>
+</body>
+</html>
