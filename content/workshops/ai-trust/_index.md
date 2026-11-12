@@ -7,6 +7,7 @@ difficulty  = "intermediate"
 product     = "Cisco + Splunk"
 weight      = 1
 layout      = "chapter"
+card_href   = "/workshops/ai-trust/00-introduction/"
 subtitle    = "One Cisco · Delivering Agentic AI Trust End to End"
 tagline     = "FY'27 · Hands-on"
 aliases     = ["/workshops/ai-governance/", "/workshops/ai-governance-healthcare/", "/workshops/ai-trust-healthcare/"]

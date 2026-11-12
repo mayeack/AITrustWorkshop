@@ -7,6 +7,7 @@ difficulty  = "intermediate"
 product     = "Cisco + NVIDIA"
 weight      = 2
 layout      = "chapter"
+card_href   = "/workshops/ai-trust-open-weights/00-introduction/"
 subtitle    = "Building Enterprise AI You Can Control with Cisco and NVIDIA"
 tagline     = "FY'27 · Hands-on"
 +++

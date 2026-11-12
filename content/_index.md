@@ -3,7 +3,7 @@ title         = "One Cisco: Delivering Agentic AI Trust End to End"
 hero_title    = "One Cisco: Delivering Agentic AI Trust *End to End*"
 eyebrow       = "The Agentic AI Trust Workshop — FY'27"
 description   = "Measured. Secured. Observable. Governed. Trusted. One Cisco, end to end."
-home_sections = ["workshops"]
+home_sections = ["workshops/ai-trust", "workshops/ai-trust-open-weights"]
 +++
 
 *A field workshop for the executives accountable for AI — and the engineers who run it.*
