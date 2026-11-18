@@ -7,6 +7,8 @@ weight      = 5
 
 *A hands-on workshop for the leaders accountable for enterprise AI — and the teams who build and run it.*
 
+{{< button href="https://cisco-full-stack-observability.navattic.com/nh9b0rdo" style="secondary" icon="play" target="_blank" >}}Take the interactive tour{{< /button >}}
+
 ## The Problem: Control Is Not Trust
 
 Open-weight models give enterprises greater control over how agentic systems are designed, evaluated, and governed against business-specific outcomes. You decide which weights run and where they run, and when models are served as NVIDIA NIM microservices on infrastructure you choose, prompts and data can stay inside your own environment. For agents that make decisions, call tools, and generate language that reaches customers, that control is the right place to start.
