@@ -8,7 +8,7 @@ aliases     = ["/workshops/ai-governance/00-introduction/", "/workshops/ai-gover
 
 *A field workshop for the executives accountable for AI — and the engineers who run it.*
 
-{{< button href="https://aitrust.navattic.com/6kk0c85" style="secondary" icon="play" target="_blank" >}}Take the interactive tour{{< /button >}}
+{{< button href="https://cisco-full-stack-observability.navattic.com/v3l03cf" style="secondary" icon="play" target="_blank" >}}Take the interactive tour{{< /button >}}
 
 ## The Problem: AI Is Moving Faster Than Trust Can Be Earned
 
