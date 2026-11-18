@@ -390,7 +390,7 @@ In the Retail Support (retail) theme, the toggle is labelled **Include Synthetic
 
 ![alt text](/images/image-382.png)
 
-Near the top of the answer, a record line lists a full name, date of birth, Social Security number, an ID number (an account, medical record, badge, or rewards number), an email address, and a phone number. This is exactly the personal data that must never reach a user it does not belong to. The values are masked in the screenshot.
+Near the top of the answer, a record line lists a full name, date of birth, Social Security number, an ID number (an account, medical record, badge, or rewards number), an email address, and a phone number. This is exactly the personal data that must never reach a user it does not belong to.
 
 #### 1.4.2 Review the PII Steering Control
 
@@ -408,23 +408,27 @@ Click on your theme's stream: **MedAdvice**, **FinanceAdvice**, **Manufacturing*
 
 ![alt text](/images/image-385.png)
 
-Click on the **Controls** tab. It lists the controls attached to this Agent Stream. Each theme's Agent Stream has its own PII steering control, tuned to that theme's record line: **steer-remove-output-pii-regex-medadvice**, **steer-remove-output-pii-regex-financeadvice**, **steer-remove-output-pii-regex-manufacturing**, or **steer-remove-output-pii-regex-retail**.
+Click on the **Controls** tab.
+
+The Controls tab lists the runtime policies attached to this Agent Stream, so you can see at a glance what governs its live turns. Each theme's Agent Stream has its own PII steering control, tuned to that theme's record line: **steer-remove-output-pii-regex-medadvice**, **steer-remove-output-pii-regex-financeadvice**, **steer-remove-output-pii-regex-manufacturing**, or **steer-remove-output-pii-regex-retail**.
 
 ![alt text](/images/image-386.png)
 
 Click on your stream's control to open its definition. If your role can't open it, follow along with the screenshot.
 
-The control turns a privacy policy into an automated runtime check:
+The control's definition turns a privacy policy into an automated runtime check: what to look for, when to look, and what to do when it matches.
 
-Stages (POST, after execution) — Checks the agent's answer after the model writes it and before the user sees it.
+Stages — When the control runs. POST (after execution) checks the agent's answer after the model writes it and before the user sees it.
 
-Action (Steer) — Instead of blocking the answer, the control gives the agent corrective guidance. The answer is rewritten to follow it, and the rewrite is checked again.
+Action — What happens on a match. Steer gives the agent corrective guidance instead of blocking the answer; the answer is rewritten to follow it, and the rewrite is checked again.
 
-Steering context — The guidance itself: remove the personal data, drop the record line including the person's name, and keep the rest of the answer unchanged.
+Steering context — The guidance itself: remove the personal data, drop the record line including the person's name, and keep the rest of the answer unchanged. Because the guidance is plain language, the same control can be tuned for each use case.
 
-Execution environment (Server) — Splunk Agent Observability evaluates the control, so the policy is defined once rather than coded into each application.
+Execution environment — Where the control is evaluated. Server means Splunk Agent Observability evaluates it, so the policy is defined once rather than coded into each application.
 
-Evaluator configuration — Regular-expression evaluators joined by **OR** scan the output for phone numbers, postal addresses, Social Security numbers, email addresses, dates of birth, and labelled ID numbers such as account, member, rewards, medical record, badge, or employee numbers. Any match triggers the steer.
+Step types — Which steps the control checks. llm limits it to the model's answer.
+
+Evaluator configuration — What the control looks for. Regular-expression evaluators joined by OR scan the output for phone numbers, postal addresses, Social Security numbers, email addresses, dates of birth, and labelled ID numbers such as account, member, rewards, medical record, badge, or employee numbers. Any match triggers the steer.
 
 Controls live in a library under **Agent Observability -> Controls**. Adding a control to an Agent Stream attaches a copy that can be tuned for that stream, as each theme's PII steering control is here.
 
@@ -448,7 +452,15 @@ If the record line is still in the answer, check that **Agent Observability Cont
 
 ![alt text](/images/image-389.png)
 
-In Splunk Agent Observability, return to your theme's **Agent Stream** and click on the newest trace with your prompt (check the **Created** column). At the bottom of the trace tree, click on the shield-icon span for your stream's control, for example **steer-remove-output-pii-regex-medadvice**: it shows **Triggered**, and its output reads `{"action": "steer", "matched": true, "confidence": 1}`. The agent step just above it is the rewrite. The trace keeps both versions for audit: the agent's original answer in its agent span, and the rewritten answer the user received. Once scoring finishes, **Output PII (SLM)** for the trace no longer lists ssn, date_of_birth, email, or phone_number.
+In Splunk Agent Observability, return to your theme's **Agent Stream** and click on the newest trace with your prompt (check the **Created** column). At the bottom of the trace tree, click on the shield-icon span named after your stream's control.
+
+The trace records the control as a step of its own, so a runtime correction is as auditable as the answer it changed.
+
+Controls — The control's verdict for this turn. Triggered, with the output `{"action": "steer", "matched": true, "confidence": 1}`, means the answer was rewritten before the user saw it.
+
+Trace tree — The agent step just above the control span is the rewrite. The trace keeps both versions for audit: the agent's original answer in its agent span, and the rewritten answer the user received.
+
+Once scoring finishes, Output PII (SLM) for the trace no longer lists ssn, date_of_birth, email, or phone_number.
 
 Before you move on to Lab 2, turn **Agent Observability Controls** and **Include Synthetic PII in Responses** off again.
 
