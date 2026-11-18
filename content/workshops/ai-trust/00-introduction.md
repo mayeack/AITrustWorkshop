@@ -165,7 +165,7 @@ That same per-turn telemetry feeds **Splunk Observability Cloud (Lab 3)**, the o
 
 **What One Cisco does.** You use Splunk Agent Observability to evaluate the entire agent trace, including agent decisions, tool calls, context, and LLM responses, against research-backed metrics such as hallucination, context adherence, PII leakage, and tool-selection quality, plus custom metrics for your own risks, such as responses that overstep the assistant's authority. Luna, Cisco's purpose-built small language model, makes those evaluations economical enough to run across both pre-production experiments and live production traffic.
 
-You quantify differences between baseline and degraded behavior, understand token usage and cost, and use continuous signals to identify drift, anomalous behavior, and failure modes that predefined test cases may never have anticipated.
+You quantify differences between baseline and degraded behavior, understand token usage and cost, and use continuous signals to identify drift, anomalous behavior, and failure modes that predefined test cases may never have anticipated. You also see a control in Splunk Agent Observability act at runtime: its evaluators find personal data in a response, and it steers the agent to remove that data before the response reaches the user.
 
 The result is not simply a pass/fail test before deployment. You establish a measurable behavioral baseline and continue evaluating the agent against it as the application, models, prompts, tools, and real-world traffic change.
 

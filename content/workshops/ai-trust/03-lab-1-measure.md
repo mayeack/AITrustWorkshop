@@ -1,12 +1,12 @@
 +++
 title       = "Lab 1 — Measure"
-description = "Splunk Agent Observability: evaluate different models, score them with Luna, and surface the unknown unknowns."
-duration    = "1 hour"
+description = "Splunk Agent Observability: evaluate different models, score them with Luna, surface the unknown unknowns, and steer leaked PII out of a response."
+duration    = "1 hour 10 min"
 weight      = 30
 aliases     = ["/lab-1-measure.html", "/workshops/ai-governance/03-lab-1-measure/", "/workshops/ai-governance-healthcare/03-lab-1-measure/", "/workshops/ai-trust-healthcare/03-lab-1-measure/"]
 +++
 
-![alt text](/images/image-123.png)
+![The AI Governance Journey, Lab 1 Measure: Splunk Agent Observability. Measure AI quality objectively and identify and steer non-compliance: experiments; evaluation scoring and annotation queues; agent streams, cost and tokenomics; controls that steer leaked PII out](/images/image-390.png)
 
 **Pillar:** Measure<br>
 **Tool:** Splunk Agent Observability<br>
@@ -21,7 +21,7 @@ aliases     = ["/lab-1-measure.html", "/workshops/ai-governance/03-lab-1-measure
 <!-- persona:end -->
 
 {{% notice style="info" title="Objective" icon="target" %}}
-Before you guard or operate anything, define and measure "good." You will compare a **baseline** and a **poisoned** model, see their responses scored by **Luna**, read token usage and cost, and review the **signals** that surface the unknown unknowns.
+Start by defining and measuring "good." You will compare a **baseline** and a **poisoned** model, see their responses scored by **Luna**, read token usage and cost, and review the **signals** that surface the unknown unknowns. Finally, you see a **control** act at runtime: its own evaluators find personal data in an answer, and it steers that data out before the response reaches the user.
 {{% /notice %}}
 
 ## Background
@@ -352,11 +352,111 @@ Prompt (the scoring rubric) — The heart of it: explicit instructions and grade
 
 Configure Output (type & roll-up) — Sets how individual scores combine into a single number that rolls up across the whole experiment. This is what makes one response's grade aggregate into a board-level quality figure.
 
+### Lab 1.4 Controls
+
+Evaluators and Signals tell you when the agent misbehaves. **Controls** let you act on it during the conversation. A control in Splunk Agent Observability pairs its own evaluators with an action: **Deny** withholds the answer, **Steer** gives the agent corrective guidance so the answer is rewritten, and **Observe** records the match without changing anything. Controls attach to an Agent Stream: when an application asks Splunk Agent Observability to check a turn, the controls attached to that turn's Agent Stream decide what happens.
+
+#### 1.4.1 Prompt PseudoCo Assistant to Leak PII
+
+![alt text](/images/image-381.png)
+
+Check that **Model** shows the baseline **mistral-nemo:12b**, and select it if needed. Click the **>** tab on the left edge to open **Demo Controls**. Turn on **Include Synthetic PII in Responses**, and turn the other toggles under **Synthetic Content** off. Make sure **Agent Observability Controls** and the other toggles under **Guardrails** are off.
+
+Send the example prompt for your industry.
+
+{{% expand title="Toggle and Example Prompt - Financial Services" %}}
+In the FinanceAdvice (financial services) theme, the toggle is labelled **Include Synthetic PII in Responses**.
+
+**Example prompt:** What are some general tips for building an emergency fund?
+{{% /expand %}}
+
+{{% expand title="Toggle and Example Prompt - Healthcare" %}}
+In the MedAdvice (healthcare) theme, the toggle is labelled **Include Synthetic PII/PHI in Responses**.
+
+**Example prompt:** I have a mild cold. What do you recommend?
+{{% /expand %}}
+
+{{% expand title="Toggle and Example Prompt - Manufacturing" %}}
+In the Manufacturing Ops (manufacturing) theme, the toggle is labelled **Include Synthetic PII in Responses**.
+
+**Example prompt:** Our conveyor keeps jamming at the transfer point. What should we check first?
+{{% /expand %}}
+
+{{% expand title="Toggle and Example Prompt - Retail" %}}
+In the Retail Support (retail) theme, the toggle is labelled **Include Synthetic PII in Responses**.
+
+**Example prompt:** How do returns work if I lost my receipt?
+{{% /expand %}}
+
+![alt text](/images/image-382.png)
+
+Near the top of the answer, a record line lists a full name, date of birth, Social Security number, an ID number (an account, medical record, badge, or rewards number), an email address, and a phone number. This is exactly the personal data that must never reach a user it does not belong to. The values are masked in the screenshot.
+
+#### 1.4.2 Review the PII Steering Control
+
+{{% notice warning "Important" %}}
+This is a shared environment, so this part of the lab is **review only**. Do not click **Save changes**, and do not change the toggle on a stream's **Controls** tab. Close the control with **Discard edits**.
+{{% /notice %}}
+
+![alt text](/images/image-383.png)
+
+In Splunk Agent Observability, click on **Agent Observability -> Agent streams** (under **PseudoCo Assistant**).
+
+![alt text](/images/image-384.png)
+
+Click on your theme's stream: **MedAdvice**, **FinanceAdvice**, **Manufacturing**, or **Retail**.
+
+![alt text](/images/image-385.png)
+
+Click on the **Controls** tab. It lists the controls attached to this Agent Stream. Each theme's Agent Stream has its own PII steering control, tuned to that theme's record line: **steer-remove-output-pii-regex-medadvice**, **steer-remove-output-pii-regex-financeadvice**, **steer-remove-output-pii-regex-manufacturing**, or **steer-remove-output-pii-regex-retail**.
+
+![alt text](/images/image-386.png)
+
+Click on your stream's control to open its definition. If your role can't open it, follow along with the screenshot.
+
+The control turns a privacy policy into an automated runtime check:
+
+Stages (POST, after execution) — Checks the agent's answer after the model writes it and before the user sees it.
+
+Action (Steer) — Instead of blocking the answer, the control gives the agent corrective guidance. The answer is rewritten to follow it, and the rewrite is checked again.
+
+Steering context — The guidance itself: remove the personal data, drop the record line including the person's name, and keep the rest of the answer unchanged.
+
+Execution environment (Server) — Splunk Agent Observability evaluates the control, so the policy is defined once rather than coded into each application.
+
+Evaluator configuration — Regular-expression evaluators joined by **OR** scan the output for phone numbers, postal addresses, Social Security numbers, email addresses, dates of birth, and labelled ID numbers such as account, member, rewards, medical record, badge, or employee numbers. Any match triggers the steer.
+
+Controls live in a library under **Agent Observability -> Controls**. Adding a control to an Agent Stream attaches a copy that can be tuned for that stream, as each theme's PII steering control is here.
+
+#### 1.4.3 Turn On Agent Observability Controls
+
+![alt text](/images/image-387.png)
+
+Return to PseudoCo Assistant. If you closed it, see [How to Access PseudoCo Assistant](/workshops/ai-trust/01-setup/#1-how-to-access-pseudoco-assistant). In **Demo Controls**, turn on **Agent Observability Controls**, and leave **Include Synthetic PII in Responses** on. PseudoCo Assistant now asks Splunk Agent Observability to check your message and each answer against the controls attached to its Agent Stream.
+
+Click on **New Session** and confirm, so the next answer starts a fresh conversation.
+
+#### 1.4.4 See the PII Removed from the Response
+
+![alt text](/images/image-388.png)
+
+Send the same example prompt again. The model is still told to include the record, but the answer you receive no longer contains the record line: the control matched the personal data and steered the agent, which rewrote the answer without it. The rest of the answer covers the same guidance, and steering adds a few seconds because the answer is rewritten and checked again. The steering context also asks for the person's name to be removed, but names are not among the patterns the control checks, so a first name can occasionally remain, for example in a greeting.
+
+{{% notice note %}}
+If the record line is still in the answer, check that **Agent Observability Controls** is on, click on **New Session**, and send the prompt again.
+{{% /notice %}}
+
+![alt text](/images/image-389.png)
+
+In Splunk Agent Observability, return to your theme's **Agent Stream** and click on the newest trace with your prompt (check the **Created** column). At the bottom of the trace tree, click on the shield-icon span for your stream's control, for example **steer-remove-output-pii-regex-medadvice**: it shows **Triggered**, and its output reads `{"action": "steer", "matched": true, "confidence": 1}`. The agent step just above it is the rewrite. The trace keeps both versions for audit: the agent's original answer in its agent span, and the rewritten answer the user received. Once scoring finishes, **Output PII (SLM)** for the trace no longer lists ssn, date_of_birth, email, or phone_number.
+
+Before you move on to Lab 2, turn **Agent Observability Controls** and **Include Synthetic PII in Responses** off again.
+
 ## Outcome
 
 **Splunk Agent Observability** turns AI development from a black box into a measurable discipline you can trust. Using PseudoCo Assistant — preloaded with a clean "baseline" model and an intentionally "poisoned" one — participants see firsthand how non-compliant AI behavior is automatically detected and scored.
 
-The journey walks through six capabilities that make trust measurable:
+The journey walks through seven capabilities that make trust measurable and actionable:
 
 **Detect the unknown** — Signals surface risks no one thought to define (PII leakage, hallucinations, harassment), catching the "unknown unknowns" before they become incidents.
 
@@ -370,9 +470,11 @@ The journey walks through six capabilities that make trust measurable:
 
 **Standardize** — A central Evaluators catalog defines what "good" and "safe" mean once and applies it everywhere, with each evaluator authored as a precise, version-controlled rubric.
 
+**Control** — A control attached to the Agent Stream acts at runtime: when its evaluators match personal data in a response, it steers the agent to rewrite the answer without that data before it reaches the user.
+
 The takeaway: AI risk becomes quantifiable and auditable. Safety, quality, and cost are measured continuously and automatically — at scale, without human review of every interaction — giving the business the defensible evidence it needs to deploy AI with confidence.
 
-Lab 1 ends with the agent's own behavior measured, scored, and explained, including the responses your industry's custom evaluator flags for overstepping the assistant's authority. Lab 2 turns from measuring behavior to securing the agent against attackers at runtime: a prompt injection sent as a structured JSON records lookup tries to exfiltrate sensitive data, and an existing guardrail in **Cisco AI Defense** blocks it before the model reads it.
+Lab 1 ends with the agent's own behavior measured, scored, and explained, including the responses your industry's custom evaluator flags for overstepping the assistant's authority, and with a control that steers leaked personal data out of a response. Lab 2 turns from the agent's own behavior to securing it against attackers at runtime: a prompt injection sent as a structured JSON records lookup tries to exfiltrate sensitive data, and an existing guardrail in **Cisco AI Defense** blocks it before the model reads it.
 
 <!-- exec-outcome:start -->
 
