@@ -6,6 +6,8 @@ weight      = 20
 aliases     = ["/section-0-overview.html", "/workshops/ai-governance/02-overview/", "/workshops/ai-governance-healthcare/02-overview/", "/workshops/ai-trust-healthcare/02-overview/"]
 +++
 
+{{< tour "lab-0" >}}
+
 ![The AI Governance Journey: Splunk baseline, then Labs 1–4](/images/image-122.png)
 
 **Pillar:** AI Governance Overview<br>
@@ -42,6 +44,8 @@ One dataset. Every pillar. That's what lets a leader go from a number on the scr
 ## Labs
 
 ### Lab 0.1 Review AI Governance App
+
+{{< tour "lab-0.1" >}}
 
 #### 0.1.1 Access Splunk Cloud
 

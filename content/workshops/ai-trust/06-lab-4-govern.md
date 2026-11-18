@@ -6,6 +6,8 @@ weight      = 60
 aliases     = ["/lab-4-govern.html", "/workshops/ai-governance/06-lab-4-govern/", "/workshops/ai-governance-healthcare/06-lab-4-govern/", "/workshops/ai-trust-healthcare/06-lab-4-govern/"]
 +++
 
+{{< tour "lab-4" >}}
+
 ![alt text](/images/image-126.png)
 
 **Pillar:** Govern<br>
@@ -39,6 +41,8 @@ The **prompt_injection** investigation type and its response plan are already se
 {{% /notice %}}
 
 ### Lab 4.1 Review the Detection Search
+
+{{< tour "lab-4.1" >}}
 
 #### 4.1.1 Access Splunk Cloud
 
@@ -162,6 +166,8 @@ Review the explanation provided by the agent.
 
 ### Lab 4.2 Stage the Prompt Injection Spray Attack
 
+{{< tour "lab-4.2" >}}
+
 #### 4.2.1 Stage the Prompt Injection Spray
 
 [How to Access PseudoCo Assistant](/workshops/ai-trust/01-setup/#1-how-to-access-pseudoco-assistant)
@@ -204,6 +210,8 @@ Top Injection Sources — Identifies where attacks originate, enabling blocking,
 Recent Detections — A live, row-level audit trail of individual attacks for investigation and forensics — the defensible record that proves what happened, when, and how it was handled.
 
 ### Lab 4.3 Respond to the Finding
+
+{{< tour "lab-4.3" >}}
 
 #### 4.3.1 Investigate with the Triage Agent
 

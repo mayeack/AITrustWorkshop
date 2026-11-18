@@ -1,0 +1,40 @@
+{{- /*
+  "Take the interactive tour" button that opens the workshop's published Navattic
+  click-through, either at the start of the whole demo or deep-linked to one lab's flow.
+
+    {{< tour >}}             the whole demo            (the Introduction)
+    {{< tour "lab-1" >}}     the first flow of Lab 1   (first line of each lab page)
+    {{< tour "lab-1.2" >}}   the Lab 1.2 flow          (right under each `### Lab 1.2 …` heading)
+
+  The demo is the one for the page's own section directory (ai-trust, ai-trust-open-weights).
+
+  Links come from data/navattic.json, which is GENERATED from the published demos by
+  .claude/skills/capture-navattic-click-through/scripts/guide_tour_links.py — never hand-edit
+  a flow id here or in the content; re-run `guide_tour_links.py sync` after any Navattic publish.
+  A key with no published flow renders nothing and logs a build warning, so a lab written
+  before its flow exists lights up on the next sync instead of linking somewhere wrong.
+
+  The markup matches {{< button style="secondary" icon="play" target="_blank" >}}.
+*/ -}}
+{{- $key := .Get 0 | default "" -}}
+{{- $ws := path.Base (strings.TrimSuffix "/" .Page.File.Dir) -}}
+{{- $url := "" -}}
+{{- $label := "Take the interactive tour" -}}
+{{- with index hugo.Data.navattic $ws -}}
+  {{- $demo := . -}}
+  {{- if eq $key "" -}}
+    {{- $url = $demo.share_url -}}
+  {{- else -}}
+    {{- $fk := index $demo.labs $key | default $key -}}
+    {{- with index $demo.flows $fk -}}
+      {{- $url = printf "%s?g=%s&s=0" $demo.share_url .id -}}
+    {{- end -}}
+    {{- $label = printf "Take the interactive tour of Lab %s" (strings.TrimPrefix "lab-" $key) -}}
+  {{- end -}}
+{{- end -}}
+{{- if $url -}}
+{{- $color := partial "css-color.html" (dict "value" "var(--color-accent)" "fallback" "var(--color-accent)") -}}
+<a class="btn-inline btn-inline--outline" href="{{ $url }}" target="_blank" rel="noopener" style="--btn-color: {{ $color | safeCSS }}"><span class="btn-inline__icon">{{ partial "icon-svg.html" "play" | safeHTML }}</span><span>{{ $label }}</span></a>
+{{- else -}}
+{{- warnf "tour: no published Navattic flow for %q in section %q (%s); run guide_tour_links.py sync" $key $ws .Position -}}
+{{- end -}}

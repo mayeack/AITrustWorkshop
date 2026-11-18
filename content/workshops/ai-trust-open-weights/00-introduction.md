@@ -7,7 +7,7 @@ weight      = 5
 
 *A hands-on workshop for the leaders accountable for enterprise AI — and the teams who build and run it.*
 
-{{< button href="https://cisco-full-stack-observability.navattic.com/nh9b0rdo" style="secondary" icon="play" target="_blank" >}}Take the interactive tour{{< /button >}}
+{{< tour >}}
 
 ## The Problem: Control Is Not Trust
 

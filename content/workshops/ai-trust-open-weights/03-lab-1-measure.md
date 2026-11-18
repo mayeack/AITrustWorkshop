@@ -5,6 +5,8 @@ duration    = "25 min"
 weight      = 30
 +++
 
+{{< tour "lab-1" >}}
+
 ![alt text](/workshops/ai-trust-open-weights/image-45.png)
 
 **Pillar:** Measure<br>
@@ -40,6 +42,8 @@ Evaluation accuracy depends on a feedback loop. The orange tags mark the steps t
 ## Labs
 
 ### Lab 1.1 Explore Prompting in PseudoCo Assistant
+
+{{< tour "lab-1.1" >}}
 
 #### 1.1.1 Access PseudoCo Assistant
 
@@ -107,6 +111,8 @@ In the MedAdvice (healthcare) theme, this toggle is labelled **Include Synthetic
 We will explore how this non-compliant behavior is monitored in subsequent sections.
 
 ### Lab 1.2 Monitor Behavior in Splunk Agent Observability
+
+{{< tour "lab-1.2" >}}
 
 #### 1.2.1 Initiate SSO for Agent Observability
 
@@ -267,6 +273,8 @@ Hardware cost is fixed, so the more tokens the GPUs serve each hour, the less ea
 Feel free to explore additional metric charts, such as those under **Safety Metrics** and **Security**.
 
 ### Lab 1.3 Evaluators
+
+{{< tour "lab-1.3" >}}
 
 #### 1.3.1 Review Evaluators
 

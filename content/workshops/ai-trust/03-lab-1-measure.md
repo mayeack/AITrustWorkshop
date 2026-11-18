@@ -6,6 +6,8 @@ weight      = 30
 aliases     = ["/lab-1-measure.html", "/workshops/ai-governance/03-lab-1-measure/", "/workshops/ai-governance-healthcare/03-lab-1-measure/", "/workshops/ai-trust-healthcare/03-lab-1-measure/"]
 +++
 
+{{< tour "lab-1" >}}
+
 ![The AI Governance Journey, Lab 1 Measure: Splunk Agent Observability. Measure AI quality objectively and identify and steer non-compliance: experiments; evaluation scoring and annotation queues; agent streams, cost and tokenomics; controls that steer leaked PII out](/images/image-390.png)
 
 **Pillar:** Measure<br>
@@ -49,6 +51,8 @@ Model evaluation, metric construction, and signal understanding are critical bot
 ## Labs
 
 ### Lab 1.1 Explore Prompting in PseudoCo Assistant
+
+{{< tour "lab-1.1" >}}
 
 #### 1.1.1 Access PseudoCo Assistant
 
@@ -112,6 +116,8 @@ In the Retail Support (retail) theme, the Outside of Authority toggle is labelle
 We will explore how this non-compliant behavior is monitored in subsequent sections.
 
 ### Lab 1.2 Monitor Behavior in Splunk Agent Observability
+
+{{< tour "lab-1.2" >}}
 
 #### 1.2.1 Access Splunk Agent Observability
 
@@ -292,6 +298,8 @@ Alerts can be configured to trigger based on the output of any evaluator. Alerts
 
 ### Lab 1.3 Evaluators
 
+{{< tour "lab-1.3" >}}
+
 #### 1.3.1 Review Evaluators
 
 ![alt text](/images/image-235.png)
@@ -353,6 +361,8 @@ Prompt (the scoring rubric) — The heart of it: explicit instructions and grade
 Configure Output (type & roll-up) — Sets how individual scores combine into a single number that rolls up across the whole experiment. This is what makes one response's grade aggregate into a board-level quality figure.
 
 ### Lab 1.4 Controls
+
+{{< tour "lab-1.4" >}}
 
 Evaluators and Signals tell you when the agent misbehaves. **Controls** let you act on it during the conversation. A control in Splunk Agent Observability pairs its own evaluators with an action: **Deny** withholds the answer, **Steer** gives the agent corrective guidance so the answer is rewritten, and **Observe** records the match without changing anything. Controls attach to an Agent Stream: when an application asks Splunk Agent Observability to check a turn, the controls attached to that turn's Agent Stream decide what happens.
 

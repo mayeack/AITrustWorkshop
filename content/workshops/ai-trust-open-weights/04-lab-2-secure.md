@@ -5,6 +5,8 @@ duration    = "15 min"
 weight      = 40
 +++
 
+{{< tour "lab-2" >}}
+
 ![The AI Trust Journey, step 3 of 3, Lab 2 Secure: Cisco Agent Security. Stop a data-exfiltration attack at runtime: every prompt and response inspected against guardrails; a prompt injection sent as a JSON request pulls PII/PHI into the response; with policy review on, the Prompt Injection guardrail blocks the request; re-run live, the attack never reaches the model](/images/image-321.png)
 
 **Pillar:** Secure<br>
@@ -37,6 +39,8 @@ In healthcare, the attack arrives as a structured JSON request rather than a pla
 
 ### Lab 2.1 Prompt a Data-Exfiltration Attack in PseudoCo Assistant
 
+{{< tour "lab-2.1" >}}
+
 #### 2.1.1 Access PseudoCo Assistant
 
 Return to the tab with PseudoCo Assistant. If you closed it, access it from the splash page.
@@ -60,6 +64,8 @@ Copy the example prompt for your industry and send it. The data request is embed
 The response carries sensitive data. That's not good! Nothing stopped it: with policy review off, Agent Security never inspected the prompt before the model read it.
 
 ### Lab 2.2 Review Current Policies in Agent Security
+
+{{< tour "lab-2.2" >}}
 
 #### 2.2.1 Access Agent Security
 
@@ -110,6 +116,8 @@ The policy groups its guardrails into **Security**, **Privacy**, and **Safety**.
 There are a number of other policies associated to this application that are not discussed in this lab.
 
 ### Lab 2.3 Block the Data-Exfiltration Attack
+
+{{< tour "lab-2.3" >}}
 
 #### 2.3.1 Access PseudoCo Assistant
 

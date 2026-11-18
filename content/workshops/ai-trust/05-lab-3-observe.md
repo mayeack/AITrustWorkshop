@@ -6,6 +6,8 @@ weight      = 50
 aliases     = ["/lab-3-observe.html", "/workshops/ai-governance/05-lab-3-observe/", "/workshops/ai-governance-healthcare/05-lab-3-observe/", "/workshops/ai-trust-healthcare/05-lab-3-observe/"]
 +++
 
+{{< tour "lab-3" >}}
+
 ![alt text](/images/image-125.png)
 
 **Pillar:** Observe<br>
@@ -33,6 +35,8 @@ In [Lab 2](/workshops/ai-trust/04-lab-2-secure/), Cisco AI Defense stopped a dat
 ## Labs
 
 ### Lab 3.1 Triage and Resolve a Latency Incident
+
+{{< tour "lab-3.1" >}}
 
 #### 3.1.1 Access Splunk Observability Cloud
 

@@ -6,6 +6,8 @@ weight      = 40
 aliases     = ["/lab-2-secure.html", "/workshops/ai-governance/04-lab-2-secure/", "/workshops/ai-governance-healthcare/04-lab-2-secure/", "/workshops/ai-trust-healthcare/04-lab-2-secure/"]
 +++
 
+{{< tour "lab-2" >}}
+
 ![The AI Governance Journey, Lab 2 Secure: Cisco AI Defense. Stop a prompt injection attack and block data exfiltration before the model reads it: every prompt and response inspected against guardrails; embedded instructions caught before they reach the model; guardrails written in plain language and versioned; every block recorded as a security event](/images/image-323.png)
 
 **Pillar:** Secure<br>
@@ -64,6 +66,8 @@ In retail, the attack arrives as a structured JSON request rather than a plain q
 
 ### Lab 2.1 Prompt a Data-Exfiltration Attack in PseudoCo Assistant
 
+{{< tour "lab-2.1" >}}
+
 #### 2.1.1 Access PseudoCo Assistant
 
 [How to Access PseudoCo Assistant](/workshops/ai-trust/01-setup/#1-how-to-access-pseudoco-assistant)
@@ -117,6 +121,8 @@ The response carries sensitive data - that's not good! Nothing stopped it: with 
 Next, you will review the guardrail in Cisco AI Defense that is built to stop this attack.
 
 ### Lab 2.2 Review the Prompt Injection Policy in Cisco AI Defense
+
+{{< tour "lab-2.2" >}}
 
 #### 2.2.1 Access Cisco AI Defense
 
@@ -219,6 +225,8 @@ Scroll down to **Adaptive Guardrail Profiles**. **Prompt Injection** is the publ
 Because a profile sits outside the application and the model, the same reviewed guardrail can protect every application the policy covers, whichever model it runs.
 
 ### Lab 2.3 Block the Data-Exfiltration Attack
+
+{{< tour "lab-2.3" >}}
 
 #### 2.3.1 Send the Attack with Policy Review On
 
