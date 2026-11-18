@@ -152,11 +152,7 @@ Click on your theme's stream under **Agent Streams**: **MedAdvice**, **FinanceAd
 
 Click on the **Signals** button. 
 
-![alt text](/images/image-392.png)
-
-Click on **View Legacy Signals** to see signals from an earlier scan.
-
-![alt text](/images/image-346.png)
+![alt text](/images/image-406.png)
 
 The Signals panel is the AI watching the AI — it scans every logged conversation for risk patterns and surfaces them as named, prioritized issues, so the team learns where the application is failing without reading transcripts one by one. Whereas Metrics need to be defined by the user, Signals surface the unknown unknown issues.
 
@@ -188,23 +184,21 @@ Critical Action Hallucinations — Catches false claims of refunds, discounts, a
 
 Click on any Signal.
 
-![alt text](/images/image-347.png)
+![alt text](/images/image-407.png)
 
-The Signal Details view provides an AI-generated investigation of detected agent behavior, connecting identified issues to their underlying causes, supporting evidence, and recommended remediation.
+The Signal Details view turns a detected AI safety issue into an evidence-backed investigation, identifying the root cause, quantifying the impact, and recommending corrective actions.
 
-Signal Summary — Provides a high-level description of the detected issue, including the affected traces, spans, and sessions.
+Root Cause Analysis — Explains exactly how the AI violated expectations, identifying sensitive patient information exposed in responses despite PII detection being triggered. This moves beyond flagging a problem to explaining why it occurred.
 
-Root Cause Analysis — Examines agent behavior, tool interactions, and execution patterns to explain why the issue occurred.
+Evidence — Quantifies the scope of the issue. Here, 3 of 5 sessions (60%) were affected, with historical scan results showing the frequency of violations. This turns an individual finding into a measurable, auditable risk.
 
-Recommendations — Suggests actionable changes to prompts, tool configurations, or agent workflows to address the identified issue.
+Affected Sessions — Links directly to the underlying conversations and traces, allowing investigators to inspect the actual responses and validate the findings rather than relying on an opaque AI judgment.
 
-Create Evaluator — Converts the detected issue into a reusable evaluation criterion, enabling automated detection of similar behavior in future interactions.
-
-Evidence Details — Provides supporting telemetry and historical trends to validate the finding and understand its scope.
+Remediation — Provides AI-generated recommendations for addressing the detected behavior, helping teams move from identifying risks to implementing corrective actions.
 
 #### 1.2.4 Review Agent Stream
 
-![alt text](/images/image-347.png)
+![alt text](/images/image-408.png)
 
 Click on **Tracing** to return to the **Agent Stream**.
 
