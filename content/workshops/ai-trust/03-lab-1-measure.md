@@ -159,15 +159,15 @@ The Signals panel is the AI watching the AI — it scans every logged conversati
 Some example Signals (yours might vary):
 
 {{% expand title="Example Signals - Financial Services" %}}
-Spontaneous PII Hallucination Without Attack — Flags responses that expose personal data. This is a top-tier compliance and privacy risk, surfaced automatically so it can be contained before it becomes a breach.
+Fabricated PII in LLM output — Flags responses that expose personal data. This is a top-tier compliance and privacy risk, surfaced automatically so it can be contained before it becomes a breach.
 
-Hallucinated Citations and Fictional Products — Catches invented research citations and financial products that do not exist. For a customer-facing financial assistant this is the highest-stakes failure mode, where a wrong answer can cause real harm and liability.
+Fabricated NovaCure Rx product and citations — Catches an invented product and fake research citations presented as authoritative advice. For a customer-facing financial assistant this is the highest-stakes failure mode, where a wrong answer can cause real harm and liability.
 {{% /expand %}}
 
 {{% expand title="Example Signals - Healthcare" %}}
-Fabricated Patient PII/PHI — Flags responses that expose personal data. This is a top-tier compliance and privacy risk, surfaced automatically so it can be contained before it becomes a breach.
+Unnecessary patient PII in medical advice responses — Flags responses that expose personal data. This is a top-tier compliance and privacy risk, surfaced automatically so it can be contained before it becomes a breach.
 
-Systematic Fake Medication Hallucination — Catches invented medical claims and unauthorized prescriptions. For a health-facing assistant this is the highest-stakes failure mode, where a wrong answer can cause real harm and liability.
+Fabricated medical sources and medications cited as evidence — Catches invented medical claims, sources and medications. For a health-facing assistant this is the highest-stakes failure mode, where a wrong answer can cause real harm and liability.
 {{% /expand %}}
 
 {{% expand title="Example Signals - Manufacturing" %}}
