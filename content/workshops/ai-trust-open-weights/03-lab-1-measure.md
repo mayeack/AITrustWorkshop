@@ -167,28 +167,27 @@ Click on MedAdvice.
 
 Click on **Signals**. 
 
-![alt text](/images/image-393.png)
-
-Click on **View Legacy Signals**.
-
-![alt text](/images/image-394.png)
+![alt text](/images/image-406.png)
 
 The Signals panel is the AI watching the AI — it scans every logged conversation for risk patterns and surfaces them as named, prioritized issues, so the team learns where the application is failing without reading transcripts one by one. Whereas Evaluators need to be defined by the user, Signals surface the unknown unknown issues.
 
 Click on any Signal.
 
-![alt text](/images/image-395.png)
+![alt text](/images/image-407.png)
 
-**Signal summary:** Names the risk pattern the signal found and the behavior behind it.<br>
-**Scope and impact:** Shows the affected spans, traces, and sessions associated with the signal, along with when the issue was created and last updated.<br>
-**Root cause analysis:** Explains the behavior that triggered the signal and links it to the relevant policy or prompt enforcement gap.<br>
-**Recommendation:** Provides a suggested remediation for the gap.<br>
-**Evidence details:** Visualizes when affected spans occurred and provides example interactions that contributed to the signal.<br>
-**Trace linkage:** Lets the user drill into the underlying session, trace, and span for direct investigation of the agent behavior.
+The Signal Details view turns a detected AI safety issue into an evidence-backed investigation, identifying the root cause, quantifying the impact, and recommending corrective actions.
+
+Root Cause Analysis — Explains exactly how the AI violated expectations, identifying sensitive patient information exposed in responses despite PII detection being triggered. This moves beyond flagging a problem to explaining why it occurred.
+
+Evidence — Quantifies the scope of the issue. Here, 3 of 5 sessions (60%) were affected, with historical scan results showing the frequency of violations. This turns an individual finding into a measurable, auditable risk.
+
+Affected Sessions — Links directly to the underlying conversations and traces, allowing investigators to inspect the actual responses and validate the findings rather than relying on an opaque AI judgment.
+
+Remediation — Provides AI-generated recommendations for addressing the detected behavior, helping teams move from identifying risks to implementing corrective actions.
 
 #### 1.2.5 Review Agent Stream
 
-![alt text](/images/image-395.png)
+![alt text](/images/image-408.png)
 
 Click on **Tracing** to return to the **Agent Stream**.
 
