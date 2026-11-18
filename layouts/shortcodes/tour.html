@@ -19,7 +19,7 @@
 {{- $key := .Get 0 | default "" -}}
 {{- $ws := path.Base (strings.TrimSuffix "/" .Page.File.Dir) -}}
 {{- $url := "" -}}
-{{- $label := "Take the interactive tour" -}}
+{{- $label := "Take the interactive tour" -}}{{/* same label on every button (user, 2026-11-18) */}}
 {{- with index hugo.Data.navattic $ws -}}
   {{- $demo := . -}}
   {{- if eq $key "" -}}
@@ -29,7 +29,6 @@
     {{- with index $demo.flows $fk -}}
       {{- $url = printf "%s?g=%s&s=0" $demo.share_url .id -}}
     {{- end -}}
-    {{- $label = printf "Take the interactive tour of Lab %s" (strings.TrimPrefix "lab-" $key) -}}
   {{- end -}}
 {{- end -}}
 {{- if $url -}}
