@@ -167,6 +167,10 @@ Click **View project details** to drill into Agent Observability. The project op
 
 ![alt text](/workshops/ai-trust-open-weights/image-10.png)
 
+Under **Agent Streams**, click **View all**.
+
+![alt text](/images/image-416.png)
+
 Click on MedAdvice.
 
 ![alt text](/images/image-399.png)
