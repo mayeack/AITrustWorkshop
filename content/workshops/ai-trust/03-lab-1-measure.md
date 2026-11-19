@@ -368,9 +368,15 @@ Evaluators and Signals tell you when the agent misbehaves. **Controls** let you 
 
 #### 1.4.1 Prompt PseudoCo Assistant to Leak PII
 
+![alt text](/images/image-409.png)
+
+Check that **Model** shows the baseline **mistral-nemo:12b**, and select it if needed. Click the **>** tab on the left edge to open **Demo Controls**.
+
 ![alt text](/images/image-381.png)
 
-Check that **Model** shows the baseline **mistral-nemo:12b**, and select it if needed. Click the **>** tab on the left edge to open **Demo Controls**. Turn on **Include Synthetic PII in Responses**, and turn the other toggles under **Synthetic Content** off. Make sure **Agent Observability Controls** and the other toggles under **Guardrails** are off.
+Turn on **Include Synthetic PII in Responses**, and turn the other toggles under **Synthetic Content** off. Make sure **Agent Observability Controls** and the other toggles under **Guardrails** are off. Click the **<** tab to close **Demo Controls**.
+
+![alt text](/images/image-410.png)
 
 Send the example prompt for your industry.
 
@@ -416,15 +422,17 @@ In Splunk Agent Observability, click on **Agent Observability -> Agent streams**
 
 Click on your theme's stream: **MedAdvice**, **FinanceAdvice**, **Manufacturing**, or **Retail**.
 
-![alt text](/images/image-385.png)
+![alt text](/images/image-411.png)
 
 Click on the **Controls** tab.
 
+![alt text](/images/image-385.png)
+
 The Controls tab lists the runtime policies attached to this Agent Stream, so you can see at a glance what governs its live turns. Each theme's Agent Stream has its own PII steering control, tuned to that theme's record line: **steer-remove-output-pii-regex-medadvice**, **steer-remove-output-pii-regex-financeadvice**, **steer-remove-output-pii-regex-manufacturing**, or **steer-remove-output-pii-regex-retail**.
 
-![alt text](/images/image-386.png)
+Click on your stream's control to open its definition. If your role can't open it, follow along with the next screenshot.
 
-Click on your stream's control to open its definition. If your role can't open it, follow along with the screenshot.
+![alt text](/images/image-386.png)
 
 The control's definition turns a privacy policy into an automated runtime check: what to look for, when to look, and what to do when it matches.
 
@@ -446,23 +454,34 @@ Controls live in a library under **Agent Observability -> Controls**. Adding a c
 
 ![alt text](/images/image-387.png)
 
-Return to PseudoCo Assistant. If you closed it, see [How to Access PseudoCo Assistant](/workshops/ai-trust/01-setup/#1-how-to-access-pseudoco-assistant). In **Demo Controls**, turn on **Agent Observability Controls**, and leave **Include Synthetic PII in Responses** on. PseudoCo Assistant now asks Splunk Agent Observability to check your message and each answer against the controls attached to its Agent Stream.
+Return to PseudoCo Assistant. If you closed it, see [How to Access PseudoCo Assistant](/workshops/ai-trust/01-setup/#1-how-to-access-pseudoco-assistant). In **Demo Controls**, turn on **Agent Observability Controls**, and leave **Include Synthetic PII in Responses** on. PseudoCo Assistant now asks Splunk Agent Observability to check your message and each answer against the controls attached to its Agent Stream. Click the **<** tab to close **Demo Controls**.
+
+![alt text](/images/image-412.png)
 
 Click on **New Session** and confirm, so the next answer starts a fresh conversation.
 
 #### 1.4.4 See the PII Removed from the Response
 
+![alt text](/images/image-413.png)
+
+Send the same example prompt again. 
+
 ![alt text](/images/image-388.png)
 
-Send the same example prompt again. The model is still told to include the record, but the answer you receive no longer contains the record line: the control matched the personal data and steered the agent, which rewrote the answer without it. The rest of the answer covers the same guidance, and steering adds a few seconds because the answer is rewritten and checked again. The steering context also asks for the person's name to be removed, but names are not among the patterns the control checks, so a first name can occasionally remain, for example in a greeting.
-
+The control matched the personal data and steered the agent, which rewrote the answer without it. The rest of the answer covers the same guidance, and is rewritten and checked again.
 {{% notice note %}}
 If the record line is still in the answer, check that **Agent Observability Controls** is on, click on **New Session**, and send the prompt again.
 {{% /notice %}}
 
-![alt text](/images/image-389.png)
+![alt text](/images/image-414.png)
 
-In Splunk Agent Observability, return to your theme's **Agent Stream** and click on the newest trace with your prompt (check the **Created** column). At the bottom of the trace tree, click on the shield-icon span named after your stream's control.
+In Splunk Agent Observability, return to your theme's **Agent Stream** on the **Tracing** tab, and click on the newest trace with your prompt (check the **Created** column).
+
+![alt text](/images/image-415.png)
+
+At the bottom of the trace tree, click on the shield-icon span named after your stream's control.
+
+![alt text](/images/image-389.png)
 
 The trace records the control as a step of its own, so a runtime correction is as auditable as the answer it changed.
 
