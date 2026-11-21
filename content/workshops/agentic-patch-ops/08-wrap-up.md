@@ -1,30 +1,30 @@
 +++
 title       = "Wrap-Up & Outcomes"
-description = "An agent that patches, under controls a person can see and prove: five labs, five executive outcomes."
+description = "From exploit to resolution in Splunk, with an AI agent doing the patching: five labs, five executive outcomes."
 duration    = "5 min"
 weight      = 70
 +++
 
 ## What You Did
 
-- **Lab 1 — Detect.** You gave PatchBot the one fact no scanner knows, who can reach a server, and watched it turn the scanner's reports into a short list ranked with CISA BOD 26-04. Cisco MCP Scanner rated every server behind PatchBot's tools before it used them.
-- **Lab 2 — Investigate.** You opened a finding's attack path, fix and evidence, and asked PatchBot in plain language what to patch first.
-- **Lab 3 — Patch.** PatchBot patched staging on its own. Production was refused until a Change Approver, not the requester, approved the change on the Change Board; then the same request went through.
-- **Lab 4 — Defend.** The Controls refused a patch outside the operator's role and a viewer's attempt to dismiss a finding. Steps hidden in a vendor advisory and in an MCP tool description were denied at runtime, and PatchBot warned the operator not to run them by hand.
-- **Lab 5 — Govern.** You followed PatchBot's requests through Agent Observability traces and Controls, the PatchBot dashboards in Splunk, and the findings and risk in Splunk Enterprise Security.
+- **Lab 1 — Attack and Detect.** You exploited CVE-2021-41773 on an internet-facing web server. Splunk Enterprise Security joined the attack with the vulnerability inventory and raised one finding, and the AI SOC analyst triaged it before you opened it.
+- **Lab 2 — Plan the Response with AI.** You started the investigation and its Exploited Vulnerability Response Plan, asked the Security Assistant how to respond, and recorded the containment a person has to do.
+- **Lab 3 — Act Through SOAR, with Identity.** The Security Assistant ran PatchBot's patch action through Splunk SOAR, with your approval. For ravi.patel, Splunk Agent Observability Controls denied every change his role didn't cover. For dana.lee, PatchBot patched development and staging under a pre-approved standard change and opened a normal change for production.
+- **Lab 4 — Approve the Normal Change.** You signed in with Cisco Duo as the Change Approver and approved production, and PatchBot patched and verified both production servers on its own.
+- **Lab 5 — Close the Loop and Govern.** Splunk resolved the investigation from the verified fixes. The SOAR record showed the Duo role and the Cisco AI Defense MCP Scanner verdicts behind each run, the attack failed against the patched server, and Agent Observability showed every denied call and the Control that denied it.
 
 ## Outcome
 
-**The gap.** An agent that can patch production acts with whatever access it is given, and it reads text written by others. Without controls, speed comes at the price of change control, least privilege and evidence.
+**The gap.** Exploitation moves faster than patching, and an AI agent that can patch production acts with whatever access it is given, on tools someone else wrote. Without controls, speed comes at the price of change control, least privilege and proof.
 
-**The value.** PatchBot shows that an agent can move fast where it is safe and wait for a person where it matters, with every action checked against the role of the person who asked and every step on the record.
+**The value.** Splunk runs the response from detection to resolution, and the agent does the patching inside controls a person can see: vetted tools, a verified operator, a policy check on every call, a person for production, and a fix proven by evidence.
 
 | **Outcome** | **What it means** | **Grounded in** |
 | --- | --- | --- |
-| **Risk-Ranked Exposure** | Work the vulnerabilities an attacker can reach first, and rate every tool the agent depends on before trusting it. | PatchBot, Cisco MCP Scanner |
-| **Explainable Decisions** | Check the agent's reasoning: every recommendation comes with its attack path, fix and deadline. | PatchBot |
-| **Controlled Change** | Production waits for a person, and nobody approves their own change. | Change Board, Splunk Agent Observability Controls |
-| **Least-Privilege Agents** | The agent does only what the person asking may do, and injected instructions stop at runtime. | Splunk Agent Observability Controls, Cisco MCP Scanner |
-| **Provable Governance** | One record of who asked, what the agent tried and what policy decided, for auditors and the SOC alike. | Splunk Agent Observability, Splunk Enterprise, Splunk Enterprise Security |
+| **Exploitation Seen Early** | The SOC sees a known-exploited CVE in use, with the AI analyst's triage attached. | Splunk Enterprise Security, AI SOC analyst |
+| **AI-Planned Response** | The assistant turns a finding into a patch plan the analyst approves in minutes. | Splunk Enterprise Security, Security Assistant |
+| **Trusted Agents** | Vetted tools, a verified operator and a policy check on every call. | Cisco AI Defense MCP Scanner, Cisco Duo, Splunk Agent Observability Controls |
+| **Governed Automation** | One action hands the work to an agent; production still waits for a person. | Splunk SOAR, Change Board |
+| **Closed-Loop Proof** | The investigation resolves from verified fixes; every denial is on the record. | Splunk Enterprise Security, Splunk Agent Observability |
 
-**What's next.** The question is no longer *whether* agents will patch production. It's whether you can prove, for every change they make, who asked, what was allowed, and who approved it.
+**What's next.** The question is no longer *whether* agents will patch production. It's whether you can prove, for every change they make, what was exploited, who it acted for, what was allowed, and who approved it.

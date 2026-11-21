@@ -1,11 +1,11 @@
 +++
 title       = "Setup & Prerequisites"
-description = "Open PatchBot, the Change Board, Splunk Agent Observability and Splunk."
+description = "Open the attack console, Splunk Enterprise Security, the Change Board and Splunk Observability Cloud."
 duration    = "5 min"
 weight      = 10
 +++
 
-All lab work happens in your web browser; there is nothing to install. Before you start Lab 1, confirm you can reach the environments below.
+All lab work happens in your web browser; there is nothing to install. Before you start Lab 1, confirm you can reach the environments below. Your instructor gives you the addresses and sign-ins for your environment.
 
 ## What You Need
 
@@ -15,29 +15,29 @@ All lab work happens in your web browser; there is nothing to install. Before yo
 
 | **Environment** | **What it is** | **Used in** |
 | --- | --- | --- |
-| **PatchBot** | The PseudoCo Assistant's patch agent, at `/patchbot-ui` on your PseudoCo Assistant | Labs 1–4 |
-| **Change Board** | Where a person approves or rejects PatchBot's production changes, at `/change-board-ui` | Lab 3 |
-| **Splunk Agent Observability** | Records every PatchBot request as a trace, and runs the Controls that judge each tool call | Lab 5 |
-| **Splunk Enterprise** with **Splunk Enterprise Security** | The PatchBot app's dashboards, and the findings and risk on the person PatchBot acted for | Lab 5 |
+| **Attack console** | Replays a known exploit against a PseudoCo web server, at `/attack-ui` on your PseudoCo Assistant address | Labs 1 and 5 |
+| **Splunk Enterprise Security** | The finding, the AI SOC analyst's triage, the investigation and its response plan, the Security Assistant, and the Splunk SOAR actions it runs | Labs 1, 2, 3 and 5 |
+| **Change Board** | Where a person approves or rejects production changes, at `/change-board-ui` on your PseudoCo Assistant address | Lab 4 |
+| **Splunk Observability Cloud** | Splunk Agent Observability: every PatchBot run as a trace, and the Controls that judge each tool call | Lab 5 |
+| **Splunk** | The PatchBot app's dashboards, including the Change Chain | Lab 5 (optional) |
 
-## Personas
+## People in the Labs
 
-PatchBot acts with the role of the person who asks. On an environment without Duo sign-in, PatchBot offers five personas, and the labs switch between them:
+PatchBot acts for the person named in each request, and takes that person's role from their Cisco Duo groups:
 
-| **Persona** | **Role** | **Can** |
+| **Person** | **Role** | **In the labs** |
 | --- | --- | --- |
-| dana.lee | Linux Patch Operator | Triage, correct the exposure model, open changes, patch Linux servers |
-| ravi.patel | Windows Patch Operator | The same for Windows servers |
-| sam.ortiz | Change Approver | Approve or reject changes on the Change Board, never their own |
-| jo.kim | Patch Viewer | Read findings, activity and resources |
-| instructor | Estate owner | Everything above |
+| ravi.patel | Windows Patch Operator | Lab 3.1: asks to patch the Linux web servers and is denied |
+| dana.lee | Linux Patch Operator | Lab 3.2: patches the web servers within the change model |
+| sam.ortiz | Change Approver | Lab 4: approves the production change on the Change Board |
 
 {{% notice note %}}
-On an environment with Duo sign-in, PatchBot shows **Sign in with Duo** instead of the personas, and your role comes from your Duo groups. Anyone in none of the PatchBot groups is a Patch Viewer.
+The labs act on one set of four web servers per environment, so everyone in the same environment works the same finding and investigation.
 {{% /notice %}}
 
 ## Access
 
-- Open **PatchBot** at `/patchbot-ui` on your PseudoCo Assistant address.
+- Open the **attack console** at `/attack-ui` on your PseudoCo Assistant address.
+- Sign in to **Splunk**; Labs 1, 2, 3 and 5 open **Enterprise Security** there.
 - Sign in to **Splunk Observability Cloud**; Lab 5 opens **Agent Observability** there.
-- Sign in to **Splunk**; Lab 5 opens the **PatchBot** app and **Enterprise Security** there.
+- For Lab 4, your instructor gives you a one-time passcode for sam.ortiz.
