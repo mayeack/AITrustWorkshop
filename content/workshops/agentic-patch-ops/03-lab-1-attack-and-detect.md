@@ -6,6 +6,8 @@ weight      = 30
 aliases     = ["/workshops/agentic-patch-ops/03-lab-1-detect/"]
 +++
 
+{{< tour "lab-1" >}}
+
 **Pillar:** Detect<br>
 **Tool:** PseudoCo attack console, Splunk Enterprise Security, AI SOC analyst<br>
 **Outcome:** Exploitation Seen Early
@@ -32,6 +34,8 @@ PseudoCo's vulnerability scanner already reports the CVE on four web servers. In
 
 ### Lab 1.1 Launch the Exploit
 
+{{< tour "lab-1.1" >}}
+
 Open the attack console at `/attack-ui` on your PseudoCo Assistant address.
 
 #### 1.1.1 Launch the Exploit
@@ -57,6 +61,8 @@ Requests — Path-traversal requests for CVE-2021-41773, answered 200 OK with th
 Now switch sides — Every request reaches Splunk as a web event, beside the vulnerability inventory the scanner sent before the attack. Everything on this page is simulated: no real system is attacked.
 
 ### Lab 1.2 Find the Finding in Enterprise Security
+
+{{< tour "lab-1.2" >}}
 
 Open Splunk in a new browser tab.
 
@@ -91,6 +97,8 @@ The finding appears within a few minutes of the attack. The AI Disposition can t
 Click on **Active exploitation of CVE-2021-41773 on web-prod-01**.
 
 ### Lab 1.3 Read the AI SOC Analyst's Triage
+
+{{< tour "lab-1.3" >}}
 
 #### 1.3.1 Review the Triage
 

@@ -6,6 +6,8 @@ weight      = 45
 aliases     = ["/workshops/agentic-patch-ops/06-lab-4-defend/"]
 +++
 
+{{< tour "lab-4" >}}
+
 **Pillar:** Approve<br>
 **Tool:** PatchBot Change Board, Cisco Duo<br>
 **Outcome:** Governed Automation
@@ -31,6 +33,8 @@ Production needs a normal change, decided by a person with the Change Approver r
 ## Labs
 
 ### Lab 4.1 Sign In as the Change Approver
+
+{{< tour "lab-4.1" >}}
 
 {{% notice warning "Important" %}}
 Get sam.ortiz's passcode from your instructor before you start: Duo must bring you back within 5 minutes of **Continue with Duo**, or PatchBot shows an error and you sign in again. Sign in at `/login/duo`, not with the Change Board's own **Sign in with Duo** button.
@@ -72,6 +76,8 @@ Click on **All**.
 
 ### Lab 4.2 Compare Standard and Normal Changes
 
+{{< tour "lab-4.2" >}}
+
 #### 4.2.1 Review Every Change
 
 ![Every change](/images/image-634.png)
@@ -89,6 +95,8 @@ Changes from earlier runs in your environment may be listed under these two.
 Click on the **Decision note** box of the change awaiting approval.
 
 ### Lab 4.3 Approve the Normal Change
+
+{{< tour "lab-4.3" >}}
 
 #### 4.3.1 Approve with a Note
 

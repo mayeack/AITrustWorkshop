@@ -7,6 +7,8 @@ weight      = 5
 
 *A hands-on workshop for the leaders accountable for vulnerability risk — and the SOC and operations teams who respond.*
 
+{{< tour >}}
+
 ## The Problem: Exploitation Moves Faster Than Patching
 
 Every week the scanners report more vulnerabilities than a team can patch, and attackers go straight for the ones in CISA's Known Exploited Vulnerabilities catalog. The question that matters is not which CVEs exist, but *which one is being exploited right now, and how fast can we close it everywhere it lives?*

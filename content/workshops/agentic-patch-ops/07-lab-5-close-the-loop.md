@@ -6,6 +6,8 @@ weight      = 50
 aliases     = ["/workshops/agentic-patch-ops/07-lab-5-govern/"]
 +++
 
+{{< tour "lab-5" >}}
+
 **Pillar:** Govern<br>
 **Tool:** Splunk Enterprise Security, Splunk SOAR, Splunk Agent Observability<br>
 **Outcome:** Closed-Loop Proof
@@ -32,6 +34,8 @@ Every SOAR run, every tool call and every policy decision is on the record: in t
 
 ### Lab 5.1 See Splunk Resolve the Investigation
 
+{{< tour "lab-5.1" >}}
+
 Go back to the Enterprise Security tab with your investigation and reload the page.
 
 #### 5.1.1 Reload the Investigation
@@ -53,6 +57,8 @@ If the investigation isn't resolved yet, wait a minute and reload: the resolve s
 Click on the **Automation** tab.
 
 ### Lab 5.2 Read the Record of Each SOAR Run
+
+{{< tour "lab-5.2" >}}
 
 #### 5.2.1 Open the First Run
 
@@ -84,6 +90,8 @@ toolchain — The Cisco AI Defense MCP Scanner verdict for each of PatchBot's MC
 
 ### Lab 5.3 Try the Attack Again
 
+{{< tour "lab-5.3" >}}
+
 Go back to the attack console tab and reload it.
 
 #### 5.3.1 Launch the Exploit Again
@@ -103,6 +111,8 @@ Requests — Answered Forbidden and Bad Request: no file read and no command run
 Now switch sides — Splunk still sees the attempts, and raises no new active-exploitation finding: the detection fires only when an exploit succeeds against a server that is still reported vulnerable.
 
 ### Lab 5.4 See What the Controls Blocked
+
+{{< tour "lab-5.4" >}}
 
 Open Splunk Observability Cloud in a new browser tab.
 
@@ -165,6 +175,8 @@ Control name — Role, viewer, production approval, change scope, change window,
 Step types, Stages and Execution — Tool, PRE and Server: every Control is judged on the server before the tool call runs. If Agent Observability can't answer, PatchBot refuses the call.
 
 ### Lab 5.5 Optional: Replay the Change Chain
+
+{{< tour "lab-5.5" >}}
 
 In Splunk, click on the Splunk logo to go back to the home page.
 

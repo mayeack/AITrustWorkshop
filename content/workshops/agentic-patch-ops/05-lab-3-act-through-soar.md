@@ -6,6 +6,8 @@ weight      = 40
 aliases     = ["/workshops/agentic-patch-ops/05-lab-3-patch/"]
 +++
 
+{{< tour "lab-3" >}}
+
 **Pillar:** Act<br>
 **Tool:** Splunk SOAR, Cisco AI Defense MCP Scanner, Cisco Duo, Splunk Agent Observability Controls<br>
 **Outcome:** Trusted Agents
@@ -33,6 +35,8 @@ Changes follow the change model. Non-production servers fall under a pre-approve
 ## Labs
 
 ### Lab 3.1 Patch as the Wrong Role
+
+{{< tour "lab-3.1" >}}
 
 #### 3.1.1 Ask to Patch as ravi.patel
 
@@ -73,6 +77,8 @@ Connector report — Denied for ravi.patel, a Windows Patch Operator, on every s
 Approved parameters — Exactly what ran: the CVE, the investigation, the operator, the reason and the requester, with the SOAR action run ID. Every automated action is attributable.
 
 ### Lab 3.2 Patch as the Right Role
+
+{{< tour "lab-3.2" >}}
 
 #### 3.2.1 Ask to Patch as dana.lee
 

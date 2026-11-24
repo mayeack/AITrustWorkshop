@@ -6,6 +6,8 @@ weight      = 35
 aliases     = ["/workshops/agentic-patch-ops/04-lab-2-investigate/"]
 +++
 
+{{< tour "lab-2" >}}
+
 **Pillar:** Plan<br>
 **Tool:** Splunk Enterprise Security, Security Assistant<br>
 **Outcome:** AI-Planned Response
@@ -31,6 +33,8 @@ The Security Assistant reads the investigation, its findings and its notes, and 
 ## Labs
 
 ### Lab 2.1 Start the Investigation
+
+{{< tour "lab-2.1" >}}
 
 #### 2.1.1 Start the Investigation
 
@@ -74,6 +78,8 @@ Respond — The **patch servers - PatchBot** action and a Splunk search of Patch
 
 ### Lab 2.2 Ask the Security Assistant
 
+{{< tour "lab-2.2" >}}
+
 #### 2.2.1 Ask How to Respond
 
 ![Security Assistant](/images/image-610.png)
@@ -103,6 +109,8 @@ The assistant's wording changes from run to run. Look for the order of the steps
 Click on **Confirm the exploitation and its scope** in the plan.
 
 ### Lab 2.3 Contain the Attack
+
+{{< tour "lab-2.3" >}}
 
 #### 2.3.1 Confirm the Scope
 

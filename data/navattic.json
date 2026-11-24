@@ -5,76 +5,68 @@
     "demo_id": "cmwo0hacx004c02mf0v929ilf",
     "flows": {
       "lab-1.1": {
-        "id": "cmwo0p21j000002nz0n62b74g",
-        "title": "Lab 1.1 Choose Who Is Asking"
+        "id": "cmwps5ddg000508lbbddrhwf6",
+        "title": "Lab 1.1 Launch the Exploit"
       },
       "lab-1.2": {
-        "id": "cmwo0rb5c002b02l37oy09v8o",
-        "title": "Lab 1.2 Read the Findings"
+        "id": "cmwu4kvbp000809l36e5wad5l",
+        "title": "Lab 1.2 Find the Finding in Enterprise Security"
       },
       "lab-1.3": {
-        "id": "cmwo0t7n6002d02lk049q9vwc",
-        "title": "Lab 1.3 Scan the Toolchain"
+        "id": "cmwu4v6f3000108k7dq0s36lc",
+        "title": "Lab 1.3 Read the AI SOC Analyst's Triage"
       },
       "lab-2.1": {
-        "id": "cmwo0ug91003u02lk9widehur",
-        "title": "Lab 2.1 Open a Finding"
+        "id": "cmwu4zhlr000008jt2qah15ol",
+        "title": "Lab 2.1 Start the Investigation"
       },
       "lab-2.2": {
-        "id": "cmwo0vy25005o02lk253z3gi3",
-        "title": "Lab 2.2 Ask PatchBot"
+        "id": "cmwu5cawu000409l2fjx1dzi9",
+        "title": "Lab 2.2 Ask the Security Assistant"
+      },
+      "lab-2.3": {
+        "id": "cmwu5goos000508jp6kvze42z",
+        "title": "Lab 2.3 Contain the Attack"
       },
       "lab-3.1": {
-        "id": "cmwo0x2zz006802lk7bhcfhrg",
-        "title": "Lab 3.1 Patch Staging"
+        "id": "cmwu5l8ya000202p06misdk7y",
+        "title": "Lab 3.1 Patch as the Wrong Role"
       },
       "lab-3.2": {
-        "id": "cmwo0ya53006n02lk509dd0a7",
-        "title": "Lab 3.2 Try Production"
-      },
-      "lab-3.3": {
-        "id": "cmwo104yv000008ii4p034kxk",
-        "title": "Lab 3.3 Approve the Change as Someone Else"
-      },
-      "lab-3.4": {
-        "id": "cmwo11vge000102ldhusa9mks",
-        "title": "Lab 3.4 Patch Production Under the Approved Change"
+        "id": "cmwu5ovbm000108l5c8d9e4dm",
+        "title": "Lab 3.2 Patch as the Right Role"
       },
       "lab-4.1": {
-        "id": "cmwo13att00o302nr11lbdupr",
-        "title": "Lab 4.1 A Patch Outside Your Role"
+        "id": "cmwu50qoa000108le4qzubtux",
+        "title": "Lab 4.1 Sign In as the Change Approver"
       },
       "lab-4.2": {
-        "id": "cmwo14vvp000302kufyd894iv",
-        "title": "Lab 4.2 The Right Role"
+        "id": "cmwu7a444000008ij5mmoduo8",
+        "title": "Lab 4.2 Compare Standard and Normal Changes"
       },
       "lab-4.3": {
-        "id": "cmwo16dvz00qf02nr70xfeh24",
-        "title": "Lab 4.3 Read-Only Means Read-Only"
-      },
-      "lab-4.4": {
-        "id": "cmwo18tj200u502nr2fgobban",
-        "title": "Lab 4.4 A Poisoned Advisory"
-      },
-      "lab-4.5": {
-        "id": "cmwo1qjmb000502nx0fhg2yjw",
-        "title": "Lab 4.5 A Poisoned MCP Tool"
+        "id": "cmwu7bi5n000002owge8obx5l",
+        "title": "Lab 4.3 Approve the Normal Change"
       },
       "lab-5.1": {
-        "id": "cmwo1y2br005z02nx38ml90qj",
-        "title": "Lab 5.1 Every Request Is a Trace"
+        "id": "cmwpt11dl000909k2b58damd8",
+        "title": "Lab 5.1 See Splunk Resolve the Investigation"
       },
       "lab-5.2": {
-        "id": "cmwo1z9n8000108le5pmg87s4",
-        "title": "Lab 5.2 The Controls"
+        "id": "cmwu7rt7w000002lh2qi23v5p",
+        "title": "Lab 5.2 Read the Record of Each SOAR Run"
       },
       "lab-5.3": {
-        "id": "cmwo259s7000i02ul8u13g5gu",
-        "title": "Lab 5.3 The Splunk Dashboards"
+        "id": "cmwu7ecbx000609jo72vz8wyw",
+        "title": "Lab 5.3 Try the Attack Again"
       },
       "lab-5.4": {
-        "id": "cmwo28dwk000002o15ocn9tqz",
-        "title": "Lab 5.4 The Findings in Enterprise Security"
+        "id": "cmwu83v3d000209kzcagf9ffu",
+        "title": "Lab 5.4 See What the Controls Blocked"
+      },
+      "lab-5.5": {
+        "id": "cmwu7uadl000k08l74iagdqkg",
+        "title": "Lab 5.5 Optional: Replay the Change Chain"
       }
     },
     "labs": {
