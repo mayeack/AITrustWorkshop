@@ -80,13 +80,13 @@ Click on **Mission Control**.
 
 ![Analyst Queue](/images/image-605.png)
 
-Type **Active exploitation** in the search box at the top right of the Analyst Queue and press Enter, then click on **Findings**.
+Type **Active exploitation of CVE-2021-41773** in the search box at the top right of the Analyst Queue and press Enter, then click on **Findings**.
 
 The Analyst Queue is where detections become casework: every finding and investigation waits here for a person to own and resolve it.
 
 Filters — The search, the type and the time range narrow the queue to one kind of finding. In a busy SOC, this is how an analyst works one incident without the noise of the rest.
 
-Finding — The title names the exploited CVE and the server, the entity is the server under attack, and the score is the finding's risk. Status New and Owner unassigned mean nobody has picked it up yet.
+Finding — The title names the exploited CVE and the server, the entity is the server under attack, and the score is the finding's risk. Scroll the table right: Status New and Owner unassigned mean nobody has picked it up yet.
 
 AI Disposition — The AI SOC analyst's verdict, filled in on its own once its triage finishes. The analyst knows where to start before reading a single event.
 

@@ -70,7 +70,15 @@ Runs — One entry per action, the newest first: dana.lee's run and ravi.patel's
 
 Run details — The connector, the parameters and PatchBot's summary, then the full result. The record holds the action's evidence, not only its status.
 
-Click on the arrow at the top right to hide the investigation details, then click on the older **AI-SOC-Analyst_PatchBot_patch-servers** run, ravi.patel's. Scroll its result down to **operator**.
+Click on the arrow at the top right to hide the investigation details.
+
+![Runs with the details hidden](/images/image-652.png)
+
+Click on the older **AI-SOC-Analyst_PatchBot_patch-servers** run, ravi.patel's.
+
+![ravi.patel's run](/images/image-653.png)
+
+Scroll its result down to **operator**.
 
 #### 5.2.2 Read Who and What Was Checked
 
