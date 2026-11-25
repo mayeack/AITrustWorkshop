@@ -29,11 +29,13 @@ The workshop starts and ends in **Splunk Enterprise Security**. An AI agent, Pat
 
 **Splunk SOAR** hands the patching to the agent, as an action a person approves.
 
-**Cisco AI Defense MCP Scanner** vets the agent's tools before it uses them, and **Cisco Duo** says who the agent is acting for.
+**Cisco Duo** says who the agent is acting for, and the **Cisco AI Defense MCP Scanner** vets its tools: a poisoned third-party tool is refused before the model reads it.
 
 **Splunk Agent Observability Controls** judge every tool call against that person's role before it runs.
 
 **The Change Board** keeps production behind a person, while pre-approved standard changes run at once.
+
+PatchBot and the Change Board are synthetic applications built for the workshop, standing in for the AI agents and change-management tools your teams use. The Splunk and Cisco products around them are real.
 
 **Splunk** resolves the investigation itself once it sees the verified fixes.
 
@@ -41,11 +43,13 @@ The workshop starts and ends in **Splunk Enterprise Security**. An AI agent, Pat
 
 | Lab | What you do | What it proves | Time |
 | --- | --- | --- | --- |
-| **Lab 1 — Attack and Detect** | Launch the exploit from the attack console, then open the finding and the AI SOC analyst's triage | The SOC sees a known-exploited CVE in use, already triaged | 15 min |
-| **Lab 2 — Plan the Response with AI** | Start the investigation, ask the Security Assistant how to respond, complete the containment tasks | A finding becomes a plan that people and AI work through together | 15 min |
-| **Lab 3 — Act Through SOAR, with Identity** | Run PatchBot's patch action through Splunk SOAR for the wrong role, then the right one | The agent uses vetted tools, acts for a verified person and can't exceed that person's role | 20 min |
-| **Lab 4 — Approve the Normal Change** | Sign in with Cisco Duo as the Change Approver and release production | Standard changes run at once; production waits for a person | 15 min |
-| **Lab 5 — Close the Loop and Govern** | See Splunk resolve the investigation, try the attack again, and follow the denied calls in Agent Observability | The fix is proven, and every decision is on the record | 20 min |
+| **Lab 1 — Attack and Detect** | Launch the exploit from the attack console, tour the PatchBot dashboards while the finding arrives, then open the finding and the AI SOC analyst's triage | The SOC sees a known-exploited CVE in use, already triaged | 25 min |
+| **Lab 2 — Plan and Contain** | Start the investigation, ask the Security Assistant how to respond, and complete the plan's Contain tasks | A finding becomes a plan that people and AI work through in order | 15 min |
+| **Lab 3 — Remediate Through SOAR, with Identity** | Run PatchBot's patch action through Splunk SOAR for the wrong role, then the right one, and record the runs | The agent acts for a verified person and can't exceed that person's role | 20 min |
+| **Lab 4 — Review Denied Calls in Agent Observability** | Follow the denied run to the Control that stopped it | Every call passes a policy the security team owns, and every denial is on the record | 10 min |
+| **Lab 5 — Review Refused Calls with Cisco AI Defense** | Poison a third-party MCP server and watch PatchBot refuse it | A tampered tool is caught before any model reads it | 10 min |
+| **Lab 6 — Approve the Normal Change** | Sign in with Cisco Duo as the Change Approver, release production, and confirm the change | Standard changes run at once; production waits for a person | 15 min |
+| **Lab 7 — Close the Loop** | See Splunk resolve the investigation, try the attack again, and close the plan with its time to remediate | The fix is proven, and the whole response is on the record | 15 min |
 
 ## Executive Outcomes
 
