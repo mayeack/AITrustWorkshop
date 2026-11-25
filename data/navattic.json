@@ -9,64 +9,108 @@
         "title": "Lab 1.1 Launch the Exploit"
       },
       "lab-1.2": {
-        "id": "cmwu4kvbp000809l36e5wad5l",
-        "title": "Lab 1.2 Find the Finding in Enterprise Security"
+        "id": "cmwv5zj2q002m02mm13m1do2s",
+        "title": "Lab 1.2 Tour the PatchBot Dashboards"
       },
       "lab-1.3": {
-        "id": "cmwu4v6f3000108k7dq0s36lc",
-        "title": "Lab 1.3 Read the AI SOC Analyst's Triage"
+        "id": "cmwvfoilq000902ov4grpasha",
+        "title": "Lab 1.3 Find the Finding in Enterprise Security"
+      },
+      "lab-1.4": {
+        "id": "cmwvg700u000202pc6nxj4bpd",
+        "title": "Lab 1.4 Read the AI SOC Analyst's Triage"
       },
       "lab-2.1": {
-        "id": "cmwu4zhlr000008jt2qah15ol",
+        "id": "cmwvgbjc1000308k5f9sv1n06",
         "title": "Lab 2.1 Start the Investigation"
       },
       "lab-2.2": {
-        "id": "cmwu5cawu000409l2fjx1dzi9",
+        "id": "cmwvged7v000002k3a2q887uj",
         "title": "Lab 2.2 Ask the Security Assistant"
       },
       "lab-2.3": {
-        "id": "cmwu5goos000508jp6kvze42z",
+        "id": "cmwvgi92l000408jvf8510v94",
         "title": "Lab 2.3 Contain the Attack"
       },
       "lab-3.1": {
-        "id": "cmwu5l8ya000202p06misdk7y",
-        "title": "Lab 3.1 Patch as the Wrong Role"
+        "id": "cmwvgk6ue000002o02wwx64kf",
+        "title": "Lab 3.1 Start the Remediate Task"
       },
       "lab-3.2": {
-        "id": "cmwu5ovbm000108l5c8d9e4dm",
-        "title": "Lab 3.2 Patch as the Right Role"
+        "id": "cmwvgoibe000808kzdo5hbtaw",
+        "title": "Lab 3.2 Patch as the Wrong Role"
+      },
+      "lab-3.3": {
+        "id": "cmwvgsah3000009l84pus1j4d",
+        "title": "Lab 3.3 Patch as the Right Role"
+      },
+      "lab-3.4": {
+        "id": "cmwvgxxkt000102mhfsn7dcou",
+        "title": "Lab 3.4 Record the Runs and End the Task"
       },
       "lab-4.1": {
-        "id": "cmwu50qoa000108le4qzubtux",
-        "title": "Lab 4.1 Sign In as the Change Approver"
+        "id": "cmwvgzqwn000202rtcayc9irq",
+        "title": "Lab 4.1 Start the Review Task"
       },
       "lab-4.2": {
-        "id": "cmwu7a444000008ij5mmoduo8",
-        "title": "Lab 4.2 Compare Standard and Normal Changes"
+        "id": "cmwvh1do2000002oy8v37f6g0",
+        "title": "Lab 4.2 Find the Denied Run"
       },
       "lab-4.3": {
-        "id": "cmwu7bi5n000002owge8obx5l",
-        "title": "Lab 4.3 Approve the Normal Change"
+        "id": "cmwvh8apb000002mzckcd8r81",
+        "title": "Lab 4.3 Read the Policy Decision"
+      },
+      "lab-4.4": {
+        "id": "cmwvh9tvl000c02mzfd82ekn5",
+        "title": "Lab 4.4 Review the Controls"
       },
       "lab-5.1": {
-        "id": "cmwpt11dl000909k2b58damd8",
-        "title": "Lab 5.1 See Splunk Resolve the Investigation"
+        "id": "cmwwizxza000509kz2asycd1a",
+        "title": "Lab 5.1 Open PatchBot's Toolchain"
       },
       "lab-5.2": {
-        "id": "cmwu7rt7w000002lh2qi23v5p",
-        "title": "Lab 5.2 Read the Record of Each SOAR Run"
+        "id": "cmwwj1qsz000008jtatb88w34",
+        "title": "Lab 5.2 Poison the Vendor's Server"
       },
       "lab-5.3": {
-        "id": "cmwu7ecbx000609jo72vz8wyw",
-        "title": "Lab 5.3 Try the Attack Again"
+        "id": "cmwwj9odu000208jpamsbg52z",
+        "title": "Lab 5.3 Watch PatchBot Refuse the Server"
       },
       "lab-5.4": {
-        "id": "cmwu83v3d000209kzcagf9ffu",
-        "title": "Lab 5.4 See What the Controls Blocked"
+        "id": "cmwwjcz8l000h02nw92mi0koe",
+        "title": "Lab 5.4 Find the Refusal in Splunk"
       },
-      "lab-5.5": {
-        "id": "cmwu7uadl000k08l74iagdqkg",
-        "title": "Lab 5.5 Optional: Replay the Change Chain"
+      "lab-6.1": {
+        "id": "cmwwjesfc000308l67ot5c2rv",
+        "title": "Lab 6.1 Start the Approval Task"
+      },
+      "lab-6.2": {
+        "id": "cmwwjgpgo000002mogkh0glg5",
+        "title": "Lab 6.2 Sign In as the Change Approver"
+      },
+      "lab-6.3": {
+        "id": "cmwwk17j8000609i94s8tbn6t",
+        "title": "Lab 6.3 Approve the Normal Change"
+      },
+      "lab-6.4": {
+        "id": "cmwwkhkcp000202p1ayh4ba52",
+        "title": "Lab 6.4 Confirm the Change in Splunk SOAR"
+      },
+      "lab-7.1": {
+        "id": "cmwwkjtx9000408jrc3pibhqg",
+        "title": "Lab 7.1 Confirm Every Server Has a Verified Fix"
+      },
+      "lab-7.2": {
+        "id": "cmwwkkv9u000302p51gpjggbs",
+        "title": "Lab 7.2 Try the Attack Again"
+      },
+      "lab-7.3": {
+        "id": "cmwwkowus000002me0w1gfbia",
+        "title": "Lab 7.3 Close the Plan"
+      },
+      "lab-7.4": {
+        "id": "cmwwkqs5u000y02me8y8ugiyj",
+        "title": "Lab 7.4 Optional: Replay the Change Chain"
       }
     },
     "labs": {
@@ -74,7 +118,9 @@
       "lab-2": "lab-2.1",
       "lab-3": "lab-3.1",
       "lab-4": "lab-4.1",
-      "lab-5": "lab-5.1"
+      "lab-5": "lab-5.1",
+      "lab-6": "lab-6.1",
+      "lab-7": "lab-7.1"
     }
   },
   "ai-trust": {
