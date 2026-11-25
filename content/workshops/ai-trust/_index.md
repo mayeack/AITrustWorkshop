@@ -2,7 +2,7 @@
 title       = "Agentic AI Trust Workshop"
 linkTitle   = "AI Trust"
 description = "Delivering agentic AI trust end to end — measure, secure, observe, and govern every AI interaction."
-duration    = "2 hours 40 min"
+duration    = "2 hours 20 min"
 difficulty  = "intermediate"
 product     = "Cisco + Splunk"
 weight      = 1

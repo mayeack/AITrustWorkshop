@@ -1,7 +1,7 @@
 +++
 title       = "Lab 2 — Secure"
 description = "Cisco AI Defense: review the existing Prompt Injection - Master guardrail profile, then block a prompt-injection data-exfiltration attack before it reaches the model."
-duration    = "20 min"
+duration    = "15 min"
 weight      = 40
 aliases     = ["/lab-2-secure.html", "/workshops/ai-governance/04-lab-2-secure/", "/workshops/ai-governance-healthcare/04-lab-2-secure/", "/workshops/ai-trust-healthcare/04-lab-2-secure/"]
 +++
