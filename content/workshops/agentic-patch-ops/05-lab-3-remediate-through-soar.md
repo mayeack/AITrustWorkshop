@@ -150,7 +150,7 @@ Click on the **Automation** tab.
 
 The Automation tab is the investigation's record of every Splunk SOAR action: what ran, for whom, and what came back.
 
-Runs — One entry per action, the newest first: dana.lee's run and ravi.patel's run, each with who ran it and when.
+Runs — One entry per action, the newest first, each with who ran it and when. This lab adds two: ravi.patel's, then dana.lee's.
 
 Click on the arrow at the top right to hide the investigation details.
 

@@ -94,7 +94,7 @@ Exposure and Patch Pipeline follows every finding from the scanner's report to t
 
 Open findings by timeline and severity — Every open CVE on PseudoCo's servers, grouped by its remediation deadline and severity. CVE-2021-41773 is in CISA's Known Exploited Vulnerabilities catalog, so its deadline is the shortest.
 
-Remediation funnel and Time to remediate — How many findings move from reported to fixed, and how long that takes. Lab 7 records this incident's time to remediate from here.
+Remediation funnel and Time to remediate — How many findings move from reported to fixed, and how long that takes. Lab 7 records this incident's time to remediate on its response plan.
 
 Click on **Initiators and Roles** in the left navigation.
 
@@ -138,7 +138,7 @@ Click on **Change Chain** in the left navigation.
 
 ![Change Chain](/images/image-660.png)
 
-Change Chain replays one remediation end to end: type a finding, change or investigation ID, and it lists every event in order. There is nothing to replay yet; Lab 7 replays this incident.
+Change Chain replays one remediation end to end: type a finding, change or investigation ID, and it lists every event in order. There is nothing to replay yet; the optional Lab 7.4 replays this incident.
 
 ### Lab 1.3 Find the Finding in Enterprise Security
 

@@ -128,6 +128,10 @@ Click on **Start**.
 
 The block task is a person's job by design: this lab has no firewall connector, so a person blocks the address and records it, and the AI may not report it as done.
 
+Description — Block the address at the perimeter by hand, then record where, by whom and when. The note is required, so the containment is on the record before anything is patched.
+
+Respond — A Splunk search of the requests from the attacking address over time. Requests that keep arriving after the block show it isn't in force.
+
 Click in the **Notes** box and type where the address was blocked, by whom and when.
 
 **Example note:** Blocked 203.0.113.66 at the perimeter firewall. Blocked by the on-call SOC analyst at the time of this note.

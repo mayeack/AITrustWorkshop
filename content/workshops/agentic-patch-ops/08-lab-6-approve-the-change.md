@@ -156,6 +156,12 @@ Click on **End**.
 
 ![Approval task ended](/images/image-739.png)
 
+The approval is recorded on its task, beside the change status that confirmed it.
+
+Verify — The approval task ended, with its owner. The second Verify task, in Lab 7, checks every server.
+
+Respond — The get change status action, completed, with its results a click away. The confirmation stays on the task for anyone who reviews the response.
+
 ## Outcome
 
 Lab 6 keeps people where they matter: production waits for an approver, and everything else flows.

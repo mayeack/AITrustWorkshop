@@ -58,6 +58,8 @@ Type the workshop code your instructor gave you and click on **Verify**.
 
 ![PseudoCo Assistant](/images/image-714.png)
 
+The PseudoCo Assistant opens signed in as dana.lee: Cisco Duo verified the person, not just a password, and the Linux Patch Operator role comes from a Duo group.
+
 Open `/patchbot-ui` on your PseudoCo Assistant address.
 
 #### 5.1.2 Open the Toolchain
@@ -68,7 +70,7 @@ Click on the **Toolchain** tab.
 
 ![Toolchain](/images/image-716.png)
 
-The Toolchain tab lists the MCP servers PatchBot can use in your workspace. None has been scanned there yet.
+The Toolchain tab lists the MCP servers PatchBot can use in your workspace, with each one's latest scan.
 
 MCP servers — PatchBot's own three servers and a third party's Vendor Advisories server. The scanner reads each server's tool catalogue before PatchBot trusts it: PatchBot refuses any job while one of its own servers lacks a clean verdict.
 
